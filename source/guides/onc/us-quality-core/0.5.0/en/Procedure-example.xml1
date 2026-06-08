@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Procedure xmlns="http://hl7.org/fhir">
+  <id value="example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedure"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Procedure example</b></p><a name="example"> </a><a name="hcexample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-us-quality-core-procedure.html">US Quality Core Procedure</a></p></div><p><b>US Quality Core Not Done Recorded</b>: 2013-04-05 09:35:00-0400</p><p><b>partOf</b>: Inpatient appendicitis surgical care</p><p><b>status</b>: Completed</p><p><b>statusReason</b>: <span title="Codes:">Appendectomy completed after surgical confirmation of acute appendicitis</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 80146002}">Excision of appendix (procedure)</span></p><p><b>subject</b>: <a href="Patient-example.html">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>encounter</b>: <a href="Encounter-example.html">Encounter: identifier = http://example.org/encounters#ENC-20130404-appendicitis; status = finished; class = inpatient encounter (v3 Code System ActCode#IMP); type = Initial hospital inpatient or observation care, per day, for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making. When using total time on the date of the encounter for code selection, 75 minutes must be met or exceeded.; period = 2013-04-04 18:00:00-0400 --&gt; 2013-04-06 11:00:00-0400</a></p><p><b>performed</b>: 2013-04-05 09:20:00-0400 --&gt; 2013-04-05 10:30:00-0400</p><h3>Performers</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Actor</b></td></tr><tr><td style="display: none">*</td><td><a href="Practitioner-example.html">Dr Cecil Surgeon</a></td></tr></table><p><b>reasonCode</b>: <span title="Codes:{http://snomed.info/sct 21522001}">Abdominal pain (finding)</span></p><p><b>reasonReference</b>: <a href="Condition-appendicitis-example.html">Condition Appendicitis (disorder)</a></p><p><b>bodySite</b>: <span title="Codes:{http://snomed.info/sct 66754008}">Appendix structure</span></p><p><b>report</b>: <a href="DiagnosticReport-example.html">Diagnostic Report for 'CBC panel - Blood by Automated count' for '-&gt;Peter Chalmers'</a></p></div>
+  </text>
+  <extension url="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-recorded">
+    <valueDateTime value="2013-04-05T09:35:00-04:00"/>
+  </extension>
+  <partOf>
+    <display value="Inpatient appendicitis surgical care"/>
+  </partOf>
+  <status value="completed"/>
+  <statusReason>
+    <text value="Appendectomy completed after surgical confirmation of acute appendicitis"/>
+  </statusReason>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="80146002"/>
+      <display value="Excision of appendix (procedure)"/>
+    </coding>
+    <text value="Excision of appendix (procedure)"/>
+  </code>
+  <subject>
+    <reference value="Patient/example"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/example"/>
+  </encounter>
+  <performedPeriod>
+    <start value="2013-04-05T09:20:00-04:00"/>
+    <end value="2013-04-05T10:30:00-04:00"/>
+  </performedPeriod>
+  <performer>
+    <actor>
+      <reference value="Practitioner/example"/>
+      <display value="Dr Cecil Surgeon"/>
+    </actor>
+  </performer>
+  <reasonCode>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="21522001"/>
+      <display value="Abdominal pain (finding)"/>
+    </coding>
+  </reasonCode>
+  <reasonReference>
+    <reference value="Condition/appendicitis-example"/>
+  </reasonReference>
+  <bodySite>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="66754008"/>
+      <display value="Appendix structure"/>
+    </coding>
+  </bodySite>
+  <report>
+    <reference value="DiagnosticReport/example"/>
+  </report>
+</Procedure>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="example-nonpatient-hospital-bed"/>
+  <meta>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-nonpatient-observation"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation example-nonpatient-hospital-bed</b></p><a name="example-nonpatient-hospital-bed"> </a><a name="hcexample-nonpatient-hospital-bed"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-us-quality-core-nonpatient-observation.html">US Quality Core NonPatient Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://snomed.info/sct 49062001}">Device (physical object)</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 91537007}">Hospital bed, device (physical object)</span></p><p><b>subject</b>: Hospital bed inventory</p><p><b>effective</b>: 2023-07-07</p><p><b>performer</b>: <a href="Organization-example.html">Hendricks Country Hospital</a></p><p><b>value</b>: <span title="Codes:{http://snomed.info/sct 735333005}">Equipment available (finding)</span></p></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="49062001"/>
+      <display value="Device (physical object)"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="91537007"/>
+      <display value="Hospital bed, device (physical object)"/>
+    </coding>
+  </code>
+  <subject>
+    <display value="Hospital bed inventory"/>
+  </subject>
+  <effectiveDateTime value="2023-07-07"/>
+  <performer>
+    <reference value="Organization/example"/>
+    <display value="Hendricks Country Hospital"/>
+  </performer>
+  <valueCodeableConcept>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="735333005"/>
+      <display value="Equipment available (finding)"/>
+    </coding>
+  </valueCodeableConcept>
+</Observation>

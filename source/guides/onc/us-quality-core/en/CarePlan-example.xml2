@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CarePlan xmlns="http://hl7.org/fhir">
+  <id value="example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-careplan"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml">Assessment and care plan for routine antenatal care during pregnancy.</div>
+  </text>
+  <status value="active"/>
+  <intent value="plan"/>
+  <category>
+    <coding>
+      <system value="http://hl7.org/fhir/us/core/CodeSystem/careplan-category"/>
+      <code value="assess-plan"/>
+      <display value="Assessment and Plan of Treatment"/>
+    </coding>
+  </category>
+  <subject>
+    <display value="Eve Everywoman"/>
+  </subject>
+  <period>
+    <start value="2019-05-24"/>
+    <end value="2020-02-24"/>
+  </period>
+  <careTeam>
+    <reference value="CareTeam/example"/>
+  </careTeam>
+  <addresses>
+    <display value="pregnancy"/>
+  </addresses>
+  <goal>
+    <display value="pregnancy goal"/>
+  </goal>
+  <activity>
+    <outcomeReference>
+      <display value="First contact, occurred at about 12 weeks based on gestational age from LMP of 2019-03-01"/>
+    </outcomeReference>
+    <detail>
+      <kind value="ServiceRequest"/>
+      <code>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="424525001"/>
+          <display value="Antenatal care (regime/therapy)"/>
+        </coding>
+        <text value="Antenatal care"/>
+      </code>
+      <status value="in-progress"/>
+      <performer>
+        <display value="Mabel Midwife"/>
+      </performer>
+      <description value="First antenatal care contact"/>
+    </detail>
+  </activity>
+  <activity>
+    <detail>
+      <kind value="ServiceRequest"/>
+      <code>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="424525001"/>
+          <display value="Antenatal care (regime/therapy)"/>
+        </coding>
+        <text value="Antenatal care"/>
+      </code>
+      <status value="scheduled"/>
+      <scheduledPeriod>
+        <start value="2019-07-26"/>
+      </scheduledPeriod>
+      <performer>
+        <display value="Mabel Midwife"/>
+      </performer>
+      <description value="Second contact to occur at 20 weeks of gestational age"/>
+    </detail>
+  </activity>
+  <activity>
+    <detail>
+      <kind value="ServiceRequest"/>
+      <code>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="424525001"/>
+          <display value="Antenatal care (regime/therapy)"/>
+        </coding>
+        <text value="Antenatal care"/>
+      </code>
+      <status value="not-started"/>
+      <scheduledPeriod>
+        <start value="2019-09-06"/>
+      </scheduledPeriod>
+      <performer>
+        <display value="Mabel Midwife"/>
+      </performer>
+      <description value="Third contact to occur at 26 weeks of gestational age"/>
+    </detail>
+  </activity>
+  <activity>
+    <detail>
+      <kind value="ServiceRequest"/>
+      <code>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="424525001"/>
+          <display value="Antenatal care (regime/therapy)"/>
+        </coding>
+        <text value="Antenatal care"/>
+      </code>
+      <status value="not-started"/>
+      <scheduledPeriod>
+        <start value="2019-10-04"/>
+      </scheduledPeriod>
+      <performer>
+        <display value="Mabel Midwife"/>
+      </performer>
+      <description value="Fourth contact to occur at 30 weeks of gestational age"/>
+    </detail>
+  </activity>
+  <activity>
+    <detail>
+      <kind value="ServiceRequest"/>
+      <code>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="424525001"/>
+          <display value="Antenatal care (regime/therapy)"/>
+        </coding>
+        <text value="Antenatal care"/>
+      </code>
+      <status value="not-started"/>
+      <scheduledPeriod>
+        <start value="2019-11-01"/>
+      </scheduledPeriod>
+      <performer>
+        <display value="Mabel Midwife"/>
+      </performer>
+      <description value="Fifth contact to occur at 34 weeks of gestational age"/>
+    </detail>
+  </activity>
+  <activity>
+    <detail>
+      <kind value="ServiceRequest"/>
+      <code>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="424525001"/>
+          <display value="Antenatal care (regime/therapy)"/>
+        </coding>
+        <text value="Antenatal care"/>
+      </code>
+      <status value="not-started"/>
+      <scheduledPeriod>
+        <start value="2019-11-15"/>
+      </scheduledPeriod>
+      <performer>
+        <display value="Mabel Midwife"/>
+      </performer>
+      <description value="Sixth contact to occur at 36 weeks of gestational age"/>
+    </detail>
+  </activity>
+  <activity>
+    <detail>
+      <kind value="ServiceRequest"/>
+      <code>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="424525001"/>
+          <display value="Antenatal care (regime/therapy)"/>
+        </coding>
+        <text value="Antenatal care"/>
+      </code>
+      <status value="not-started"/>
+      <scheduledPeriod>
+        <start value="2019-11-29"/>
+      </scheduledPeriod>
+      <performer>
+        <display value="Mabel Midwife"/>
+      </performer>
+      <description value="Seventh contact to occur at 38 weeks of gestational age"/>
+    </detail>
+  </activity>
+  <activity>
+    <detail>
+      <kind value="ServiceRequest"/>
+      <code>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="424525001"/>
+          <display value="Antenatal care (regime/therapy)"/>
+        </coding>
+        <text value="Antenatal care"/>
+      </code>
+      <status value="not-started"/>
+      <scheduledPeriod>
+        <start value="2019-12-13"/>
+      </scheduledPeriod>
+      <performer>
+        <display value="Mabel Midwife"/>
+      </performer>
+      <description value="Eighth contact to occur at 40 weeks of gestational age"/>
+    </detail>
+  </activity>
+  <activity>
+    <detail>
+      <kind value="ServiceRequest"/>
+      <code>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="236973005"/>
+          <display value="Delivery procedure (procedure)"/>
+        </coding>
+        <text value="Delivery procedure"/>
+      </code>
+      <status value="not-started"/>
+      <scheduledPeriod>
+        <start value="2019-12-13"/>
+        <end value="2019-12-27"/>
+      </scheduledPeriod>
+      <performer>
+        <display value="Mabel Midwife"/>
+      </performer>
+      <description value="Delivery"/>
+    </detail>
+  </activity>
+</CarePlan>

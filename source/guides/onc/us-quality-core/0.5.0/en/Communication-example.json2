@@ -1,0 +1,62 @@
+{
+  "resourceType" : "Communication",
+  "id" : "example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-communication"]
+  },
+  "language" : "en",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Communication example</b></p><a name=\"example\"> </a><a name=\"hcexample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-communication.html\">US Quality Core Communication</a></p></div><p><b>partOf</b>: <a href=\"DiagnosticReport-note-example.html\">Portable chest radiograph report</a></p><p><b>status</b>: Completed</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/communication-category alert}\">Alert</span></p><p><b>medium</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ParticipationMode WRITTEN}\">written</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number\u00a0(use:\u00a0usual,\u00a0period:\u00a02001-05-06 --&gt; (ongoing)))</a></p><p><b>topic</b>: <span title=\"Codes:\">Chest radiograph report available</span></p><p><b>about</b>: <a href=\"DiagnosticReport-note-example.html\">Portable chest radiograph report</a></p><p><b>encounter</b>: <a href=\"Encounter-example.html\">Encounter: identifier = http://example.org/encounters#ENC-20130404-appendicitis; status = finished; class = inpatient encounter (v3 Code System ActCode#IMP); type = Initial hospital inpatient or observation care, per day, for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making. When using total time on the date of the encounter for code selection, 75 minutes must be met or exceeded.; period = 2013-04-04 18:00:00-0400 --&gt; 2013-04-06 11:00:00-0400</a></p><p><b>sent</b>: 2019-02-03 19:45:00+0000</p><p><b>received</b>: 2019-02-03 19:45:30+0000</p><p><b>recipient</b>: <a href=\"Practitioner-example.html\">Practitioner Adam Careful </a></p><p><b>sender</b>: <a href=\"Organization-example.html\">Organization Health Level Seven International</a></p><blockquote><p><b>payload</b></p><p><b>content</b>: Portable chest radiograph report is final with no acute cardiopulmonary abnormality.</p></blockquote><blockquote><p><b>payload</b></p><p><b>content</b>: <a href=\"DiagnosticReport-note-example.html\">Portable chest radiograph report</a></p></blockquote></div>"
+  },
+  "partOf" : [{
+    "reference" : "DiagnosticReport/note-example",
+    "display" : "Portable chest radiograph report"
+  }],
+  "status" : "completed",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/communication-category",
+      "code" : "alert"
+    }],
+    "text" : "Alert"
+  }],
+  "medium" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ParticipationMode",
+      "code" : "WRITTEN",
+      "display" : "written"
+    }],
+    "text" : "written"
+  }],
+  "subject" : {
+    "reference" : "Patient/example"
+  },
+  "topic" : {
+    "text" : "Chest radiograph report available"
+  },
+  "about" : [{
+    "reference" : "DiagnosticReport/note-example",
+    "display" : "Portable chest radiograph report"
+  }],
+  "encounter" : {
+    "reference" : "Encounter/example"
+  },
+  "sent" : "2019-02-03T19:45:00Z",
+  "received" : "2019-02-03T19:45:30Z",
+  "recipient" : [{
+    "reference" : "Practitioner/example"
+  }],
+  "sender" : {
+    "reference" : "Organization/example"
+  },
+  "payload" : [{
+    "contentString" : "Portable chest radiograph report is final with no acute cardiopulmonary abnormality."
+  },
+  {
+    "contentReference" : {
+      "reference" : "DiagnosticReport/note-example",
+      "display" : "Portable chest radiograph report"
+    }
+  }]
+}

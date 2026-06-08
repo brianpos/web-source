@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<NutritionOrder xmlns="http://hl7.org/fhir">
+  <id value="example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-nutritionorder"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: NutritionOrder example</b></p><a name="example"> </a><a name="hcexample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-us-quality-core-nutritionorder.html">US Quality Core NutritionOrder</a></p></div><p><b>identifier</b>: 123</p><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>patient</b>: <a href="Patient-example.html">Peter Chalmers</a></p><p><b>encounter</b>: <a href="Encounter-example.html">Inpatient</a></p><p><b>dateTime</b>: 2013-04-04</p><p><b>orderer</b>: <a href="Practitioner-example.html">Dr Adam Careful</a></p><p><b>allergyIntolerance</b>: <a href="AllergyIntolerance-example.html">Food allergy</a></p><p><b>foodPreferenceModifier</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/diet dairy-free}">Dairy Free</span></p><blockquote><p><b>oralDiet</b></p><p><b>type</b>: <span title="Codes:{http://snomed.info/sct 160670007}">Diabetic diet</span></p><p><b>schedule</b>: 3 per 1 day</p><h3>Nutrients</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Modifier</b></td><td><b>Amount</b></td></tr><tr><td style="display: none">*</td><td><span title="Codes:{http://snomed.info/sct 2331003}">Carbohydrate</span></td><td>75 grams<span style="background: LightGoldenRodYellow"> (Details: UCUM  codeg = 'g')</span></td></tr></table></blockquote></div>
+  </text>
+  <identifier>
+    <value value="123"/>
+  </identifier>
+  <status value="active"/>
+  <intent value="order"/>
+  <patient>
+    <reference value="Patient/example"/>
+    <display value="Peter Chalmers"/>
+  </patient>
+  <encounter>
+    <reference value="Encounter/example"/>
+    <display value="Inpatient"/>
+  </encounter>
+  <dateTime value="2013-04-04"/>
+  <orderer>
+    <reference value="Practitioner/example"/>
+    <display value="Dr Adam Careful"/>
+  </orderer>
+  <allergyIntolerance>
+    <reference value="AllergyIntolerance/example"/>
+    <display value="Food allergy"/>
+  </allergyIntolerance>
+  <foodPreferenceModifier>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/diet"/>
+      <code value="dairy-free"/>
+    </coding>
+  </foodPreferenceModifier>
+  <oralDiet>
+    <type>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="160670007"/>
+        <display value="Diabetic diet"/>
+      </coding>
+      <text value="Diabetic diet"/>
+    </type>
+    <schedule>
+      <repeat>
+        <boundsPeriod>
+          <start value="2013-04-04"/>
+        </boundsPeriod>
+        <frequency value="3"/>
+        <period value="1"/>
+        <periodUnit value="d"/>
+      </repeat>
+    </schedule>
+    <nutrient>
+      <modifier>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="2331003"/>
+          <display value="Carbohydrate"/>
+        </coding>
+      </modifier>
+      <amount>
+        <value value="75"/>
+        <unit value="grams"/>
+        <system value="http://unitsofmeasure.org"/>
+        <code value="g"/>
+      </amount>
+    </nutrient>
+  </oralDiet>
+</NutritionOrder>

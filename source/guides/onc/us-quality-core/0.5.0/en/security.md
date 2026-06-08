@@ -1,0 +1,8 @@
+# Privacy, Security, and Consent - 2026 US Quality Core Implementation Guide v0.5.0
+
+## Privacy, Security, and Consent
+
+Quality applications may make use of patient-specific information. For this reason, all transactions must be appropriately secured, limiting access to authorized individuals and protecting data while in transit (as laid out in the [FHIR Implementer's Safety Check List](http://hl7.org/fhir/R4/safety.html#7.10.1)). These considerations relate to any FHIR implementation, including authentication, authorization, access control consistent with patient consent, transaction logging, and following best practices.
+
+The [US Core 6.1.0 Security](https://hl7.org/fhir/us/core/STU6.1/security.html) section provides additional expectations that apply to this guide.
+

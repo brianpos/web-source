@@ -235,5 +235,24 @@
       "date" : "2026-03-18",
       "path" : "http://fhir.org/guides/cdc/opioid-cds-r4/2022.1.0"
     }
+  },
+  {
+    "path" : "onc/us-quality-core/package-list.json",
+    "package-id" : "fhir.onc.us-quality-core",
+    "title" : "US Quality Core",
+    "canonical" : "http://fhir.org/guides/onc/us-quality-core",
+    "category" : "Quality / CDS",
+    "ci-build" : " http://build.fhir.org/guides/onc/us-quality-core",
+    "version-count" : 1,
+    "latest" : {
+      "version" : "0.5.0",
+      "date" : "2026-06-08",
+      "path" : "http://fhir.org/guides/onc/us-quality-core/0.5.0"
+    },
+    "milestone" : {
+      "version" : "0.5.0",
+      "date" : "2026-06-08",
+      "path" : "http://fhir.org/guides/onc/us-quality-core/0.5.0"
+    }
   }]
 }

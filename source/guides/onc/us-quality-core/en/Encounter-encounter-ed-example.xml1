@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Encounter xmlns="http://hl7.org/fhir">
+  <id value="encounter-ed-example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Encounter encounter-ed-example</b></p><a name="encounter-ed-example"> </a><a name="hcencounter-ed-example"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-us-quality-core-encounter.html">US Quality Core Encounter</a></p></div><p><b>status</b>: In Progress</p><p><b>class</b>: <a href="http://hl7.org/fhir/R4/v3/ActCode/cs.html#v3-ActCode-IMP">v3 Code System ActCode: IMP</a> (inpatient encounter)</p><p><b>type</b>: <span title="Codes:{http://www.ama-assn.org/go/cpt 99223}">Initial hospital inpatient or observation care, per day, for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making. When using total time on the date of the encounter for code selection, 75 minutes must be met or exceeded.</span></p><p><b>subject</b>: <a href="Patient-example.html">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>period</b>: 2017-02-01 07:15:00+1000 --&gt; (ongoing)</p><blockquote><p><b>location</b></p><p><b>location</b>: <a href="Location-example.html">Emergency Waiting Room</a></p><p><b>status</b>: Active</p><p><b>period</b>: 2017-02-01 07:15:00+1000 --&gt; 2017-02-01 08:45:00+1000</p></blockquote><blockquote><p><b>location</b></p><p><b>location</b>: <a href="Location-example.html">Emergency</a></p><p><b>status</b>: Active</p><p><b>period</b>: 2017-02-01 08:45:00+1000 --&gt; 2017-02-01 09:27:00+1000</p></blockquote><blockquote><p><b>location</b></p><p><b>location</b>: <a href="Location-example.html">Ward 1, Room 42, Bed 1</a></p><p><b>status</b>: Active</p><p><b>period</b>: 2017-02-01 09:27:00+1000 --&gt; 2017-02-01 12:15:00+1000</p></blockquote><blockquote><p><b>location</b></p><p><b>location</b>: <a href="Location-example.html">Ward 1, Room 42, Bed 1</a></p><p><b>status</b>: Reserved</p><p><b>period</b>: 2017-02-01 12:15:00+1000 --&gt; 2017-02-01 12:45:00+1000</p></blockquote><blockquote><p><b>location</b></p><p><b>location</b>: <a href="Location-example.html">Ward 1, Room 42, Bed 1</a></p><p><b>status</b>: Active</p><p><b>period</b>: 2017-02-01 12:45:00+1000 --&gt; (ongoing)</p></blockquote></div>
+  </text>
+  <status value="in-progress"/>
+  <class>
+    <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+    <code value="IMP"/>
+    <display value="inpatient encounter"/>
+  </class>
+  <type>
+    <coding>
+      <system value="http://www.ama-assn.org/go/cpt"/>
+      <code value="99223"/>
+      <display value="Initial hospital inpatient or observation care, per day, for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making. When using total time on the date of the encounter for code selection, 75 minutes must be met or exceeded."/>
+    </coding>
+  </type>
+  <subject>
+    <reference value="Patient/example"/>
+  </subject>
+  <period>
+    <start value="2017-02-01T07:15:00+10:00"/>
+  </period>
+  <location>
+    <location>
+      <reference value="Location/example"/>
+      <display value="Emergency Waiting Room"/>
+    </location>
+    <status value="active"/>
+    <period>
+      <start value="2017-02-01T07:15:00+10:00"/>
+      <end value="2017-02-01T08:45:00+10:00"/>
+    </period>
+  </location>
+  <location>
+    <location>
+      <reference value="Location/example"/>
+      <display value="Emergency"/>
+    </location>
+    <status value="active"/>
+    <period>
+      <start value="2017-02-01T08:45:00+10:00"/>
+      <end value="2017-02-01T09:27:00+10:00"/>
+    </period>
+  </location>
+  <location>
+    <location>
+      <reference value="Location/example"/>
+      <display value="Ward 1, Room 42, Bed 1"/>
+    </location>
+    <status value="active"/>
+    <period>
+      <start value="2017-02-01T09:27:00+10:00"/>
+      <end value="2017-02-01T12:15:00+10:00"/>
+    </period>
+  </location>
+  <location>
+    <location>
+      <reference value="Location/example"/>
+      <display value="Ward 1, Room 42, Bed 1"/>
+    </location>
+    <status value="reserved"/>
+    <period>
+      <start value="2017-02-01T12:15:00+10:00"/>
+      <end value="2017-02-01T12:45:00+10:00"/>
+    </period>
+  </location>
+  <location>
+    <location>
+      <reference value="Location/example"/>
+      <display value="Ward 1, Room 42, Bed 1"/>
+    </location>
+    <status value="active"/>
+    <period>
+      <start value="2017-02-01T12:45:00+10:00"/>
+    </period>
+  </location>
+</Encounter>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Condition xmlns="http://hl7.org/fhir">
+  <id value="health-concern-example"/>
+  <meta>
+    <extension url="http://hl7.org/fhir/StructureDefinition/instance-name">
+      <valueString value="Health Concern Example"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/instance-description">
+      <valueMarkdown value="This example of a US Quality Core Condition Problems and Health Concerns Profile illustrates its use to capture information about a patient's health concern."/>
+    </extension>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Condition health-concern-example</b></p><a name="health-concern-example"> </a><a name="hchealth-concern-example"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-us-quality-core-condition-problems-health-concerns.html">US Quality Core Condition Problems Health Concerns</a></p></div><p><b>Condition Asserted Date</b>: 2007-12-14</p><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical resolved}">Resolved</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>category</b>: <span title="Codes:{http://hl7.org/fhir/us/core/CodeSystem/condition-category health-concern}">Health Concern</span></p><p><b>severity</b>: <span title="Codes:{http://snomed.info/sct 255604002}">Mild</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 247824007}">Fear of becoming fat</span></p><p><b>subject</b>: <a href="Patient-example.html">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>onset</b>: 2007-12-14</p><p><b>abatement</b>: 2008-02-01</p><p><b>recordedDate</b>: 2007-12-14 07:15:07-0800</p></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/condition-assertedDate">
+    <valueDateTime value="2007-12-14"/>
+  </extension>
+  <clinicalStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+      <code value="resolved"/>
+      <display value="Resolved"/>
+    </coding>
+    <text value="Resolved"/>
+  </clinicalStatus>
+  <verificationStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+      <code value="confirmed"/>
+      <display value="Confirmed"/>
+    </coding>
+    <text value="Confirmed"/>
+  </verificationStatus>
+  <category>
+    <coding>
+      <system value="http://hl7.org/fhir/us/core/CodeSystem/condition-category"/>
+      <code value="health-concern"/>
+      <display value="Health Concern"/>
+    </coding>
+    <text value="Health Concern"/>
+  </category>
+  <severity>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="255604002"/>
+      <display value="Mild (qualifier value)"/>
+    </coding>
+    <text value="Mild"/>
+  </severity>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="247824007"/>
+      <display value="Fear of becoming fat"/>
+    </coding>
+    <text value="Fear of becoming fat"/>
+  </code>
+  <subject>
+    <reference value="Patient/example"/>
+  </subject>
+  <onsetDateTime value="2007-12-14"/>
+  <abatementDateTime value="2008-02-01"/>
+  <recordedDate value="2007-12-14T07:15:07-08:00"/>
+</Condition>

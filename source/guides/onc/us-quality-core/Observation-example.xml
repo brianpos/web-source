@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation example</b></p><a name="example"> </a><a name="hcexample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-us-quality-core-simple-observation.html">US Quality Core Simple Observation</a></p></div><p><b>Observation Body Position</b>: <span title="Codes:{http://snomed.info/sct 33586001}">Sitting position (finding)</span></p><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}">Vital Signs</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 30350-3}">Hemoglobin [Mass/volume] in Venous blood</span></p><p><b>subject</b>: <a href="Patient-example.html">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>encounter</b>: <a href="Encounter-example.html">Encounter: identifier = http://example.org/encounters#ENC-20130404-appendicitis; status = finished; class = inpatient encounter (v3 Code System ActCode#IMP); type = Initial hospital inpatient or observation care, per day, for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making. When using total time on the date of the encounter for code selection, 75 minutes must be met or exceeded.; period = 2013-04-04 18:00:00-0400 --&gt; 2013-04-06 11:00:00-0400</a></p><p><b>effective</b>: 2013-04-02 10:30:10+0100 --&gt; 2013-04-05 10:30:10+0100</p><p><b>issued</b>: 2013-04-03 15:30:10+0100</p><p><b>performer</b>: <a href="Practitioner-example.html">Practitioner</a></p><p><b>value</b>: 7.2 g/dl<span style="background: LightGoldenRodYellow"> (Details: UCUM  codeg/dL = 'g/dL')</span></p><p><b>interpretation</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation L}">Below low normal</span></p><p><b>bodySite</b>: <span title="Codes:{http://snomed.info/sct 308046002}">Superficial forearm vein</span></p><p><b>method</b>: <span title="Codes:{http://snomed.info/sct 120220003}">Injection to forearm</span></p><p><b>derivedFrom</b>: <a href="Observation-example.html">Observation Hemoglobin [Mass/volume] in Venous blood</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 8480-6}, {http://snomed.info/sct 271649006}">Systolic blood pressure</span></p><p><b>value</b>: 107 mmHg<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemm[Hg] = 'mm[Hg]')</span></p><p><b>interpretation</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation N}">Normal</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 8462-4}">Diastolic blood pressure</span></p><p><b>value</b>: 60 mmHg<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemm[Hg] = 'mm[Hg]')</span></p><p><b>interpretation</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation L}">Below low normal</span></p></blockquote></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/observation-bodyPosition">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="33586001"/>
+        <display value="Sitting position (finding)"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="vital-signs"/>
+      <display value="Vital Signs"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="30350-3"/>
+      <display value="Hemoglobin [Mass/volume] in Venous blood"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/example"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/example"/>
+  </encounter>
+  <effectivePeriod>
+    <start value="2013-04-02T10:30:10+01:00"/>
+    <end value="2013-04-05T10:30:10+01:00"/>
+  </effectivePeriod>
+  <issued value="2013-04-03T15:30:10+01:00"/>
+  <performer>
+    <reference value="Practitioner/example"/>
+    <display value="Practitioner"/>
+  </performer>
+  <valueQuantity>
+    <value value="7.2"/>
+    <unit value="g/dl"/>
+    <system value="http://unitsofmeasure.org"/>
+    <code value="g/dL"/>
+  </valueQuantity>
+  <interpretation>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"/>
+      <code value="L"/>
+      <display value="Low"/>
+    </coding>
+    <text value="Below low normal"/>
+  </interpretation>
+  <bodySite>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="308046002"/>
+      <display value="Superficial forearm vein"/>
+    </coding>
+  </bodySite>
+  <method>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="120220003"/>
+      <display value="Injection to forearm"/>
+    </coding>
+  </method>
+  <derivedFrom>
+    <reference value="Observation/example"/>
+  </derivedFrom>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="8480-6"/>
+        <display value="Systolic blood pressure"/>
+      </coding>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="271649006"/>
+        <display value="Systolic blood pressure"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="107"/>
+      <unit value="mmHg"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="mm[Hg]"/>
+    </valueQuantity>
+    <interpretation>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"/>
+        <code value="N"/>
+        <display value="Normal"/>
+      </coding>
+      <text value="Normal"/>
+    </interpretation>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="8462-4"/>
+        <display value="Diastolic blood pressure"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="60"/>
+      <unit value="mmHg"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="mm[Hg]"/>
+    </valueQuantity>
+    <interpretation>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"/>
+        <code value="L"/>
+        <display value="Low"/>
+      </coding>
+      <text value="Below low normal"/>
+    </interpretation>
+  </component>
+</Observation>

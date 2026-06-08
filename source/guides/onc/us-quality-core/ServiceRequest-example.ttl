@@ -1,0 +1,95 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/onc/us-quality-core/ServiceRequest/example> a fhir:ServiceRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest example</b></p><a name=\"example\"> </a><a name=\"hcexample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-servicerequest.html\">US Quality Core ServiceRequest</a></p></div><p><b>status</b>: Completed</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 387713003}\">Surgical Procedure</span></p><p><b>priority</b>: Urgent</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 80146002}\">Excision of appendix (procedure)</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>encounter</b>: <a href=\"Encounter-example.html\">Encounter: identifier = http://example.org/encounters#ENC-20130404-appendicitis; status = finished; class = inpatient encounter (v3 Code System ActCode#IMP); type = Initial hospital inpatient or observation care, per day, for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making. When using total time on the date of the encounter for code selection, 75 minutes must be met or exceeded.; period = 2013-04-04 18:00:00-0400 --&gt; 2013-04-06 11:00:00-0400</a></p><p><b>occurrence</b>: 2013-04-05 --&gt; 2013-04-05</p><p><b>asNeeded</b>: true</p><p><b>authoredOn</b>: 2013-04-04</p><p><b>reasonCode</b>: <span title=\"Codes:{http://snomed.info/sct 21522001}\">Abdominal pain (finding)</span></p><p><b>reasonReference</b>: <a href=\"Condition-appendicitis-example.html\">Condition Appendicitis (disorder)</a></p><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 66754008}\">Appendix structure</span></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       a sct:387713003 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "387713003" ] ;
+       fhir:display [ fhir:v "Surgical Procedure" ]
+     ] )
+  ] ) ; # 
+  fhir:priority [ fhir:v "urgent"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:80146002 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "80146002" ] ;
+       fhir:display [ fhir:v "Excision of appendix (procedure)" ]
+     ] ) ;
+     fhir:text [ fhir:v "Excision of appendix (procedure)" ]
+  ] ; # 
+  fhir:subject [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:encounter [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Encounter/example> ;
+     fhir:reference [ fhir:v "Encounter/example" ]
+  ] ; # 
+  fhir:occurrence [
+     a fhir:Period ;
+     fhir:start [ fhir:v "2013-04-05"^^xsd:date ] ;
+     fhir:end [ fhir:v "2013-04-05"^^xsd:date ]
+  ] ; # 
+  fhir:asNeeded [
+     a fhir:Boolean ;
+     fhir:v true
+  ] ; # 
+  fhir:authoredOn [ fhir:v "2013-04-04"^^xsd:date] ; # 
+  fhir:reasonCode ( [
+     fhir:coding ( [
+       a sct:21522001 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "21522001" ] ;
+       fhir:display [ fhir:v "Abdominal pain (finding)" ]
+     ] )
+  ] ) ; # 
+  fhir:reasonReference ( [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Condition/appendicitis-example> ;
+     fhir:reference [ fhir:v "Condition/appendicitis-example" ]
+  ] ) ; # 
+  fhir:bodySite ( [
+     fhir:coding ( [
+       a sct:66754008 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "66754008" ] ;
+       fhir:display [ fhir:v "Appendix structure" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,92 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/onc/us-quality-core/ValueSet/us-quality-core-non-negative-task-status> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "us-quality-core-non-negative-task-status"] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet us-quality-core-non-negative-task-status</b></p><a name=\"us-quality-core-non-negative-task-status\"> </a><a name=\"hcus-quality-core-non-negative-task-status\"> </a><ul><li>Include these codes as defined in <a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html\"><code>http://hl7.org/fhir/task-status</code></a><span title=\"Version is not explicitly stated, which means it is fixed to 4.0.1, the version found through the package references\"> version ?4.0.1</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-draft\">draft</a></td><td>Draft</td><td>The task is not yet ready to be acted upon.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-requested\">requested</a></td><td>Requested</td><td>The task is ready to be acted upon and action is sought.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-received\">received</a></td><td>Received</td><td>A potential performer has claimed ownership of the task and is evaluating whether to perform it.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-accepted\">accepted</a></td><td>Accepted</td><td>The potential performer has agreed to execute the task but has not yet started work.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-ready\">ready</a></td><td>Ready</td><td>The task is ready to be performed, but no action has yet been taken.  Used in place of requested/received/accepted/rejected when request assignment and acceptance is a given.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-cancelled\">cancelled</a></td><td>Cancelled</td><td>The task was not completed.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-in-progress\">in-progress</a></td><td>In Progress</td><td>The task has been started but is not yet complete.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-on-hold\">on-hold</a></td><td>On Hold</td><td>The task has been started but work has been paused.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-failed\">failed</a></td><td>Failed</td><td>The task was attempted but could not be completed due to some error.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-completed\">completed</a></td><td>Completed</td><td>The task has been completed.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-entered-in-error\">entered-in-error</a></td><td>Entered In Error</td><td>The task should never have existed and is retained only because of the possibility it may have used.</td></tr></table></li></ul></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://fhir.org/guides/onc/us-quality-core/ValueSet/us-quality-core-non-negative-task-status"^^xsd:anyURI ;
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/ValueSet/us-quality-core-non-negative-task-status>
+  ] ; # 
+  fhir:version [ fhir:v "0.5.0"] ; # 
+  fhir:name [ fhir:v "NonNegativeTaskStatus"] ; # 
+  fhir:title [ fhir:v "Non-Negative Task Status"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-06-05"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "Office of the National Coordinator for Health Information Technology (ONC)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Office of the National Coordinator for Health Information Technology (ONC)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.healthit.gov/feedback" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "This value set defines the set of codes that indicate a non-negated task status (i.e. codes that are not `rejected`)"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] ) ;
+     fhir:text [ fhir:v "USA" ]
+  ] ) ; # 
+  fhir:purpose [ fhir:v "This value set was defined to support the set of task statuses in FHIR that do not explicitly indicate a negative status (i.e. all the codes from the http://hl7.org/fhir/task-status code system that are not `rejected`)."] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [
+         fhir:v "http://hl7.org/fhir/task-status"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/task-status>
+       ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "draft" ] ;
+         fhir:display [ fhir:v "Draft" ]
+       ] [
+         fhir:code [ fhir:v "requested" ] ;
+         fhir:display [ fhir:v "Requested" ]
+       ] [
+         fhir:code [ fhir:v "received" ] ;
+         fhir:display [ fhir:v "Received" ]
+       ] [
+         fhir:code [ fhir:v "accepted" ] ;
+         fhir:display [ fhir:v "Accepted" ]
+       ] [
+         fhir:code [ fhir:v "ready" ] ;
+         fhir:display [ fhir:v "Ready" ]
+       ] [
+         fhir:code [ fhir:v "cancelled" ] ;
+         fhir:display [ fhir:v "Cancelled" ]
+       ] [
+         fhir:code [ fhir:v "in-progress" ] ;
+         fhir:display [ fhir:v "In Progress" ]
+       ] [
+         fhir:code [ fhir:v "on-hold" ] ;
+         fhir:display [ fhir:v "On Hold" ]
+       ] [
+         fhir:code [ fhir:v "failed" ] ;
+         fhir:display [ fhir:v "Failed" ]
+       ] [
+         fhir:code [ fhir:v "completed" ] ;
+         fhir:display [ fhir:v "Completed" ]
+       ] [
+         fhir:code [ fhir:v "entered-in-error" ] ;
+         fhir:display [ fhir:v "Entered In Error" ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

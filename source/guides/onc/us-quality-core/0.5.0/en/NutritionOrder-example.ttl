@@ -1,0 +1,108 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/onc/us-quality-core/NutritionOrder/example> a fhir:NutritionOrder ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-nutritionorder"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-nutritionorder>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: NutritionOrder example</b></p><a name=\"example\"> </a><a name=\"hcexample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-nutritionorder.html\">US Quality Core NutritionOrder</a></p></div><p><b>identifier</b>: 123</p><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>patient</b>: <a href=\"Patient-example.html\">Peter Chalmers</a></p><p><b>encounter</b>: <a href=\"Encounter-example.html\">Inpatient</a></p><p><b>dateTime</b>: 2013-04-04</p><p><b>orderer</b>: <a href=\"Practitioner-example.html\">Dr Adam Careful</a></p><p><b>allergyIntolerance</b>: <a href=\"AllergyIntolerance-example.html\">Food allergy</a></p><p><b>foodPreferenceModifier</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/diet dairy-free}\">Dairy Free</span></p><blockquote><p><b>oralDiet</b></p><p><b>type</b>: <span title=\"Codes:{http://snomed.info/sct 160670007}\">Diabetic diet</span></p><p><b>schedule</b>: 3 per 1 day</p><h3>Nutrients</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Modifier</b></td><td><b>Amount</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://snomed.info/sct 2331003}\">Carbohydrate</span></td><td>75 grams<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg = 'g')</span></td></tr></table></blockquote></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:value [ fhir:v "123" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:patient [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ] ;
+     fhir:display [ fhir:v "Peter Chalmers" ]
+  ] ; # 
+  fhir:encounter [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Encounter/example> ;
+     fhir:reference [ fhir:v "Encounter/example" ] ;
+     fhir:display [ fhir:v "Inpatient" ]
+  ] ; # 
+  fhir:dateTime [ fhir:v "2013-04-04"^^xsd:date] ; # 
+  fhir:orderer [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Practitioner/example> ;
+     fhir:reference [ fhir:v "Practitioner/example" ] ;
+     fhir:display [ fhir:v "Dr Adam Careful" ]
+  ] ; # 
+  fhir:allergyIntolerance ( [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/AllergyIntolerance/example> ;
+     fhir:reference [ fhir:v "AllergyIntolerance/example" ] ;
+     fhir:display [ fhir:v "Food allergy" ]
+  ] ) ; # 
+  fhir:foodPreferenceModifier ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/diet"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/diet>
+       ] ;
+       fhir:code [ fhir:v "dairy-free" ]
+     ] )
+  ] ) ; # 
+  fhir:oralDiet [
+     fhir:type ( [
+       fhir:coding ( [
+         a sct:160670007 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "160670007" ] ;
+         fhir:display [ fhir:v "Diabetic diet" ]
+       ] ) ;
+       fhir:text [ fhir:v "Diabetic diet" ]
+     ] ) ;
+     fhir:schedule ( [
+       fhir:repeat [
+         fhir:bounds [
+           a fhir:Period ;
+           fhir:start [ fhir:v "2013-04-04"^^xsd:date ]
+         ] ;
+         fhir:frequency [ fhir:v "3"^^xsd:positiveInteger ] ;
+         fhir:period [ fhir:v "1"^^xsd:decimal ] ;
+         fhir:periodUnit [ fhir:v "d" ]
+       ]
+     ] ) ;
+     fhir:nutrient ( [
+       fhir:modifier [
+         fhir:coding ( [
+           a sct:2331003 ;
+           fhir:system [
+             fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+             fhir:l <http://snomed.info/sct>
+           ] ;
+           fhir:code [ fhir:v "2331003" ] ;
+           fhir:display [ fhir:v "Carbohydrate" ]
+         ] )
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v "75"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "grams" ] ;
+         fhir:system [
+           fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+           fhir:l <http://unitsofmeasure.org>
+         ] ;
+         fhir:code [ fhir:v "g" ]
+       ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

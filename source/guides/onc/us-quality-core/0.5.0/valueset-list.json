@@ -1,0 +1,92 @@
+{
+  "codeSystems" : [{
+    "url" : "http://fhir.org/guides/onc/us-quality-core/ValueSet/us-quality-core-medication-dose-type",
+    "version" : "0.5.0",
+    "status" : "draft",
+    "name" : "USQualityCoreMedicationDoseType",
+    "title" : "USQualityCore SNOMED CT Dosage Codes",
+    "description" : "This value set includes all the \"Dosages\" SNOMED CT codes (i.e. codes with an is-a relationship with 277406006: Dosages).",
+    "systems" : ["http://snomed.info/sct"]
+  },
+  {
+    "url" : "http://fhir.org/guides/onc/us-quality-core/ValueSet/us-quality-core-negation-reason",
+    "version" : "0.5.0",
+    "status" : "active",
+    "name" : "NegationReasonCodes",
+    "title" : "USQualityCore Negation Reason Codes",
+    "description" : "This value set defines the set of codes that can be used to indicate the reason an action was not taken",
+    "systems" : ["http://snomed.info/sct"]
+  },
+  {
+    "url" : "http://fhir.org/guides/onc/us-quality-core/ValueSet/us-quality-core-non-negative-event-status",
+    "version" : "0.5.0",
+    "status" : "active",
+    "name" : "NonNegativeEventStatus",
+    "title" : "Non-Negative Event Status",
+    "description" : "This value set defines the set of codes that indicate a non-negated event status (i.e. codes that are not `not-done`)",
+    "systems" : ["http://hl7.org/fhir/event-status"]
+  },
+  {
+    "url" : "http://fhir.org/guides/onc/us-quality-core/ValueSet/us-quality-core-non-negative-immunization-status",
+    "version" : "0.5.0",
+    "status" : "active",
+    "name" : "NonNegativeImmunizationStatus",
+    "title" : "Non-Negative Immunization Status",
+    "description" : "This value set defines the set of codes that indicate a non-negated event status for immunization resources (i.e. codes that are not `not-done`)",
+    "systems" : ["http://hl7.org/fhir/event-status"]
+  },
+  {
+    "url" : "http://fhir.org/guides/onc/us-quality-core/ValueSet/us-quality-core-non-negative-medication-admin-status",
+    "version" : "0.5.0",
+    "status" : "active",
+    "name" : "NonNegativeMedicationAdministrationStatus",
+    "title" : "Non-Negative MedicationAdministration Status",
+    "description" : "This value set defines the set of codes that indicate a non-negated medication administration status (i.e. codes that are not `not-done`)",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/medication-admin-status"]
+  },
+  {
+    "url" : "http://fhir.org/guides/onc/us-quality-core/ValueSet/us-quality-core-non-negative-medicationdispense-status",
+    "version" : "0.5.0",
+    "status" : "active",
+    "name" : "NonNegativeMedicationDispenseStatus",
+    "title" : "Non-Negative MedicationDispense Status",
+    "description" : "This value set defines the set of codes that indicate a non-negated medication dispense status (i.e. codes that are not `declined`)",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/medicationdispense-status"]
+  },
+  {
+    "url" : "http://fhir.org/guides/onc/us-quality-core/ValueSet/us-quality-core-non-negative-observation-status",
+    "version" : "0.5.0",
+    "status" : "active",
+    "name" : "NonNegativeObservationStatus",
+    "title" : "Non-Negative Observation Status",
+    "description" : "This value set defines the set of codes that indicate a non-negated observation status (i.e. codes that are not `cancelled`)",
+    "systems" : ["http://hl7.org/fhir/observation-status"]
+  },
+  {
+    "url" : "http://fhir.org/guides/onc/us-quality-core/ValueSet/us-quality-core-non-negative-task-status",
+    "version" : "0.5.0",
+    "status" : "active",
+    "name" : "NonNegativeTaskStatus",
+    "title" : "Non-Negative Task Status",
+    "description" : "This value set defines the set of codes that indicate a non-negated task status (i.e. codes that are not `rejected`)",
+    "systems" : ["http://hl7.org/fhir/task-status"]
+  },
+  {
+    "url" : "http://fhir.org/guides/onc/us-quality-core/ValueSet/us-quality-core-observation-body-position",
+    "version" : "0.5.0",
+    "status" : "active",
+    "name" : "USQualityCoreObservationBodyPosition",
+    "title" : "US Quality Core Observation Body Position",
+    "description" : "SNOMED CT code system values descending from the following:'body position finding' 9851009",
+    "systems" : ["http://snomed.info/sct"]
+  },
+  {
+    "url" : "http://fhir.org/guides/onc/us-quality-core/ValueSet/us-quality-core-present-on-admission",
+    "version" : "0.5.0",
+    "status" : "active",
+    "name" : "USQualityCorePresentOnAdmission",
+    "title" : "USQualityCore Present On Admission Codes",
+    "description" : "Value Set for USQualityCore Present On Admission.",
+    "systems" : ["https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/HospitalAcqCond/Coding"]
+  }]
+}

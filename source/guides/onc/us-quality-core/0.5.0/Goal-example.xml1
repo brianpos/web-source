@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Goal xmlns="http://hl7.org/fhir">
+  <id value="example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-goal"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Goal example</b></p><a name="example"> </a><a name="hcexample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-us-quality-core-goal.html">US Quality Core Goal</a></p></div><p><b>identifier</b>: 123</p><p><b>lifecycleStatus</b>: On Hold</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/goal-category dietary}">Dietary</span></p><p><b>priority</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/goal-priority high-priority}">high</span></p><p><b>description</b>: <span title="Codes:{http://loinc.org 50064-5}">Target body weight is 160 to 180 lbs.</span></p><p><b>subject</b>: <a href="Patient-example.html">Peter James Chalmers</a></p><p><b>start</b>: 2015-04-05</p><h3>Targets</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Measure</b></td><td><b>Detail[x]</b></td><td><b>Due[x]</b></td></tr><tr><td style="display: none">*</td><td><span title="Codes:{http://loinc.org 3141-9}">Weight Measured</span></td><td>160-180 lbs</td><td>2016-04-05</td></tr></table><p><b>statusDate</b>: 2016-02-14</p><p><b>statusReason</b>: Patient wants to defer weight loss until after honeymoon.</p><p><b>expressedBy</b>: <a href="Patient-example.html">Peter James Chalmers</a></p><p><b>addresses</b>: obesity condition</p><p><b>outcomeReference</b>: <a href="Observation-example.html">Body Weight Measured</a></p></div>
+  </text>
+  <identifier>
+    <value value="123"/>
+  </identifier>
+  <lifecycleStatus value="on-hold"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/goal-category"/>
+      <code value="dietary"/>
+    </coding>
+  </category>
+  <priority>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/goal-priority"/>
+      <code value="high-priority"/>
+      <display value="High Priority"/>
+    </coding>
+    <text value="high"/>
+  </priority>
+  <description>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="50064-5"/>
+      <display value="Ideal body weight"/>
+    </coding>
+    <text value="Target body weight is 160 to 180 lbs."/>
+  </description>
+  <subject>
+    <reference value="Patient/example"/>
+    <display value="Peter James Chalmers"/>
+  </subject>
+  <startDate value="2015-04-05"/>
+  <target>
+    <measure>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="3141-9"/>
+        <display value="Weight Measured"/>
+      </coding>
+    </measure>
+    <detailRange>
+      <low>
+        <value value="160"/>
+        <unit value="lbs"/>
+        <system value="http://unitsofmeasure.org"/>
+        <code value="[lb_av]"/>
+      </low>
+      <high>
+        <value value="180"/>
+        <unit value="lbs"/>
+        <system value="http://unitsofmeasure.org"/>
+        <code value="[lb_av]"/>
+      </high>
+    </detailRange>
+    <dueDate value="2016-04-05"/>
+  </target>
+  <statusDate value="2016-02-14"/>
+  <statusReason value="Patient wants to defer weight loss until after honeymoon."/>
+  <expressedBy>
+    <reference value="Patient/example"/>
+    <display value="Peter James Chalmers"/>
+  </expressedBy>
+  <addresses>
+    <display value="obesity condition"/>
+  </addresses>
+  <outcomeReference>
+    <reference value="Observation/example"/>
+    <display value="Body Weight Measured"/>
+  </outcomeReference>
+</Goal>

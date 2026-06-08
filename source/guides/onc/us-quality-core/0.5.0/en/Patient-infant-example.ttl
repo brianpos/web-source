@@ -1,0 +1,63 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/onc/us-quality-core/Patient/infant-example> a fhir:Patient ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "infant-example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient infant-example</b></p><a name=\"infant-example\"> </a><a name=\"hcinfant-example\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-patient.html\">US Quality Core Patient</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Infant Example  Male, DoB: 2020-06-02 ( Social Security number: United States Social Security Number#999123458 (use: usual, ))</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Record is active\">Active:</td><td colspan=\"3\">true</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\"><ul><li>ph: 555-555-5555(Home)</li><li>49 Meadow St Mounds OK 74047 US </li></ul></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "SS" ] ;
+         fhir:display [ fhir:v "Social Security number" ]
+       ] ) ;
+       fhir:text [ fhir:v "Social Security number" ]
+     ] ;
+     fhir:system [
+       fhir:v "http://hl7.org/fhir/sid/us-ssn"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/sid/us-ssn>
+     ] ;
+     fhir:value [ fhir:v "999123458" ]
+  ] ) ; # 
+  fhir:active [ fhir:v true] ; # 
+  fhir:name ( [
+     fhir:family [ fhir:v "Example" ] ;
+     fhir:given ( [ fhir:v "Infant" ] )
+  ] ) ; # 
+  fhir:telecom ( [
+     fhir:system [ fhir:v "phone" ] ;
+     fhir:value [ fhir:v "555-555-5555" ] ;
+     fhir:use [ fhir:v "home" ]
+  ] ) ; # 
+  fhir:gender [ fhir:v "male"] ; # 
+  fhir:birthDate [ fhir:v "2020-06-02"^^xsd:date] ; # 
+  fhir:address ( [
+     fhir:line ( [ fhir:v "49 Meadow St" ] ) ;
+     fhir:city [ fhir:v "Mounds" ] ;
+     fhir:state [ fhir:v "OK" ] ;
+     fhir:postalCode [ fhir:v "74047" ] ;
+     fhir:country [ fhir:v "US" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

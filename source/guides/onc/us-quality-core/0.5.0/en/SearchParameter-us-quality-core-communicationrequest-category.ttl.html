@@ -1,0 +1,402 @@
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>UsQualityCoreCommunicationrequestCategory - TTL Representation - 2026 US Quality Core Implementation Guide v0.5.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <style type="text/css">
+blockquote.note {
+  margin: 5px;
+  padding: 10px;
+  border-left-style: solid;
+  background-color: var(--stu-note-background-color);
+  border-left-color: var(--stu-note-border-left-color);
+}
+
+blockquote.note::before {
+  white-space: pre;
+  content: "Note\A ";
+  background-color: yellow;
+  color: red;
+  font-weight: bold;
+}
+</style>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script type="text/javascript" src="assets/js/prism.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-fhirpath.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"12.17"}
+    h3,h4,h5,h6{--heading-prefix:"12.17"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <div id="hl7-nav">
+  <a id="hl7-logo" no-external="true" href="https://healthit.gov">
+    <img height="50" alt="Visit the ONC website" src="onc-logo.png"/>
+  </a>
+</div>
+<div id="family-nav">
+  <a id="family-logo" no-external="true" href="https://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+<div id="hl7-search">
+  <a id="hl7-search-lnk" no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+</div>
+<!-- TODO: Push this into the base template -->
+<script type="text/javascript" src="assets/cql.js"> </script>
+
+
+        <div id="ig-status" data-fhir="generated">
+          <p><span style="font-size:12pt;font-weight:bold">2026 US Quality Core Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.5.0 - release
+
+
+
+  <img alt="United States of America flag" src="../assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment" data-fhir="generated">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">Home</a></li>
+  
+  <li class="dropdown">
+    <a data-toggle="dropdown" class="dropdown-toggle">Conformance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="general-requirements.html" class="item">General Requirements</a></li>
+      <li><a href="must-support.html" class="item">Must Support</a></li>
+      <li><a href="security.html" class="item">Security</a></li>
+    </ul>
+  </li>
+
+  <li class="dropdown">
+    <a data-toggle="dropdown" class="dropdown-toggle">Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="uscdiquality.html" class="item">USCDI+ Quality</a></li>    
+      <li><a href="negation.html" class="item">US Quality Core Negation</a></li>
+      <li><a href="provenance.html" class="item">Provenance</a></li>
+      <li><a href="relationship-with-uscore-qicore.html" class="item">Relationship with US Core and QI-Core</a></li> 
+      <li><a href="qdm-to-us-quality-core.html" class="item">QDM to US Quality Core</a></li>
+    </ul>
+  </li>
+
+  <li class="dropdown">
+    <a data-toggle="dropdown" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="capability-statements.html" class="item">Capability Statements</a></li>
+      <li><a href="profiles.html" class="item">Profiles</a></li>
+      <li><a href="extensions.html" class="item">Extensions</a></li>
+      <li><a href="terminology.html" class="item">Terminology</a></li>
+      <li><a href="examples.html" class="item">Examples</a></li>
+    </ul>
+  </li>
+
+  <li class="dropdown">
+    <a data-toggle="dropdown" class="dropdown-toggle">CQL Artifacts and Patterns (Informational)
+       <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="modelinfo.html" class="item">US Quality Core ModelInfo (Informational)</a></li>
+      <li><a href="patterns.html" class="item">US Quality Core Patterns (Informational)</a></li>
+    </ul>
+  </li>
+
+  <li><a href="downloads.html" class="item">Downloads</a></li>
+  <li><a href="changes.html" class="item">Change Log</a></li>
+
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment" data-fhir="generated">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>UsQualityCoreCommunicationrequestCategory</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<!-- layouts\layout-instance-format -->
+<div style="counter-reset: section 9" class="col-12">
+<!--ReleaseHeader--><p id="publish-box">This page is part of the US Quality Core (v0.5.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version in its permanent home (it will always be available at this URL).  For a full list of available versions, see the <a data-no-external="true" href="http://fhir.org/guides/onc/us-quality-core/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+
+
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="SearchParameter-us-quality-core-communicationrequest-category.html">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="SearchParameter-us-quality-core-communicationrequest-category.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="SearchParameter-us-quality-core-communicationrequest-category.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li class="active">
+      <a href="#">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+
+<h2 id="root">: UsQualityCoreCommunicationrequestCategory</h2>
+
+  <table class="colsi" data-fhir="generated">
+    <tr>
+
+      <td colspan="2">
+        
+          Active
+          
+
+            as of 
+2026-06-05
+
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p><a href="SearchParameter-us-quality-core-communicationrequest-category.ttl" no-download="true">Raw ttl</a> | <a href="SearchParameter-us-quality-core-communicationrequest-category.ttl" download>Download</a></p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <pre class="rdf" data-fhir="generated" style="white-space: pre; overflow: hidden"><code class="language-turtle">
+@prefix fhir: &lt;http://hl7.org/fhir/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+# - resource -------------------------------------------------------------------
+
+ a fhir:SearchParameter ;
+  <a href="http://hl7.org/fhir/R4/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot ;
+  <a href="http://hl7.org/fhir/R4/resource.html#SearchParameter.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;us-quality-core-communicationrequest-category&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/resource.html#SearchParameter.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/domainresource.html#SearchParameter.text">fhir:text</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;generated&quot; ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">fhir:div</a> [ <a href="http://hl7.org/fhir/R4/narrative.html#xhtml">fhir:v</a> &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: SearchParameter us-quality-core-communicationrequest-category&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;us-quality-core-communicationrequest-category\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcus-quality-core-communicationrequest-category\&quot;&gt; &lt;/a&gt;&lt;h2&gt;UsQualityCoreCommunicationrequestCategory&lt;/h2&gt;&lt;p&gt;Parameter &lt;code&gt;category&lt;/code&gt;:&lt;code&gt;token&lt;/code&gt;&lt;/p&gt;&lt;div&gt;&lt;p&gt;US Quality Core CommunicationRequest Category Search Parameter&lt;/p&gt;\n&lt;/div&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;Resource&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/communicationrequest.html\&quot;&gt;CommunicationRequest&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Expression&lt;/td&gt;&lt;td&gt;&lt;code&gt;CommunicationRequest.category&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Processing Mode&lt;/td&gt;&lt;td&gt;Normal&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Multiples&lt;/td&gt;&lt;td&gt;&lt;ul&gt;&lt;li&gt;multipleAnd: The parameter may repeat in order to specify multiple values that must all be true&lt;/li&gt;&lt;li&gt;multipleOr: The parameter may have multiple values (separated by comma) where at least one must be true&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;^^rdf:XMLLiteral ]
+  ] ; # 
+  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.url">fhir:url</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-communicationrequest-category&quot;^^xsd:anyURI ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> &lt;http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-communicationrequest-category&gt;
+  ] ; # 
+  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.version">fhir:version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;0.5.0&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;UsQualityCoreCommunicationrequestCategory&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;active&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.date">fhir:date</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> &quot;2026-06-05&quot;^^xsd:date] ; # 
+  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.publisher">fhir:publisher</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Office of the National Coordinator for Health Information Technology (ONC)&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.contact">fhir:contact</a> ( [
+<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Office of the National Coordinator for Health Information Technology (ONC)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">fhir:telecom</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;url&quot; ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;https://www.healthit.gov/feedback&quot; ]     ] )
+  ] ) ; # 
+  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.description">fhir:description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">fhir:v</a> &quot;US Quality Core CommunicationRequest Category Search Parameter&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.jurisdiction">fhir:jurisdiction</a> ( [
+    ( <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:coding</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:system</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;urn:iso:std:iso:3166&quot;^^xsd:anyURI ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> &lt;urn:iso:std:iso:3166&gt;       ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;US&quot; ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;United States of America&quot; ]     ] ) ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">fhir:text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;USA&quot; ]
+  ] ) ; # 
+  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;category&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.base">fhir:base</a> ( [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;CommunicationRequest&quot;] ) ; # 
+  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.type">fhir:type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;token&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.expression">fhir:expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;CommunicationRequest.category&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.xpathUsage">fhir:xpathUsage</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;normal&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.multipleOr">fhir:multipleOr</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:v</a> true] ; # 
+  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.multipleAnd">fhir:multipleAnd</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:v</a> true] . # 
+
+</code></pre>
+
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <script type="text/javascript" src="assets/js/togglechanges.js"> </script>
+  <script type="text/javascript" src="assets/js/requirements-table.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container" data-fhir="generated">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.healthit.gov/feedback">Office of the National Coordinator for Health Information Technology (ONC)</a>.  
+          Package fhir.onc.us-quality-core#0.5.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated 
+  <span title="2026-06-08 16:44:00 +1000">
+    2026-06-08
+  </span>
+
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

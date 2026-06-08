@@ -1,0 +1,70 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/onc/us-quality-core/MedicationRequest/negation-example-code> a fhir:MedicationRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "negation-example-code"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationnotrequested"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationnotrequested>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: MedicationRequest negation-example-code</b></p><a name=\"negation-example-code\"> </a><a name=\"hcnegation-example-code\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-medicationnotrequested.html\">US Quality Core Medication Not Requested</a></p></div><p><b>status</b>: Completed</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/medicationrequest-category community}\">Community</span></p><p><b>doNotPerform</b>: true</p><p><b>medication</b>: <span title=\"Codes:{http://snomed.info/sct 1336006}\">Deoxycortone</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>authoredOn</b>: 2015-03-25 19:32:52-0500</p><p><b>requester</b>: <a href=\"Practitioner-example.html\">Practitioner Adam Careful </a></p><p><b>reasonCode</b>: <span title=\"Codes:{http://snomed.info/sct 183966005}\">Drug treatment not indicated (situation)</span></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/medicationrequest-category"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/medicationrequest-category>
+       ] ;
+       fhir:code [ fhir:v "community" ]
+     ] )
+  ] ) ; # 
+  fhir:doNotPerform [ fhir:v true] ; # 
+  fhir:medication [
+     a fhir:CodeableConcept ;
+     fhir:coding ( [
+       a sct:1336006 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "1336006" ] ;
+       fhir:display [ fhir:v "Deoxycortone" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:authoredOn [ fhir:v "2015-03-25T19:32:52-05:00"^^xsd:dateTime] ; # 
+  fhir:requester [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Practitioner/example> ;
+     fhir:reference [ fhir:v "Practitioner/example" ]
+  ] ; # 
+  fhir:reasonCode ( [
+     fhir:coding ( [
+       a sct:183966005 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "183966005" ] ;
+       fhir:display [ fhir:v "Drug treatment not indicated (situation)" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

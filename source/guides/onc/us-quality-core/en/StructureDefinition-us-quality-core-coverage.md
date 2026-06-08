@@ -1,0 +1,415 @@
+# US Quality Core Coverage - 2026 US Quality Core Implementation Guide v0.5.0
+
+## Resource Profile: US Quality Core Coverage 
+
+ 
+Profile of Coverage for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors. 
+
+### USCDI+ Quality Element Support Expectations
+
+Systems are expected to support this profile as part of implementing USCDI+ Quality V1 in FHIR and meeting the conformance requirements of this guide.
+
+The following elements are specifically relevant to USCDI+ Quality V1 data classes and elements. Systems are expected to support these elements as applicable to their role in US Quality Core data exchange. See the [Must Support](must-support.md) section of this guide for more information. These elements are tagged as (USCDI+ Quality) in the formal profile views.
+
+**USCDI+ Quality Elements:**
+
+* identifier: (USCDI+ Quality) (USCDI) Member ID and other identifiers
+* identifier:memberid: (USCDI+ Quality) (USCDI) Member ID
+* identifier:memberid.type: (USCDI+ Quality) (USCDI) Member Number identifier type
+* status: (USCDI+ Quality) (USCDI) active | cancelled | draft | entered-in-error
+* type: (USCDI+ Quality) (USCDI) Coverage category such as medical or accident
+* subscriberId: (USCDI+ Quality) (USCDI) ID assigned to the subscriber
+* beneficiary: (USCDI+ Quality) (USCDI) Plan beneficiary
+* relationship: (USCDI+ Quality) (USCDI) Beneficiary relationship to the subscriber
+* period: (USCDI+ Quality) (USCDI) Coverage start and end dates
+* payor: (USCDI+ Quality) (USCDI) Issuer of the policy
+* class: (USCDI+ Quality) (USCDI) Additional coverage classifications
+* class:group: (USCDI+ Quality) (USCDI) Group
+* class:group.value: (USCDI+ Quality) (USCDI) Group Identifier
+* class:group.name: (USCDI+ Quality) (USCDI) Human readable description of the type and value
+* class:plan: (USCDI+ Quality) (USCDI) Plan
+* class:plan.value: (USCDI+ Quality) (USCDI) Plan Number
+* class:plan.name: (USCDI+ Quality) (USCDI) Plan Name
+
+Because this profile is derived from US Core, systems are also expected to support Must Support requirements and (USCDI) tagged elements inherited from US Core. The [Formal Views](#profile) section also provides the formal summary, definitions, terminology requirements, and mandatory element requirements.
+
+### Profile Specific Implementation Guidance
+
+Additional informational guidance for authoring CQL using this profile is provided in the [CQL Authoring Usage (Informational)](#cql-authoring-usage-informational) section of this page.
+
+**Usages:**
+
+* Examples for this Profile: [Coverage/example](Coverage-example.md)
+* CapabilityStatements using this Profile: [US Quality Core Client CapabilityStatement](CapabilityStatement-us-quality-core-client.md) and [US Quality Core Server CapabilityStatement](CapabilityStatement-us-quality-core-server.md)
+
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.onc.us-quality-core|current/StructureDefinition/StructureDefinition-us-quality-core-coverage.json)
+
+### Formal Views of Profile Content
+
+ [Description Differentials, Snapshots, and other representations](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+
+ 
+
+Other representations of profile: [CSV](../StructureDefinition-us-quality-core-coverage.csv), [Excel](../StructureDefinition-us-quality-core-coverage.xlsx), [Schematron](../StructureDefinition-us-quality-core-coverage.sch) 
+
+### Notes:
+
+#### CQL Authoring Usage (Informational)
+
+```
+define "SDE Payer":
+  [Coverage: type in "Payer"] Payer
+    return {
+      code: Payer.type,
+      period: Payer.period
+    }
+
+```
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "us-quality-core-coverage",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-coverage",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreCoverage",
+  "title" : "US Quality Core Coverage",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-06-05",
+  "publisher" : "Office of the National Coordinator for Health Information Technology (ONC)",
+  "contact" : [{
+    "name" : "Office of the National Coordinator for Health Information Technology (ONC)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.healthit.gov/feedback"
+    }]
+  }],
+  "description" : "Profile of Coverage for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }],
+    "text" : "USA"
+  }],
+  "fhirVersion" : "4.0.1",
+  "mapping" : [{
+    "identity" : "workflow",
+    "uri" : "http://hl7.org/fhir/workflow",
+    "name" : "Workflow Pattern"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "cdanetv4",
+    "uri" : "http://www.cda-adc.ca/en/services/cdanet/",
+    "name" : "Canadian Dental Association eclaims standard"
+  },
+  {
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  },
+  {
+    "identity" : "cpha3pharm",
+    "uri" : "http://www.pharmacists.ca/",
+    "name" : "Canadian Pharmacy Associaiton eclaims standard"
+  }],
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Coverage",
+  "baseDefinition" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-coverage|6.1.0",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [{
+      "id" : "Coverage",
+      "path" : "Coverage"
+    },
+    {
+      "id" : "Coverage.identifier",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement",
+        "valueBoolean" : true
+      },
+      {
+        "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+        "valueBoolean" : true
+      }],
+      "path" : "Coverage.identifier",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "type"
+        }],
+        "rules" : "open"
+      },
+      "short" : "(USCDI+ Quality) (USCDI) Member ID and other identifiers"
+    },
+    {
+      "id" : "Coverage.identifier:memberid",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement",
+        "valueBoolean" : true
+      },
+      {
+        "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+        "valueBoolean" : true
+      }],
+      "path" : "Coverage.identifier",
+      "sliceName" : "memberid",
+      "short" : "(USCDI+ Quality) (USCDI) Member ID"
+    },
+    {
+      "id" : "Coverage.identifier:memberid.type",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement",
+        "valueBoolean" : true
+      },
+      {
+        "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+        "valueBoolean" : true
+      }],
+      "path" : "Coverage.identifier.type",
+      "short" : "(USCDI+ Quality) (USCDI) Member Number identifier type"
+    },
+    {
+      "id" : "Coverage.status",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement",
+        "valueBoolean" : true
+      },
+      {
+        "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+        "valueBoolean" : true
+      }],
+      "path" : "Coverage.status",
+      "short" : "(USCDI+ Quality) (USCDI) active | cancelled | draft | entered-in-error"
+    },
+    {
+      "id" : "Coverage.type",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement",
+        "valueBoolean" : true
+      },
+      {
+        "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+        "valueBoolean" : true
+      }],
+      "path" : "Coverage.type",
+      "short" : "(USCDI+ Quality) (USCDI) Coverage category such as medical or accident",
+      "binding" : {
+        "strength" : "extensible",
+        "description" : "Categories of types of health care payor entities as defined by the US Public Health Data Consortium SOP code system",
+        "valueSet" : "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
+      }
+    },
+    {
+      "id" : "Coverage.policyHolder",
+      "path" : "Coverage.policyHolder",
+      "short" : "Owner of the policy",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient",
+        "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-organization",
+        "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-relatedperson"]
+      }]
+    },
+    {
+      "id" : "Coverage.subscriberId",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement",
+        "valueBoolean" : true
+      },
+      {
+        "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+        "valueBoolean" : true
+      }],
+      "path" : "Coverage.subscriberId",
+      "short" : "(USCDI+ Quality) (USCDI) ID assigned to the subscriber",
+      "min" : 0,
+      "max" : "1"
+    },
+    {
+      "id" : "Coverage.beneficiary",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement",
+        "valueBoolean" : true
+      },
+      {
+        "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+        "valueBoolean" : true
+      }],
+      "path" : "Coverage.beneficiary",
+      "short" : "(USCDI+ Quality) (USCDI) Plan beneficiary",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"]
+      }]
+    },
+    {
+      "id" : "Coverage.relationship",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement",
+        "valueBoolean" : true
+      },
+      {
+        "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+        "valueBoolean" : true
+      }],
+      "path" : "Coverage.relationship",
+      "short" : "(USCDI+ Quality) (USCDI) Beneficiary relationship to the subscriber"
+    },
+    {
+      "id" : "Coverage.period",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement",
+        "valueBoolean" : true
+      },
+      {
+        "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+        "valueBoolean" : true
+      }],
+      "path" : "Coverage.period",
+      "short" : "(USCDI+ Quality) (USCDI) Coverage start and end dates"
+    },
+    {
+      "id" : "Coverage.payor",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement",
+        "valueBoolean" : true
+      },
+      {
+        "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+        "valueBoolean" : true
+      }],
+      "path" : "Coverage.payor",
+      "short" : "(USCDI+ Quality) (USCDI) Issuer of the policy",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient",
+        "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-organization",
+        "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-relatedperson"]
+      }]
+    },
+    {
+      "id" : "Coverage.class",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement",
+        "valueBoolean" : true
+      },
+      {
+        "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+        "valueBoolean" : true
+      }],
+      "path" : "Coverage.class",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "type"
+        }],
+        "description" : "Slice based on value pattern",
+        "ordered" : false,
+        "rules" : "open"
+      },
+      "short" : "(USCDI+ Quality) (USCDI) Additional coverage classifications"
+    },
+    {
+      "id" : "Coverage.class:group",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement",
+        "valueBoolean" : true
+      },
+      {
+        "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+        "valueBoolean" : true
+      }],
+      "path" : "Coverage.class",
+      "sliceName" : "group",
+      "short" : "(USCDI+ Quality) (USCDI) Group"
+    },
+    {
+      "id" : "Coverage.class:group.value",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement",
+        "valueBoolean" : true
+      },
+      {
+        "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+        "valueBoolean" : true
+      }],
+      "path" : "Coverage.class.value",
+      "short" : "(USCDI+ Quality) (USCDI) Group Identifier"
+    },
+    {
+      "id" : "Coverage.class:group.name",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement",
+        "valueBoolean" : true
+      },
+      {
+        "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+        "valueBoolean" : true
+      }],
+      "path" : "Coverage.class.name",
+      "short" : "(USCDI+ Quality) (USCDI) Human readable description of the type and value"
+    },
+    {
+      "id" : "Coverage.class:plan",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement",
+        "valueBoolean" : true
+      },
+      {
+        "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+        "valueBoolean" : true
+      }],
+      "path" : "Coverage.class",
+      "sliceName" : "plan",
+      "short" : "(USCDI+ Quality) (USCDI) Plan"
+    },
+    {
+      "id" : "Coverage.class:plan.value",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement",
+        "valueBoolean" : true
+      },
+      {
+        "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+        "valueBoolean" : true
+      }],
+      "path" : "Coverage.class.value",
+      "short" : "(USCDI+ Quality) (USCDI) Plan Number"
+    },
+    {
+      "id" : "Coverage.class:plan.name",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement",
+        "valueBoolean" : true
+      },
+      {
+        "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+        "valueBoolean" : true
+      }],
+      "path" : "Coverage.class.name",
+      "short" : "(USCDI+ Quality) (USCDI) Plan Name"
+    }]
+  }
+}
+
+```

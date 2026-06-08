@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DeviceRequest xmlns="http://hl7.org/fhir">
+  <id value="negation-example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-devicenotrequested"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: DeviceRequest negation-example</b></p><a name="negation-example"> </a><a name="hcnegation-example"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-us-quality-core-devicenotrequested.html">US Quality Core Device Not Requested</a></p></div><p><b>US Quality Core Do Not Perform Reason</b>: <span title="Codes:{http://snomed.info/sct 410534003}">Not indicated (qualifier value)</span></p><p><b>Extension Definition for DeviceRequest.doNotPerform for Version 5.0</b>: true</p><p><b>status</b>: Completed</p><p><b>intent</b>: Original Order</p><p><b>code</b>: <span title="Codes:">Not Done Value Set: Venous Foot Pumps (VFP)</span> (Not done value set: <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.3.117.1.7.1.230/expansion">Venous foot pumps</a>)</p><p><b>subject</b>: <a href="Patient-example.html">Peter Chalmers</a></p><p><b>authoredOn</b>: 2016-04-05 09:20:00-0400</p></div>
+  </text>
+  <extension url="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-doNotPerformReason">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="410534003"/>
+        <display value="Not indicated (qualifier value)"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <modifierExtension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-DeviceRequest.doNotPerform">
+    <valueBoolean value="true"/>
+  </modifierExtension>
+  <status value="completed"/>
+  <intent value="original-order"/>
+  <codeCodeableConcept>
+    <extension url="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-notDoneValueSet">
+      <valueCanonical value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.230"/>
+    </extension>
+    <text value="Not Done Value Set: Venous Foot Pumps (VFP)"/>
+  </codeCodeableConcept>
+  <subject>
+    <reference value="Patient/example"/>
+    <display value="Peter Chalmers"/>
+  </subject>
+  <authoredOn value="2016-04-05T09:20:00-04:00"/>
+</DeviceRequest>

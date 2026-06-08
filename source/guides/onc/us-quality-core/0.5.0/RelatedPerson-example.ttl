@@ -1,0 +1,59 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/onc/us-quality-core/RelatedPerson/example> a fhir:RelatedPerson ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-relatedperson"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-relatedperson>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: RelatedPerson example</b></p><a name=\"example\"> </a><a name=\"hcexample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-relatedperson.html\">US Quality Core RelatedPerson</a></p></div><p><b>active</b>: true</p><p><b>patient</b>: <a href=\"Patient-example.html\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>relationship</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v2-0131 C}\">Emergency Contact</span></p><p><b>name</b>: Peter James Chalmers (Official)</p><p><b>telecom</b>: ph: (03) 5555 6473(Work)</p><p><b>gender</b>: Male</p><p><b>address</b>: 534 Erewhon St PleasantVille UT 84414 (home)</p><p><b>period</b>: 2012-03-11 --&gt; (ongoing)</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:active [ fhir:v true] ; # 
+  fhir:patient [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:relationship ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/v2-0131"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/v2-0131>
+       ] ;
+       fhir:code [ fhir:v "C" ]
+     ] )
+  ] ) ; # 
+  fhir:name ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:family [ fhir:v "Chalmers" ] ;
+     fhir:given ( [ fhir:v "Peter" ] [ fhir:v "James" ] )
+  ] ) ; # 
+  fhir:telecom ( [
+     fhir:system [ fhir:v "phone" ] ;
+     fhir:value [ fhir:v "(03) 5555 6473" ] ;
+     fhir:use [ fhir:v "work" ]
+  ] ) ; # 
+  fhir:gender [ fhir:v "male"] ; # 
+  fhir:address ( [
+     fhir:use [ fhir:v "home" ] ;
+     fhir:line ( [ fhir:v "534 Erewhon St" ] ) ;
+     fhir:city [ fhir:v "PleasantVille" ] ;
+     fhir:state [ fhir:v "UT" ] ;
+     fhir:postalCode [ fhir:v "84414" ]
+  ] ) ; # 
+  fhir:period [
+     fhir:start [ fhir:v "2012-03-11"^^xsd:date ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

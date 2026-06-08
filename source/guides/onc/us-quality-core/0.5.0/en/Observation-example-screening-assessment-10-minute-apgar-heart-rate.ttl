@@ -1,0 +1,104 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/onc/us-quality-core/Observation/example-screening-assessment-10-minute-apgar-heart-rate> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "example-screening-assessment-10-minute-apgar-heart-rate"] ; # 
+  fhir:meta [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/instance-name"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/StructureDefinition/instance-name>
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "10 minute Apgar Heart Rate Screening Assessment Example"
+       ]
+     ] [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/instance-description"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/StructureDefinition/instance-description>
+       ] ;
+       fhir:value [
+         a fhir:Markdown ;
+         fhir:v "This example of a US Quality Core Observation Screening Assessment Profile illustrates its use to directly capture individual screening assessment items as an observation. It is not derived from a FHIR QuestionnaireResponse."
+       ]
+     ] ) ;
+     fhir:profile ( [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-screening-assessment"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-screening-assessment>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation example-screening-assessment-10-minute-apgar-heart-rate</b></p><a name=\"example-screening-assessment-10-minute-apgar-heart-rate\"> </a><a name=\"hcexample-screening-assessment-10-minute-apgar-heart-rate\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-observation-screening-assessment.html\">US Quality Core Observation Screening Assessment</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category survey}\">Survey</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 32402-0}\">Apgar respiratory effort score</span></p><p><b>subject</b>: <a href=\"Patient-infant-example.html\">Infant Example  Male, DoB: 2020-06-02 ( Social Security number: United States Social Security Number#999123458 (use: usual, ))</a></p><p><b>effective</b>: 2016-05-18 22:33:22+0000</p><p><b>performer</b>: <a href=\"Practitioner-example.html\">Practitioner Adam Careful </a></p><p><b>value</b>: <span title=\"Codes:{http://loinc.org LA6718-6}\">2. At least 100 beats per minute</span></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/observation-category>
+       ] ;
+       fhir:code [ fhir:v "survey" ] ;
+       fhir:display [ fhir:v "Survey" ]
+     ] ) ;
+     fhir:text [ fhir:v "Survey" ]
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:32402-0 ;
+       fhir:system [
+         fhir:v "http://loinc.org"^^xsd:anyURI ;
+         fhir:l <http://loinc.org>
+       ] ;
+       fhir:code [ fhir:v "32402-0" ] ;
+       fhir:display [ fhir:v "10 minute Apgar Heart Rate" ]
+     ] ) ;
+     fhir:text [ fhir:v "Apgar respiratory effort score" ]
+  ] ; # 
+  fhir:subject [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Patient/infant-example> ;
+     fhir:reference [ fhir:v "Patient/infant-example" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:DateTime ;
+     fhir:v "2016-05-18T22:33:22+00:00"^^xsd:dateTime
+  ] ; # 
+  fhir:performer ( [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Practitioner/example> ;
+     fhir:reference [ fhir:v "Practitioner/example" ]
+  ] ) ; # 
+  fhir:value [
+     a fhir:CodeableConcept ;
+     fhir:coding ( [
+       a loinc:LA6718-6 ;
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/ordinalValue"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/ordinalValue>
+         ] ;
+         fhir:value [
+           a fhir:Decimal ;
+           fhir:v "2"^^xsd:decimal
+         ]
+       ] ) ;
+       fhir:system [
+         fhir:v "http://loinc.org"^^xsd:anyURI ;
+         fhir:l <http://loinc.org>
+       ] ;
+       fhir:code [ fhir:v "LA6718-6" ] ;
+       fhir:display [ fhir:v "At least 100 beats per minute" ]
+     ] ) ;
+     fhir:text [ fhir:v "2. At least 100 beats per minute" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,3524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="fhir.onc.us-quality-core"/>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide fhir.onc.us-quality-core</b></p><a name="fhir.onc.us-quality-core"> </a><a name="hcfhir.onc.us-quality-core"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: en</p></div><h2>USQualityCore</h2><p>The official URL for this implementation guide is: </p><pre>http://fhir.org/guides/onc/us-quality-core/ImplementationGuide/fhir.onc.us-quality-core</pre><div><p>The USQualityCore Implementation Guide defines a set of FHIR profiles with extensions and bindings needed to create interoperable, quality-focused applications. The profiles in this implementation guide derive from and extend the <a href="http://hl7.org/fhir/us/core">US Core</a> profiles to provide a common foundation for building, sharing, and evaluating knowledge artifacts across quality improvement efforts in the US Realm.</p>
+</div></div>
+  </text>
+  <url value="http://fhir.org/guides/onc/us-quality-core/ImplementationGuide/fhir.onc.us-quality-core"/>
+  <version value="0.5.0"/>
+  <name value="USQualityCore"/>
+  <title value="2026 US Quality Core Implementation Guide"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-06-05"/>
+  <publisher value="Office of the National Coordinator for Health Information Technology (ONC)"/>
+  <contact>
+    <name value="Office of the National Coordinator for Health Information Technology (ONC)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.healthit.gov/feedback"/>
+    </telecom>
+  </contact>
+  <description value="The USQualityCore Implementation Guide defines a set of FHIR profiles with extensions and bindings needed to create interoperable, quality-focused applications. The profiles in this implementation guide derive from and extend the [US Core](http://hl7.org/fhir/us/core) profiles to provide a common foundation for building, sharing, and evaluating knowledge artifacts across quality improvement efforts in the US Realm."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+    <text value="USA"/>
+  </jurisdiction>
+  <packageId value="fhir.onc.us-quality-core"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="4.0.1"/>
+  <dependsOn id="hl7ext">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/>
+    </extension>
+    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+    <packageId value="hl7.fhir.uv.extensions.r4"/>
+    <version value="5.3.0"/>
+  </dependsOn>
+  <dependsOn id="uscore">
+    <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core"/>
+    <packageId value="hl7.fhir.us.core"/>
+    <version value="6.1.0"/>
+  </dependsOn>
+  <dependsOn id="dicom">
+    <uri value="http://fhir.org/packages/fhir.dicom/ImplementationGuide/fhir.dicom"/>
+    <packageId value="fhir.dicom"/>
+    <version value="2024.1.20240120"/>
+  </dependsOn>
+  <dependsOn id="terminology">
+    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <packageId value="hl7.terminology.r4"/>
+    <version value="7.1.0"/>
+  </dependsOn>
+  <dependsOn id="cqluv">
+    <uri value="http://hl7.org/fhir/uv/cql/ImplementationGuide/hl7.fhir.uv.cql"/>
+    <packageId value="hl7.fhir.uv.cql"/>
+    <version value="2.0.0"/>
+  </dependsOn>
+  <dependsOn id="cqlus">
+    <uri value="http://hl7.org/fhir/us/cql/ImplementationGuide/hl7.fhir.us.cql"/>
+    <packageId value="hl7.fhir.us.cql"/>
+    <version value="2.0.0-ballot"/>
+  </dependsOn>
+  <global>
+    <type value="Patient"/>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"/>
+  </global>
+  <global>
+    <type value="Encounter"/>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter"/>
+  </global>
+  <global>
+    <type value="Practitioner"/>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitioner"/>
+  </global>
+  <global>
+    <type value="PractitionerRole"/>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitionerrole"/>
+  </global>
+  <global>
+    <type value="Immunization"/>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunization"/>
+  </global>
+  <global>
+    <type value="Observation"/>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"/>
+  </global>
+  <global>
+    <type value="Organization"/>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-organization"/>
+  </global>
+  <definition>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="release"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2026+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="templates\liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-binary"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/cql"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-expansion-params"/>
+      </extension>
+      <extension url="value">
+        <valueString value="exp-params.json"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="generate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="xml"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="generate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="JSON"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="autoload-resources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="output"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://fhir.org/guides/onc/us-quality-core/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="fmm-definition"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="propagate-status"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="excludelogbinaryformat"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="tabbed-snapshots"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="i18n-default-lang"/>
+      </extension>
+      <extension url="value">
+        <valueString value="en"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters">
+      <valueReference>
+        <reference value="Parameters/expansion-parameters"/>
+      </valueReference>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
+      <valueCode value="hl7.fhir.uv.tools.r4#1.1.2"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="release"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2026+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="templates\liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-binary"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/cql"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-expansion-params"/>
+      </extension>
+      <extension url="value">
+        <valueString value="exp-params.json"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="generate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="xml"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="generate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="JSON"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="autoload-resources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="output"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://fhir.org/guides/onc/us-quality-core/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="fmm-definition"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="propagate-status"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="excludelogbinaryformat"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="tabbed-snapshots"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="i18n-default-lang"/>
+      </extension>
+      <extension url="value">
+        <valueString value="en"/>
+      </extension>
+    </extension>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AdverseEvent"/>
+      </extension>
+      <reference>
+        <reference value="AdverseEvent/example"/>
+      </reference>
+      <name value="AdverseEvent example"/>
+      <description value="Example of an allergic reaction adverse event"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-adverseevent"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/example"/>
+      </reference>
+      <name value="AllergyIntolerance example"/>
+      <description value="Example of a clinical assessment record of an allergy"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-allergyintolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/example-refuted"/>
+      </reference>
+      <name value="AllergyIntolerance refuted example"/>
+      <description value="Example of a clinical assessment record of an allergy that has been refuted"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-allergyintolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="BodyStructure"/>
+      </extension>
+      <reference>
+        <reference value="BodyStructure/example"/>
+      </reference>
+      <name value="BodyStructure example"/>
+      <description value="Example of a BodyStructure resource to identify a mass in the spleen"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-bodystructure"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CarePlan"/>
+      </extension>
+      <reference>
+        <reference value="CarePlan/example"/>
+      </reference>
+      <name value="CarePlan example"/>
+      <description value="Example of an assessment and care plan for a pregnancy"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-careplan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CareTeam"/>
+      </extension>
+      <reference>
+        <reference value="CareTeam/example"/>
+      </reference>
+      <name value="CareTeam example"/>
+      <description value="Example of a CareTeam involved in the delivery of care for a pregnancy"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-careteam"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Claim"/>
+      </extension>
+      <reference>
+        <reference value="Claim/example"/>
+      </reference>
+      <name value="Claim example"/>
+      <description value="Example of a vision claim"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-claim"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ClaimResponse"/>
+      </extension>
+      <reference>
+        <reference value="ClaimResponse/example"/>
+      </reference>
+      <name value="ClaimResponse example"/>
+      <description value="Example of a vision claim response"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-claimresponse"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Communication"/>
+      </extension>
+      <reference>
+        <reference value="Communication/example"/>
+      </reference>
+      <name value="Communication example"/>
+      <description value="Example of a notification sent to a patient about an abnormal test result"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-communication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Communication"/>
+      </extension>
+      <reference>
+        <reference value="Communication/negation-example"/>
+      </reference>
+      <name value="Communication negation example"/>
+      <description value="Example of a notification that failed to be sent to a patient and reason why"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-communicationnotdone"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CommunicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="CommunicationRequest/example"/>
+      </reference>
+      <name value="CommunicationRequest example"/>
+      <description value="Example of a record of request to provide additional information for a claim"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-communicationrequest"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/example"/>
+      </reference>
+      <name value="Condition Encounter Diagnosis example"/>
+      <description value="Example of a condition encounter diagnosis resource used to record information about a burn of the left ear"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-encounter-diagnosis"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/health-concern-example"/>
+      </reference>
+      <name value="Condition Problems Health Concerns example"/>
+      <description value="Example of a patient with a condition encounter health concern regarding obesity"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/appendicitis-example"/>
+      </reference>
+      <name value="Condition example - appendicitis"/>
+      <description value="Example of a condition resource used to record information about an appendicitis"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-encounter-diagnosis"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Coverage"/>
+      </extension>
+      <reference>
+        <reference value="Coverage/example"/>
+      </reference>
+      <name value="Coverage example"/>
+      <description value="Example of a coverage resource used to provide information about an individual's specific plan"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-coverage"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Device"/>
+      </extension>
+      <reference>
+        <reference value="Device/example"/>
+      </reference>
+      <name value="Device example"/>
+      <description value="Device example for an ECG"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-device"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DeviceRequest"/>
+      </extension>
+      <reference>
+        <reference value="DeviceRequest/example"/>
+      </reference>
+      <name value="DeviceRequest example"/>
+      <description value="Request to employ a medical device"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-devicerequest"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DeviceRequest"/>
+      </extension>
+      <reference>
+        <reference value="DeviceRequest/negation-example"/>
+      </reference>
+      <name value="DeviceRequest negation example"/>
+      <description value="Example of a request to employ a medical device that was not performed"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-devicenotrequested"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DeviceRequest"/>
+      </extension>
+      <reference>
+        <reference value="DeviceRequest/negation-with-code-example"/>
+      </reference>
+      <name value="DeviceRequest negation with code example"/>
+      <description value="Example of a request to employ a medical device that was not performed"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-devicenotrequested"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DeviceUseStatement"/>
+      </extension>
+      <reference>
+        <reference value="DeviceUseStatement/example"/>
+      </reference>
+      <name value="DeviceUseStatement example"/>
+      <description value="Example of a record of device use by a patient"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-deviceusestatement"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/example"/>
+      </reference>
+      <name value="DiagnosticReportLab example"/>
+      <description value="Example of the findings and interpretation of a laboratory diagnostic test"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-lab"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/note-example"/>
+      </reference>
+      <name value="DiagnosticReportNote example"/>
+      <description value="Example of a DiagnosticReport Note"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-note"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/example"/>
+      </reference>
+      <name value="Encounter example"/>
+      <description value="Example of an Encounter"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="FamilyMemberHistory"/>
+      </extension>
+      <reference>
+        <reference value="FamilyMemberHistory/example"/>
+      </reference>
+      <name value="FamilyMemberHistory example"/>
+      <description value="Example of Family Member History for a patient"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-familymemberhistory"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Flag"/>
+      </extension>
+      <reference>
+        <reference value="Flag/example"/>
+      </reference>
+      <name value="Flag example"/>
+      <description value="Warning/Notification when providing care example"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-flag"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Goal"/>
+      </extension>
+      <reference>
+        <reference value="Goal/example"/>
+      </reference>
+      <name value="Goal example"/>
+      <description value="Example of weight loss goal/objective for a patient"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-goal"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ImagingStudy"/>
+      </extension>
+      <reference>
+        <reference value="ImagingStudy/example"/>
+      </reference>
+      <name value="ImagingStudy example"/>
+      <description value="Example of ImagingStudy based on CT imaging study"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-imagingstudy"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Immunization"/>
+      </extension>
+      <reference>
+        <reference value="Immunization/example"/>
+      </reference>
+      <name value="Immunization example"/>
+      <description value="Immunization example"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Immunization"/>
+      </extension>
+      <reference>
+        <reference value="Immunization/statusreason-example"/>
+      </reference>
+      <name value="Entered-in-error Influenza immunization record example"/>
+      <description value="Example of an entered-in-error influenza immunization record with statusReason"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Immunization"/>
+      </extension>
+      <reference>
+        <reference value="Immunization/negation-example"/>
+      </reference>
+      <name value="Immunization negation example"/>
+      <description value="Example of immunization that was refused/failed to be administered using value set"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunizationnotdone"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Immunization"/>
+      </extension>
+      <reference>
+        <reference value="Immunization/negation-example-code"/>
+      </reference>
+      <name value="Immunization negation with code example"/>
+      <description value="Example of immunization that was refused/failed to be administered using code"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunizationnotdone"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ImmunizationEvaluation"/>
+      </extension>
+      <reference>
+        <reference value="ImmunizationEvaluation/example"/>
+      </reference>
+      <name value="ImmunizationEvaluaion example"/>
+      <description value="Example of ImmunizationEvaluation"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunizationevaluation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ImmunizationRecommendation"/>
+      </extension>
+      <reference>
+        <reference value="ImmunizationRecommendation/example"/>
+      </reference>
+      <name value="ImmunizationRecommendation example"/>
+      <description value="Example of ImmunizationRecommendation for Hepatitis A vaccine"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunizationrecommendation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Location"/>
+      </extension>
+      <reference>
+        <reference value="Location/example"/>
+      </reference>
+      <name value="Location example"/>
+      <description value="Example of Location of a provider - south wing of Mean Joe Greene University Medical Center"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-location"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/example"/>
+      </reference>
+      <name value="Medication example"/>
+      <description value="Example of Alemtuzumab Medication"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationAdministration"/>
+      </extension>
+      <reference>
+        <reference value="MedicationAdministration/example"/>
+      </reference>
+      <name value="MedicationAdministration example"/>
+      <description value="Intravenous example of MedicationAdministration"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationadministration"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationAdministration"/>
+      </extension>
+      <reference>
+        <reference value="MedicationAdministration/cmd-example"/>
+      </reference>
+      <name value="MedicationAdministration Cumulative Duration example"/>
+      <description value="Cumulative Medication example of MedicationAdministration"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationadministration"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationAdministration"/>
+      </extension>
+      <reference>
+        <reference value="MedicationAdministration/negation-example"/>
+      </reference>
+      <name value="MedicationAdministration negation example"/>
+      <description value="Example of medication not administered using a value set to indicate what was not administered"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationadministrationnotdone"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationAdministration"/>
+      </extension>
+      <reference>
+        <reference value="MedicationAdministration/negation-with-code-example"/>
+      </reference>
+      <name value="MedicationAdministration negation with code example"/>
+      <description value="Example of medication not administered using a code to indicate that a particular medication was not administered"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationadministrationnotdone"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationDispense"/>
+      </extension>
+      <reference>
+        <reference value="MedicationDispense/example"/>
+      </reference>
+      <name value="MedicationDispense example"/>
+      <description value="Penicillin MedicationDispense Example"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationdispense"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationDispense"/>
+      </extension>
+      <reference>
+        <reference value="MedicationDispense/cmd-example"/>
+      </reference>
+      <name value="MedicationDispense cumulative dose example"/>
+      <description value="Cumulative Medication Dispense Example"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationdispense"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationDispense"/>
+      </extension>
+      <reference>
+        <reference value="MedicationDispense/negation-example"/>
+      </reference>
+      <name value="MedicationDispense negation example"/>
+      <description value="Example of medication not dispensed using a value set to indicate the reason"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationdispensedeclined"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationDispense"/>
+      </extension>
+      <reference>
+        <reference value="MedicationDispense/negation-with-code-example"/>
+      </reference>
+      <name value="MedicationDispense negation with code example"/>
+      <description value="Example of medication not dispensed using a code to indicate the reason"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationdispensedeclined"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/cmd-example"/>
+      </reference>
+      <name value="MedicationRequest Cumulative Duration"/>
+      <description value="Cumulative Medication Duration Example"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationrequest"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/example"/>
+      </reference>
+      <name value="MedicationRequest example"/>
+      <description value="Penicillin MedicationRequest Example"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationrequest"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/patient-reported-example"/>
+      </reference>
+      <name value="MedicationRequest Patient Reported Example"/>
+      <description value="Patient Reported Example"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationrequest"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/patient-requester-example"/>
+      </reference>
+      <name value="MedicationRequest Patient Requester Example"/>
+      <description value="Patient Requester Example"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationrequest"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/practitioner-ordered-example"/>
+      </reference>
+      <name value="MedicationRequest Practitioner Ordered Example"/>
+      <description value="Practitioner Ordered Example"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationrequest"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/negation-example"/>
+      </reference>
+      <name value="MedicationNotRequested using value set example"/>
+      <description value="Example of medication not requested using a value set to indicate the reason"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationnotrequested"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/negation-example-code"/>
+      </reference>
+      <name value="MedicationNotRequested using code example"/>
+      <description value="Example of medication not requested using a code to indicate the reason"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationnotrequested"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationStatement"/>
+      </extension>
+      <reference>
+        <reference value="MedicationStatement/example"/>
+      </reference>
+      <name value="MedicationStatment example"/>
+      <description value="Penicillin MedicationStatement Example"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationstatement"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="NutritionOrder"/>
+      </extension>
+      <reference>
+        <reference value="NutritionOrder/example"/>
+      </reference>
+      <name value="NutrientOrder example"/>
+      <description value="Example of NutrientOrder for diabetic diet"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-nutritionorder"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/example"/>
+      </reference>
+      <name value="Observation example"/>
+      <description value="Example of Decreased Hemoglobin Observation"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/example-odh"/>
+      </reference>
+      <name value="ODH Observation example"/>
+      <description value="Example of occupational data added to observation measure"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/example-frailty"/>
+      </reference>
+      <name value="Frailty observation example"/>
+      <description value="Example of a frailty observation measure"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/example-gestation"/>
+      </reference>
+      <name value="Gestation age at birth observation example"/>
+      <description value="Example of a gestation age at birth observation"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/example-obstetric-delivery"/>
+      </reference>
+      <name value="Date and time of obstetric delivery example"/>
+      <description value="Example of a obstetric delivery datetime Observation"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/example-delivery-date-estimate"/>
+      </reference>
+      <name value="Delivery date estimated example"/>
+      <description value="Example of a delivery date estimate Observation"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/example-preterm-births"/>
+      </reference>
+      <name value="Number of preterm births obeservation example"/>
+      <description value="Example number of preterm births Observation"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/example-births"/>
+      </reference>
+      <name value="Number of full-term births obeservation example"/>
+      <description value="Example number of full-term births Observation"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/example-parity"/>
+      </reference>
+      <name value="Number of parity obeservation example"/>
+      <description value="Example number of parity Observation"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/example-pregnancies"/>
+      </reference>
+      <name value="Number of pregnancies obeservation example"/>
+      <description value="Example number of pregnancies Observation"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/negation-example"/>
+      </reference>
+      <name value="ObservationCancelled with value set example"/>
+      <description value="Example of observation not done using a value set to indicate the reason"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observationcancelled"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/negation-with-code-example"/>
+      </reference>
+      <name value="ObservationCancelled with code example"/>
+      <description value="Example of observation not done using a code to indicate the reason"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observationcancelled"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/clinical-result-heart-rate-rhythm"/>
+      </reference>
+      <name value="Heart rate rhythm clinical result observation example"/>
+      <description value="Example of a Heart rate rhythm clinical result observation"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-clinical-result"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/example-screening-assessment-10-minute-apgar-heart-rate"/>
+      </reference>
+      <name value="10 minute Apgar Heart Rate Observation Screening Assessment Example"/>
+      <description value="Example of a 10 minute Apgar Heart Rate Observation Screening Assessment"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-screening-assessment"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/laboratory-result-observation-example-blood-glucose"/>
+      </reference>
+      <name value="Glucose Laboratory Result Observation Example"/>
+      <description value="Example of a glucose laboratory result observation"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-lab"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/example-nonpatient-mechanical-ventilator"/>
+      </reference>
+      <name value="Mechanical Ventilator Availability (physical object) Observation Example"/>
+      <description value="Example of mechanical ventilator availability nonpatient observation"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-nonpatient-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/example-nonpatient-hospital-bed"/>
+      </reference>
+      <name value="Hospital Bed Availability (physical object) Observation Example"/>
+      <description value="Example of hospital bed availability nonpatient observation"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-nonpatient-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/example-nonpatient-hemodialysis-machine"/>
+      </reference>
+      <name value="Hemodialysis Machine Availability (physical object) Observation Example"/>
+      <description value="Example of hempdialysis machine availability nonpatient observation"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-nonpatient-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/example"/>
+      </reference>
+      <name value="Organization example"/>
+      <description value="HL7 Organization example"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/example1"/>
+      </reference>
+      <name value="Hospital Organization example"/>
+      <description value="Hendricks County Hospital example"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/example"/>
+      </reference>
+      <name value="Patient example"/>
+      <description value="Basic Patient example"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/example-2"/>
+      </reference>
+      <name value="65+ Female patient example"/>
+      <description value="65+ Female patient example"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/infant-example"/>
+      </reference>
+      <name value="Infant patient example"/>
+      <description value="Infant patient example"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/example"/>
+      </reference>
+      <name value="Practitioner example"/>
+      <description value="Referring Practitioner example"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitioner"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/example"/>
+      </reference>
+      <name value="PractitionerRole example"/>
+      <description value="PractitionerRole example"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitionerrole"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Procedure"/>
+      </extension>
+      <reference>
+        <reference value="Procedure/example"/>
+      </reference>
+      <name value="Procedure example"/>
+      <description value="Appendectomy Procedure example"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedure"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Procedure"/>
+      </extension>
+      <reference>
+        <reference value="Procedure/negation-example"/>
+      </reference>
+      <name value="ProcedureNotDone with value set example"/>
+      <description value="Example of procedure not done using a value set to indicate the reason"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedurenotdone"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Procedure"/>
+      </extension>
+      <reference>
+        <reference value="Procedure/negation-with-code-example"/>
+      </reference>
+      <name value="ProcedureNotDone with code example"/>
+      <description value="Example of procedure not done using a code to indicate the reason"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedurenotdone"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/PHQ-9-example"/>
+      </reference>
+      <name value="PHQ-9 QuestionnaireResponse Example"/>
+      <description value="Example of a PHQ-9 Questionnaire Response"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-questionnaireresponse"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/example"/>
+      </reference>
+      <name value="ServiceRequest example"/>
+      <description value="Request for Appendectomy ServiceRequest example"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/appropriateness-example"/>
+      </reference>
+      <name value="ServiceRequest appropriateness example"/>
+      <description value="ServiceRequest appropriateness example"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/negation-example"/>
+      </reference>
+      <name value="ServiceNotRequested with value set example"/>
+      <description value="Example of service not requested using a value set to indicate the reason"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicenotrequested"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/negation-example-code"/>
+      </reference>
+      <name value="ServiceNotRequested with code example"/>
+      <description value="Example of service not requested using a code to indicate the reason"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicenotrequested"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/myringotomy-example"/>
+      </reference>
+      <name value="ServiceRequest Myringotomy Procedure example"/>
+      <description value="ServiceRequest for Myringotomy Procedure example"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/elective-example"/>
+      </reference>
+      <name value="ServiceRequest elective example"/>
+      <description value="Elective procedure ServiceRequest example"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="RelatedPerson"/>
+      </extension>
+      <reference>
+        <reference value="RelatedPerson/example"/>
+      </reference>
+      <name value="RelatedPerson example"/>
+      <description value="Emergency contact example"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-relatedperson"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Substance"/>
+      </extension>
+      <reference>
+        <reference value="Substance/example"/>
+      </reference>
+      <name value="Substance example"/>
+      <description value="Honey Bee venom (apitoxin) Substance example"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-substance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/example"/>
+      </reference>
+      <name value="Task example"/>
+      <description value="Task example"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-task"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/negation-example"/>
+      </reference>
+      <name value="TaskRejected with value set example"/>
+      <description value="Example of task not done using a value set to indicate the reason"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-taskrejected"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/negation-with-code-example"/>
+      </reference>
+      <name value="TaskRejected with code example"/>
+      <description value="Example of task not done using a code to indicate the reason"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-taskrejected"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/encounter-ed-example"/>
+      </reference>
+      <name value="Encounter example of emergency visit that escalated into inpatient patient"/>
+      <description value="Encounter example of emergency visit that escalated into inpatient patient"/>
+      <exampleCanonical value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/manifest"/>
+      </reference>
+      <name value="Input Expansion Parameters"/>
+      <description value="The input expansion parameters resource for this implementation guide, specifying SNOMED Edition and version. This resource will be contained within the published implementation guide with all pinned references."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/us-quality-core-medication-dose-type"/>
+      </reference>
+      <name value="USQualityCore SNOMED CT Dosage Codes"/>
+      <description value="This value set includes all the &quot;Dosages&quot; SNOMED CT codes (i.e. codes with an is-a relationship with 277406006: Dosages)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/us-quality-core-negation-reason"/>
+      </reference>
+      <name value="USQualityCore Negation Reason Codes"/>
+      <description value="This value set defines the set of codes that can be used to indicate the reason an action was not taken"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/us-quality-core-observation-body-position"/>
+      </reference>
+      <name value="US Quality Core Observation Body Position"/>
+      <description value="SNOMED CT code system values descending from the following:'body position finding' 9851009"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/us-quality-core-present-on-admission"/>
+      </reference>
+      <name value="USQualityCore Present On Admission Codes"/>
+      <description value="Value Set for USQualityCore Present On Admission."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-adverseevent"/>
+      </reference>
+      <name value="US Quality Core AdverseEvent"/>
+      <description value="An adverse event (AE) is an untoward occurrence during treatment that should be reported, for example, to a clinical study sponsor or safety oversight organization.  AEs include reportable serious medical errors such as those defined by National Quality Forum (see http://www.qualityforum.org/Topics/ SREs/List_of_SREs.aspx), and Patient Safety Healthcare Events as defined by AHRQ.  Some AEs can involve conditions such as &quot;recurring headaches&quot; but others do not, such as accidental falls, surgical errors, sexual abuse of patient, and sudden death. An adverse event can also be an unsafe condition that increases the probability of a patient safety event, and near-misses. An adverse event can be caused by exposure to some agent (e.g., a medication, immunization, food, or environmental agent). An adverse reaction can range from a mild reaction, such as a harmless rash to a severe and life-threatening condition. They can occur immediately or develop over time. For example, a patient may develop a rash after taking a particular medication."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-allergyintolerance"/>
+      </reference>
+      <name value="US Quality Core AllergyIntolerance"/>
+      <description value="Profile of AllergyIntolerance for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-bodystructure"/>
+      </reference>
+      <name value="US Quality Core BodyStructure"/>
+      <description value="Profile of BodyStructure for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-careplan"/>
+      </reference>
+      <name value="US Quality Core CarePlan"/>
+      <description value="The US Quality Core CarePlan is based upon the US Core CarePlan Profile which is based upon the core FHIR CarePlan Resource and created to meet the 2015 Edition Common Clinical Data Set 'Assessment and Plan of Treatment requirements. Defines constraints and extensions on the CarePlan resource for the minimal set of data to query and retrieve a patient's Care Plan."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-careteam"/>
+      </reference>
+      <name value="US Quality Core CareTeam"/>
+      <description value="Profile of CareTeam for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-claim"/>
+      </reference>
+      <name value="US Quality Core Claim"/>
+      <description value="Profile of Claim for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-claimresponse"/>
+      </reference>
+      <name value="US Quality Core ClaimResponse"/>
+      <description value="The US Quality Core ClaimResponse profile is used to provide the results of the adjudication and/or authorization of a set of healthcare-related products and services for a patient against the patient's insurance coverages, or to respond with what the adjudication would be for a supplied set of products or services should they be actually supplied to the patient. It identifies the mandatory core elements, extensions, vocabularies and value sets which **SHALL** be present in the ClaimResponse resource when using this profile"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-communication"/>
+      </reference>
+      <name value="US Quality Core Communication"/>
+      <description value="Profile of Communication for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-communicationnotdone"/>
+      </reference>
+      <name value="US Quality Core Communication Not Done"/>
+      <description value="Profile of CommunicationNotDone for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-communicationrequest"/>
+      </reference>
+      <name value="US Quality Core CommunicationRequest"/>
+      <description value="Profile of CommunicationRequest for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-condition-encounter-diagnosis"/>
+      </reference>
+      <name value="US Quality Core Condition Encounter Diagnosis"/>
+      <description value="The US Quality Core Condition Encounter Diagnosis Profile is based upon the US Core Condition Encounter Diagnosis Profile.   In version 5.0.0, The US Quality Core Condition Profile has been split into the US Quality Core Condition Encounter Diagnosis Profile and US Quality Core Condition Problems and Health Concerns Profile. To promote interoperability and adoption through common implementation, this profile defines constraints and extensions on the Condition resource for the minimal set of data to record, search, and fetch information about an encounter diagnosis.  It Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-condition-problems-health-concerns"/>
+      </reference>
+      <name value="US Quality Core Condition Problems Health Concerns"/>
+      <description value="Profile of Condition for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-coverage"/>
+      </reference>
+      <name value="US Quality Core Coverage"/>
+      <description value="Profile of Coverage for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-device"/>
+      </reference>
+      <name value="US Quality Core Device"/>
+      <description value="Profile of Device for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-devicenotrequested"/>
+      </reference>
+      <name value="US Quality Core Device Not Requested"/>
+      <description value="Profile of DeviceRequest for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-devicerequest"/>
+      </reference>
+      <name value="US Quality Core DeviceRequest"/>
+      <description value="Profile of DeviceRequest for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-deviceusestatement"/>
+      </reference>
+      <name value="US Quality Core DeviceUseStatement"/>
+      <description value="Profile of DeviceUseStatement for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-diagnosticreport-lab"/>
+      </reference>
+      <name value="US Quality Core DiagnosticReport Profile for Laboratory Results Reporting"/>
+      <description value="Profile of DiagnosticReport for laboratory results for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-diagnosticreport-note"/>
+      </reference>
+      <name value="US Quality Core DiagnosticReport Profile for Report and Note Exchange"/>
+      <description value="Profile of DiagnosticReport for Note exchange for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-encounter"/>
+      </reference>
+      <name value="US Quality Core Encounter"/>
+      <description value="Profile of Encounter for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-familymemberhistory"/>
+      </reference>
+      <name value="US Quality Core FamilyMemberHistory"/>
+      <description value="Profile of Family Member History for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-flag"/>
+      </reference>
+      <name value="US Quality Core Flag"/>
+      <description value="Profile of Flag for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-goal"/>
+      </reference>
+      <name value="US Quality Core Goal"/>
+      <description value="Profile of Goal for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-imagingstudy"/>
+      </reference>
+      <name value="US Quality Core ImagingStudy"/>
+      <description value="Profile of ImagingStudy for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-immunization"/>
+      </reference>
+      <name value="US Quality Core Immunization"/>
+      <description value="Profile of Immunization for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-immunizationevaluation"/>
+      </reference>
+      <name value="US Quality Core ImmunizationEvaluation"/>
+      <description value="Defines constraints and extensions on the ImmunizationEvaluation resource for the minimal set of data to query and retrieve a patient's Immunization Evaluation."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-immunizationnotdone"/>
+      </reference>
+      <name value="US Quality Core Immunization Not Done"/>
+      <description value="Negation profile of Immunization for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-immunizationrecommendation"/>
+      </reference>
+      <name value="US Quality Core ImmunizationRecommendation"/>
+      <description value="Profile of ImmunizationRecommendation for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-location"/>
+      </reference>
+      <name value="US Quality Core Location"/>
+      <description value="Profile of Location for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-medication"/>
+      </reference>
+      <name value="US Quality Core Medication"/>
+      <description value="Profile of Medication for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-medicationadministration"/>
+      </reference>
+      <name value="US Quality Core MedicationAdministration"/>
+      <description value="Profile of MedicationAdministration for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-medicationadministrationnotdone"/>
+      </reference>
+      <name value="US Quality Core MedicationAdministration Not Done"/>
+      <description value="Negation profile of MedicationAdministration for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-medicationdispense"/>
+      </reference>
+      <name value="US Quality Core MedicationDispense"/>
+      <description value="Profile of MedicationDispense for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-medicationdispensedeclined"/>
+      </reference>
+      <name value="US Quality Core MedicationDispense Declined"/>
+      <description value="Negation profile of MedicationDispense for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-medicationnotrequested"/>
+      </reference>
+      <name value="US Quality Core Medication Not Requested"/>
+      <description value="Negation profile of MedicationRequest for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-medicationrequest"/>
+      </reference>
+      <name value="US Quality Core MedicationRequest"/>
+      <description value="Profile of MedicationRequest for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-medicationstatement"/>
+      </reference>
+      <name value="US Quality Core MedicationStatement"/>
+      <description value="Profile of MedicationStatement for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-nonpatient-observation"/>
+      </reference>
+      <name value="US Quality Core NonPatient Observation"/>
+      <description value="Profile of NonPatient Observation for decision support/quality metrics evaluating resource use and availability rather than focusing on patients. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-nutritionorder"/>
+      </reference>
+      <name value="US Quality Core NutritionOrder"/>
+      <description value="Defines constraints and extensions on the NutritionOrder resource for the minimal set of data to query and retrieve a patient's Nutrition Order."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-observation-clinical-result"/>
+      </reference>
+      <name value="US Quality Core Observation Clinical Result"/>
+      <description value="The US Quality Core Observation Clinical Result Profile is based upon the US Core Observation Clinical Result Profile. Clinical results includes non-imaging and non-laboratory tests performed on a patient that results in structured or unstructured (narrative) findings specific to the patient, such as electrocardiogram (ECG), visual acuity exam, macular exam, or graded exercise testing (GXT), to facilitate the diagnosis and management of conditions. The US Quality Core Observation Clinical Result Profile profile defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-observation-lab"/>
+      </reference>
+      <name value="US Quality Core Laboratory Result Observation"/>
+      <description value="The US Quality Core Laboratory Result Observation Profile is based upon the US Laboratory Result Observation Resource.  Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-observation-screening-assessment"/>
+      </reference>
+      <name value="US Quality Core Observation Screening Assessment"/>
+      <description value="The US Quality Core Observation Screening Assessment Profile is based upon the US Core Observation Screening Assessment Profile which can be used to represent individual responses, panels of multi-question surveys, and multi-select responses to “check all that apply” questions. The US Quality Core Observation Survey Profile sets minimum expectations for the Observation Resource to record, search, and fetch retrieve observations that represent the questions and responses to form/survey and defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-observationcancelled"/>
+      </reference>
+      <name value="US Quality Core Observation Cancelled"/>
+      <description value="Profile of ObservationCancelled for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-organization"/>
+      </reference>
+      <name value="US Quality Core Organization"/>
+      <description value="Profile of Organization for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-patient"/>
+      </reference>
+      <name value="US Quality Core Patient"/>
+      <description value="Profile of Patient for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-practitioner"/>
+      </reference>
+      <name value="US Quality Core Practitioner"/>
+      <description value="Profile of Practitioner for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-practitionerrole"/>
+      </reference>
+      <name value="US Quality Core PractitionerRole"/>
+      <description value="Profile of PractitionerRole for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-procedure"/>
+      </reference>
+      <name value="US Quality Core Procedure"/>
+      <description value="Profile of Procedure for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-procedurenotdone"/>
+      </reference>
+      <name value="US Quality Core Procedure Not Done"/>
+      <description value="Profile of Procedure for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-questionnaireresponse"/>
+      </reference>
+      <name value="US Quality Core QuestionnaireResponse"/>
+      <description value="The US Quality Core QuestionnaireResponse Profile is based upon the US Core QuestionnaireResponse Profile and sets minimum expectations for the QuestionnaireResponse resource to record, search, and fetch retrieve captures the responses to form/survey and defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-relatedperson"/>
+      </reference>
+      <name value="US Quality Core RelatedPerson"/>
+      <description value="Profile of RelatedPerson for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-servicenotrequested"/>
+      </reference>
+      <name value="US Quality Core Service Not Requested"/>
+      <description value="Negation profile of ServiceRequest for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-servicerequest"/>
+      </reference>
+      <name value="US Quality Core ServiceRequest"/>
+      <description value="Profile of ServiceRequest for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-simple-observation"/>
+      </reference>
+      <name value="US Quality Core Simple Observation"/>
+      <description value="Profile of Simple Observation for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-substance"/>
+      </reference>
+      <name value="US Quality Core Substance"/>
+      <description value="Profile of Substance for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-task"/>
+      </reference>
+      <name value="US Quality Core Task"/>
+      <description value="Profile of Task for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-taskrejected"/>
+      </reference>
+      <name value="US Quality Core Task Rejected"/>
+      <description value="Profile of TaskRejected for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/us-quality-core-client"/>
+      </reference>
+      <name value="US Quality Core Client CapabilityStatement"/>
+      <description value="This capability statement describes the expected capabilities of the US Quality&#xA;Core Client which is responsible for initiating queries for USCDI+&#xA;Quality V1 data from US Quality Core Servers.  The set of FHIR RESTful&#xA;operations and search parameters required to be supported by US Quality Core&#xA;Servers is provided in the [US Quality Core Server Capability&#xA;Statement](CapabilityStatement-us-quality-core-server.html).  US Quality Core&#xA;Clients have the option of choosing from this list to access necessary data&#xA;based on their local use cases and other contextual requirements."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/us-quality-core-server"/>
+      </reference>
+      <name value="US Quality Core Server CapabilityStatement"/>
+      <description value="This capability statement describes the expected capabilities of the US Quality Core Servers&#xA;which is responsible for responding to USCDI+ Quality V1 queries submitted by US Quality Core Clients.&#xA;It describes a minimum set of FHIR RESTful operations and search parameters necessary to enable access&#xA;to the set of USCDI+ Quality V1 data that is in scope of this implementation guide.  For more information&#xA;about which USCDI+ Quality data elements are in scope, please review the [USCDI+ Quality](uscdiquality.html) section&#xA;of this implementation guide.&#xA;&#xA;US Quality Core Servers **SHALL** support the capabilities described in the [US&#xA;Core Server CapabilityStatement&#xA;STU6.1](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html).&#xA;Some RESTFUL operations and search parameters described in the US Quality Core Server CapabilityStatement are redundant&#xA;to the US Core Server CapabilityStatement, but are listed here to highlight which&#xA;capabilities are specifically relevant to USCDI+ Quality V1.&#xA;&#xA;The US Quality Core Implementation Guide v0.5.0 is derived from the QI-Core Implementation Guide STU6. It adopts&#xA;all profiles within the [QI-Core Implementation Guide STU6](https://hl7.org/fhir/us/qicore/STU6/) to enable a more seamless adoption of this&#xA;implementation guide.  However, only those profiles that contain USCDI+ Quality V1 data are required to be supported&#xA;by US Quality Core Servers.  The FHIR RESTful operations and search parameters in this capability statement&#xA;reflects this scope."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-adverseevent-event"/>
+      </reference>
+      <name value="UsQualityCoreAdverseeventEvent"/>
+      <description value="US Quality Core AdverseEvent Event Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-adverseevent-recorded-date"/>
+      </reference>
+      <name value="UsQualityCoreAdverseeventRecordedDate"/>
+      <description value="US Quality Core AdverseEvent recorded-date Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-adverseevent-subject"/>
+      </reference>
+      <name value="UsQualityCoreAdverseeventSubject"/>
+      <description value="US Quality Core AdverseEvent Subject Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-allergyintolerance-patient"/>
+      </reference>
+      <name value="UsQualityCoreAllergyintolerancePatient"/>
+      <description value="US Quality Core AllergyIntolerance Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-bodystructure-patient"/>
+      </reference>
+      <name value="UsQualityCoreBodystructurePatient"/>
+      <description value="US Quality Core BodyStructure Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-careplan-category"/>
+      </reference>
+      <name value="UsQualityCoreCareplanCategory"/>
+      <description value="US Quality Core CarePlan Category Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-careplan-patient"/>
+      </reference>
+      <name value="UsQualityCoreCareplanPatient"/>
+      <description value="US Quality Core CarePlan Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-careteam-patient"/>
+      </reference>
+      <name value="UsQualityCoreCareteamPatient"/>
+      <description value="US Quality Core CareTeam Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-careteam-status"/>
+      </reference>
+      <name value="UsQualityCoreCareteamStatus"/>
+      <description value="US Quality Core CareTeam Status Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-claim-patient"/>
+      </reference>
+      <name value="UsQualityCoreClaimPatient"/>
+      <description value="US Quality Core Claim Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-claimresponse-patient"/>
+      </reference>
+      <name value="UsQualityCoreClaimresponsePatient"/>
+      <description value="US Quality Core ClaimResponse Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-claimresponse-type"/>
+      </reference>
+      <name value="UsQualityCoreClaimresponseType"/>
+      <description value="US Quality Core ClaimResponse Type Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-communication-patient"/>
+      </reference>
+      <name value="UsQualityCoreCommunicationPatient"/>
+      <description value="US Quality Core Communication Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-communication-topic"/>
+      </reference>
+      <name value="UsQualityCoreCommunicationTopic"/>
+      <description value="US Quality Core Communication Topic Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-communicationrequest-category"/>
+      </reference>
+      <name value="UsQualityCoreCommunicationrequestCategory"/>
+      <description value="US Quality Core CommunicationRequest Category Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-communicationrequest-patient"/>
+      </reference>
+      <name value="UsQualityCoreCommunicationrequestPatient"/>
+      <description value="US Quality Core CommunicationRequest Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-condition-abatement-date"/>
+      </reference>
+      <name value="UsQualityCoreConditionAbatementDate"/>
+      <description value="US Quality Core Condition abatement-date Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-condition-category"/>
+      </reference>
+      <name value="UsQualityCoreConditionCategory"/>
+      <description value="US Quality Core Condition Category Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-condition-code"/>
+      </reference>
+      <name value="UsQualityCoreConditionCode"/>
+      <description value="US Quality Core Condition Code Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-condition-onset-date"/>
+      </reference>
+      <name value="UsQualityCoreConditionOnsetDate"/>
+      <description value="US Quality Core Condition onset-date Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-condition-patient"/>
+      </reference>
+      <name value="UsQualityCoreConditionPatient"/>
+      <description value="US Quality Core Condition Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-coverage-patient"/>
+      </reference>
+      <name value="UsQualityCoreCoveragePatient"/>
+      <description value="US Quality Core Coverage Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-device-patient"/>
+      </reference>
+      <name value="UsQualityCoreDevicePatient"/>
+      <description value="US Quality Core Device Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-device-type"/>
+      </reference>
+      <name value="UsQualityCoreDeviceType"/>
+      <description value="US Quality Core Device Type Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-devicerequest-code"/>
+      </reference>
+      <name value="UsQualityCoreDevicerequestCode"/>
+      <description value="US Quality Core DeviceRequest Code Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-devicerequest-do-not-perform"/>
+      </reference>
+      <name value="UsQualityCoreDevicerequestDoNotPerform"/>
+      <description value="US Quality Core DeviceRequest do-not-perform Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-devicerequest-patient"/>
+      </reference>
+      <name value="UsQualityCoreDevicerequestPatient"/>
+      <description value="US Quality Core DeviceRequest Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-deviceusestatement-device-type"/>
+      </reference>
+      <name value="UsQualityCoreDeviceusestatementDeviceType"/>
+      <description value="US Quality Core DeviceUseStatement Device Type Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-deviceusestatement-patient"/>
+      </reference>
+      <name value="UsQualityCoreDeviceusestatementPatient"/>
+      <description value="US Quality Core DeviceUseStatement Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-diagnosticreport-category"/>
+      </reference>
+      <name value="UsQualityCoreDiagnosticreportCategory"/>
+      <description value="US Quality Core DiagnosticReport Category Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-diagnosticreport-code"/>
+      </reference>
+      <name value="UsQualityCoreDiagnosticreportCode"/>
+      <description value="US Quality Core DiagnosticReport Code Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-diagnosticreport-date"/>
+      </reference>
+      <name value="UsQualityCoreDiagnosticreportDate"/>
+      <description value="US Quality Core DiagnosticReport date Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-diagnosticreport-patient"/>
+      </reference>
+      <name value="UsQualityCoreDiagnosticreportPatient"/>
+      <description value="US Quality Core DiagnosticReport Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-encounter-date"/>
+      </reference>
+      <name value="UsQualityCoreEncounterDate"/>
+      <description value="US Quality Core Encounter date Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-encounter-id"/>
+      </reference>
+      <name value="UsQualityCoreEncounter"/>
+      <description value="US Quality Core Encounter Id Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-encounter-patient"/>
+      </reference>
+      <name value="UsQualityCoreEncounterPatient"/>
+      <description value="US Quality Core Encounter Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-encounter-type"/>
+      </reference>
+      <name value="UsQualityCoreEncounterType"/>
+      <description value="US Quality Core Encounter Type Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-familymemberhistory-patient"/>
+      </reference>
+      <name value="UsQualityCoreFamilymemberhistoryPatient"/>
+      <description value="US Quality Core FamilyMemberHistory Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-flag-code"/>
+      </reference>
+      <name value="UsQualityCoreFlagCode"/>
+      <description value="US Quality Core Flag Code Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-flag-patient"/>
+      </reference>
+      <name value="UsQualityCoreFlagPatient"/>
+      <description value="US Quality Core Flag Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-goal-patient"/>
+      </reference>
+      <name value="UsQualityCoreGoalPatient"/>
+      <description value="US Quality Core Goal Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-immunization-date"/>
+      </reference>
+      <name value="UsQualityCoreImmunizationDate"/>
+      <description value="US Quality Core Immunization date Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-immunization-patient"/>
+      </reference>
+      <name value="UsQualityCoreImmunizationPatient"/>
+      <description value="US Quality Core Immunization Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-immunization-status"/>
+      </reference>
+      <name value="UsQualityCoreImmunizationStatus"/>
+      <description value="US Quality Core Immunization Status Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-immunizationevaluation-patient"/>
+      </reference>
+      <name value="UsQualityCoreImmunizationevaluationPatient"/>
+      <description value="US Quality Core ImmunizationEvaluation Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-immunizationevaluation-target-disease"/>
+      </reference>
+      <name value="UsQualityCoreImmunizationevaluationTargetDisease"/>
+      <description value="US Quality Core ImmunizationEvaluation Target Disease Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-location-id"/>
+      </reference>
+      <name value="UsQualityCoreLocation"/>
+      <description value="US Quality Core Location Id Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-medication-code"/>
+      </reference>
+      <name value="UsQualityCoreMedicationCode"/>
+      <description value="US Quality Core Medication Code Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-medicationadministration-code"/>
+      </reference>
+      <name value="UsQualityCoreMedicationadministrationCode"/>
+      <description value="US Quality Core MedicationAdministration Code Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-medicationadministration-effective-time"/>
+      </reference>
+      <name value="UsQualityCoreMedicationadministrationEffectiveTime"/>
+      <description value="US Quality Core MedicationAdministration effective-time Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-medicationadministration-patient"/>
+      </reference>
+      <name value="UsQualityCoreMedicationadministrationPatient"/>
+      <description value="US Quality Core MedicationAdministration Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-medicationadministration-status"/>
+      </reference>
+      <name value="UsQualityCoreMedicationadministrationStatus"/>
+      <description value="US Quality Core MedicationAdministration Status Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-medicationdispense-patient"/>
+      </reference>
+      <name value="UsQualityCoreMedicationdispensePatient"/>
+      <description value="US Quality Core MedicationDispense Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-medicationdispense-status"/>
+      </reference>
+      <name value="UsQualityCoreMedicationdispenseStatus"/>
+      <description value="US Quality Core MedicationDispense Status Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-medicationrequest-do-not-perform"/>
+      </reference>
+      <name value="UsQualityCoreMedicationrequestDoNotPerform"/>
+      <description value="US Quality Core MedicationRequest do-not-perform Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-medicationrequest-intent"/>
+      </reference>
+      <name value="UsQualityCoreMedicationrequestIntent"/>
+      <description value="US Quality Core MedicationRequest intent Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-medicationrequest-patient"/>
+      </reference>
+      <name value="UsQualityCoreMedicationrequestPatient"/>
+      <description value="US Quality Core MedicationRequest Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-medicationstatement-code"/>
+      </reference>
+      <name value="UsQualityCoreMedicationstatementCode"/>
+      <description value="US Quality Core MedicationStatement Code Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-medicationstatement-patient"/>
+      </reference>
+      <name value="UsQualityCoreMedicationstatementPatient"/>
+      <description value="US Quality Core MedicationStatement Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-observation-category"/>
+      </reference>
+      <name value="UsQualityCoreObservationCategory"/>
+      <description value="US Quality Core Observation Category Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-observation-code"/>
+      </reference>
+      <name value="UsQualityCoreObservationCode"/>
+      <description value="US Quality Core Observation Code Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-observation-date"/>
+      </reference>
+      <name value="UsQualityCoreObservationDate"/>
+      <description value="US Quality Core Observation date Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-observation-patient"/>
+      </reference>
+      <name value="UsQualityCoreObservationPatient"/>
+      <description value="US Quality Core Observation Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-observation-status"/>
+      </reference>
+      <name value="UsQualityCoreObservationStatus"/>
+      <description value="US Quality Core Observation Status Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-patient-id"/>
+      </reference>
+      <name value="UsQualityCorePatient"/>
+      <description value="US Quality Core Patient Id Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-practitioner-id"/>
+      </reference>
+      <name value="UsQualityCorePractitioner"/>
+      <description value="US Quality Core Practitioner Id Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-practitionerrole-id"/>
+      </reference>
+      <name value="UsQualityCorePractitionerrole"/>
+      <description value="US Quality Core PractitionerRole Id Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-procedure-date"/>
+      </reference>
+      <name value="UsQualityCoreProcedureDate"/>
+      <description value="US Quality Core Procedure date Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-procedure-patient"/>
+      </reference>
+      <name value="UsQualityCoreProcedurePatient"/>
+      <description value="US Quality Core Procedure Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-procedure-status"/>
+      </reference>
+      <name value="UsQualityCoreProcedureStatus"/>
+      <description value="US Quality Core Procedure Status Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-questionnaireresponse-id"/>
+      </reference>
+      <name value="UsQualityCoreQuestionnaireresponse"/>
+      <description value="US Quality Core QuestionnaireResponse Id Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-questionnaireresponse-patient"/>
+      </reference>
+      <name value="UsQualityCoreQuestionnaireresponsePatient"/>
+      <description value="US Quality Core QuestionnaireResponse Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-questionnaireresponse-questionnaire"/>
+      </reference>
+      <name value="UsQualityCoreQuestionnaireresponseQuestionnaire"/>
+      <description value="US Quality Core QuestionnaireResponse Questionnaire Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-relatedperson-id"/>
+      </reference>
+      <name value="UsQualityCoreRelatedperson"/>
+      <description value="US Quality Core RelatedPerson Id Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-relatedperson-patient"/>
+      </reference>
+      <name value="UsQualityCoreRelatedpersonPatient"/>
+      <description value="US Quality Core RelatedPerson Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-servicerequest-authored"/>
+      </reference>
+      <name value="UsQualityCoreServicerequestAuthored"/>
+      <description value="US Quality Core ServiceRequest authored Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-servicerequest-category"/>
+      </reference>
+      <name value="UsQualityCoreServicerequestCategory"/>
+      <description value="US Quality Core ServiceRequest Category Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-servicerequest-code"/>
+      </reference>
+      <name value="UsQualityCoreServicerequestCode"/>
+      <description value="US Quality Core ServiceRequest Code Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-servicerequest-do-not-perform"/>
+      </reference>
+      <name value="UsQualityCoreServicerequestDoNotPerform"/>
+      <description value="US Quality Core ServiceRequest do-not-perform Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-servicerequest-id"/>
+      </reference>
+      <name value="UsQualityCoreServicerequest"/>
+      <description value="US Quality Core ServiceRequest Id Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-servicerequest-patient"/>
+      </reference>
+      <name value="UsQualityCoreServicerequestPatient"/>
+      <description value="US Quality Core ServiceRequest Patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-substance-code"/>
+      </reference>
+      <name value="UsQualityCoreSubstanceCode"/>
+      <description value="US Quality Core Substance Code Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-task-code"/>
+      </reference>
+      <name value="UsQualityCoreTaskCode"/>
+      <description value="US Quality Core Task Code Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-task-patient"/>
+      </reference>
+      <name value="UsQualityCoreTaskPatient"/>
+      <description value="US Quality Core Task patient Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/us-quality-core-task-status"/>
+      </reference>
+      <name value="UsQualityCoreTaskStatus"/>
+      <description value="US Quality Core Task Status Search Parameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-doNotPerformReason"/>
+      </reference>
+      <name value="US Quality Core Do Not Perform Reason"/>
+      <description value="Indicates the reason the event was not performed."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-encounter-diagnosisPresentOnAdmission"/>
+      </reference>
+      <name value="US Quality Core Diagnosis Present on Admission"/>
+      <description value="Indicator of whether the Encounter diagnosis was present at the time of admission."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-isElective"/>
+      </reference>
+      <name value="US Quality Core IsElective"/>
+      <description value="Indicates whether this is an elective procedure."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-notDoneReason"/>
+      </reference>
+      <name value="US Quality Core Not Done Reason"/>
+      <description value="Indicates the reason the event was not done."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-recorded"/>
+      </reference>
+      <name value="US Quality Core Not Done Recorded"/>
+      <description value="Captures the recorded date of the event."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/uscdiplusquality"/>
+      </reference>
+      <name value="US Quality Core USCDI+ Quality Extension"/>
+      <description value="This extension is only used in the US Quality Core Implementation Guide's Profile StructureDefinition elements."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Library"/>
+      </extension>
+      <reference>
+        <reference value="Library/USQualityCore-ModelInfo"/>
+      </reference>
+      <name value="US Quality Core Model Definition"/>
+      <description value="Model definition for the US Quality Core IG Model"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Library"/>
+      </extension>
+      <reference>
+        <reference value="Library/USQualityCoreCommon"/>
+      </reference>
+      <name value="US Quality Core Common"/>
+      <description value="Common terminologies and functions used in US Quality Core-based CQL artifacts"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Library"/>
+      </extension>
+      <reference>
+        <reference value="Library/USQualityCoreCommonTests"/>
+      </reference>
+      <name value="US Quality Core CommonTests"/>
+      <description value="Tests for the US Quality Core Common library"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-notDoneValueSet"/>
+      </reference>
+      <name value="USQualityCore Not Done ValueSet"/>
+      <description value="A logical reference (e.g. a reference to ValueSet.url) to a value set/version that identifies a set of possible coded values representing activities that were not requested, ordered, or performed."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/us-quality-core-servicerequest-appropriatenessScore"/>
+      </reference>
+      <name value="USQualityCore Appropriateness Score"/>
+      <description value="The appropriateness score for the requested action."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/us-quality-core-non-negative-event-status"/>
+      </reference>
+      <name value="Non-Negative Event Status"/>
+      <description value="This value set defines the set of codes that indicate a non-negated event status (i.e. codes that are not `not-done`)"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/us-quality-core-non-negative-immunization-status"/>
+      </reference>
+      <name value="Non-Negative Immunization Status"/>
+      <description value="This value set defines the set of codes that indicate a non-negated event status for immunization resources (i.e. codes that are not `not-done`)"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/us-quality-core-non-negative-medication-admin-status"/>
+      </reference>
+      <name value="Non-Negative MedicationAdministration Status"/>
+      <description value="This value set defines the set of codes that indicate a non-negated medication administration status (i.e. codes that are not `not-done`)"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/us-quality-core-non-negative-medicationdispense-status"/>
+      </reference>
+      <name value="Non-Negative MedicationDispense Status"/>
+      <description value="This value set defines the set of codes that indicate a non-negated medication dispense status (i.e. codes that are not `declined`)"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/us-quality-core-non-negative-observation-status"/>
+      </reference>
+      <name value="Non-Negative Observation Status"/>
+      <description value="This value set defines the set of codes that indicate a non-negated observation status (i.e. codes that are not `cancelled`)"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/us-quality-core-non-negative-task-status"/>
+      </reference>
+      <name value="Non-Negative Task Status"/>
+      <description value="This value set defines the set of codes that indicate a non-negated task status (i.e. codes that are not `rejected`)"/>
+    </resource>
+    <page>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+        <valueUrl value="index.html"/>
+      </extension>
+      <nameUrl value="index.html"/>
+      <title value="2026 US Quality Core Implementation Guide"/>
+      <generation value="markdown"/>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="conformance.html"/>
+        </extension>
+        <nameUrl value="conformance.html"/>
+        <title value="Conformance"/>
+        <generation value="markdown"/>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="general-requirements.html"/>
+          </extension>
+          <nameUrl value="general-requirements.html"/>
+          <title value="General Requirements"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="must-support.html"/>
+          </extension>
+          <nameUrl value="must-support.html"/>
+          <title value="Must Support"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="security.html"/>
+          </extension>
+          <nameUrl value="security.html"/>
+          <title value="Privacy, Security, and Consent"/>
+          <generation value="markdown"/>
+        </page>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="guidance.html"/>
+        </extension>
+        <nameUrl value="guidance.html"/>
+        <title value="Guidance"/>
+        <generation value="markdown"/>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="uscdiquality.html"/>
+          </extension>
+          <nameUrl value="uscdiquality.html"/>
+          <title value="USCDI+ Quality"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="negation.html"/>
+          </extension>
+          <nameUrl value="negation.html"/>
+          <title value="US Quality Core Negation"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="provenance.html"/>
+          </extension>
+          <nameUrl value="provenance.html"/>
+          <title value="Provenance"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="relationship-with-uscore-qicore.html"/>
+          </extension>
+          <nameUrl value="relationship-with-uscore-qicore.html"/>
+          <title value="Relationship with US Core and QI-Core"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="qdm-to-us-quality-core.html"/>
+          </extension>
+          <nameUrl value="qdm-to-us-quality-core.html"/>
+          <title value="Quality Data Model (QDM) v5.6 to US Quality Core v0.5.0 mapping"/>
+          <generation value="markdown"/>
+        </page>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="capability-statements.html"/>
+        </extension>
+        <nameUrl value="capability-statements.html"/>
+        <title value="US Quality Core Capability Statements"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="profiles.html"/>
+        </extension>
+        <nameUrl value="profiles.html"/>
+        <title value="US Quality Core Profiles"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="extensions.html"/>
+        </extension>
+        <nameUrl value="extensions.html"/>
+        <title value="US Quality Core Extensions"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="terminology.html"/>
+        </extension>
+        <nameUrl value="terminology.html"/>
+        <title value="US Quality Core Terminology"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="examples.html"/>
+        </extension>
+        <nameUrl value="examples.html"/>
+        <title value="US Quality Core Examples"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="cql-artifacts.html"/>
+        </extension>
+        <nameUrl value="cql-artifacts.html"/>
+        <title value="CQL Artifacts and Patterns (Informational)"/>
+        <generation value="markdown"/>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="modelinfo.html"/>
+          </extension>
+          <nameUrl value="modelinfo.html"/>
+          <title value="US Quality Core ModelInfo (Informational)"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="patterns.html"/>
+          </extension>
+          <nameUrl value="patterns.html"/>
+          <title value="US Quality Core Patterns (Informational)"/>
+          <generation value="markdown"/>
+        </page>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="downloads.html"/>
+        </extension>
+        <nameUrl value="downloads.html"/>
+        <title value="US Quality Core Downloads"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="changes.html"/>
+        </extension>
+        <nameUrl value="changes.html"/>
+        <title value="Change Log"/>
+        <generation value="markdown"/>
+      </page>
+    </page>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/capabilities"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/examples"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/extensions"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/models"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/operations"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/profiles"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/vocabulary"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/testing"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/history"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="fsh-generated/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="template/config"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/assets"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/images"/>
+    </parameter>
+    <parameter>
+      <code value="path-tx-cache"/>
+      <value value="input-cache/txcache"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>

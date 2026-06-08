@@ -1,0 +1,67 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/onc/us-quality-core/ServiceRequest/appropriateness-example> a fhir:ServiceRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "appropriateness-example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest appropriateness-example</b></p><a name=\"appropriateness-example\"> </a><a name=\"hcappropriateness-example\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-servicerequest.html\">US Quality Core ServiceRequest</a></p></div><p><b>USQualityCore Appropriateness Score</b>: appropriate</p><p><b>status</b>: Completed</p><p><b>intent</b>: Order</p><p><b>code</b>: <span title=\"Codes:{http://www.ama-assn.org/go/cpt 70450}\">Computed tomography, head or brain; without contrast material</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>authoredOn</b>: 2015-03-30</p><p><b>requester</b>: Dr. Beverly Crusher</p><p><b>reasonCode</b>: <span title=\"Codes:{http://snomed.info/sct 330007}\">Occipital headache</span></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest-appropriatenessScore"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest-appropriatenessScore>
+     ] ;
+     fhir:value [
+       a fhir:Code ;
+       fhir:v "appropriate"
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://www.ama-assn.org/go/cpt"^^xsd:anyURI ;
+         fhir:l <http://www.ama-assn.org/go/cpt>
+       ] ;
+       fhir:code [ fhir:v "70450" ] ;
+       fhir:display [ fhir:v "Computed tomography, head or brain; without contrast material" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:authoredOn [ fhir:v "2015-03-30"^^xsd:date] ; # 
+  fhir:requester [
+     fhir:display [ fhir:v "Dr. Beverly Crusher" ]
+  ] ; # 
+  fhir:reasonCode ( [
+     fhir:coding ( [
+       a sct:330007 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "330007" ] ;
+       fhir:display [ fhir:v "Occipital headache" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FamilyMemberHistory xmlns="http://hl7.org/fhir">
+  <id value="example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-familymemberhistory"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: FamilyMemberHistory example</b></p><a name="example"> </a><a name="hcexample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-us-quality-core-familymemberhistory.html">US Quality Core FamilyMemberHistory</a></p></div><p><b>status</b>: Completed</p><p><b>patient</b>: <a href="Patient-example.html">Peter Patient</a></p><p><b>date</b>: 2011-03-18 17:49:10+0000</p><p><b>relationship</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/v3-RoleCode FTH}">FATHER</span></p><h3>Conditions</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Extension</b></td><td><b>Code</b></td><td><b>Outcome</b></td><td><b>Onset[x]</b></td><td><b>Note</b></td></tr><tr><td style="display: none">*</td><td/><td><span title="Codes:{http://snomed.info/sct 315619001}">Family history of myocardial infarction in male relative of first degree, age known (situation)</span></td><td><span title="Codes:{http://snomed.info/sct 520004}">Congenital bent nose</span></td><td>74 yr<span style="background: LightGoldenRodYellow"> (Details: UCUM  codea = 'a')</span></td><td><blockquote><div><p>Was fishing at the time. At least he went doing something he loved.</p>
+</div></blockquote></td></tr></table></div>
+  </text>
+  <status value="completed"/>
+  <patient>
+    <reference value="Patient/example"/>
+    <display value="Peter Patient"/>
+  </patient>
+  <date value="2011-03-18T17:49:10+00:00"/>
+  <relationship>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-RoleCode"/>
+      <code value="FTH"/>
+      <display value="FATHER"/>
+    </coding>
+  </relationship>
+  <condition>
+    <extension url="http://hl7.org/fhir/StructureDefinition/familymemberhistory-severity">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="399166001"/>
+          <display value="Fatal"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <code>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="315619001"/>
+        <display value="Family history of myocardial infarction in male relative of first degree, age known (situation)"/>
+      </coding>
+      <text value="Family history of myocardial infarction in male relative of first degree, age known (situation)"/>
+    </code>
+    <outcome>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="520004"/>
+        <display value="Congenital bent nose"/>
+      </coding>
+    </outcome>
+    <onsetAge>
+      <value value="74"/>
+      <unit value="yr"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="a"/>
+    </onsetAge>
+    <note>
+      <text value="Was fishing at the time. At least he went doing something he loved."/>
+    </note>
+  </condition>
+</FamilyMemberHistory>

@@ -1,0 +1,86 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/onc/us-quality-core/Observation/negation-with-code-example> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "negation-with-code-example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observationcancelled"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observationcancelled>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation negation-with-code-example</b></p><a name=\"negation-with-code-example\"> </a><a name=\"hcnegation-with-code-example\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-observationcancelled.html\">US Quality Core Observation Cancelled</a></p></div><p><b>US Quality Core Not Done Reason</b>: <span title=\"Codes:{http://snomed.info/sct 410536001}\">Contraindicated (qualifier value)</span></p><p><b>status</b>: Cancelled</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 30313-1}\">Hemoglobin [Mass/volume] in Arterial blood</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>encounter</b>: <a href=\"Encounter-example.html\">Encounter: identifier = http://example.org/encounters#ENC-20130404-appendicitis; status = finished; class = inpatient encounter (v3 Code System ActCode#IMP); type = Initial hospital inpatient or observation care, per day, for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making. When using total time on the date of the encounter for code selection, 75 minutes must be met or exceeded.; period = 2013-04-04 18:00:00-0400 --&gt; 2013-04-06 11:00:00-0400</a></p><p><b>effective</b>: 2013-04-02 10:30:10+0100 --&gt; 2013-04-05 10:30:10+0100</p><p><b>issued</b>: 2013-04-03 15:30:10+0100</p><p><b>performer</b>: <a href=\"Organization-example1.html\">Hendricks Country Hospital</a></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-notDoneReason"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-notDoneReason>
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         a sct:410536001 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "410536001" ] ;
+         fhir:display [ fhir:v "Contraindicated (qualifier value)" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "cancelled"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/observation-category>
+       ] ;
+       fhir:code [ fhir:v "laboratory" ] ;
+       fhir:display [ fhir:v "Laboratory" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:30313-1 ;
+       fhir:system [
+         fhir:v "http://loinc.org"^^xsd:anyURI ;
+         fhir:l <http://loinc.org>
+       ] ;
+       fhir:code [ fhir:v "30313-1" ] ;
+       fhir:display [ fhir:v "Hemoglobin [Mass/volume] in Arterial blood" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:encounter [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Encounter/example> ;
+     fhir:reference [ fhir:v "Encounter/example" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:Period ;
+     fhir:start [ fhir:v "2013-04-02T10:30:10+01:00"^^xsd:dateTime ] ;
+     fhir:end [ fhir:v "2013-04-05T10:30:10+01:00"^^xsd:dateTime ]
+  ] ; # 
+  fhir:issued [ fhir:v "2013-04-03T15:30:10+01:00"^^xsd:dateTime] ; # 
+  fhir:performer ( [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Organization/example1> ;
+     fhir:reference [ fhir:v "Organization/example1" ] ;
+     fhir:display [ fhir:v "Hendricks Country Hospital" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

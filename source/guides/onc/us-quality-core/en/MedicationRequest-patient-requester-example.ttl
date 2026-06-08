@@ -1,0 +1,105 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/onc/us-quality-core/MedicationRequest/patient-requester-example> a fhir:MedicationRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "patient-requester-example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationrequest"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationrequest>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: MedicationRequest patient-requester-example</b></p><a name=\"patient-requester-example\"> </a><a name=\"hcpatient-requester-example\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-medicationrequest.html\">US Quality Core MedicationRequest</a></p></div><p><b>status</b>: Active</p><p><b>intent</b>: Plan</p><p><b>medication</b>: <a href=\"Medication-example.html\">Medication alemtuzumab 10 MG/ML [Lemtrada]</a></p><p><b>subject</b>: <a href=\"Patient-example.html\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>authoredOn</b>: 2015-03-25 19:32:52-0500</p><p><b>requester</b>: <a href=\"Patient-example.html\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><blockquote><p><b>dosageInstruction</b></p><p><b>timing</b>: 4 per 2 days</p><p><b>site</b>: <span title=\"Codes:{http://snomed.info/sct 447964005}\">Digestive tract route (qualifier value)</span></p><p><b>route</b>: <span title=\"Codes:{http://snomed.info/sct 394899003}\">oral administration of treatment</span></p><h3>DoseAndRates</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td><td><b>Dose[x]</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/dose-rate-type ordered}\">Ordered</span></td><td>20 ml<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeml = 'ml')</span></td></tr></table></blockquote><h3>DispenseRequests</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Quantity</b></td></tr><tr><td style=\"display: none\">*</td><td>200 ml<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeml = 'ml')</span></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:intent [ fhir:v "plan"] ; # 
+  fhir:medication [
+     a fhir:Reference ;
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Medication/example> ;
+     fhir:reference [ fhir:v "Medication/example" ]
+  ] ; # 
+  fhir:subject [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:authoredOn [ fhir:v "2015-03-25T19:32:52-05:00"^^xsd:dateTime] ; # 
+  fhir:requester [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:dosageInstruction ( [
+     fhir:timing [
+       fhir:repeat [
+         fhir:frequency [ fhir:v "4"^^xsd:positiveInteger ] ;
+         fhir:period [ fhir:v "2"^^xsd:decimal ] ;
+         fhir:periodUnit [ fhir:v "d" ]
+       ]
+     ] ;
+     fhir:site [
+       fhir:coding ( [
+         a sct:447964005 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "447964005" ]
+       ] )
+     ] ;
+     fhir:route [
+       fhir:coding ( [
+         a sct:394899003 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "394899003" ] ;
+         fhir:display [ fhir:v "oral administration of treatment" ]
+       ] )
+     ] ;
+     fhir:doseAndRate ( [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/dose-rate-type"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/dose-rate-type>
+           ] ;
+           fhir:code [ fhir:v "ordered" ] ;
+           fhir:display [ fhir:v "Ordered" ]
+         ] )
+       ] ;
+       fhir:dose [
+         a fhir:Quantity ;
+         fhir:value [ fhir:v "20"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "ml" ] ;
+         fhir:system [
+           fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+           fhir:l <http://unitsofmeasure.org>
+         ] ;
+         fhir:code [ fhir:v "ml" ]
+       ]
+     ] )
+  ] ) ; # 
+  fhir:dispenseRequest [
+     fhir:quantity [
+       fhir:value [ fhir:v "200"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "ml" ] ;
+       fhir:system [
+         fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+         fhir:l <http://unitsofmeasure.org>
+       ] ;
+       fhir:code [ fhir:v "ml" ]
+     ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

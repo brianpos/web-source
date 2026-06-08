@@ -1,0 +1,104 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/onc/us-quality-core/Encounter/example> a fhir:Encounter ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Encounter example</b></p><a name=\"example\"> </a><a name=\"hcexample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-encounter.html\">US Quality Core Encounter</a></p></div><p><b>identifier</b>: <code>http://example.org/encounters</code>/ENC-20130404-appendicitis</p><p><b>status</b>: Finished</p><p><b>class</b>: <a href=\"http://hl7.org/fhir/R4/v3/ActCode/cs.html#v3-ActCode-IMP\">v3 Code System ActCode: IMP</a> (inpatient encounter)</p><p><b>type</b>: <span title=\"Codes:{http://www.ama-assn.org/go/cpt 99223}\">Initial hospital inpatient or observation care, per day, for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making. When using total time on the date of the encounter for code selection, 75 minutes must be met or exceeded.</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>period</b>: 2013-04-04 18:00:00-0400 --&gt; 2013-04-06 11:00:00-0400</p><h3>Diagnoses</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Extension</b></td><td><b>Condition</b></td></tr><tr><td style=\"display: none\">*</td><td/><td><a href=\"Condition-appendicitis-example.html\">Condition Appendicitis (disorder)</a></td></tr></table><h3>Hospitalizations</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>DischargeDisposition</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/discharge-disposition home}\">Home</span></td></tr></table><h3>Locations</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Location</b></td><td><b>Status</b></td><td><b>Period</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Location-example.html\">South Wing, second floor</a></td><td>Completed</td><td>2013-04-04 18:00:00-0400 --&gt; 2013-04-06 11:00:00-0400</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "http://example.org/encounters"^^xsd:anyURI ;
+       fhir:l <http://example.org/encounters>
+     ] ;
+     fhir:value [ fhir:v "ENC-20130404-appendicitis" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "finished"] ; # 
+  fhir:class [
+     fhir:system [
+       fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ;
+       fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActCode>
+     ] ;
+     fhir:code [ fhir:v "IMP" ] ;
+     fhir:display [ fhir:v "inpatient encounter" ]
+  ] ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://www.ama-assn.org/go/cpt"^^xsd:anyURI ;
+         fhir:l <http://www.ama-assn.org/go/cpt>
+       ] ;
+       fhir:code [ fhir:v "99223" ] ;
+       fhir:display [ fhir:v "Initial hospital inpatient or observation care, per day, for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making. When using total time on the date of the encounter for code selection, 75 minutes must be met or exceeded." ]
+     ] )
+  ] ) ; # 
+  fhir:subject [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:period [
+     fhir:start [ fhir:v "2013-04-04T18:00:00-04:00"^^xsd:dateTime ] ;
+     fhir:end [ fhir:v "2013-04-06T11:00:00-04:00"^^xsd:dateTime ]
+  ] ; # 
+  fhir:diagnosis ( [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter-diagnosisPresentOnAdmission"^^xsd:anyURI ;
+         fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter-diagnosisPresentOnAdmission>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/HospitalAcqCond/Coding"^^xsd:anyURI ;
+             fhir:l <https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/HospitalAcqCond/Coding>
+           ] ;
+           fhir:code [ fhir:v "Y" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:condition [
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/Condition/appendicitis-example> ;
+       fhir:reference [ fhir:v "Condition/appendicitis-example" ]
+     ]
+  ] ) ; # 
+  fhir:hospitalization [
+     fhir:dischargeDisposition [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/discharge-disposition"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/discharge-disposition>
+         ] ;
+         fhir:code [ fhir:v "home" ] ;
+         fhir:display [ fhir:v "Home" ]
+       ] )
+     ]
+  ] ; # 
+  fhir:location ( [
+     fhir:location [
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/Location/example> ;
+       fhir:reference [ fhir:v "Location/example" ] ;
+       fhir:display [ fhir:v "South Wing, second floor" ]
+     ] ;
+     fhir:status [ fhir:v "completed" ] ;
+     fhir:period [
+       fhir:start [ fhir:v "2013-04-04T18:00:00-04:00"^^xsd:dateTime ] ;
+       fhir:end [ fhir:v "2013-04-06T11:00:00-04:00"^^xsd:dateTime ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

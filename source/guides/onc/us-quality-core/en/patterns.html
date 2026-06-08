@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>US Quality Core Patterns (Informational) - 2026 US Quality Core Implementation Guide v0.5.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <style type="text/css">
+blockquote.note {
+  margin: 5px;
+  padding: 10px;
+  border-left-style: solid;
+  background-color: var(--stu-note-background-color);
+  border-left-color: var(--stu-note-border-left-color);
+}
+
+blockquote.note::before {
+  white-space: pre;
+  content: "Note\A ";
+  background-color: yellow;
+  color: red;
+  font-weight: bold;
+}
+</style>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script type="text/javascript" src="assets/js/prism.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-fhirpath.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"9.2"}
+    h3,h4,h5,h6{--heading-prefix:"9.2"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <div id="hl7-nav">
+  <a id="hl7-logo" no-external="true" href="https://healthit.gov">
+    <img height="50" alt="Visit the ONC website" src="onc-logo.png"/>
+  </a>
+</div>
+<div id="family-nav">
+  <a id="family-logo" no-external="true" href="https://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+<div id="hl7-search">
+  <a id="hl7-search-lnk" no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+</div>
+<!-- TODO: Push this into the base template -->
+<script type="text/javascript" src="assets/cql.js"> </script>
+
+
+        <div id="ig-status" data-fhir="generated">
+          <p><span style="font-size:12pt;font-weight:bold">2026 US Quality Core Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.5.0 - release
+
+
+
+  <img alt="United States of America flag" src="../assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment" data-fhir="generated">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">Home</a></li>
+  
+  <li class="dropdown">
+    <a data-toggle="dropdown" class="dropdown-toggle">Conformance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="general-requirements.html" class="item">General Requirements</a></li>
+      <li><a href="must-support.html" class="item">Must Support</a></li>
+      <li><a href="security.html" class="item">Security</a></li>
+    </ul>
+  </li>
+
+  <li class="dropdown">
+    <a data-toggle="dropdown" class="dropdown-toggle">Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="uscdiquality.html" class="item">USCDI+ Quality</a></li>    
+      <li><a href="negation.html" class="item">US Quality Core Negation</a></li>
+      <li><a href="provenance.html" class="item">Provenance</a></li>
+      <li><a href="relationship-with-uscore-qicore.html" class="item">Relationship with US Core and QI-Core</a></li> 
+      <li><a href="qdm-to-us-quality-core.html" class="item">QDM to US Quality Core</a></li>
+    </ul>
+  </li>
+
+  <li class="dropdown">
+    <a data-toggle="dropdown" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="capability-statements.html" class="item">Capability Statements</a></li>
+      <li><a href="profiles.html" class="item">Profiles</a></li>
+      <li><a href="extensions.html" class="item">Extensions</a></li>
+      <li><a href="terminology.html" class="item">Terminology</a></li>
+      <li><a href="examples.html" class="item">Examples</a></li>
+    </ul>
+  </li>
+
+  <li class="dropdown">
+    <a data-toggle="dropdown" class="dropdown-toggle">CQL Artifacts and Patterns (Informational)
+       <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="modelinfo.html" class="item">US Quality Core ModelInfo (Informational)</a></li>
+      <li><a href="patterns.html" class="item">US Quality Core Patterns (Informational)</a></li>
+    </ul>
+  </li>
+
+  <li><a href="downloads.html" class="item">Downloads</a></li>
+  <li><a href="changes.html" class="item">Change Log</a></li>
+
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment" data-fhir="generated">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='cql-artifacts.html'><b>CQL Artifacts and Patterns (Informational)</b></a></li><li><b>US Quality Core Patterns (Informational)</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the US Quality Core (v0.5.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="http://fhir.org/guides/onc/us-quality-core/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>US Quality Core Patterns (Informational)</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#primitives" id="markdown-toc-primitives">Primitives</a></li>
+  <li><a href="#extensions" id="markdown-toc-extensions">Extensions</a></li>
+  <li><a href="#choice-types" id="markdown-toc-choice-types">Choice Types</a></li>
+</ul>
+
+</div>
+
+<blockquote class="note" id="USQualityCore-Patterns">
+  <p>The Clinical Quality Language (CQL) artifacts, ModelInfo, libraries, and patterns referenced on this page are informational content included in this version of US Quality Core to support measure authoring, execution, and reporting tooling. They are not part of the conformance requirements of this guide and may evolve or be removed in future versions.</p>
+</blockquote>
+
+<p>The US Quality Core patterns described here are adapted from the QI-Core patterns developed through the use of QI-Core profiles in creating CQL-based quality measures and decision support, and are aligned for use with US Quality Core profiles. 
+CMS program measures can be accessed at the <a href="https://ecqi.healthit.gov/">Electronic Clinical Quality Improvement (eCQI) Resource Center</a> on HealthIT.gov.</p>
+
+<p>For more information about model information for usage in CQL, refer to the <a href="modelinfo.html">ModelInfo</a> page of this guide.</p>
+
+<h3 id="primitives">Primitives</h3>
+
+<p>The USQualityCore ModelInfo represents FHIR primitive elements using the system types directly, so when using USQualityCore, no <code class="language-plaintext highlighter-rouge">.value</code> accessor is required.</p>
+
+<p>To facilitate implementation in FHIR, references to primitive elements are translated to the FHIR representation using the same <code class="language-plaintext highlighter-rouge">FHIRHelpers</code> library used for pure-FHIR artifacts, so this library is still required as a runtime, rather than a compile-time dependency for profile-informed authoring models.</p>
+
+<p>In profile-informed authoring, the primitive type is mapped to the CQL type and represented with the CQL type in the model. So, a <code class="language-plaintext highlighter-rouge">FHIR.string</code> element is modeled as a <code class="language-plaintext highlighter-rouge">System.String</code>, and the translator maps that to the <code class="language-plaintext highlighter-rouge">FHIR.string</code> value using the <code class="language-plaintext highlighter-rouge">FHIRHelpers</code> library.</p>
+
+<pre><code class="language-cql">include FHIRHelpers version '4.0.1'
+</code></pre>
+
+<p>Note that the FHIRHelpers version must be consistent with the FHIR version being used.</p>
+
+<h3 id="extensions">Extensions</h3>
+
+<p>Extensions in FHIR provide a standard mechanism to describe additional content that is not part of the base
+FHIR resources. By defining extensions in a uniform way as part of the base specification, FHIR enables extension-based functionality to be introduced through the use of profiles and implementation guidance. US Quality Core includes several extensions related to quality improvement applications.</p>
+
+<p>With profile-informed authoring in USQualityCore, extensions and slices defined in profiles are represented directly as elements in the types. For example:</p>
+
+<pre><code class="language-cql">define TestSlices:
+  [USCoreBloodPressure] BP
+    where BP.systolic.value &lt; 140 'mm[Hg]'
+      and BP.diastolic.value &lt; 90 'mm[Hg]'
+
+define TestSimpleExtensions:
+  Patient P
+    where P.birthsex = 'M'
+
+define TestComplexExtensions:
+  Patient P
+    where P.race.ombCategory contains "American Indian or Alaska Native"
+      and P.race.detailed contains "Alaska Native"
+</code></pre>
+
+<h3 id="choice-types">Choice Types</h3>
+
+<p>FHIR includes the notion of Choice Types, or elements that can be of any of a number of types. For example,
+the <code class="language-plaintext highlighter-rouge">Patient.deceased</code> element can be specified as a <code class="language-plaintext highlighter-rouge">Boolean</code> or as a <code class="language-plaintext highlighter-rouge">DateTime</code>. Since CQL also supports choice types, these are manifest directly as Choice Types within the ModelInfo.</p>
+
+<p>Where appropriate, USQualityCore profiles restrict choice types to those that are appropriate for the quality improvement use case. For example, The <code class="language-plaintext highlighter-rouge">USQualityCoreConditionProblemsHealthConcerns</code> profile removes <code class="language-plaintext highlighter-rouge">String</code> as a possible type for the <code class="language-plaintext highlighter-rouge">onset</code> element, to communicate the expectation that a computable representation of onset is required for quality improvement applications.</p>
+
+<p>Quality improvement logic must be prepared to deal with choice elements of any of the available types because systems may communicate instances with values of any of these types. To support the most common usages of choice types (for timing elements), the following functions have been defined:</p>
+
+<pre><code class="language-cql">define fluent function toInterval(choice Choice&lt;DateTime, Quantity, Interval&lt;DateTime&gt;, Interval&lt;Quantity&gt;&gt;):
+  case
+	  when choice is DateTime then
+    	Interval[choice as DateTime, choice as DateTime]
+		when choice is Interval&lt;DateTime&gt; then
+  		choice as Interval&lt;DateTime&gt;
+		when choice is Quantity then
+		  Interval[Patient.birthDate + (choice as Quantity),
+			  Patient.birthDate + (choice as Quantity) + 1 year)
+		when choice is Interval&lt;Quantity&gt; then
+		  Interval[Patient.birthDate + (choice.low as Quantity),
+			  Patient.birthDate + (choice.high as Quantity) + 1 year)
+		else
+			null as Interval&lt;DateTime&gt;
+	end
+
+define fluent function abatementInterval(condition Condition):
+	if condition.abatement is DateTime then
+	  Interval[condition.abatement as DateTime, condition.abatement as DateTime]
+	else if condition.abatement is Quantity then
+		Interval[Patient.birthDate + (condition.abatement as Quantity),
+			Patient.birthDate + (condition.abatement as Quantity) + 1 year)
+	else if condition.abatement is Interval&lt;Quantity&gt; then
+	  Interval[Patient.birthDate + (condition.abatement.low as Quantity),
+		  Patient.birthDate + (condition.abatement.high as Quantity) + 1 year)
+	else if condition.abatement is Interval&lt;DateTime&gt; then
+	  Interval[condition.abatement.low, condition.abatement.high)
+	else null as Interval&lt;DateTime&gt;
+
+define fluent function prevalenceInterval(condition Condition):
+if condition.clinicalStatus ~ "active"
+  or condition.clinicalStatus ~ "recurrence"
+  or condition.clinicalStatus ~ "relapse" then
+  Interval[start of ToInterval(condition.onset), end of ToAbatementInterval(condition)]
+else
+  Interval[start of ToInterval(condition.onset), end of ToAbatementInterval(condition))
+
+define fluent function latest(choice Choice&lt;DateTime, Quantity, Interval&lt;DateTime&gt;, Interval&lt;Quantity&gt;&gt; ):
+  (choice.toInterval()) period
+    return
+      if period.hasEnd() then end of period
+      else start of period
+
+define fluent function earliest(choice Choice&lt;DateTime, Quantity, Interval&lt;DateTime&gt;, Interval&lt;Quantity&gt;&gt; ):
+  (choice.toInterval()) period
+    return
+      if period.hasStart() then start of period
+      else end of period
+</code></pre>
+
+<p>Note that these functions make use of the FHIRHelpers library to ensure correct processing.</p>
+
+<blockquote>
+  <p>NOTE: The examples throughout this topic have been simplified to illustrate specific usage. Refer to the originating context for complete expressions.</p>
+</blockquote>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <script type="text/javascript" src="assets/js/togglechanges.js"> </script>
+  <script type="text/javascript" src="assets/js/requirements-table.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container" data-fhir="generated">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.healthit.gov/feedback">Office of the National Coordinator for Health Information Technology (ONC)</a>.  
+          Package fhir.onc.us-quality-core#0.5.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated 
+  <span title="2026-06-08 16:55:00 +1000">
+    2026-06-08
+  </span>
+
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

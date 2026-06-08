@@ -1,0 +1,90 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/onc/us-quality-core/ClaimResponse/example> a fhir:ClaimResponse ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-claimresponse"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-claimresponse>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ClaimResponse example</b></p><a name=\"example\"> </a><a name=\"hcexample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-claimresponse.html\">US Quality Core ClaimResponse</a></p></div><p><b>status</b>: Active</p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/claim-type professional}\">Professional</span></p><p><b>use</b>: Preauthorization</p><p><b>patient</b>: <a href=\"Patient-example.html\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>created</b>: 2018-02-24</p><p><b>insurer</b>: <a href=\"Organization-example.html\">Organization Health Level Seven International</a></p><p><b>requestor</b>: <a href=\"Practitioner-example.html\">Practitioner Adam Careful </a></p><p><b>request</b>: <a href=\"Claim-example.html\">Claim: identifier = http://example.org/claims#6612346; status = active; type = Professional; use = claim; created = 2014-08-16; priority = Normal</a></p><p><b>outcome</b>: Queued</p><blockquote><p><b>item</b></p><p><b>itemSequence</b>: 1</p><blockquote><p><b>adjudication</b></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/adjudication submitted}\">Submitted Amount</span></p><h3>Amounts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>4000.00</td><td>United States dollar</td></tr></table></blockquote><blockquote><p><b>detail</b></p><p><b>detailSequence</b>: 1</p><blockquote><p><b>adjudication</b></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/adjudication submitted}\">Submitted Amount</span></p><h3>Amounts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>4000.00</td><td>United States dollar</td></tr></table></blockquote></blockquote></blockquote></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/claim-type"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/claim-type>
+       ] ;
+       fhir:code [ fhir:v "professional" ] ;
+       fhir:display [ fhir:v "Professional" ]
+     ] )
+  ] ; # 
+  fhir:use [ fhir:v "preauthorization"] ; # 
+  fhir:patient [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:created [ fhir:v "2018-02-24"^^xsd:date] ; # 
+  fhir:insurer [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Organization/example> ;
+     fhir:reference [ fhir:v "Organization/example" ]
+  ] ; # 
+  fhir:requestor [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Practitioner/example> ;
+     fhir:reference [ fhir:v "Practitioner/example" ]
+  ] ; # 
+  fhir:request [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Claim/example> ;
+     fhir:reference [ fhir:v "Claim/example" ]
+  ] ; # 
+  fhir:outcome [ fhir:v "queued"] ; # 
+  fhir:item ( [
+     fhir:itemSequence [ fhir:v "1"^^xsd:positiveInteger ] ;
+     fhir:adjudication ( [
+       fhir:category [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/adjudication"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/adjudication>
+           ] ;
+           fhir:code [ fhir:v "submitted" ]
+         ] )
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v 4000.00 ] ;
+         fhir:currency [ fhir:v "USD" ]
+       ]
+     ] ) ;
+     fhir:detail ( [
+       fhir:detailSequence [ fhir:v "1"^^xsd:positiveInteger ] ;
+       fhir:adjudication ( [
+         fhir:category [
+           fhir:coding ( [
+             fhir:system [
+               fhir:v "http://terminology.hl7.org/CodeSystem/adjudication"^^xsd:anyURI ;
+               fhir:l <http://terminology.hl7.org/CodeSystem/adjudication>
+             ] ;
+             fhir:code [ fhir:v "submitted" ]
+           ] )
+         ] ;
+         fhir:amount [
+           fhir:value [ fhir:v 4000.00 ] ;
+           fhir:currency [ fhir:v "USD" ]
+         ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

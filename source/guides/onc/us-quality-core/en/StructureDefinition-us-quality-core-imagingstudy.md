@@ -1,0 +1,247 @@
+# US Quality Core ImagingStudy - 2026 US Quality Core Implementation Guide v0.5.0
+
+## Resource Profile: US Quality Core ImagingStudy 
+
+ 
+Profile of ImagingStudy for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors. 
+
+### USCDI+ Quality Element Support Expectations
+
+This profile does not include USCDI+ Quality flagged elements and is **not in scope** for USCDI+ Quality V1 conformance requirements in this guide. See the [USCDI+ Quality](uscdiquality.md#summary-list-of-in-scope-profiles-for-conformance) page for the list of profiles and elements that are in scope for USCDI+ Quality V1.
+
+This profile is inherited from QI-Core v6.0.0 and is included to ease adoption for systems that currently support QI-Core. Refer to the [Formal Views](#profile) section for the formal summary, definitions, terminology requirements, and mandatory element requirements.
+
+**Usages:**
+
+* Refer to this Profile: [US Quality Core DiagnosticReport Profile for Report and Note Exchange](StructureDefinition-us-quality-core-diagnosticreport-note.md), [US Quality Core NonPatient Observation](StructureDefinition-us-quality-core-nonpatient-observation.md) and [US Quality Core Simple Observation](StructureDefinition-us-quality-core-simple-observation.md)
+* Examples for this Profile: [ImagingStudy/example](ImagingStudy-example.md)
+
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.onc.us-quality-core|current/StructureDefinition/StructureDefinition-us-quality-core-imagingstudy.json)
+
+### Formal Views of Profile Content
+
+ [Description Differentials, Snapshots, and other representations](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+
+ 
+
+Other representations of profile: [CSV](../StructureDefinition-us-quality-core-imagingstudy.csv), [Excel](../StructureDefinition-us-quality-core-imagingstudy.xlsx), [Schematron](../StructureDefinition-us-quality-core-imagingstudy.sch) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "us-quality-core-imagingstudy",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-imagingstudy",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreImagingStudy",
+  "title" : "US Quality Core ImagingStudy",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-06-05",
+  "publisher" : "Office of the National Coordinator for Health Information Technology (ONC)",
+  "contact" : [{
+    "name" : "Office of the National Coordinator for Health Information Technology (ONC)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.healthit.gov/feedback"
+    }]
+  }],
+  "description" : "Profile of ImagingStudy for decision support/quality metrics. Defines the core set of elements and extensions for quality rule and measure authors.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }],
+    "text" : "USA"
+  }],
+  "fhirVersion" : "4.0.1",
+  "mapping" : [{
+    "identity" : "workflow",
+    "uri" : "http://hl7.org/fhir/workflow",
+    "name" : "Workflow Pattern"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "dicom",
+    "uri" : "http://nema.org/dicom",
+    "name" : "DICOM Tag Mapping"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  }],
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "ImagingStudy",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/ImagingStudy",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [{
+      "id" : "ImagingStudy",
+      "path" : "ImagingStudy"
+    },
+    {
+      "id" : "ImagingStudy.subject",
+      "path" : "ImagingStudy.subject",
+      "short" : "Who or what is the subject of the study",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"]
+      }]
+    },
+    {
+      "id" : "ImagingStudy.encounter",
+      "path" : "ImagingStudy.encounter",
+      "short" : "Encounter with which this imaging study is associated",
+      "definition" : "The healthcare event (e.g. a patient and healthcare provider interaction) during which this ImagingStudy is made.",
+      "comment" : "This will typically be the encounter the event occurred within, but some events may be initiated prior to or after the official completion of an encounter but still be tied to the context of the encounter (e.g. pre-admission test).",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "ImagingStudy.encounter",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter"]
+      }],
+      "isModifier" : false,
+      "isSummary" : true
+    },
+    {
+      "id" : "ImagingStudy.started",
+      "path" : "ImagingStudy.started",
+      "short" : "When the study was started"
+    },
+    {
+      "id" : "ImagingStudy.basedOn",
+      "path" : "ImagingStudy.basedOn",
+      "short" : "Request fulfilled",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest",
+        "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-careplan"]
+      }]
+    },
+    {
+      "id" : "ImagingStudy.referrer",
+      "path" : "ImagingStudy.referrer",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitioner",
+        "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitionerrole"]
+      }],
+      "mustSupport" : false
+    },
+    {
+      "id" : "ImagingStudy.interpreter",
+      "path" : "ImagingStudy.interpreter",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitioner",
+        "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitionerrole"]
+      }],
+      "mustSupport" : false
+    },
+    {
+      "id" : "ImagingStudy.endpoint",
+      "path" : "ImagingStudy.endpoint",
+      "short" : "Study access endpoint"
+    },
+    {
+      "id" : "ImagingStudy.procedureReference",
+      "path" : "ImagingStudy.procedureReference",
+      "short" : "The performed Procedure reference",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedure"]
+      }]
+    },
+    {
+      "id" : "ImagingStudy.location",
+      "path" : "ImagingStudy.location",
+      "short" : "Where ImagingStudy occurred",
+      "definition" : "The principal physical location where the ImagingStudy was performed.",
+      "requirements" : "Ties the event to where the records are likely kept and provides context around the event occurrence (e.g. if it occurred inside or outside a dedicated healthcare setting).",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "ImagingStudy.location",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-location"]
+      }],
+      "isModifier" : false,
+      "isSummary" : true
+    },
+    {
+      "id" : "ImagingStudy.reasonReference",
+      "path" : "ImagingStudy.reasonReference",
+      "short" : "Why was study performed",
+      "definition" : "Indicates another resource whose existence justifies this Study.",
+      "min" : 0,
+      "max" : "*",
+      "base" : {
+        "path" : "ImagingStudy.reasonReference",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns",
+        "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation",
+        "http://hl7.org/fhir/StructureDefinition/Media",
+        "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-note",
+        "http://hl7.org/fhir/StructureDefinition/DocumentReference"]
+      }],
+      "isModifier" : false,
+      "isSummary" : true
+    },
+    {
+      "id" : "ImagingStudy.series.performer.actor",
+      "path" : "ImagingStudy.series.performer.actor",
+      "short" : "Who performed the series",
+      "definition" : "Indicates who or what performed the series.",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "ImagingStudy.series.performer.actor",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitioner",
+        "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitionerrole",
+        "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-organization",
+        "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-careteam",
+        "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient",
+        "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-device",
+        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device|6.1.0",
+        "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-relatedperson"]
+      }],
+      "isModifier" : false,
+      "isSummary" : true
+    }]
+  }
+}
+
+```

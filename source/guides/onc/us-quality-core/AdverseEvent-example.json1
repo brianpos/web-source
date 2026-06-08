@@ -1,0 +1,61 @@
+{
+  "resourceType" : "AdverseEvent",
+  "id" : "example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-adverseevent"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: AdverseEvent example</b></p><a name=\"example\"> </a><a name=\"hcexample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-adverseevent.html\">US Quality Core AdverseEvent</a></p></div><p><b>identifier</b>: 49476534</p><p><b>actuality</b>: Adverse Event</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/adverse-event-category product-use-error}\">Product Use Error</span></p><p><b>event</b>: <span title=\"Codes:{http://snomed.info/sct 725119006}\">Generalized rash (disorder)</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number\u00a0(use:\u00a0usual,\u00a0period:\u00a02001-05-06 --&gt; (ongoing)))</a></p><p><b>date</b>: 2017-01-29 12:34:56+0000</p><p><b>detected</b>: 2017-01-29 12:34:56+0000</p><p><b>recordedDate</b>: 2017-01-29 13:10:00+0000</p><p><b>seriousness</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/adverse-event-seriousness Non-serious}\">Non-serious</span></p><p><b>recorder</b>: <a href=\"Practitioner-example.html\">Practitioner Adam Careful </a></p><blockquote><p><b>suspectEntity</b></p><p><b>instance</b>: <a href=\"Medication-example.html\">alemtuzumab 10 MG/ML [Lemtrada]</a></p><h3>Causalities</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Assessment</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess Possible}\">Possible</span></td></tr></table></blockquote></div>"
+  },
+  "identifier" : {
+    "value" : "49476534"
+  },
+  "actuality" : "actual",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/adverse-event-category",
+      "version" : "4.0.1",
+      "code" : "product-use-error",
+      "display" : "Product Use Error"
+    }]
+  }],
+  "event" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "725119006",
+      "display" : "Generalized rash (disorder)"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/example"
+  },
+  "date" : "2017-01-29T12:34:56+00:00",
+  "detected" : "2017-01-29T12:34:56+00:00",
+  "recordedDate" : "2017-01-29T13:10:00+00:00",
+  "seriousness" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness",
+      "code" : "Non-serious",
+      "display" : "Non-serious"
+    }]
+  },
+  "recorder" : {
+    "reference" : "Practitioner/example"
+  },
+  "suspectEntity" : [{
+    "instance" : {
+      "reference" : "Medication/example",
+      "display" : "alemtuzumab 10 MG/ML [Lemtrada]"
+    },
+    "causality" : [{
+      "assessment" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess",
+          "code" : "Possible",
+          "display" : "Possible"
+        }]
+      }
+    }]
+  }]
+}

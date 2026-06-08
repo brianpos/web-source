@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Location xmlns="http://hl7.org/fhir">
+  <id value="example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-location"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Location example</b></p><a name="example"> </a><a name="hcexample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-us-quality-core-location.html">US Quality Core Location</a></p></div><p><b>identifier</b>: B1-S.F2 (use: temp, )</p><p><b>status</b>: Active</p><p><b>name</b>: South Wing, second floor</p><p><b>alias</b>: Mean Joe Greene University Medical Center, South Wing, second floor, BU MC, SW, F2</p><p><b>description</b>: Second floor of the Old South Wing, formerly in use by Psychiatry</p><p><b>mode</b>: Instance</p><p><b>type</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/v3-RoleCode HOSP}">Hospital</span></p><p><b>telecom</b>: ph: 2328(Work), fax: 2329(Work), <a href="mailto:secondwing@meanjoegreeneuniversitymedicalcenter.com">secondwing@meanjoegreeneuniversitymedicalcenter.com</a>, <a href="http://sampleorg.com/southwing">http://sampleorg.com/southwing</a></p><p><b>address</b>: Iron Curtain 75, Building A Pittsburgh PA 15016 US (work)</p><p><b>physicalType</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/location-physical-type wi}">Wing</span></p><h3>Positions</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Longitude</b></td><td><b>Latitude</b></td><td><b>Altitude</b></td></tr><tr><td style="display: none">*</td><td>-83.6945691</td><td>42.25475478</td><td>0</td></tr></table><p><b>managingOrganization</b>: <a href="Organization-example.html">Organization Health Level Seven International</a></p></div>
+  </text>
+  <identifier>
+    <use value="temp"/>
+    <value value="B1-S.F2"/>
+  </identifier>
+  <status value="active"/>
+  <name value="South Wing, second floor"/>
+  <alias value="Mean Joe Greene University Medical Center, South Wing, second floor"/>
+  <alias value="BU MC, SW, F2"/>
+  <description value="Second floor of the Old South Wing, formerly in use by Psychiatry"/>
+  <mode value="instance"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-RoleCode"/>
+      <code value="HOSP"/>
+      <display value="Hospital"/>
+    </coding>
+  </type>
+  <telecom>
+    <system value="phone"/>
+    <value value="2328"/>
+    <use value="work"/>
+  </telecom>
+  <telecom>
+    <system value="fax"/>
+    <value value="2329"/>
+    <use value="work"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="secondwing@meanjoegreeneuniversitymedicalcenter.com"/>
+  </telecom>
+  <telecom>
+    <system value="url"/>
+    <value value="http://sampleorg.com/southwing"/>
+    <use value="work"/>
+  </telecom>
+  <address>
+    <use value="work"/>
+    <line value="Iron Curtain 75, Building A"/>
+    <city value="Pittsburgh"/>
+    <state value="PA"/>
+    <postalCode value="15016"/>
+    <country value="US"/>
+  </address>
+  <physicalType>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/location-physical-type"/>
+      <code value="wi"/>
+      <display value="Wing"/>
+    </coding>
+  </physicalType>
+  <position>
+    <longitude value="-83.6945691"/>
+    <latitude value="42.25475478"/>
+    <altitude value="0"/>
+  </position>
+  <managingOrganization>
+    <reference value="Organization/example"/>
+  </managingOrganization>
+</Location>

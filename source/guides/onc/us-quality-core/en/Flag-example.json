@@ -1,0 +1,42 @@
+{
+  "resourceType" : "Flag",
+  "id" : "example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-flag"]
+  },
+  "language" : "en",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Flag example</b></p><a name=\"example\"> </a><a name=\"hcexample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-flag.html\">US Quality Core Flag</a></p></div><p><b>identifier</b>: 12345</p><p><b>status</b>: Active</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/flag-category safety}\">Safety</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 129839007}\">Patient is at increased risk for falls during inpatient care</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">Peter Patient</a></p><p><b>period</b>: 2013-04-04 --&gt; (ongoing)</p><p><b>author</b>: <a href=\"Practitioner-example.html\">Nancy Nurse</a></p></div>"
+  },
+  "identifier" : [{
+    "value" : "12345"
+  }],
+  "status" : "active",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/flag-category",
+      "code" : "safety",
+      "display" : "Safety"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "129839007",
+      "display" : "At risk for falls"
+    }],
+    "text" : "Patient is at increased risk for falls during inpatient care"
+  },
+  "subject" : {
+    "reference" : "Patient/example",
+    "display" : "Peter Patient"
+  },
+  "period" : {
+    "start" : "2013-04-04"
+  },
+  "author" : {
+    "reference" : "Practitioner/example",
+    "display" : "Nancy Nurse"
+  }
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DeviceUseStatement xmlns="http://hl7.org/fhir">
+  <id value="example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-deviceusestatement"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: DeviceUseStatement example</b></p><a name="example"> </a><a name="hcexample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-us-quality-core-deviceusestatement.html">US Quality Core DeviceUseStatement</a></p></div><p><b>identifier</b>: 51ebb7a9-4e3a-4360-9a05-0cc2d869086f</p><p><b>status</b>: Active</p><p><b>subject</b>: <a href="Patient-example.html">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>timing</b>: 2013-04-04 18:30:00-0400 --&gt; (ongoing)</p><p><b>device</b>: <a href="Device-example.html">Electrocardiographic monitor and recorder</a></p></div>
+  </text>
+  <identifier>
+    <value value="51ebb7a9-4e3a-4360-9a05-0cc2d869086f"/>
+  </identifier>
+  <status value="active"/>
+  <subject>
+    <reference value="Patient/example"/>
+  </subject>
+  <timingPeriod>
+    <start value="2013-04-04T18:30:00-04:00"/>
+  </timingPeriod>
+  <device>
+    <reference value="Device/example"/>
+    <display value="Electrocardiographic monitor and recorder"/>
+  </device>
+</DeviceUseStatement>

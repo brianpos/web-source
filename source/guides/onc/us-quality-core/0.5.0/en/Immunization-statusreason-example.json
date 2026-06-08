@@ -1,0 +1,33 @@
+{
+  "resourceType" : "Immunization",
+  "id" : "statusreason-example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunization"]
+  },
+  "language" : "en",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Immunization statusreason-example</b></p><a name=\"statusreason-example\"> </a><a name=\"hcstatusreason-example\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-immunization.html\">US Quality Core Immunization</a></p></div><p><b>status</b>: Entered in Error</p><p><b>statusReason</b>: <span title=\"Codes:\">Duplicate seasonal influenza immunization record entered in error after chart review</span></p><p><b>vaccineCode</b>: <span title=\"Codes:{http://hl7.org/fhir/sid/cvx 140}\">Seasonal influenza vaccine</span></p><p><b>patient</b>: <a href=\"Patient-example.html\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number\u00a0(use:\u00a0usual,\u00a0period:\u00a02001-05-06 --&gt; (ongoing)))</a></p><p><b>encounter</b>: <a href=\"Encounter-example.html\">Encounter: identifier = http://example.org/encounters#ENC-20130404-appendicitis; status = finished; class = inpatient encounter (v3 Code System ActCode#IMP); type = Initial hospital inpatient or observation care, per day, for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making. When using total time on the date of the encounter for code selection, 75 minutes must be met or exceeded.; period = 2013-04-04 18:00:00-0400 --&gt; 2013-04-06 11:00:00-0400</a></p><p><b>occurrence</b>: 2013-01-01</p><p><b>recorded</b>: 2013-01-10</p><p><b>primarySource</b>: false</p></div>"
+  },
+  "status" : "entered-in-error",
+  "statusReason" : {
+    "text" : "Duplicate seasonal influenza immunization record entered in error after chart review"
+  },
+  "vaccineCode" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/sid/cvx",
+      "code" : "140",
+      "display" : "Influenza, seasonal, injectable, preservative free"
+    }],
+    "text" : "Seasonal influenza vaccine"
+  },
+  "patient" : {
+    "reference" : "Patient/example"
+  },
+  "encounter" : {
+    "reference" : "Encounter/example"
+  },
+  "occurrenceDateTime" : "2013-01-01",
+  "recorded" : "2013-01-10",
+  "primarySource" : false
+}

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Immunization xmlns="http://hl7.org/fhir">
+  <id value="example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunization"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Immunization example</b></p><a name="example"> </a><a name="hcexample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-us-quality-core-immunization.html">US Quality Core Immunization</a></p></div><p><b>identifier</b>: <a href="http://terminology.hl7.org/5.5.0/NamingSystem-uri.html" title="As defined by RFC 3986 (http://www.ietf.org/rfc/rfc3986.txt)(with many schemes defined in many RFCs). For OIDs and UUIDs, use the URN form (urn:oid:(note: lowercase) and urn:uuid:). See http://www.ietf.org/rfc/rfc3001.txt and http://www.ietf.org/rfc/rfc4122.txt 
+
+This oid is used as an identifier II.root to indicate the the extension is an absolute URI (technically, an IRI). Typically, this is used for OIDs and GUIDs. Note that when this OID is used with OIDs and GUIDs, the II.extension should start with urn:oid or urn:uuid: 
+
+Note that this OID is created to aid with interconversion between CDA and FHIR - FHIR uses urn:ietf:rfc:3986 as equivalent to this OID. URIs as identifiers appear more commonly in FHIR.
+
+This OID may also be used in CD.codeSystem.">Uniform Resource Identifier (URI)</a>/urn:oid:1.3.6.1.4.1.21367.2005.3.7.1234</p><p><b>status</b>: Completed</p><p><b>vaccineCode</b>: <span title="Codes:{http://hl7.org/fhir/sid/cvx 140}">Seasonal influenza vaccine</span></p><p><b>patient</b>: <a href="Patient-example.html">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>encounter</b>: <a href="Encounter-example.html">Encounter: identifier = http://example.org/encounters#ENC-20130404-appendicitis; status = finished; class = inpatient encounter (v3 Code System ActCode#IMP); type = Initial hospital inpatient or observation care, per day, for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making. When using total time on the date of the encounter for code selection, 75 minutes must be met or exceeded.; period = 2013-04-04 18:00:00-0400 --&gt; 2013-04-06 11:00:00-0400</a></p><p><b>occurrence</b>: 2013-01-01</p><p><b>recorded</b>: 2013-01-10</p><p><b>primarySource</b>: true</p><p><b>location</b>: <a href="Location-example.html">Location South Wing, second floor</a></p><p><b>manufacturer</b>: <a href="Organization-example.html">Organization Health Level Seven International</a></p><p><b>lotNumber</b>: AAJN11K</p><p><b>expirationDate</b>: 2015-02-15</p><p><b>site</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/v3-ActSite LA}">left arm</span></p><p><b>route</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration IM}">Injection, intramuscular</span></p><p><b>doseQuantity</b>: 0.5 mL<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemL = 'mL')</span></p><blockquote><p><b>performer</b></p><p><b>function</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/v2-0443 OP}">Ordering Provider</span></p><p><b>actor</b>: <a href="Practitioner-example.html">Practitioner Adam Careful </a></p></blockquote><blockquote><p><b>performer</b></p><p><b>function</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/v2-0443 AP}">Administering Provider</span></p><p><b>actor</b>: <a href="Practitioner-example.html">Practitioner Adam Careful </a></p></blockquote><p><b>note</b>: </p><blockquote><div><p>Seasonal influenza vaccine administered intramuscularly in the left arm</p>
+</div></blockquote><p><b>reasonCode</b>: <span title="Codes:">Annual influenza vaccination</span></p><h3>ProtocolApplieds</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Series</b></td><td><b>Authority</b></td><td><b>TargetDisease</b></td><td><b>DoseNumber[x]</b></td><td><b>SeriesDoses[x]</b></td></tr><tr><td style="display: none">*</td><td>Vaccination Series 1</td><td><a href="Organization-example.html">Organization Health Level Seven International</a></td><td><span title="Codes:{http://snomed.info/sct 6142004}">Influenza (disorder)</span></td><td>1</td><td>2</td></tr></table></div>
+  </text>
+  <identifier>
+    <system value="urn:ietf:rfc:3986"/>
+    <value value="urn:oid:1.3.6.1.4.1.21367.2005.3.7.1234"/>
+  </identifier>
+  <status value="completed"/>
+  <vaccineCode>
+    <coding>
+      <system value="http://hl7.org/fhir/sid/cvx"/>
+      <code value="140"/>
+      <display value="Influenza, seasonal, injectable, preservative free"/>
+    </coding>
+    <text value="Seasonal influenza vaccine"/>
+  </vaccineCode>
+  <patient>
+    <reference value="Patient/example"/>
+  </patient>
+  <encounter>
+    <reference value="Encounter/example"/>
+  </encounter>
+  <occurrenceDateTime value="2013-01-01"/>
+  <recorded value="2013-01-10"/>
+  <primarySource value="true"/>
+  <location>
+    <reference value="Location/example"/>
+  </location>
+  <manufacturer>
+    <reference value="Organization/example"/>
+  </manufacturer>
+  <lotNumber value="AAJN11K"/>
+  <expirationDate value="2015-02-15"/>
+  <site>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActSite"/>
+      <code value="LA"/>
+      <display value="left arm"/>
+    </coding>
+  </site>
+  <route>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration"/>
+      <code value="IM"/>
+      <display value="Injection, intramuscular"/>
+    </coding>
+  </route>
+  <doseQuantity>
+    <value value="0.5"/>
+    <unit value="mL"/>
+    <system value="http://unitsofmeasure.org"/>
+    <code value="mL"/>
+  </doseQuantity>
+  <performer>
+    <function>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0443"/>
+        <code value="OP"/>
+      </coding>
+    </function>
+    <actor>
+      <reference value="Practitioner/example"/>
+    </actor>
+  </performer>
+  <performer>
+    <function>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0443"/>
+        <code value="AP"/>
+      </coding>
+    </function>
+    <actor>
+      <reference value="Practitioner/example"/>
+    </actor>
+  </performer>
+  <note>
+    <text value="Seasonal influenza vaccine administered intramuscularly in the left arm"/>
+  </note>
+  <reasonCode>
+    <text value="Annual influenza vaccination"/>
+  </reasonCode>
+  <protocolApplied>
+    <series value="Vaccination Series 1"/>
+    <authority>
+      <reference value="Organization/example"/>
+    </authority>
+    <targetDisease>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="6142004"/>
+        <display value="Influenza (disorder)"/>
+      </coding>
+    </targetDisease>
+    <doseNumberPositiveInt value="1"/>
+    <seriesDosesPositiveInt value="2"/>
+  </protocolApplied>
+</Immunization>

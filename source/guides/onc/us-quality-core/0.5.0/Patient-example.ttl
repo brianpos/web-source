@@ -1,0 +1,269 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/onc/us-quality-core/Patient/example> a fhir:Patient ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient example</b></p><a name=\"example\"> </a><a name=\"hcexample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-patient.html\">US Quality Core Patient</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Record is active\">Active:</td><td>true</td><td style=\"background-color: #f3f5da\" title=\"Known status of Patient\">Deceased:</td><td colspan=\"3\">false</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\"><ul><li>ph: (03) 5555 6473(Work)</li><li>ph: (03) 3410 5613(Mobile)</li><li>ph: (03) 5555 8834(Old)</li><li>534 Erewhon St PeasantVille, Utah 84414(home)</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Language spoken\">Language:</td><td colspan=\"3\"><span title=\"Codes:{urn:ietf:bcp:47 en}\">English</span></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Nominated Contact: Next-of-Kin\">Next-of-Kin:</td><td colspan=\"3\"><ul><li>Bénédicte du Marché  (Female)</li><li>534 Erewhon St PleasantVille VT 3999 (home)</li><li><a href=\"tel:+33(237)998327\">+33 (237) 998327</a></li><li>Valid Period:2012 --&gt; (ongoing)</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Patient Links\">Links:</td><td colspan=\"3\"><ul><li>Managing Organization: <a href=\"Organization-example.html\">Organization Health Level Seven International</a></li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Concepts classifying the person into a named category of humans sharing common history, traits, geographical origin or nationality.  The ethnicity codes used to represent these concepts are based upon the [CDC ethnicity and Ethnicity Code Set Version 1.0](http://www.cdc.gov/phin/resources/vocabulary/index.html) which includes over 900 concepts for representing race and ethnicity of which 43 reference ethnicity.  The ethnicity concepts are grouped by and pre-mapped to the 2 OMB ethnicity categories: - Hispanic or Latino - Not Hispanic or Latino.\">US Core Ethnicity Extension:</td><td colspan=\"3\"><ul><li>ombCategory: <a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-CDCREC.html#CDCREC-2186-5\">CDC Race and Ethnicity: 2186-5</a> (Not Hispanic or Latino)</li><li>text: Not Hispanic or Latino</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Concepts classifying the person into a named category of humans sharing common history, traits, geographical origin or nationality.  The race codes used to represent these concepts are based upon the [CDC Race and Ethnicity Code Set Version 1.0](http://www.cdc.gov/phin/resources/vocabulary/index.html#3) which includes over 900 concepts for representing race and ethnicity of which 921 reference race.  The race concepts are grouped by and pre-mapped to the 5 OMB race categories:#xA;#xA; - American Indian or Alaska Native#xA; - Asian#xA; - Black or African American#xA; - Native Hawaiian or Other Pacific Islander#xA; - White.\">US Core Race Extension:</td><td colspan=\"3\"><ul><li>ombCategory: <a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-CDCREC.html#CDCREC-2106-3\">CDC Race and Ethnicity: 2106-3</a> (White)</li><li>text: White</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"This Extension profile represents a tribe or band with which a person associates and, optionally, whether they are enrolled.\">US Core Tribal Affiliation Extension:</td><td colspan=\"3\"><ul><li>tribalAffiliation: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-TribalEntityUS 239}\">Reno-Sparks Indian Colony, Nevada</span></li><li>isEnrolled: false</li></ul></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/core/StructureDefinition/us-core-race>
+     ] ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "ombCategory"^^xsd:anyURI ;
+         fhir:l fhir:ombCategory
+       ] ;
+       fhir:value [
+         a fhir:Coding ;
+         fhir:system [
+           fhir:v "urn:oid:2.16.840.1.113883.6.238"^^xsd:anyURI ;
+           fhir:l <urn:oid:2.16.840.1.113883.6.238>
+         ] ;
+         fhir:code [ fhir:v "2106-3" ] ;
+         fhir:display [ fhir:v "White" ]
+       ]
+     ] [
+       fhir:url [
+         fhir:v "text"^^xsd:anyURI ;
+         fhir:l fhir:text
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "White"
+       ]
+     ] )
+  ] [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity>
+     ] ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "ombCategory"^^xsd:anyURI ;
+         fhir:l fhir:ombCategory
+       ] ;
+       fhir:value [
+         a fhir:Coding ;
+         fhir:system [
+           fhir:v "urn:oid:2.16.840.1.113883.6.238"^^xsd:anyURI ;
+           fhir:l <urn:oid:2.16.840.1.113883.6.238>
+         ] ;
+         fhir:code [ fhir:v "2186-5" ] ;
+         fhir:display [ fhir:v "Not Hispanic or Latino" ]
+       ]
+     ] [
+       fhir:url [
+         fhir:v "text"^^xsd:anyURI ;
+         fhir:l fhir:text
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "Not Hispanic or Latino"
+       ]
+     ] )
+  ] [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/us/core/StructureDefinition/us-core-tribal-affiliation"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/core/StructureDefinition/us-core-tribal-affiliation>
+     ] ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "tribalAffiliation"^^xsd:anyURI ;
+         fhir:l fhir:tribalAffiliation
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/v3-TribalEntityUS"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/v3-TribalEntityUS>
+           ] ;
+           fhir:code [ fhir:v "239" ] ;
+           fhir:display [ fhir:v "Reno-Sparks Indian Colony, Nevada" ]
+         ] ) ;
+         fhir:text [ fhir:v "Reno-Sparks Indian Colony, Nevada" ]
+       ]
+     ] [
+       fhir:url [
+         fhir:v "isEnrolled"^^xsd:anyURI ;
+         fhir:l fhir:isEnrolled
+       ] ;
+       fhir:value [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] )
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "SS" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "http://hl7.org/fhir/sid/us-ssn"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/sid/us-ssn>
+     ] ;
+     fhir:value [ fhir:v "999123456" ] ;
+     fhir:period [
+       fhir:start [ fhir:v "2001-05-06"^^xsd:date ]
+     ] ;
+     fhir:assigner [
+       fhir:display [ fhir:v "Acme Healthcare" ]
+     ]
+  ] ) ; # 
+  fhir:active [ fhir:v true] ; # 
+  fhir:name ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:family [ fhir:v "Chalmers" ] ;
+     fhir:given ( [ fhir:v "Peter" ] [ fhir:v "James" ] ) ;
+     fhir:suffix ( [ fhir:v "Jr." ] )
+  ] [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:family [ fhir:v "Chalmers" ] ;
+     fhir:given ( [ fhir:v "Jim" ] )
+  ] [
+     fhir:use [ fhir:v "maiden" ] ;
+     fhir:family [ fhir:v "Windsor" ] ;
+     fhir:given ( [ fhir:v "Peter" ] [ fhir:v "James" ] ) ;
+     fhir:period [
+       fhir:end [ fhir:v "2002"^^xsd:gYear ]
+     ]
+  ] ) ; # 
+  fhir:telecom ( [
+     fhir:system [ fhir:v "phone" ] ;
+     fhir:value [ fhir:v "(03) 5555 6473" ] ;
+     fhir:use [ fhir:v "work" ] ;
+     fhir:rank [ fhir:v "1"^^xsd:positiveInteger ]
+  ] [
+     fhir:system [ fhir:v "phone" ] ;
+     fhir:value [ fhir:v "(03) 3410 5613" ] ;
+     fhir:use [ fhir:v "mobile" ] ;
+     fhir:rank [ fhir:v "2"^^xsd:positiveInteger ]
+  ] [
+     fhir:system [ fhir:v "phone" ] ;
+     fhir:value [ fhir:v "(03) 5555 8834" ] ;
+     fhir:use [ fhir:v "old" ] ;
+     fhir:period [
+       fhir:end [ fhir:v "2014"^^xsd:gYear ]
+     ]
+  ] ) ; # 
+  fhir:gender [ fhir:v "male"] ; # 
+  fhir:birthDate [
+     fhir:v "1974-12-25"^^xsd:date ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/patient-birthTime"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/StructureDefinition/patient-birthTime>
+       ] ;
+       fhir:value [
+         a fhir:DateTime ;
+         fhir:v "1974-12-25T14:35:45-05:00"^^xsd:dateTime
+       ]
+     ] )
+  ] ; # 
+  fhir:deceased [
+     a fhir:Boolean ;
+     fhir:v false
+  ] ; # 
+  fhir:address ( [
+     fhir:use [ fhir:v "home" ] ;
+     fhir:type [ fhir:v "both" ] ;
+     fhir:text [ fhir:v "534 Erewhon St PeasantVille, Utah 84414" ] ;
+     fhir:line ( [ fhir:v "534 Erewhon St" ] ) ;
+     fhir:city [ fhir:v "PleasantVille" ] ;
+     fhir:district [ fhir:v "Rainbow" ] ;
+     fhir:state [ fhir:v "UT" ] ;
+     fhir:postalCode [ fhir:v "84414" ] ;
+     fhir:period [
+       fhir:start [ fhir:v "1974-12-25"^^xsd:date ]
+     ]
+  ] ) ; # 
+  fhir:contact ( [
+     fhir:relationship ( [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0131"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0131>
+         ] ;
+         fhir:code [ fhir:v "N" ]
+       ] )
+     ] ) ;
+     fhir:name [
+       fhir:family [
+         fhir:v "du Marché" ;
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/humanname-own-prefix>
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "VV"
+           ]
+         ] )
+       ] ;
+       fhir:given ( [ fhir:v "Bénédicte" ] )
+     ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "phone" ] ;
+       fhir:value [ fhir:v "+33 (237) 998327" ]
+     ] ) ;
+     fhir:address [
+       fhir:use [ fhir:v "home" ] ;
+       fhir:type [ fhir:v "both" ] ;
+       fhir:line ( [ fhir:v "534 Erewhon St" ] ) ;
+       fhir:city [ fhir:v "PleasantVille" ] ;
+       fhir:district [ fhir:v "Rainbow" ] ;
+       fhir:state [ fhir:v "VT" ] ;
+       fhir:postalCode [ fhir:v "3999" ] ;
+       fhir:period [
+         fhir:start [ fhir:v "1974-12-25"^^xsd:date ]
+       ]
+     ] ;
+     fhir:gender [ fhir:v "female" ] ;
+     fhir:period [
+       fhir:start [ fhir:v "2012"^^xsd:gYear ]
+     ]
+  ] ) ; # 
+  fhir:communication ( [
+     fhir:language [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "urn:ietf:bcp:47"^^xsd:anyURI ;
+           fhir:l <urn:ietf:bcp:47>
+         ] ;
+         fhir:code [ fhir:v "en" ] ;
+         fhir:display [ fhir:v "English" ]
+       ] ) ;
+       fhir:text [ fhir:v "English" ]
+     ]
+  ] ) ; # 
+  fhir:managingOrganization [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Organization/example> ;
+     fhir:reference [ fhir:v "Organization/example" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,4244 @@
+{
+   "library" : {
+      "localId" : "0",
+      "annotation" : [ {
+         "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion",
+         "signatureLevel" : "All",
+         "type" : "CqlToElmInfo"
+      }, {
+         "type" : "Annotation",
+         "t" : [ {
+            "name" : "description",
+            "value" : "Common terminologies and functions used in USQualityCore-based CQL artifacts"
+         }, {
+            "name" : "comment",
+            "value" : "The modelinfo included with the published IG is using [derived modelinfo](https://hl7.org/fhir/uv/cql/using-modelinfo.html#derived-modelinfo)\nto enable reuse of data elements and libraries defined in the [US Core](https://hl7.org/fhir/us/core)\nand [US CQL](https://hl7.org/fhir/us/cql) Common IGs. This library is derived from the QICoreCommon shared library used in FHIR-based\nquality measure specifications. However, most of the functionality that was defined in QICoreCommon is now either in [FHIRCommon](https://hl7.org/fhir/uv/cql/Library-FHIRCommon.html)\nor [USCoreCommon](https://hl7.org/fhir/us/cql/Library-USCoreCommon.html)."
+         } ],
+         "s" : {
+            "r" : "680",
+            "s" : [ {
+               "value" : [ "/*\n@description: Common terminologies and functions used in USQualityCore-based CQL artifacts\n@comment: The modelinfo included with the published IG is using [derived modelinfo](https://hl7.org/fhir/uv/cql/using-modelinfo.html#derived-modelinfo)\nto enable reuse of data elements and libraries defined in the [US Core](https://hl7.org/fhir/us/core)\nand [US CQL](https://hl7.org/fhir/us/cql) Common IGs. This library is derived from the QICoreCommon shared library used in FHIR-based\nquality measure specifications. However, most of the functionality that was defined in QICoreCommon is now either in [FHIRCommon](https://hl7.org/fhir/uv/cql/Library-FHIRCommon.html)\nor [USCoreCommon](https://hl7.org/fhir/us/cql/Library-USCoreCommon.html).\n*/\n","library USQualityCoreCommon version '0.5.0'" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "USQualityCoreCommon",
+         "system" : "http://fhir.org/guides/onc/us-quality-core",
+         "version" : "0.5.0"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localId" : "1",
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1",
+            "version" : "1.0.0"
+         }, {
+            "localId" : "206",
+            "locator" : "11:1-11:35",
+            "localIdentifier" : "USQualityCore",
+            "uri" : "http://fhir.org/guides/onc/us-quality-core",
+            "version" : "0.5.0",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "206",
+                  "s" : [ {
+                     "value" : [ "","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "USQualityCore" ]
+                     } ]
+                  }, {
+                     "value" : [ " version '0.5.0'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "208",
+            "locator" : "13:1-13:51",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://hl7.org/fhir/uv/cql/FHIRHelpers",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "208",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "hl7",".","fhir",".","uv",".","cql",".","FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'4.0.1'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "210",
+            "locator" : "14:1-14:50",
+            "localIdentifier" : "FHIRCommon",
+            "path" : "http://hl7.org/fhir/uv/cql/FHIRCommon",
+            "version" : "2.0.0",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "210",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "hl7",".","fhir",".","uv",".","cql",".","FHIRCommon" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'2.0.0'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "codeSystems" : {
+         "def" : [ {
+            "localId" : "212",
+            "locator" : "16:1-16:72",
+            "name" : "ActCode",
+            "id" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "212",
+                  "s" : [ {
+                     "value" : [ "","codesystem ","\"ActCode\"",": ","'http://terminology.hl7.org/CodeSystem/v3-ActCode'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "214",
+            "locator" : "17:1-17:71",
+            "name" : "TaskCodeSystem",
+            "id" : "http://hl7.org/fhir/CodeSystem/task-code",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "214",
+                  "s" : [ {
+                     "value" : [ "","codesystem ","\"TaskCodeSystem\"",": ","'http://hl7.org/fhir/CodeSystem/task-code'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "codes" : {
+         "def" : [ {
+            "localId" : "216",
+            "locator" : "20:1-20:58",
+            "name" : "ambulatory",
+            "id" : "AMB",
+            "display" : "ambulatory",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "216",
+                  "s" : [ {
+                     "value" : [ "// Encounter Class Codes\n","code ","\"ambulatory\"",": ","'AMB'"," from " ]
+                  }, {
+                     "r" : "217",
+                     "s" : [ {
+                        "value" : [ "ActCode" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'ambulatory'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "217",
+               "locator" : "20:31-20:37",
+               "name" : "ActCode"
+            }
+         }, {
+            "localId" : "219",
+            "locator" : "21:1-21:57",
+            "name" : "emergency",
+            "id" : "EMER",
+            "display" : "emergency",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "219",
+                  "s" : [ {
+                     "value" : [ "","code ","\"emergency\"",": ","'EMER'"," from " ]
+                  }, {
+                     "r" : "220",
+                     "s" : [ {
+                        "value" : [ "ActCode" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'emergency'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "220",
+               "locator" : "21:31-21:37",
+               "name" : "ActCode"
+            }
+         }, {
+            "localId" : "222",
+            "locator" : "22:1-22:48",
+            "name" : "field",
+            "id" : "FLD",
+            "display" : "field",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "222",
+                  "s" : [ {
+                     "value" : [ "","code ","\"field\"",": ","'FLD'"," from " ]
+                  }, {
+                     "r" : "223",
+                     "s" : [ {
+                        "value" : [ "ActCode" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'field'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "223",
+               "locator" : "22:26-22:32",
+               "name" : "ActCode"
+            }
+         }, {
+            "localId" : "225",
+            "locator" : "23:1-23:59",
+            "name" : "home health",
+            "id" : "HH",
+            "display" : "home health",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "225",
+                  "s" : [ {
+                     "value" : [ "","code ","\"home health\"",": ","'HH'"," from " ]
+                  }, {
+                     "r" : "226",
+                     "s" : [ {
+                        "value" : [ "ActCode" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'home health'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "226",
+               "locator" : "23:31-23:37",
+               "name" : "ActCode"
+            }
+         }, {
+            "localId" : "228",
+            "locator" : "24:1-24:76",
+            "name" : "inpatient encounter",
+            "id" : "IMP",
+            "display" : "inpatient encounter",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "228",
+                  "s" : [ {
+                     "value" : [ "","code ","\"inpatient encounter\"",": ","'IMP'"," from " ]
+                  }, {
+                     "r" : "229",
+                     "s" : [ {
+                        "value" : [ "ActCode" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'inpatient encounter'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "229",
+               "locator" : "24:40-24:46",
+               "name" : "ActCode"
+            }
+         }, {
+            "localId" : "231",
+            "locator" : "25:1-25:70",
+            "name" : "inpatient acute",
+            "id" : "ACUTE",
+            "display" : "inpatient acute",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "231",
+                  "s" : [ {
+                     "value" : [ "","code ","\"inpatient acute\"",": ","'ACUTE'"," from " ]
+                  }, {
+                     "r" : "232",
+                     "s" : [ {
+                        "value" : [ "ActCode" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'inpatient acute'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "232",
+               "locator" : "25:38-25:44",
+               "name" : "ActCode"
+            }
+         }, {
+            "localId" : "234",
+            "locator" : "26:1-26:78",
+            "name" : "inpatient non-acute",
+            "id" : "NONAC",
+            "display" : "inpatient non-acute",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "234",
+                  "s" : [ {
+                     "value" : [ "","code ","\"inpatient non-acute\"",": ","'NONAC'"," from " ]
+                  }, {
+                     "r" : "235",
+                     "s" : [ {
+                        "value" : [ "ActCode" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'inpatient non-acute'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "235",
+               "locator" : "26:42-26:48",
+               "name" : "ActCode"
+            }
+         }, {
+            "localId" : "237",
+            "locator" : "27:1-27:83",
+            "name" : "observation encounter",
+            "id" : "OBSENC",
+            "display" : "observation encounter",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "237",
+                  "s" : [ {
+                     "value" : [ "","code ","\"observation encounter\"",": ","'OBSENC'"," from " ]
+                  }, {
+                     "r" : "238",
+                     "s" : [ {
+                        "value" : [ "ActCode" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'observation encounter'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "238",
+               "locator" : "27:45-27:51",
+               "name" : "ActCode"
+            }
+         }, {
+            "localId" : "240",
+            "locator" : "28:1-28:66",
+            "name" : "pre-admission",
+            "id" : "PRENC",
+            "display" : "pre-admission",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "240",
+                  "s" : [ {
+                     "value" : [ "","code ","\"pre-admission\"",": ","'PRENC'"," from " ]
+                  }, {
+                     "r" : "241",
+                     "s" : [ {
+                        "value" : [ "ActCode" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'pre-admission'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "241",
+               "locator" : "28:36-28:42",
+               "name" : "ActCode"
+            }
+         }, {
+            "localId" : "243",
+            "locator" : "29:1-29:57",
+            "name" : "short stay",
+            "id" : "SS",
+            "display" : "short stay",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "243",
+                  "s" : [ {
+                     "value" : [ "","code ","\"short stay\"",": ","'SS'"," from " ]
+                  }, {
+                     "r" : "244",
+                     "s" : [ {
+                        "value" : [ "ActCode" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'short stay'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "244",
+               "locator" : "29:30-29:36",
+               "name" : "ActCode"
+            }
+         }, {
+            "localId" : "246",
+            "locator" : "30:1-30:51",
+            "name" : "virtual",
+            "id" : "VR",
+            "display" : "Virtual",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "246",
+                  "s" : [ {
+                     "value" : [ "","code ","\"virtual\"",": ","'VR'"," from " ]
+                  }, {
+                     "r" : "247",
+                     "s" : [ {
+                        "value" : [ "ActCode" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'Virtual'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "247",
+               "locator" : "30:27-30:33",
+               "name" : "ActCode"
+            }
+         }, {
+            "localId" : "249",
+            "locator" : "33:1-33:65",
+            "name" : "Fulfill",
+            "id" : "fulfill",
+            "display" : "Fulfill",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "249",
+                  "s" : [ {
+                     "value" : [ "//Task codes\n","code ","\"Fulfill\"",": ","'fulfill'"," from " ]
+                  }, {
+                     "r" : "250",
+                     "s" : [ {
+                        "value" : [ "\"TaskCodeSystem\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'Fulfill'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "250",
+               "locator" : "33:32-33:47",
+               "name" : "TaskCodeSystem"
+            }
+         } ]
+      },
+      "contexts" : {
+         "def" : [ {
+            "localId" : "255",
+            "locator" : "35:1-35:15",
+            "name" : "Patient"
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "localId" : "253",
+            "locator" : "35:1-35:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "localId" : "254",
+               "type" : "SingletonFrom",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "252",
+                  "locator" : "35:1-35:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient",
+                  "type" : "Retrieve",
+                  "include" : [ ],
+                  "codeFilter" : [ ],
+                  "dateFilter" : [ ],
+                  "otherFilter" : [ ]
+               }
+            }
+         }, {
+            "localId" : "256",
+            "locator" : "40:1-41:23",
+            "name" : "getId",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Returns the id of the given uri (i.e. everything after the last slash)"
+               } ],
+               "s" : {
+                  "r" : "256",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Returns the id of the given uri (i.e. everything after the last slash)\n*/\n","define fluent function getId(uri String):\n  " ]
+                  }, {
+                     "r" : "275",
+                     "s" : [ {
+                        "r" : "275",
+                        "s" : [ {
+                           "value" : [ "Last","(" ]
+                        }, {
+                           "r" : "268",
+                           "s" : [ {
+                              "value" : [ "Split","(" ]
+                           }, {
+                              "r" : "261",
+                              "s" : [ {
+                                 "value" : [ "uri" ]
+                              } ]
+                           }, {
+                              "value" : [ ", " ]
+                           }, {
+                              "r" : "262",
+                              "s" : [ {
+                                 "value" : [ "'/'" ]
+                              } ]
+                           }, {
+                              "value" : [ ")" ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "275",
+               "locator" : "41:3-41:23",
+               "type" : "Last",
+               "signature" : [ {
+                  "localId" : "276",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "localId" : "277",
+                     "name" : "{urn:hl7-org:elm-types:r1}String",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               } ],
+               "source" : {
+                  "localId" : "268",
+                  "locator" : "41:8-41:22",
+                  "type" : "Split",
+                  "signature" : [ {
+                     "localId" : "269",
+                     "name" : "{urn:hl7-org:elm-types:r1}String",
+                     "type" : "NamedTypeSpecifier"
+                  }, {
+                     "localId" : "270",
+                     "name" : "{urn:hl7-org:elm-types:r1}String",
+                     "type" : "NamedTypeSpecifier"
+                  } ],
+                  "stringToSplit" : {
+                     "localId" : "261",
+                     "locator" : "41:14-41:16",
+                     "name" : "uri",
+                     "type" : "OperandRef"
+                  },
+                  "separator" : {
+                     "localId" : "262",
+                     "locator" : "41:19-41:21",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : "/",
+                     "type" : "Literal"
+                  }
+               }
+            },
+            "operand" : [ {
+               "localId" : "258",
+               "name" : "uri",
+               "operandTypeSpecifier" : {
+                  "localId" : "257",
+                  "locator" : "40:34-40:39",
+                  "name" : "{urn:hl7-org:elm-types:r1}String",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "localId" : "278",
+            "locator" : "46:1-50:3",
+            "name" : "toValueSet",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Returns the System.ValueSet instance with the url and version (if present) of the given canonical reference"
+               } ],
+               "s" : {
+                  "r" : "278",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Returns the System.ValueSet instance with the url and version (if present) of the given canonical reference\n*/\n","define fluent function toValueSet(canonical FHIR.canonical):\n  " ]
+                  }, {
+                     "r" : "283",
+                     "s" : [ {
+                        "r" : "283",
+                        "s" : [ {
+                           "value" : [ "System",".","ValueSet"," {\n    " ]
+                        }, {
+                           "s" : [ {
+                              "value" : [ "id",": " ]
+                           }, {
+                              "r" : "286",
+                              "s" : [ {
+                                 "r" : "285",
+                                 "s" : [ {
+                                    "value" : [ "canonical" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "286",
+                                 "s" : [ {
+                                    "value" : [ "url","()" ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ",\n    " ]
+                        }, {
+                           "s" : [ {
+                              "value" : [ "version",": " ]
+                           }, {
+                              "r" : "289",
+                              "s" : [ {
+                                 "r" : "288",
+                                 "s" : [ {
+                                    "value" : [ "canonical" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "289",
+                                 "s" : [ {
+                                    "value" : [ "version","()" ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n  }" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "283",
+               "locator" : "47:3-50:3",
+               "classType" : "{urn:hl7-org:elm-types:r1}ValueSet",
+               "type" : "Instance",
+               "element" : [ {
+                  "name" : "id",
+                  "value" : {
+                     "localId" : "286",
+                     "locator" : "48:9-48:23",
+                     "name" : "url",
+                     "libraryName" : "FHIRCommon",
+                     "type" : "FunctionRef",
+                     "signature" : [ {
+                        "localId" : "287",
+                        "name" : "{http://hl7.org/fhir}canonical",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "285",
+                        "locator" : "48:9-48:17",
+                        "name" : "canonical",
+                        "type" : "OperandRef"
+                     } ]
+                  }
+               }, {
+                  "name" : "version",
+                  "value" : {
+                     "localId" : "289",
+                     "locator" : "49:14-49:32",
+                     "name" : "version",
+                     "libraryName" : "FHIRCommon",
+                     "type" : "FunctionRef",
+                     "signature" : [ {
+                        "localId" : "290",
+                        "name" : "{http://hl7.org/fhir}canonical",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "288",
+                        "locator" : "49:14-49:22",
+                        "name" : "canonical",
+                        "type" : "OperandRef"
+                     } ]
+                  }
+               } ]
+            },
+            "operand" : [ {
+               "localId" : "280",
+               "name" : "canonical",
+               "operandTypeSpecifier" : {
+                  "localId" : "279",
+                  "locator" : "46:45-46:58",
+                  "name" : "{http://hl7.org/fhir}canonical",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "localId" : "291",
+            "locator" : "56:1-61:28",
+            "name" : "toActivityExtent",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Converts the activity extent pattern used to represent negated activities to either a codeableConcept or a value set"
+               }, {
+                  "name" : "seealso",
+                  "value" : "[Negation In US Quality Core](negation.html)"
+               } ],
+               "s" : {
+                  "r" : "291",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Converts the activity extent pattern used to represent negated activities to either a codeableConcept or a value set\n@seealso: [Negation In US Quality Core](negation.html)\n*/\n","define fluent function toActivityExtent(codeableConcept FHIR.CodeableConcept):\n  " ]
+                  }, {
+                     "r" : "325",
+                     "s" : [ {
+                        "r" : "325",
+                        "s" : [ {
+                           "s" : [ {
+                              "r" : "296",
+                              "s" : [ {
+                                 "r" : "303",
+                                 "s" : [ {
+                                    "value" : [ "(" ]
+                                 }, {
+                                    "r" : "303",
+                                    "s" : [ {
+                                       "r" : "300",
+                                       "s" : [ {
+                                          "r" : "297",
+                                          "s" : [ {
+                                             "value" : [ "codeableConcept" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "300",
+                                          "s" : [ {
+                                             "value" : [ "ext","(" ]
+                                          }, {
+                                             "r" : "298",
+                                             "s" : [ {
+                                                "value" : [ "'http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-notDoneValueSet'" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ ")" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "303",
+                                       "s" : [ {
+                                          "value" : [ "value" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ ")" ]
+                                 } ]
+                              }, {
+                                 "value" : [ " ","X" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n    " ]
+                        }, {
+                           "r" : "305",
+                           "s" : [ {
+                              "value" : [ "return\n      " ]
+                           }, {
+                              "r" : "306",
+                              "s" : [ {
+                                 "value" : [ "if " ]
+                              }, {
+                                 "r" : "310",
+                                 "s" : [ {
+                                    "r" : "307",
+                                    "s" : [ {
+                                       "value" : [ "X" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " is not null" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n        then " ]
+                              }, {
+                                 "r" : "313",
+                                 "s" : [ {
+                                    "r" : "312",
+                                    "s" : [ {
+                                       "value" : [ "X" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "313",
+                                    "s" : [ {
+                                       "value" : [ "toValueSet","()" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n        else " ]
+                              }, {
+                                 "r" : "316",
+                                 "s" : [ {
+                                    "value" : [ "codeableConcept" ]
+                                 } ]
+                              } ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "325",
+               "locator" : "57:3-61:28",
+               "type" : "Query",
+               "source" : [ {
+                  "localId" : "296",
+                  "locator" : "57:3-57:129",
+                  "alias" : "X",
+                  "expression" : {
+                     "localId" : "303",
+                     "locator" : "57:3-57:127",
+                     "path" : "value",
+                     "type" : "Property",
+                     "source" : {
+                        "localId" : "300",
+                        "locator" : "57:4-57:120",
+                        "name" : "ext",
+                        "libraryName" : "FHIRCommon",
+                        "type" : "FunctionRef",
+                        "signature" : [ {
+                           "localId" : "301",
+                           "name" : "{http://hl7.org/fhir}Element",
+                           "type" : "NamedTypeSpecifier"
+                        }, {
+                           "localId" : "302",
+                           "name" : "{urn:hl7-org:elm-types:r1}String",
+                           "type" : "NamedTypeSpecifier"
+                        } ],
+                        "operand" : [ {
+                           "localId" : "297",
+                           "locator" : "57:4-57:18",
+                           "name" : "codeableConcept",
+                           "type" : "OperandRef"
+                        }, {
+                           "localId" : "298",
+                           "locator" : "57:24-57:119",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-notDoneValueSet",
+                           "type" : "Literal"
+                        } ]
+                     }
+                  }
+               } ],
+               "let" : [ ],
+               "relationship" : [ ],
+               "return" : {
+                  "localId" : "305",
+                  "locator" : "58:5-61:28",
+                  "expression" : {
+                     "localId" : "306",
+                     "locator" : "59:7-61:28",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "310",
+                        "locator" : "59:10-59:22",
+                        "type" : "Not",
+                        "signature" : [ {
+                           "localId" : "311",
+                           "name" : "{urn:hl7-org:elm-types:r1}Boolean",
+                           "type" : "NamedTypeSpecifier"
+                        } ],
+                        "operand" : {
+                           "localId" : "308",
+                           "locator" : "59:10-59:22",
+                           "type" : "IsNull",
+                           "signature" : [ {
+                              "localId" : "309",
+                              "name" : "{urn:hl7-org:elm-types:r1}Any",
+                              "type" : "NamedTypeSpecifier"
+                           } ],
+                           "operand" : {
+                              "localId" : "307",
+                              "locator" : "59:10",
+                              "name" : "X",
+                              "type" : "AliasRef"
+                           }
+                        }
+                     },
+                     "then" : {
+                        "localId" : "317",
+                        "type" : "As",
+                        "signature" : [ ],
+                        "operand" : {
+                           "localId" : "313",
+                           "locator" : "60:14-60:27",
+                           "name" : "toValueSet",
+                           "type" : "FunctionRef",
+                           "signature" : [ {
+                              "localId" : "315",
+                              "name" : "{http://hl7.org/fhir}canonical",
+                              "type" : "NamedTypeSpecifier"
+                           } ],
+                           "operand" : [ {
+                              "localId" : "314",
+                              "asType" : "{http://hl7.org/fhir}canonical",
+                              "type" : "As",
+                              "signature" : [ ],
+                              "operand" : {
+                                 "localId" : "312",
+                                 "locator" : "60:14",
+                                 "name" : "X",
+                                 "type" : "AliasRef"
+                              }
+                           } ]
+                        },
+                        "asTypeSpecifier" : {
+                           "localId" : "318",
+                           "type" : "ChoiceTypeSpecifier",
+                           "choice" : [ {
+                              "localId" : "319",
+                              "name" : "{urn:hl7-org:elm-types:r1}ValueSet",
+                              "type" : "NamedTypeSpecifier"
+                           }, {
+                              "localId" : "320",
+                              "name" : "{http://hl7.org/fhir}CodeableConcept",
+                              "type" : "NamedTypeSpecifier"
+                           } ]
+                        }
+                     },
+                     "else" : {
+                        "localId" : "321",
+                        "type" : "As",
+                        "signature" : [ ],
+                        "operand" : {
+                           "localId" : "316",
+                           "locator" : "61:14-61:28",
+                           "name" : "codeableConcept",
+                           "type" : "OperandRef"
+                        },
+                        "asTypeSpecifier" : {
+                           "localId" : "322",
+                           "type" : "ChoiceTypeSpecifier",
+                           "choice" : [ {
+                              "localId" : "323",
+                              "name" : "{urn:hl7-org:elm-types:r1}ValueSet",
+                              "type" : "NamedTypeSpecifier"
+                           }, {
+                              "localId" : "324",
+                              "name" : "{http://hl7.org/fhir}CodeableConcept",
+                              "type" : "NamedTypeSpecifier"
+                           } ]
+                        }
+                     }
+                  }
+               }
+            },
+            "operand" : [ {
+               "localId" : "293",
+               "name" : "codeableConcept",
+               "operandTypeSpecifier" : {
+                  "localId" : "292",
+                  "locator" : "56:57-56:76",
+                  "name" : "{http://hl7.org/fhir}CodeableConcept",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "localId" : "326",
+            "locator" : "66:1-67:140",
+            "name" : "recorded",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Returns the value of the recorded extension for a Communication Not Done"
+               } ],
+               "s" : {
+                  "r" : "326",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Returns the value of the recorded extension for a Communication Not Done\n*/\n","define fluent function recorded(communicationNotDone CommunicationNotDone):\n  " ]
+                  }, {
+                     "r" : "331",
+                     "s" : [ {
+                        "r" : "331",
+                        "s" : [ {
+                           "r" : "338",
+                           "s" : [ {
+                              "r" : "335",
+                              "s" : [ {
+                                 "r" : "332",
+                                 "s" : [ {
+                                    "value" : [ "communicationNotDone" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "335",
+                                 "s" : [ {
+                                    "value" : [ "ext","(" ]
+                                 }, {
+                                    "r" : "333",
+                                    "s" : [ {
+                                       "value" : [ "'http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-recorded'" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ ")" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "338",
+                              "s" : [ {
+                                 "value" : [ "value" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " as " ]
+                        }, {
+                           "r" : "339",
+                           "s" : [ {
+                              "value" : [ "FHIR",".","dateTime" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "331",
+               "locator" : "67:3-67:140",
+               "strict" : false,
+               "type" : "As",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "338",
+                  "locator" : "67:3-67:123",
+                  "path" : "value",
+                  "type" : "Property",
+                  "source" : {
+                     "localId" : "335",
+                     "locator" : "67:3-67:117",
+                     "name" : "ext",
+                     "libraryName" : "FHIRCommon",
+                     "type" : "FunctionRef",
+                     "signature" : [ {
+                        "localId" : "336",
+                        "name" : "{http://hl7.org/fhir}DomainResource",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "337",
+                        "name" : "{urn:hl7-org:elm-types:r1}String",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "332",
+                        "locator" : "67:3-67:22",
+                        "name" : "communicationNotDone",
+                        "type" : "OperandRef"
+                     }, {
+                        "localId" : "333",
+                        "locator" : "67:28-67:116",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-recorded",
+                        "type" : "Literal"
+                     } ]
+                  }
+               },
+               "asTypeSpecifier" : {
+                  "localId" : "339",
+                  "locator" : "67:128-67:140",
+                  "name" : "{http://hl7.org/fhir}dateTime",
+                  "type" : "NamedTypeSpecifier"
+               }
+            },
+            "operand" : [ {
+               "localId" : "328",
+               "name" : "communicationNotDone",
+               "operandTypeSpecifier" : {
+                  "localId" : "327",
+                  "locator" : "66:54-66:73",
+                  "name" : "{http://hl7.org/fhir}Communication",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "localId" : "340",
+            "locator" : "73:1-74:47",
+            "name" : "topic",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Returns the negated activity extent for a Communication Not Done"
+               }, {
+                  "name" : "seealso",
+                  "value" : "[Negation In US Quality Core](negation.html)"
+               } ],
+               "s" : {
+                  "r" : "340",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Returns the negated activity extent for a Communication Not Done\n@seealso: [Negation In US Quality Core](negation.html)\n*/\n","define fluent function topic(communicationNotDone CommunicationNotDone):\n  " ]
+                  }, {
+                     "r" : "347",
+                     "s" : [ {
+                        "r" : "347",
+                        "s" : [ {
+                           "r" : "346",
+                           "s" : [ {
+                              "r" : "345",
+                              "s" : [ {
+                                 "value" : [ "communicationNotDone" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "346",
+                              "s" : [ {
+                                 "value" : [ "topic" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "347",
+                           "s" : [ {
+                              "value" : [ "toActivityExtent","()" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "347",
+               "locator" : "74:3-74:47",
+               "name" : "toActivityExtent",
+               "type" : "FunctionRef",
+               "signature" : [ {
+                  "localId" : "348",
+                  "name" : "{http://hl7.org/fhir}CodeableConcept",
+                  "type" : "NamedTypeSpecifier"
+               } ],
+               "operand" : [ {
+                  "localId" : "346",
+                  "locator" : "74:3-74:28",
+                  "path" : "topic",
+                  "type" : "Property",
+                  "source" : {
+                     "localId" : "345",
+                     "locator" : "74:3-74:22",
+                     "name" : "communicationNotDone",
+                     "type" : "OperandRef"
+                  }
+               } ]
+            },
+            "operand" : [ {
+               "localId" : "342",
+               "name" : "communicationNotDone",
+               "operandTypeSpecifier" : {
+                  "localId" : "341",
+                  "locator" : "73:51-73:70",
+                  "name" : "{http://hl7.org/fhir}Communication",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "localId" : "349",
+            "locator" : "79:1-80:155",
+            "name" : "doNotPerformReason",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Returns the value of the doNotPerformReason extension for a Device Not Requested"
+               } ],
+               "s" : {
+                  "r" : "349",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Returns the value of the doNotPerformReason extension for a Device Not Requested\n*/\n","define fluent function doNotPerformReason(deviceNotRequested DeviceNotRequested):\n  " ]
+                  }, {
+                     "r" : "354",
+                     "s" : [ {
+                        "r" : "354",
+                        "s" : [ {
+                           "r" : "361",
+                           "s" : [ {
+                              "r" : "358",
+                              "s" : [ {
+                                 "r" : "355",
+                                 "s" : [ {
+                                    "value" : [ "deviceNotRequested" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "358",
+                                 "s" : [ {
+                                    "value" : [ "ext","(" ]
+                                 }, {
+                                    "r" : "356",
+                                    "s" : [ {
+                                       "value" : [ "'http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-doNotPerformReason'" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ ")" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "361",
+                              "s" : [ {
+                                 "value" : [ "value" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " as " ]
+                        }, {
+                           "r" : "362",
+                           "s" : [ {
+                              "value" : [ "FHIR",".","CodeableConcept" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "354",
+               "locator" : "80:3-80:155",
+               "strict" : false,
+               "type" : "As",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "361",
+                  "locator" : "80:3-80:131",
+                  "path" : "value",
+                  "type" : "Property",
+                  "source" : {
+                     "localId" : "358",
+                     "locator" : "80:3-80:125",
+                     "name" : "ext",
+                     "libraryName" : "FHIRCommon",
+                     "type" : "FunctionRef",
+                     "signature" : [ {
+                        "localId" : "359",
+                        "name" : "{http://hl7.org/fhir}DomainResource",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "360",
+                        "name" : "{urn:hl7-org:elm-types:r1}String",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "355",
+                        "locator" : "80:3-80:20",
+                        "name" : "deviceNotRequested",
+                        "type" : "OperandRef"
+                     }, {
+                        "localId" : "356",
+                        "locator" : "80:26-80:124",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-doNotPerformReason",
+                        "type" : "Literal"
+                     } ]
+                  }
+               },
+               "asTypeSpecifier" : {
+                  "localId" : "362",
+                  "locator" : "80:136-80:155",
+                  "name" : "{http://hl7.org/fhir}CodeableConcept",
+                  "type" : "NamedTypeSpecifier"
+               }
+            },
+            "operand" : [ {
+               "localId" : "351",
+               "name" : "deviceNotRequested",
+               "operandTypeSpecifier" : {
+                  "localId" : "350",
+                  "locator" : "79:62-79:79",
+                  "name" : "{http://hl7.org/fhir}DeviceRequest",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "localId" : "363",
+            "locator" : "85:1-86:130",
+            "name" : "doNotPerform",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Returns the value of the doNotPerform extension for a Device Not Requested"
+               } ],
+               "s" : {
+                  "r" : "363",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Returns the value of the doNotPerform extension for a Device Not Requested\n*/\n","define fluent function doNotPerform(deviceNotRequested DeviceNotRequested):\n  " ]
+                  }, {
+                     "r" : "368",
+                     "s" : [ {
+                        "r" : "368",
+                        "s" : [ {
+                           "r" : "375",
+                           "s" : [ {
+                              "r" : "372",
+                              "s" : [ {
+                                 "r" : "369",
+                                 "s" : [ {
+                                    "value" : [ "deviceNotRequested" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "372",
+                                 "s" : [ {
+                                    "value" : [ "ext","(" ]
+                                 }, {
+                                    "r" : "370",
+                                    "s" : [ {
+                                       "value" : [ "'http://hl7.org/fhir/5.0/StructureDefinition/extension-DeviceRequest.doNotPerform'" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ ")" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "375",
+                              "s" : [ {
+                                 "value" : [ "value" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " as " ]
+                        }, {
+                           "r" : "376",
+                           "s" : [ {
+                              "value" : [ "FHIR",".","boolean" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "368",
+               "locator" : "86:3-86:130",
+               "strict" : false,
+               "type" : "As",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "375",
+                  "locator" : "86:3-86:114",
+                  "path" : "value",
+                  "type" : "Property",
+                  "source" : {
+                     "localId" : "372",
+                     "locator" : "86:3-86:108",
+                     "name" : "ext",
+                     "libraryName" : "FHIRCommon",
+                     "type" : "FunctionRef",
+                     "signature" : [ {
+                        "localId" : "373",
+                        "name" : "{http://hl7.org/fhir}DomainResource",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "374",
+                        "name" : "{urn:hl7-org:elm-types:r1}String",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "369",
+                        "locator" : "86:3-86:20",
+                        "name" : "deviceNotRequested",
+                        "type" : "OperandRef"
+                     }, {
+                        "localId" : "370",
+                        "locator" : "86:26-86:107",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-DeviceRequest.doNotPerform",
+                        "type" : "Literal"
+                     } ]
+                  }
+               },
+               "asTypeSpecifier" : {
+                  "localId" : "376",
+                  "locator" : "86:119-86:130",
+                  "name" : "{http://hl7.org/fhir}boolean",
+                  "type" : "NamedTypeSpecifier"
+               }
+            },
+            "operand" : [ {
+               "localId" : "365",
+               "name" : "deviceNotRequested",
+               "operandTypeSpecifier" : {
+                  "localId" : "364",
+                  "locator" : "85:56-85:73",
+                  "name" : "{http://hl7.org/fhir}DeviceRequest",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "localId" : "377",
+            "locator" : "92:1-93:44",
+            "name" : "code",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Returns the negated activity extent for a Device Not Requested"
+               }, {
+                  "name" : "seealso",
+                  "value" : "[Negation In US Quality Core](negation.html)"
+               } ],
+               "s" : {
+                  "r" : "377",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Returns the negated activity extent for a Device Not Requested\n@seealso: [Negation In US Quality Core](negation.html)\n*/\n","define fluent function code(deviceNotRequested DeviceNotRequested):\n  " ]
+                  }, {
+                     "r" : "384",
+                     "s" : [ {
+                        "r" : "384",
+                        "s" : [ {
+                           "r" : "383",
+                           "s" : [ {
+                              "r" : "382",
+                              "s" : [ {
+                                 "value" : [ "deviceNotRequested" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "383",
+                              "s" : [ {
+                                 "value" : [ "code" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "384",
+                           "s" : [ {
+                              "value" : [ "toActivityExtent","()" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "384",
+               "locator" : "93:3-93:44",
+               "name" : "toActivityExtent",
+               "type" : "FunctionRef",
+               "signature" : [ {
+                  "localId" : "385",
+                  "name" : "{http://hl7.org/fhir}CodeableConcept",
+                  "type" : "NamedTypeSpecifier"
+               } ],
+               "operand" : [ {
+                  "localId" : "383",
+                  "locator" : "93:3-93:25",
+                  "path" : "code",
+                  "type" : "Property",
+                  "source" : {
+                     "localId" : "382",
+                     "locator" : "93:3-93:20",
+                     "name" : "deviceNotRequested",
+                     "type" : "OperandRef"
+                  }
+               } ]
+            },
+            "operand" : [ {
+               "localId" : "379",
+               "name" : "deviceNotRequested",
+               "operandTypeSpecifier" : {
+                  "localId" : "378",
+                  "locator" : "92:48-92:65",
+                  "name" : "{http://hl7.org/fhir}DeviceRequest",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "localId" : "386",
+            "locator" : "98:1-99:142",
+            "name" : "abatement",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Returns the value of the abatement extension for a FamilyMemberHistory"
+               } ],
+               "s" : {
+                  "r" : "386",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Returns the value of the abatement extension for a FamilyMemberHistory\n*/\n","define fluent function abatement(familyMemberHistory FamilyMemberHistory):\n  " ]
+                  }, {
+                     "r" : "391",
+                     "s" : [ {
+                        "r" : "391",
+                        "s" : [ {
+                           "r" : "398",
+                           "s" : [ {
+                              "r" : "395",
+                              "s" : [ {
+                                 "r" : "392",
+                                 "s" : [ {
+                                    "value" : [ "familyMemberHistory" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "395",
+                                 "s" : [ {
+                                    "value" : [ "ext","(" ]
+                                 }, {
+                                    "r" : "393",
+                                    "s" : [ {
+                                       "value" : [ "'hl7.org/fhir/StructureDefinition/familymemberhistory-abatement'" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ ")" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "398",
+                              "s" : [ {
+                                 "value" : [ "value" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " as " ]
+                        }, {
+                           "r" : "402",
+                           "s" : [ {
+                              "value" : [ "Choice<" ]
+                           }, {
+                              "r" : "399",
+                              "s" : [ {
+                                 "value" : [ "FHIR",".","date" ]
+                              } ]
+                           }, {
+                              "value" : [ ", " ]
+                           }, {
+                              "r" : "400",
+                              "s" : [ {
+                                 "value" : [ "FHIR",".","Age" ]
+                              } ]
+                           }, {
+                              "value" : [ ", " ]
+                           }, {
+                              "r" : "401",
+                              "s" : [ {
+                                 "value" : [ "FHIR",".","boolean" ]
+                              } ]
+                           }, {
+                              "value" : [ ">" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "391",
+               "locator" : "99:3-99:142",
+               "strict" : false,
+               "type" : "As",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "398",
+                  "locator" : "99:3-99:97",
+                  "path" : "value",
+                  "type" : "Property",
+                  "source" : {
+                     "localId" : "395",
+                     "locator" : "99:3-99:91",
+                     "name" : "ext",
+                     "libraryName" : "FHIRCommon",
+                     "type" : "FunctionRef",
+                     "signature" : [ {
+                        "localId" : "396",
+                        "name" : "{http://hl7.org/fhir}DomainResource",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "397",
+                        "name" : "{urn:hl7-org:elm-types:r1}String",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "392",
+                        "locator" : "99:3-99:21",
+                        "name" : "familyMemberHistory",
+                        "type" : "OperandRef"
+                     }, {
+                        "localId" : "393",
+                        "locator" : "99:27-99:90",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "hl7.org/fhir/StructureDefinition/familymemberhistory-abatement",
+                        "type" : "Literal"
+                     } ]
+                  }
+               },
+               "asTypeSpecifier" : {
+                  "localId" : "402",
+                  "locator" : "99:102-99:142",
+                  "type" : "ChoiceTypeSpecifier",
+                  "choice" : [ {
+                     "localId" : "399",
+                     "locator" : "99:109-99:117",
+                     "name" : "{http://hl7.org/fhir}date",
+                     "type" : "NamedTypeSpecifier"
+                  }, {
+                     "localId" : "400",
+                     "locator" : "99:120-99:127",
+                     "name" : "{http://hl7.org/fhir}Age",
+                     "type" : "NamedTypeSpecifier"
+                  }, {
+                     "localId" : "401",
+                     "locator" : "99:130-99:141",
+                     "name" : "{http://hl7.org/fhir}boolean",
+                     "type" : "NamedTypeSpecifier"
+                  } ]
+               }
+            },
+            "operand" : [ {
+               "localId" : "388",
+               "name" : "familyMemberHistory",
+               "operandTypeSpecifier" : {
+                  "localId" : "387",
+                  "locator" : "98:54-98:72",
+                  "name" : "{http://hl7.org/fhir}FamilyMemberHistory",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "localId" : "403",
+            "locator" : "104:1-105:120",
+            "name" : "severity",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Returns the value of the severity extension for a FamilyMemberHistory"
+               } ],
+               "s" : {
+                  "r" : "403",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Returns the value of the severity extension for a FamilyMemberHistory\n*/\n","define fluent function severity(familyMemberHistory FamilyMemberHistory):\n  " ]
+                  }, {
+                     "r" : "408",
+                     "s" : [ {
+                        "r" : "408",
+                        "s" : [ {
+                           "r" : "415",
+                           "s" : [ {
+                              "r" : "412",
+                              "s" : [ {
+                                 "r" : "409",
+                                 "s" : [ {
+                                    "value" : [ "familyMemberHistory" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "412",
+                                 "s" : [ {
+                                    "value" : [ "ext","(" ]
+                                 }, {
+                                    "r" : "410",
+                                    "s" : [ {
+                                       "value" : [ "'hl7.org/fhir/StructureDefinition/familymemberhistory-severity'" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ ")" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "415",
+                              "s" : [ {
+                                 "value" : [ "value" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " as " ]
+                        }, {
+                           "r" : "416",
+                           "s" : [ {
+                              "value" : [ "FHIR",".","CodeableConcept" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "408",
+               "locator" : "105:3-105:120",
+               "strict" : false,
+               "type" : "As",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "415",
+                  "locator" : "105:3-105:96",
+                  "path" : "value",
+                  "type" : "Property",
+                  "source" : {
+                     "localId" : "412",
+                     "locator" : "105:3-105:90",
+                     "name" : "ext",
+                     "libraryName" : "FHIRCommon",
+                     "type" : "FunctionRef",
+                     "signature" : [ {
+                        "localId" : "413",
+                        "name" : "{http://hl7.org/fhir}DomainResource",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "414",
+                        "name" : "{urn:hl7-org:elm-types:r1}String",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "409",
+                        "locator" : "105:3-105:21",
+                        "name" : "familyMemberHistory",
+                        "type" : "OperandRef"
+                     }, {
+                        "localId" : "410",
+                        "locator" : "105:27-105:89",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "hl7.org/fhir/StructureDefinition/familymemberhistory-severity",
+                        "type" : "Literal"
+                     } ]
+                  }
+               },
+               "asTypeSpecifier" : {
+                  "localId" : "416",
+                  "locator" : "105:101-105:120",
+                  "name" : "{http://hl7.org/fhir}CodeableConcept",
+                  "type" : "NamedTypeSpecifier"
+               }
+            },
+            "operand" : [ {
+               "localId" : "405",
+               "name" : "familyMemberHistory",
+               "operandTypeSpecifier" : {
+                  "localId" : "404",
+                  "locator" : "104:53-104:71",
+                  "name" : "{http://hl7.org/fhir}FamilyMemberHistory",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "localId" : "417",
+            "locator" : "111:1-112:52",
+            "name" : "vaccineCode",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Returns the negated activity extent for an Immunization Not Done"
+               }, {
+                  "name" : "seealso",
+                  "value" : "[Negation In US Quality Core](negation.html)"
+               } ],
+               "s" : {
+                  "r" : "417",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Returns the negated activity extent for an Immunization Not Done\n@seealso: [Negation In US Quality Core](negation.html)\n*/\n","define fluent function vaccineCode(immunizationNotDone ImmunizationNotDone):\n  " ]
+                  }, {
+                     "r" : "424",
+                     "s" : [ {
+                        "r" : "424",
+                        "s" : [ {
+                           "r" : "423",
+                           "s" : [ {
+                              "r" : "422",
+                              "s" : [ {
+                                 "value" : [ "immunizationNotDone" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "423",
+                              "s" : [ {
+                                 "value" : [ "vaccineCode" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "424",
+                           "s" : [ {
+                              "value" : [ "toActivityExtent","()" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "424",
+               "locator" : "112:3-112:52",
+               "name" : "toActivityExtent",
+               "type" : "FunctionRef",
+               "signature" : [ {
+                  "localId" : "425",
+                  "name" : "{http://hl7.org/fhir}CodeableConcept",
+                  "type" : "NamedTypeSpecifier"
+               } ],
+               "operand" : [ {
+                  "localId" : "423",
+                  "locator" : "112:3-112:33",
+                  "path" : "vaccineCode",
+                  "type" : "Property",
+                  "source" : {
+                     "localId" : "422",
+                     "locator" : "112:3-112:21",
+                     "name" : "immunizationNotDone",
+                     "type" : "OperandRef"
+                  }
+               } ]
+            },
+            "operand" : [ {
+               "localId" : "419",
+               "name" : "immunizationNotDone",
+               "operandTypeSpecifier" : {
+                  "localId" : "418",
+                  "locator" : "111:56-111:74",
+                  "name" : "{http://hl7.org/fhir}Immunization",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "localId" : "426",
+            "locator" : "117:1-118:151",
+            "name" : "recorded",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Returns the value of the recorded extension for a Medication Administration Not Done"
+               } ],
+               "s" : {
+                  "r" : "426",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Returns the value of the recorded extension for a Medication Administration Not Done\n*/\n","define fluent function recorded(medicationAdministrationNotDone MedicationAdministrationNotDone):\n  " ]
+                  }, {
+                     "r" : "431",
+                     "s" : [ {
+                        "r" : "431",
+                        "s" : [ {
+                           "r" : "438",
+                           "s" : [ {
+                              "r" : "435",
+                              "s" : [ {
+                                 "r" : "432",
+                                 "s" : [ {
+                                    "value" : [ "medicationAdministrationNotDone" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "435",
+                                 "s" : [ {
+                                    "value" : [ "ext","(" ]
+                                 }, {
+                                    "r" : "433",
+                                    "s" : [ {
+                                       "value" : [ "'http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-recorded'" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ ")" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "438",
+                              "s" : [ {
+                                 "value" : [ "value" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " as " ]
+                        }, {
+                           "r" : "439",
+                           "s" : [ {
+                              "value" : [ "FHIR",".","dateTime" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "431",
+               "locator" : "118:3-118:151",
+               "strict" : false,
+               "type" : "As",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "438",
+                  "locator" : "118:3-118:134",
+                  "path" : "value",
+                  "type" : "Property",
+                  "source" : {
+                     "localId" : "435",
+                     "locator" : "118:3-118:128",
+                     "name" : "ext",
+                     "libraryName" : "FHIRCommon",
+                     "type" : "FunctionRef",
+                     "signature" : [ {
+                        "localId" : "436",
+                        "name" : "{http://hl7.org/fhir}DomainResource",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "437",
+                        "name" : "{urn:hl7-org:elm-types:r1}String",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "432",
+                        "locator" : "118:3-118:33",
+                        "name" : "medicationAdministrationNotDone",
+                        "type" : "OperandRef"
+                     }, {
+                        "localId" : "433",
+                        "locator" : "118:39-118:127",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-recorded",
+                        "type" : "Literal"
+                     } ]
+                  }
+               },
+               "asTypeSpecifier" : {
+                  "localId" : "439",
+                  "locator" : "118:139-118:151",
+                  "name" : "{http://hl7.org/fhir}dateTime",
+                  "type" : "NamedTypeSpecifier"
+               }
+            },
+            "operand" : [ {
+               "localId" : "428",
+               "name" : "medicationAdministrationNotDone",
+               "operandTypeSpecifier" : {
+                  "localId" : "427",
+                  "locator" : "117:65-117:95",
+                  "name" : "{http://hl7.org/fhir}MedicationAdministration",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "localId" : "440",
+            "locator" : "124:1-125:63",
+            "name" : "medication",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Returns the negated activity extent for a Medication Administration Not Done"
+               }, {
+                  "name" : "seealso",
+                  "value" : "[Negation In US Quality Core](negation.html)"
+               } ],
+               "s" : {
+                  "r" : "440",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Returns the negated activity extent for a Medication Administration Not Done\n@seealso: [Negation In US Quality Core](negation.html)\n*/\n","define fluent function medication(medicationAdministrationNotDone MedicationAdministrationNotDone):\n  " ]
+                  }, {
+                     "r" : "447",
+                     "s" : [ {
+                        "r" : "447",
+                        "s" : [ {
+                           "r" : "446",
+                           "s" : [ {
+                              "r" : "445",
+                              "s" : [ {
+                                 "value" : [ "medicationAdministrationNotDone" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "446",
+                              "s" : [ {
+                                 "value" : [ "medication" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "447",
+                           "s" : [ {
+                              "value" : [ "toActivityExtent","()" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "447",
+               "locator" : "125:3-125:63",
+               "name" : "toActivityExtent",
+               "type" : "FunctionRef",
+               "signature" : [ {
+                  "localId" : "448",
+                  "name" : "{http://hl7.org/fhir}CodeableConcept",
+                  "type" : "NamedTypeSpecifier"
+               } ],
+               "operand" : [ {
+                  "localId" : "446",
+                  "locator" : "125:3-125:44",
+                  "path" : "medication",
+                  "type" : "Property",
+                  "source" : {
+                     "localId" : "445",
+                     "locator" : "125:3-125:33",
+                     "name" : "medicationAdministrationNotDone",
+                     "type" : "OperandRef"
+                  }
+               } ]
+            },
+            "operand" : [ {
+               "localId" : "442",
+               "name" : "medicationAdministrationNotDone",
+               "operandTypeSpecifier" : {
+                  "localId" : "441",
+                  "locator" : "124:67-124:97",
+                  "name" : "{http://hl7.org/fhir}MedicationAdministration",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "localId" : "449",
+            "locator" : "130:1-131:146",
+            "name" : "recorded",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Returns the value of the recorded extension for a Medication Dispense Declined"
+               } ],
+               "s" : {
+                  "r" : "449",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Returns the value of the recorded extension for a Medication Dispense Declined\n*/\n","define fluent function recorded(medicationDispenseDeclined MedicationDispenseDeclined):\n  " ]
+                  }, {
+                     "r" : "454",
+                     "s" : [ {
+                        "r" : "454",
+                        "s" : [ {
+                           "r" : "461",
+                           "s" : [ {
+                              "r" : "458",
+                              "s" : [ {
+                                 "r" : "455",
+                                 "s" : [ {
+                                    "value" : [ "medicationDispenseDeclined" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "458",
+                                 "s" : [ {
+                                    "value" : [ "ext","(" ]
+                                 }, {
+                                    "r" : "456",
+                                    "s" : [ {
+                                       "value" : [ "'http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-recorded'" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ ")" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "461",
+                              "s" : [ {
+                                 "value" : [ "value" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " as " ]
+                        }, {
+                           "r" : "462",
+                           "s" : [ {
+                              "value" : [ "FHIR",".","dateTime" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "454",
+               "locator" : "131:3-131:146",
+               "strict" : false,
+               "type" : "As",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "461",
+                  "locator" : "131:3-131:129",
+                  "path" : "value",
+                  "type" : "Property",
+                  "source" : {
+                     "localId" : "458",
+                     "locator" : "131:3-131:123",
+                     "name" : "ext",
+                     "libraryName" : "FHIRCommon",
+                     "type" : "FunctionRef",
+                     "signature" : [ {
+                        "localId" : "459",
+                        "name" : "{http://hl7.org/fhir}DomainResource",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "460",
+                        "name" : "{urn:hl7-org:elm-types:r1}String",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "455",
+                        "locator" : "131:3-131:28",
+                        "name" : "medicationDispenseDeclined",
+                        "type" : "OperandRef"
+                     }, {
+                        "localId" : "456",
+                        "locator" : "131:34-131:122",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-recorded",
+                        "type" : "Literal"
+                     } ]
+                  }
+               },
+               "asTypeSpecifier" : {
+                  "localId" : "462",
+                  "locator" : "131:134-131:146",
+                  "name" : "{http://hl7.org/fhir}dateTime",
+                  "type" : "NamedTypeSpecifier"
+               }
+            },
+            "operand" : [ {
+               "localId" : "451",
+               "name" : "medicationDispenseDeclined",
+               "operandTypeSpecifier" : {
+                  "localId" : "450",
+                  "locator" : "130:60-130:85",
+                  "name" : "{http://hl7.org/fhir}MedicationDispense",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "localId" : "463",
+            "locator" : "137:1-138:84",
+            "name" : "medication",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Returns the negated activity extent for a Medication Dispense Declined"
+               }, {
+                  "name" : "seealso",
+                  "value" : "[Negation In US Quality Core](negation.html)"
+               } ],
+               "s" : {
+                  "r" : "463",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Returns the negated activity extent for a Medication Dispense Declined\n@seealso: [Negation In US Quality Core](negation.html)\n*/\n","define fluent function medication(medicationDispenseDeclined MedicationDispenseDeclined):\n  " ]
+                  }, {
+                     "r" : "472",
+                     "s" : [ {
+                        "r" : "472",
+                        "s" : [ {
+                           "r" : "468",
+                           "s" : [ {
+                              "value" : [ "(" ]
+                           }, {
+                              "r" : "468",
+                              "s" : [ {
+                                 "r" : "470",
+                                 "s" : [ {
+                                    "r" : "469",
+                                    "s" : [ {
+                                       "value" : [ "medicationDispenseDeclined" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "470",
+                                    "s" : [ {
+                                       "value" : [ "medication" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " as " ]
+                              }, {
+                                 "r" : "471",
+                                 "s" : [ {
+                                    "value" : [ "FHIR",".","CodeableConcept" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ ")" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "472",
+                           "s" : [ {
+                              "value" : [ "toActivityExtent","()" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "472",
+               "locator" : "138:3-138:84",
+               "name" : "toActivityExtent",
+               "type" : "FunctionRef",
+               "signature" : [ {
+                  "localId" : "473",
+                  "name" : "{http://hl7.org/fhir}CodeableConcept",
+                  "type" : "NamedTypeSpecifier"
+               } ],
+               "operand" : [ {
+                  "localId" : "468",
+                  "locator" : "138:3-138:65",
+                  "strict" : false,
+                  "type" : "As",
+                  "signature" : [ ],
+                  "operand" : {
+                     "localId" : "470",
+                     "locator" : "138:4-138:40",
+                     "path" : "medication",
+                     "type" : "Property",
+                     "source" : {
+                        "localId" : "469",
+                        "locator" : "138:4-138:29",
+                        "name" : "medicationDispenseDeclined",
+                        "type" : "OperandRef"
+                     }
+                  },
+                  "asTypeSpecifier" : {
+                     "localId" : "471",
+                     "locator" : "138:45-138:64",
+                     "name" : "{http://hl7.org/fhir}CodeableConcept",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               } ]
+            },
+            "operand" : [ {
+               "localId" : "465",
+               "name" : "medicationDispenseDeclined",
+               "operandTypeSpecifier" : {
+                  "localId" : "464",
+                  "locator" : "137:62-137:87",
+                  "name" : "{http://hl7.org/fhir}MedicationDispense",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "localId" : "474",
+            "locator" : "144:1-145:54",
+            "name" : "medication",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Returns the negated activity extent for a Medication Not Requested"
+               }, {
+                  "name" : "seealso",
+                  "value" : "[Negation In US Quality Core](negation.html)"
+               } ],
+               "s" : {
+                  "r" : "474",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Returns the negated activity extent for a Medication Not Requested\n@seealso: [Negation In US Quality Core](negation.html)\n*/\n","define fluent function medication(medicationNotRequested MedicationNotRequested):\n  " ]
+                  }, {
+                     "r" : "481",
+                     "s" : [ {
+                        "r" : "481",
+                        "s" : [ {
+                           "r" : "480",
+                           "s" : [ {
+                              "r" : "479",
+                              "s" : [ {
+                                 "value" : [ "medicationNotRequested" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "480",
+                              "s" : [ {
+                                 "value" : [ "medication" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "481",
+                           "s" : [ {
+                              "value" : [ "toActivityExtent","()" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "481",
+               "locator" : "145:3-145:54",
+               "name" : "toActivityExtent",
+               "type" : "FunctionRef",
+               "signature" : [ {
+                  "localId" : "482",
+                  "name" : "{http://hl7.org/fhir}CodeableConcept",
+                  "type" : "NamedTypeSpecifier"
+               } ],
+               "operand" : [ {
+                  "localId" : "480",
+                  "locator" : "145:3-145:35",
+                  "path" : "medication",
+                  "type" : "Property",
+                  "source" : {
+                     "localId" : "479",
+                     "locator" : "145:3-145:24",
+                     "name" : "medicationNotRequested",
+                     "type" : "OperandRef"
+                  }
+               } ]
+            },
+            "operand" : [ {
+               "localId" : "476",
+               "name" : "medicationNotRequested",
+               "operandTypeSpecifier" : {
+                  "localId" : "475",
+                  "locator" : "144:58-144:79",
+                  "name" : "{http://hl7.org/fhir}MedicationRequest",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "localId" : "483",
+            "locator" : "150:1-151:152",
+            "name" : "notDoneReason",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Returns the notDoneReason for an ObservationCancelled"
+               } ],
+               "s" : {
+                  "r" : "483",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Returns the notDoneReason for an ObservationCancelled\n*/\n","define fluent function notDoneReason(observationCancelled ObservationCancelled):\n  " ]
+                  }, {
+                     "r" : "488",
+                     "s" : [ {
+                        "r" : "488",
+                        "s" : [ {
+                           "r" : "495",
+                           "s" : [ {
+                              "r" : "492",
+                              "s" : [ {
+                                 "r" : "489",
+                                 "s" : [ {
+                                    "value" : [ "observationCancelled" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "492",
+                                 "s" : [ {
+                                    "value" : [ "ext","(" ]
+                                 }, {
+                                    "r" : "490",
+                                    "s" : [ {
+                                       "value" : [ "'http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-notDoneReason'" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ ")" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "495",
+                              "s" : [ {
+                                 "value" : [ "value" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " as " ]
+                        }, {
+                           "r" : "496",
+                           "s" : [ {
+                              "value" : [ "FHIR",".","CodeableConcept" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "488",
+               "locator" : "151:3-151:152",
+               "strict" : false,
+               "type" : "As",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "495",
+                  "locator" : "151:3-151:128",
+                  "path" : "value",
+                  "type" : "Property",
+                  "source" : {
+                     "localId" : "492",
+                     "locator" : "151:3-151:122",
+                     "name" : "ext",
+                     "libraryName" : "FHIRCommon",
+                     "type" : "FunctionRef",
+                     "signature" : [ {
+                        "localId" : "493",
+                        "name" : "{http://hl7.org/fhir}DomainResource",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "494",
+                        "name" : "{urn:hl7-org:elm-types:r1}String",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "489",
+                        "locator" : "151:3-151:22",
+                        "name" : "observationCancelled",
+                        "type" : "OperandRef"
+                     }, {
+                        "localId" : "490",
+                        "locator" : "151:28-151:121",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-notDoneReason",
+                        "type" : "Literal"
+                     } ]
+                  }
+               },
+               "asTypeSpecifier" : {
+                  "localId" : "496",
+                  "locator" : "151:133-151:152",
+                  "name" : "{http://hl7.org/fhir}CodeableConcept",
+                  "type" : "NamedTypeSpecifier"
+               }
+            },
+            "operand" : [ {
+               "localId" : "485",
+               "name" : "observationCancelled",
+               "operandTypeSpecifier" : {
+                  "localId" : "484",
+                  "locator" : "150:59-150:78",
+                  "name" : "{http://hl7.org/fhir}Observation",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "localId" : "497",
+            "locator" : "157:1-158:46",
+            "name" : "code",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Returns the negated activity extent for an ObservationCancelled"
+               }, {
+                  "name" : "seealso",
+                  "value" : "[Negation In US Quality Core](negation.html)"
+               } ],
+               "s" : {
+                  "r" : "497",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Returns the negated activity extent for an ObservationCancelled\n@seealso: [Negation In US Quality Core](negation.html)\n*/\n","define fluent function code(observationCancelled ObservationCancelled):\n  " ]
+                  }, {
+                     "r" : "504",
+                     "s" : [ {
+                        "r" : "504",
+                        "s" : [ {
+                           "r" : "503",
+                           "s" : [ {
+                              "r" : "502",
+                              "s" : [ {
+                                 "value" : [ "observationCancelled" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "503",
+                              "s" : [ {
+                                 "value" : [ "code" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "504",
+                           "s" : [ {
+                              "value" : [ "toActivityExtent","()" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "504",
+               "locator" : "158:3-158:46",
+               "name" : "toActivityExtent",
+               "type" : "FunctionRef",
+               "signature" : [ {
+                  "localId" : "505",
+                  "name" : "{http://hl7.org/fhir}CodeableConcept",
+                  "type" : "NamedTypeSpecifier"
+               } ],
+               "operand" : [ {
+                  "localId" : "503",
+                  "locator" : "158:3-158:27",
+                  "path" : "code",
+                  "type" : "Property",
+                  "source" : {
+                     "localId" : "502",
+                     "locator" : "158:3-158:22",
+                     "name" : "observationCancelled",
+                     "type" : "OperandRef"
+                  }
+               } ]
+            },
+            "operand" : [ {
+               "localId" : "499",
+               "name" : "observationCancelled",
+               "operandTypeSpecifier" : {
+                  "localId" : "498",
+                  "locator" : "157:50-157:69",
+                  "name" : "{http://hl7.org/fhir}Observation",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "localId" : "506",
+            "locator" : "163:1-164:129",
+            "name" : "recorded",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Returns the value of the recorded extension for a Procedure"
+               } ],
+               "s" : {
+                  "r" : "506",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Returns the value of the recorded extension for a Procedure\n*/\n","define fluent function recorded(procedure Procedure):\n  " ]
+                  }, {
+                     "r" : "511",
+                     "s" : [ {
+                        "r" : "511",
+                        "s" : [ {
+                           "r" : "518",
+                           "s" : [ {
+                              "r" : "515",
+                              "s" : [ {
+                                 "r" : "512",
+                                 "s" : [ {
+                                    "value" : [ "procedure" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "515",
+                                 "s" : [ {
+                                    "value" : [ "ext","(" ]
+                                 }, {
+                                    "r" : "513",
+                                    "s" : [ {
+                                       "value" : [ "'http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-recorded'" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ ")" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "518",
+                              "s" : [ {
+                                 "value" : [ "value" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " as " ]
+                        }, {
+                           "r" : "519",
+                           "s" : [ {
+                              "value" : [ "FHIR",".","dateTime" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "511",
+               "locator" : "164:3-164:129",
+               "strict" : false,
+               "type" : "As",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "518",
+                  "locator" : "164:3-164:112",
+                  "path" : "value",
+                  "type" : "Property",
+                  "source" : {
+                     "localId" : "515",
+                     "locator" : "164:3-164:106",
+                     "name" : "ext",
+                     "libraryName" : "FHIRCommon",
+                     "type" : "FunctionRef",
+                     "signature" : [ {
+                        "localId" : "516",
+                        "name" : "{http://hl7.org/fhir}DomainResource",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "517",
+                        "name" : "{urn:hl7-org:elm-types:r1}String",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "512",
+                        "locator" : "164:3-164:11",
+                        "name" : "procedure",
+                        "type" : "OperandRef"
+                     }, {
+                        "localId" : "513",
+                        "locator" : "164:17-164:105",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-recorded",
+                        "type" : "Literal"
+                     } ]
+                  }
+               },
+               "asTypeSpecifier" : {
+                  "localId" : "519",
+                  "locator" : "164:117-164:129",
+                  "name" : "{http://hl7.org/fhir}dateTime",
+                  "type" : "NamedTypeSpecifier"
+               }
+            },
+            "operand" : [ {
+               "localId" : "508",
+               "name" : "procedure",
+               "operandTypeSpecifier" : {
+                  "localId" : "507",
+                  "locator" : "163:43-163:51",
+                  "name" : "{http://hl7.org/fhir}Procedure",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "localId" : "520",
+            "locator" : "169:1-170:136",
+            "name" : "recorded",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Returns the value of the recorded extension for a Medication Administration Not Done"
+               } ],
+               "s" : {
+                  "r" : "520",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Returns the value of the recorded extension for a Medication Administration Not Done\n*/\n","define fluent function recorded(procedureNotDone ProcedureNotDone):\n  " ]
+                  }, {
+                     "r" : "525",
+                     "s" : [ {
+                        "r" : "525",
+                        "s" : [ {
+                           "r" : "532",
+                           "s" : [ {
+                              "r" : "529",
+                              "s" : [ {
+                                 "r" : "526",
+                                 "s" : [ {
+                                    "value" : [ "procedureNotDone" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "529",
+                                 "s" : [ {
+                                    "value" : [ "ext","(" ]
+                                 }, {
+                                    "r" : "527",
+                                    "s" : [ {
+                                       "value" : [ "'http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-recorded'" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ ")" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "532",
+                              "s" : [ {
+                                 "value" : [ "value" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " as " ]
+                        }, {
+                           "r" : "533",
+                           "s" : [ {
+                              "value" : [ "FHIR",".","dateTime" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "525",
+               "locator" : "170:3-170:136",
+               "strict" : false,
+               "type" : "As",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "532",
+                  "locator" : "170:3-170:119",
+                  "path" : "value",
+                  "type" : "Property",
+                  "source" : {
+                     "localId" : "529",
+                     "locator" : "170:3-170:113",
+                     "name" : "ext",
+                     "libraryName" : "FHIRCommon",
+                     "type" : "FunctionRef",
+                     "signature" : [ {
+                        "localId" : "530",
+                        "name" : "{http://hl7.org/fhir}DomainResource",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "531",
+                        "name" : "{urn:hl7-org:elm-types:r1}String",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "526",
+                        "locator" : "170:3-170:18",
+                        "name" : "procedureNotDone",
+                        "type" : "OperandRef"
+                     }, {
+                        "localId" : "527",
+                        "locator" : "170:24-170:112",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-recorded",
+                        "type" : "Literal"
+                     } ]
+                  }
+               },
+               "asTypeSpecifier" : {
+                  "localId" : "533",
+                  "locator" : "170:124-170:136",
+                  "name" : "{http://hl7.org/fhir}dateTime",
+                  "type" : "NamedTypeSpecifier"
+               }
+            },
+            "operand" : [ {
+               "localId" : "522",
+               "name" : "procedureNotDone",
+               "operandTypeSpecifier" : {
+                  "localId" : "521",
+                  "locator" : "169:50-169:65",
+                  "name" : "{http://hl7.org/fhir}Procedure",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "localId" : "534",
+            "locator" : "176:1-177:42",
+            "name" : "code",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Returns the negated activity extent for a Procedure Not Done"
+               }, {
+                  "name" : "seealso",
+                  "value" : "[Negation In US Quality Core](negation.html)"
+               } ],
+               "s" : {
+                  "r" : "534",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Returns the negated activity extent for a Procedure Not Done\n@seealso: [Negation In US Quality Core](negation.html)\n*/\n","define fluent function code(procedureNotDone ProcedureNotDone):\n  " ]
+                  }, {
+                     "r" : "541",
+                     "s" : [ {
+                        "r" : "541",
+                        "s" : [ {
+                           "r" : "540",
+                           "s" : [ {
+                              "r" : "539",
+                              "s" : [ {
+                                 "value" : [ "procedureNotDone" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "540",
+                              "s" : [ {
+                                 "value" : [ "code" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "541",
+                           "s" : [ {
+                              "value" : [ "toActivityExtent","()" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "541",
+               "locator" : "177:3-177:42",
+               "name" : "toActivityExtent",
+               "type" : "FunctionRef",
+               "signature" : [ {
+                  "localId" : "542",
+                  "name" : "{http://hl7.org/fhir}CodeableConcept",
+                  "type" : "NamedTypeSpecifier"
+               } ],
+               "operand" : [ {
+                  "localId" : "540",
+                  "locator" : "177:3-177:23",
+                  "path" : "code",
+                  "type" : "Property",
+                  "source" : {
+                     "localId" : "539",
+                     "locator" : "177:3-177:18",
+                     "name" : "procedureNotDone",
+                     "type" : "OperandRef"
+                  }
+               } ]
+            },
+            "operand" : [ {
+               "localId" : "536",
+               "name" : "procedureNotDone",
+               "operandTypeSpecifier" : {
+                  "localId" : "535",
+                  "locator" : "176:46-176:61",
+                  "name" : "{http://hl7.org/fhir}Procedure",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "localId" : "543",
+            "locator" : "182:1-183:156",
+            "name" : "reasonRefused",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Returns the value of the recorded extension for a Medication Administration Not Done"
+               } ],
+               "s" : {
+                  "r" : "543",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Returns the value of the recorded extension for a Medication Administration Not Done\n*/\n","define fluent function reasonRefused(serviceNotRequested ServiceNotRequested):\n  " ]
+                  }, {
+                     "r" : "548",
+                     "s" : [ {
+                        "r" : "548",
+                        "s" : [ {
+                           "r" : "555",
+                           "s" : [ {
+                              "r" : "552",
+                              "s" : [ {
+                                 "r" : "549",
+                                 "s" : [ {
+                                    "value" : [ "serviceNotRequested" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "552",
+                                 "s" : [ {
+                                    "value" : [ "ext","(" ]
+                                 }, {
+                                    "r" : "550",
+                                    "s" : [ {
+                                       "value" : [ "'http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-doNotPerformReason'" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ ")" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "555",
+                              "s" : [ {
+                                 "value" : [ "value" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " as " ]
+                        }, {
+                           "r" : "556",
+                           "s" : [ {
+                              "value" : [ "FHIR",".","CodeableConcept" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "548",
+               "locator" : "183:3-183:156",
+               "strict" : false,
+               "type" : "As",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "555",
+                  "locator" : "183:3-183:132",
+                  "path" : "value",
+                  "type" : "Property",
+                  "source" : {
+                     "localId" : "552",
+                     "locator" : "183:3-183:126",
+                     "name" : "ext",
+                     "libraryName" : "FHIRCommon",
+                     "type" : "FunctionRef",
+                     "signature" : [ {
+                        "localId" : "553",
+                        "name" : "{http://hl7.org/fhir}DomainResource",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "554",
+                        "name" : "{urn:hl7-org:elm-types:r1}String",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "549",
+                        "locator" : "183:3-183:21",
+                        "name" : "serviceNotRequested",
+                        "type" : "OperandRef"
+                     }, {
+                        "localId" : "550",
+                        "locator" : "183:27-183:125",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-doNotPerformReason",
+                        "type" : "Literal"
+                     } ]
+                  }
+               },
+               "asTypeSpecifier" : {
+                  "localId" : "556",
+                  "locator" : "183:137-183:156",
+                  "name" : "{http://hl7.org/fhir}CodeableConcept",
+                  "type" : "NamedTypeSpecifier"
+               }
+            },
+            "operand" : [ {
+               "localId" : "545",
+               "name" : "serviceNotRequested",
+               "operandTypeSpecifier" : {
+                  "localId" : "544",
+                  "locator" : "182:58-182:76",
+                  "name" : "{http://hl7.org/fhir}ServiceRequest",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "localId" : "557",
+            "locator" : "189:1-190:45",
+            "name" : "code",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Returns the negated activity extent for a Service Not Requested"
+               }, {
+                  "name" : "seealso",
+                  "value" : "[Negation In US Quality Core](negation.html)"
+               } ],
+               "s" : {
+                  "r" : "557",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Returns the negated activity extent for a Service Not Requested\n@seealso: [Negation In US Quality Core](negation.html)\n*/\n","define fluent function code(serviceNotRequested ServiceNotRequested):\n  " ]
+                  }, {
+                     "r" : "564",
+                     "s" : [ {
+                        "r" : "564",
+                        "s" : [ {
+                           "r" : "563",
+                           "s" : [ {
+                              "r" : "562",
+                              "s" : [ {
+                                 "value" : [ "serviceNotRequested" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "563",
+                              "s" : [ {
+                                 "value" : [ "code" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "564",
+                           "s" : [ {
+                              "value" : [ "toActivityExtent","()" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "564",
+               "locator" : "190:3-190:45",
+               "name" : "toActivityExtent",
+               "type" : "FunctionRef",
+               "signature" : [ {
+                  "localId" : "565",
+                  "name" : "{http://hl7.org/fhir}CodeableConcept",
+                  "type" : "NamedTypeSpecifier"
+               } ],
+               "operand" : [ {
+                  "localId" : "563",
+                  "locator" : "190:3-190:26",
+                  "path" : "code",
+                  "type" : "Property",
+                  "source" : {
+                     "localId" : "562",
+                     "locator" : "190:3-190:21",
+                     "name" : "serviceNotRequested",
+                     "type" : "OperandRef"
+                  }
+               } ]
+            },
+            "operand" : [ {
+               "localId" : "559",
+               "name" : "serviceNotRequested",
+               "operandTypeSpecifier" : {
+                  "localId" : "558",
+                  "locator" : "189:49-189:67",
+                  "name" : "{http://hl7.org/fhir}ServiceRequest",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "localId" : "566",
+            "locator" : "196:1-197:38",
+            "name" : "code",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Returns the negated activity extent for a Task Rejected"
+               }, {
+                  "name" : "seealso",
+                  "value" : "[Negation In US Quality Core](negation.html)"
+               } ],
+               "s" : {
+                  "r" : "566",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Returns the negated activity extent for a Task Rejected\n@seealso: [Negation In US Quality Core](negation.html)\n*/\n","define fluent function code(taskRejected TaskRejected):\n  " ]
+                  }, {
+                     "r" : "573",
+                     "s" : [ {
+                        "r" : "573",
+                        "s" : [ {
+                           "r" : "572",
+                           "s" : [ {
+                              "r" : "571",
+                              "s" : [ {
+                                 "value" : [ "taskRejected" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "572",
+                              "s" : [ {
+                                 "value" : [ "code" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "573",
+                           "s" : [ {
+                              "value" : [ "toActivityExtent","()" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "573",
+               "locator" : "197:3-197:38",
+               "name" : "toActivityExtent",
+               "type" : "FunctionRef",
+               "signature" : [ {
+                  "localId" : "574",
+                  "name" : "{http://hl7.org/fhir}CodeableConcept",
+                  "type" : "NamedTypeSpecifier"
+               } ],
+               "operand" : [ {
+                  "localId" : "572",
+                  "locator" : "197:3-197:19",
+                  "path" : "code",
+                  "type" : "Property",
+                  "source" : {
+                     "localId" : "571",
+                     "locator" : "197:3-197:14",
+                     "name" : "taskRejected",
+                     "type" : "OperandRef"
+                  }
+               } ]
+            },
+            "operand" : [ {
+               "localId" : "568",
+               "name" : "taskRejected",
+               "operandTypeSpecifier" : {
+                  "localId" : "567",
+                  "locator" : "196:42-196:53",
+                  "name" : "{http://hl7.org/fhir}Task",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "localId" : "575",
+            "locator" : "203:1-205:27",
+            "name" : "toDayNumbers",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Creates a list of integers from 1 to how many days are in the interval. Note, this wont create an index for\nthe final day if it is less than 24 hours. This also includes the first 24 hour period."
+               } ],
+               "s" : {
+                  "r" : "575",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Creates a list of integers from 1 to how many days are in the interval. Note, this wont create an index for\nthe final day if it is less than 24 hours. This also includes the first 24 hour period.\n*/\n","define fluent function toDayNumbers(Period Interval<DateTime>):\n  " ]
+                  }, {
+                     "r" : "608",
+                     "s" : [ {
+                        "r" : "608",
+                        "s" : [ {
+                           "s" : [ {
+                              "r" : "581",
+                              "s" : [ {
+                                 "r" : "597",
+                                 "s" : [ {
+                                    "value" : [ "( " ]
+                                 }, {
+                                    "r" : "597",
+                                    "s" : [ {
+                                       "value" : [ "expand " ]
+                                    }, {
+                                       "r" : "582",
+                                       "s" : [ {
+                                          "value" : [ "{ " ]
+                                       }, {
+                                          "r" : "595",
+                                          "s" : [ {
+                                             "r" : "583",
+                                             "value" : [ "Interval[","1",", " ]
+                                          }, {
+                                             "r" : "584",
+                                             "s" : [ {
+                                                "value" : [ "duration in days between " ]
+                                             }, {
+                                                "r" : "585",
+                                                "s" : [ {
+                                                   "value" : [ "start of " ]
+                                                }, {
+                                                   "r" : "586",
+                                                   "s" : [ {
+                                                      "value" : [ "Period" ]
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "value" : [ " and " ]
+                                             }, {
+                                                "r" : "589",
+                                                "s" : [ {
+                                                   "value" : [ "end of " ]
+                                                }, {
+                                                   "r" : "590",
+                                                   "s" : [ {
+                                                      "value" : [ "Period" ]
+                                                   } ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "]" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "}" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " )" ]
+                                 } ]
+                              }, {
+                                 "value" : [ " ","DayNumber" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n    " ]
+                        }, {
+                           "r" : "603",
+                           "s" : [ {
+                              "value" : [ "return " ]
+                           }, {
+                              "r" : "604",
+                              "s" : [ {
+                                 "value" : [ "end of " ]
+                              }, {
+                                 "r" : "605",
+                                 "s" : [ {
+                                    "value" : [ "DayNumber" ]
+                                 } ]
+                              } ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "608",
+               "locator" : "204:3-205:27",
+               "type" : "Query",
+               "source" : [ {
+                  "localId" : "581",
+                  "locator" : "204:3-204:97",
+                  "alias" : "DayNumber",
+                  "expression" : {
+                     "localId" : "597",
+                     "locator" : "204:3-204:87",
+                     "type" : "Expand",
+                     "signature" : [ {
+                        "localId" : "598",
+                        "type" : "ListTypeSpecifier",
+                        "elementType" : {
+                           "localId" : "599",
+                           "type" : "IntervalTypeSpecifier",
+                           "pointType" : {
+                              "localId" : "600",
+                              "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                              "type" : "NamedTypeSpecifier"
+                           }
+                        }
+                     }, {
+                        "localId" : "601",
+                        "name" : "{urn:hl7-org:elm-types:r1}Quantity",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "582",
+                        "locator" : "204:12-204:85",
+                        "type" : "List",
+                        "element" : [ {
+                           "localId" : "595",
+                           "locator" : "204:14-204:84",
+                           "lowClosed" : true,
+                           "highClosed" : true,
+                           "type" : "Interval",
+                           "low" : {
+                              "localId" : "583",
+                              "locator" : "204:23",
+                              "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                              "value" : "1",
+                              "type" : "Literal"
+                           },
+                           "high" : {
+                              "localId" : "584",
+                              "locator" : "204:26-204:83",
+                              "precision" : "Day",
+                              "type" : "DurationBetween",
+                              "signature" : [ {
+                                 "localId" : "593",
+                                 "name" : "{urn:hl7-org:elm-types:r1}DateTime",
+                                 "type" : "NamedTypeSpecifier"
+                              }, {
+                                 "localId" : "594",
+                                 "name" : "{urn:hl7-org:elm-types:r1}DateTime",
+                                 "type" : "NamedTypeSpecifier"
+                              } ],
+                              "operand" : [ {
+                                 "localId" : "585",
+                                 "locator" : "204:51-204:65",
+                                 "type" : "Start",
+                                 "signature" : [ {
+                                    "localId" : "587",
+                                    "type" : "IntervalTypeSpecifier",
+                                    "pointType" : {
+                                       "localId" : "588",
+                                       "name" : "{urn:hl7-org:elm-types:r1}DateTime",
+                                       "type" : "NamedTypeSpecifier"
+                                    }
+                                 } ],
+                                 "operand" : {
+                                    "localId" : "586",
+                                    "locator" : "204:60-204:65",
+                                    "name" : "Period",
+                                    "type" : "OperandRef"
+                                 }
+                              }, {
+                                 "localId" : "589",
+                                 "locator" : "204:71-204:83",
+                                 "type" : "End",
+                                 "signature" : [ {
+                                    "localId" : "591",
+                                    "type" : "IntervalTypeSpecifier",
+                                    "pointType" : {
+                                       "localId" : "592",
+                                       "name" : "{urn:hl7-org:elm-types:r1}DateTime",
+                                       "type" : "NamedTypeSpecifier"
+                                    }
+                                 } ],
+                                 "operand" : {
+                                    "localId" : "590",
+                                    "locator" : "204:78-204:83",
+                                    "name" : "Period",
+                                    "type" : "OperandRef"
+                                 }
+                              } ]
+                           }
+                        } ]
+                     }, {
+                        "localId" : "596",
+                        "type" : "Null"
+                     } ]
+                  }
+               } ],
+               "let" : [ ],
+               "relationship" : [ ],
+               "return" : {
+                  "localId" : "603",
+                  "locator" : "205:5-205:27",
+                  "expression" : {
+                     "localId" : "604",
+                     "locator" : "205:12-205:27",
+                     "type" : "End",
+                     "signature" : [ {
+                        "localId" : "606",
+                        "type" : "IntervalTypeSpecifier",
+                        "pointType" : {
+                           "localId" : "607",
+                           "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                           "type" : "NamedTypeSpecifier"
+                        }
+                     } ],
+                     "operand" : {
+                        "localId" : "605",
+                        "locator" : "205:19-205:27",
+                        "name" : "DayNumber",
+                        "type" : "AliasRef"
+                     }
+                  }
+               }
+            },
+            "operand" : [ {
+               "localId" : "578",
+               "name" : "Period",
+               "operandTypeSpecifier" : {
+                  "localId" : "576",
+                  "locator" : "203:44-203:61",
+                  "type" : "IntervalTypeSpecifier",
+                  "pointType" : {
+                     "localId" : "577",
+                     "locator" : "203:53-203:60",
+                     "name" : "{urn:hl7-org:elm-types:r1}DateTime",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            } ]
+         }, {
+            "localId" : "609",
+            "locator" : "211:1-219:5",
+            "name" : "daysInPeriod",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Creates a list of 24 hour long intervals in an interval paired with the index (1 indexed) to which 24 hour interval it is.\nNote that the result will include intervals that are closed at the beginning and open at the end"
+               } ],
+               "s" : {
+                  "r" : "609",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Creates a list of 24 hour long intervals in an interval paired with the index (1 indexed) to which 24 hour interval it is.\nNote that the result will include intervals that are closed at the beginning and open at the end\n*/\n","define fluent function daysInPeriod(Period Interval<DateTime>):\n  " ]
+                  }, {
+                     "r" : "679",
+                     "s" : [ {
+                        "r" : "679",
+                        "s" : [ {
+                           "s" : [ {
+                              "r" : "615",
+                              "s" : [ {
+                                 "r" : "617",
+                                 "s" : [ {
+                                    "value" : [ "( " ]
+                                 }, {
+                                    "r" : "617",
+                                    "s" : [ {
+                                       "r" : "616",
+                                       "s" : [ {
+                                          "value" : [ "Period" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "617",
+                                       "s" : [ {
+                                          "value" : [ "toDayNumbers","()" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ ")" ]
+                                 } ]
+                              }, {
+                                 "value" : [ " ","DayIndex" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n    " ]
+                        }, {
+                           "s" : [ {
+                              "value" : [ "let " ]
+                           }, {
+                              "r" : "621",
+                              "s" : [ {
+                                 "value" : [ "startPeriod",": " ]
+                              }, {
+                                 "r" : "622",
+                                 "s" : [ {
+                                    "r" : "623",
+                                    "s" : [ {
+                                       "value" : [ "start of " ]
+                                    }, {
+                                       "r" : "624",
+                                       "s" : [ {
+                                          "value" : [ "Period" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " + " ]
+                                 }, {
+                                    "r" : "627",
+                                    "s" : [ {
+                                       "value" : [ "(" ]
+                                    }, {
+                                       "r" : "627",
+                                       "s" : [ {
+                                          "r" : "628",
+                                          "s" : [ {
+                                             "value" : [ "24 ","hours" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " * " ]
+                                       }, {
+                                          "r" : "629",
+                                          "s" : [ {
+                                             "value" : [ "(" ]
+                                          }, {
+                                             "r" : "629",
+                                             "s" : [ {
+                                                "r" : "630",
+                                                "s" : [ {
+                                                   "value" : [ "DayIndex" ]
+                                                } ]
+                                             }, {
+                                                "r" : "631",
+                                                "value" : [ " - ","1" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ ")" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ ")" ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ ",\n    " ]
+                           }, {
+                              "r" : "641",
+                              "s" : [ {
+                                 "value" : [ "endPeriod",": " ]
+                              }, {
+                                 "r" : "642",
+                                 "s" : [ {
+                                    "value" : [ "if " ]
+                                 }, {
+                                    "r" : "643",
+                                    "s" : [ {
+                                       "value" : [ "(" ]
+                                    }, {
+                                       "r" : "643",
+                                       "s" : [ {
+                                          "r" : "644",
+                                          "s" : [ {
+                                             "value" : [ "hours between " ]
+                                          }, {
+                                             "r" : "645",
+                                             "s" : [ {
+                                                "value" : [ "startPeriod" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ " and " ]
+                                          }, {
+                                             "r" : "646",
+                                             "s" : [ {
+                                                "value" : [ "end of " ]
+                                             }, {
+                                                "r" : "647",
+                                                "s" : [ {
+                                                   "value" : [ "Period" ]
+                                                } ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "r" : "652",
+                                          "value" : [ " ","<"," ","24" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ ")" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " then " ]
+                                 }, {
+                                    "r" : "655",
+                                    "s" : [ {
+                                       "value" : [ "startPeriod" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n      else " ]
+                                 }, {
+                                    "r" : "656",
+                                    "s" : [ {
+                                       "r" : "657",
+                                       "s" : [ {
+                                          "value" : [ "start of " ]
+                                       }, {
+                                          "r" : "658",
+                                          "s" : [ {
+                                             "value" : [ "Period" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " + " ]
+                                    }, {
+                                       "r" : "661",
+                                       "s" : [ {
+                                          "value" : [ "(" ]
+                                       }, {
+                                          "r" : "661",
+                                          "s" : [ {
+                                             "r" : "662",
+                                             "s" : [ {
+                                                "value" : [ "24 ","hours" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ " * " ]
+                                          }, {
+                                             "r" : "663",
+                                             "s" : [ {
+                                                "value" : [ "DayIndex" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ ")" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n    " ]
+                        }, {
+                           "r" : "673",
+                           "s" : [ {
+                              "value" : [ "return " ]
+                           }, {
+                              "r" : "674",
+                              "s" : [ {
+                                 "value" : [ "Tuple {\n      " ]
+                              }, {
+                                 "s" : [ {
+                                    "value" : [ "dayIndex",": " ]
+                                 }, {
+                                    "r" : "675",
+                                    "s" : [ {
+                                       "value" : [ "DayIndex" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ ",\n      " ]
+                              }, {
+                                 "s" : [ {
+                                    "value" : [ "dayPeriod",": " ]
+                                 }, {
+                                    "r" : "678",
+                                    "s" : [ {
+                                       "value" : [ "Interval[" ]
+                                    }, {
+                                       "r" : "676",
+                                       "s" : [ {
+                                          "value" : [ "startPeriod" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ ", " ]
+                                    }, {
+                                       "r" : "677",
+                                       "s" : [ {
+                                          "value" : [ "endPeriod" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ ")" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n    }" ]
+                              } ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "679",
+               "locator" : "212:3-219:5",
+               "type" : "Query",
+               "source" : [ {
+                  "localId" : "615",
+                  "locator" : "212:3-212:35",
+                  "alias" : "DayIndex",
+                  "expression" : {
+                     "localId" : "617",
+                     "locator" : "212:3-212:26",
+                     "name" : "toDayNumbers",
+                     "type" : "FunctionRef",
+                     "signature" : [ {
+                        "localId" : "618",
+                        "type" : "IntervalTypeSpecifier",
+                        "pointType" : {
+                           "localId" : "619",
+                           "name" : "{urn:hl7-org:elm-types:r1}DateTime",
+                           "type" : "NamedTypeSpecifier"
+                        }
+                     } ],
+                     "operand" : [ {
+                        "localId" : "616",
+                        "locator" : "212:5-212:10",
+                        "name" : "Period",
+                        "type" : "OperandRef"
+                     } ]
+                  }
+               } ],
+               "let" : [ {
+                  "localId" : "621",
+                  "locator" : "213:9-213:66",
+                  "identifier" : "startPeriod",
+                  "expression" : {
+                     "localId" : "622",
+                     "locator" : "213:22-213:66",
+                     "type" : "Add",
+                     "signature" : [ {
+                        "localId" : "639",
+                        "name" : "{urn:hl7-org:elm-types:r1}DateTime",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "640",
+                        "name" : "{urn:hl7-org:elm-types:r1}Quantity",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "623",
+                        "locator" : "213:22-213:36",
+                        "type" : "Start",
+                        "signature" : [ {
+                           "localId" : "625",
+                           "type" : "IntervalTypeSpecifier",
+                           "pointType" : {
+                              "localId" : "626",
+                              "name" : "{urn:hl7-org:elm-types:r1}DateTime",
+                              "type" : "NamedTypeSpecifier"
+                           }
+                        } ],
+                        "operand" : {
+                           "localId" : "624",
+                           "locator" : "213:31-213:36",
+                           "name" : "Period",
+                           "type" : "OperandRef"
+                        }
+                     }, {
+                        "localId" : "627",
+                        "locator" : "213:40-213:66",
+                        "type" : "Multiply",
+                        "signature" : [ {
+                           "localId" : "637",
+                           "name" : "{urn:hl7-org:elm-types:r1}Quantity",
+                           "type" : "NamedTypeSpecifier"
+                        }, {
+                           "localId" : "638",
+                           "name" : "{urn:hl7-org:elm-types:r1}Quantity",
+                           "type" : "NamedTypeSpecifier"
+                        } ],
+                        "operand" : [ {
+                           "localId" : "628",
+                           "locator" : "213:41-213:48",
+                           "value" : 24,
+                           "unit" : "hours",
+                           "type" : "Quantity"
+                        }, {
+                           "localId" : "635",
+                           "type" : "ToQuantity",
+                           "signature" : [ {
+                              "localId" : "636",
+                              "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                              "type" : "NamedTypeSpecifier"
+                           } ],
+                           "operand" : {
+                              "localId" : "629",
+                              "locator" : "213:52-213:65",
+                              "type" : "Subtract",
+                              "signature" : [ {
+                                 "localId" : "632",
+                                 "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                 "type" : "NamedTypeSpecifier"
+                              }, {
+                                 "localId" : "633",
+                                 "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                 "type" : "NamedTypeSpecifier"
+                              } ],
+                              "operand" : [ {
+                                 "localId" : "630",
+                                 "locator" : "213:53-213:60",
+                                 "name" : "DayIndex",
+                                 "type" : "AliasRef"
+                              }, {
+                                 "localId" : "631",
+                                 "locator" : "213:64",
+                                 "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                                 "value" : "1",
+                                 "type" : "Literal"
+                              } ]
+                           }
+                        } ]
+                     } ]
+                  }
+               }, {
+                  "localId" : "641",
+                  "locator" : "214:5-215:50",
+                  "identifier" : "endPeriod",
+                  "expression" : {
+                     "localId" : "642",
+                     "locator" : "214:16-215:50",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "643",
+                        "locator" : "214:19-214:68",
+                        "type" : "Less",
+                        "signature" : [ {
+                           "localId" : "653",
+                           "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                           "type" : "NamedTypeSpecifier"
+                        }, {
+                           "localId" : "654",
+                           "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                           "type" : "NamedTypeSpecifier"
+                        } ],
+                        "operand" : [ {
+                           "localId" : "644",
+                           "locator" : "214:20-214:62",
+                           "precision" : "Hour",
+                           "type" : "DurationBetween",
+                           "signature" : [ {
+                              "localId" : "650",
+                              "name" : "{urn:hl7-org:elm-types:r1}DateTime",
+                              "type" : "NamedTypeSpecifier"
+                           }, {
+                              "localId" : "651",
+                              "name" : "{urn:hl7-org:elm-types:r1}DateTime",
+                              "type" : "NamedTypeSpecifier"
+                           } ],
+                           "operand" : [ {
+                              "localId" : "645",
+                              "locator" : "214:34-214:44",
+                              "name" : "startPeriod",
+                              "type" : "QueryLetRef"
+                           }, {
+                              "localId" : "646",
+                              "locator" : "214:50-214:62",
+                              "type" : "End",
+                              "signature" : [ {
+                                 "localId" : "648",
+                                 "type" : "IntervalTypeSpecifier",
+                                 "pointType" : {
+                                    "localId" : "649",
+                                    "name" : "{urn:hl7-org:elm-types:r1}DateTime",
+                                    "type" : "NamedTypeSpecifier"
+                                 }
+                              } ],
+                              "operand" : {
+                                 "localId" : "647",
+                                 "locator" : "214:57-214:62",
+                                 "name" : "Period",
+                                 "type" : "OperandRef"
+                              }
+                           } ]
+                        }, {
+                           "localId" : "652",
+                           "locator" : "214:66-214:67",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                           "value" : "24",
+                           "type" : "Literal"
+                        } ]
+                     },
+                     "then" : {
+                        "localId" : "655",
+                        "locator" : "214:75-214:85",
+                        "name" : "startPeriod",
+                        "type" : "QueryLetRef"
+                     },
+                     "else" : {
+                        "localId" : "656",
+                        "locator" : "215:12-215:50",
+                        "type" : "Add",
+                        "signature" : [ {
+                           "localId" : "669",
+                           "name" : "{urn:hl7-org:elm-types:r1}DateTime",
+                           "type" : "NamedTypeSpecifier"
+                        }, {
+                           "localId" : "670",
+                           "name" : "{urn:hl7-org:elm-types:r1}Quantity",
+                           "type" : "NamedTypeSpecifier"
+                        } ],
+                        "operand" : [ {
+                           "localId" : "657",
+                           "locator" : "215:12-215:26",
+                           "type" : "Start",
+                           "signature" : [ {
+                              "localId" : "659",
+                              "type" : "IntervalTypeSpecifier",
+                              "pointType" : {
+                                 "localId" : "660",
+                                 "name" : "{urn:hl7-org:elm-types:r1}DateTime",
+                                 "type" : "NamedTypeSpecifier"
+                              }
+                           } ],
+                           "operand" : {
+                              "localId" : "658",
+                              "locator" : "215:21-215:26",
+                              "name" : "Period",
+                              "type" : "OperandRef"
+                           }
+                        }, {
+                           "localId" : "661",
+                           "locator" : "215:30-215:50",
+                           "type" : "Multiply",
+                           "signature" : [ {
+                              "localId" : "667",
+                              "name" : "{urn:hl7-org:elm-types:r1}Quantity",
+                              "type" : "NamedTypeSpecifier"
+                           }, {
+                              "localId" : "668",
+                              "name" : "{urn:hl7-org:elm-types:r1}Quantity",
+                              "type" : "NamedTypeSpecifier"
+                           } ],
+                           "operand" : [ {
+                              "localId" : "662",
+                              "locator" : "215:31-215:38",
+                              "value" : 24,
+                              "unit" : "hours",
+                              "type" : "Quantity"
+                           }, {
+                              "localId" : "665",
+                              "type" : "ToQuantity",
+                              "signature" : [ {
+                                 "localId" : "666",
+                                 "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                 "type" : "NamedTypeSpecifier"
+                              } ],
+                              "operand" : {
+                                 "localId" : "663",
+                                 "locator" : "215:42-215:49",
+                                 "name" : "DayIndex",
+                                 "type" : "AliasRef"
+                              }
+                           } ]
+                        } ]
+                     }
+                  }
+               } ],
+               "relationship" : [ ],
+               "return" : {
+                  "localId" : "673",
+                  "locator" : "216:5-219:5",
+                  "expression" : {
+                     "localId" : "674",
+                     "locator" : "216:12-219:5",
+                     "type" : "Tuple",
+                     "element" : [ {
+                        "name" : "dayIndex",
+                        "value" : {
+                           "localId" : "675",
+                           "locator" : "217:17-217:24",
+                           "name" : "DayIndex",
+                           "type" : "AliasRef"
+                        }
+                     }, {
+                        "name" : "dayPeriod",
+                        "value" : {
+                           "localId" : "678",
+                           "locator" : "218:18-218:49",
+                           "lowClosed" : true,
+                           "highClosed" : false,
+                           "type" : "Interval",
+                           "low" : {
+                              "localId" : "676",
+                              "locator" : "218:27-218:37",
+                              "name" : "startPeriod",
+                              "type" : "QueryLetRef"
+                           },
+                           "high" : {
+                              "localId" : "677",
+                              "locator" : "218:40-218:48",
+                              "name" : "endPeriod",
+                              "type" : "QueryLetRef"
+                           }
+                        }
+                     } ]
+                  }
+               }
+            },
+            "operand" : [ {
+               "localId" : "612",
+               "name" : "Period",
+               "operandTypeSpecifier" : {
+                  "localId" : "610",
+                  "locator" : "211:44-211:61",
+                  "type" : "IntervalTypeSpecifier",
+                  "pointType" : {
+                     "localId" : "611",
+                     "locator" : "211:53-211:60",
+                     "name" : "{urn:hl7-org:elm-types:r1}DateTime",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            } ]
+         }, {
+            "localId" : "680",
+            "locator" : "224:1-225:165",
+            "name" : "presentOnAdmission",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "fluent" : true,
+            "type" : "FunctionDef",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "description",
+                  "value" : "Returns the value of the presentOnAdmission extension"
+               } ],
+               "s" : {
+                  "r" : "680",
+                  "s" : [ {
+                     "value" : [ "/*\n@description: Returns the value of the presentOnAdmission extension\n*/\n","define fluent function presentOnAdmission(diagnosis USQualityCore.\"Encounter.Diagnosis\"):\n  " ]
+                  }, {
+                     "r" : "685",
+                     "s" : [ {
+                        "r" : "685",
+                        "s" : [ {
+                           "r" : "692",
+                           "s" : [ {
+                              "r" : "689",
+                              "s" : [ {
+                                 "r" : "686",
+                                 "s" : [ {
+                                    "value" : [ "diagnosis" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "689",
+                                 "s" : [ {
+                                    "value" : [ "ext","(" ]
+                                 }, {
+                                    "r" : "687",
+                                    "s" : [ {
+                                       "value" : [ "'http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter-diagnosisPresentOnAdmission'" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ ")" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "692",
+                              "s" : [ {
+                                 "value" : [ "value" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " as " ]
+                        }, {
+                           "r" : "693",
+                           "s" : [ {
+                              "value" : [ "FHIR",".","CodeableConcept" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "685",
+               "locator" : "225:3-225:165",
+               "strict" : false,
+               "type" : "As",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "692",
+                  "locator" : "225:3-225:141",
+                  "path" : "value",
+                  "type" : "Property",
+                  "source" : {
+                     "localId" : "689",
+                     "locator" : "225:3-225:135",
+                     "name" : "ext",
+                     "libraryName" : "FHIRCommon",
+                     "type" : "FunctionRef",
+                     "signature" : [ {
+                        "localId" : "690",
+                        "name" : "{http://hl7.org/fhir}Element",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "691",
+                        "name" : "{urn:hl7-org:elm-types:r1}String",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "686",
+                        "locator" : "225:3-225:11",
+                        "name" : "diagnosis",
+                        "type" : "OperandRef"
+                     }, {
+                        "localId" : "687",
+                        "locator" : "225:17-225:134",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter-diagnosisPresentOnAdmission",
+                        "type" : "Literal"
+                     } ]
+                  }
+               },
+               "asTypeSpecifier" : {
+                  "localId" : "693",
+                  "locator" : "225:146-225:165",
+                  "name" : "{http://hl7.org/fhir}CodeableConcept",
+                  "type" : "NamedTypeSpecifier"
+               }
+            },
+            "operand" : [ {
+               "localId" : "682",
+               "name" : "diagnosis",
+               "operandTypeSpecifier" : {
+                  "localId" : "681",
+                  "locator" : "224:53-224:87",
+                  "name" : "{http://hl7.org/fhir}Encounter.Diagnosis",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         } ]
+      }
+   }
+}

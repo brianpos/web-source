@@ -1,0 +1,105 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/onc/us-quality-core/Coverage/example> a fhir:Coverage ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-coverage"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-coverage>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Coverage example</b></p><a name=\"example\"> </a><a name=\"hcexample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-coverage.html\">US Quality Core Coverage</a></p></div><p><b>identifier</b>: Member Number/?ngen-9?</p><p><b>status</b>: Active</p><p><b>type</b>: <span title=\"Codes:{https://nahdo.org/sopt 59}\">Other Private Insurance</span></p><p><b>policyHolder</b>: <a href=\"Patient-example.html\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>subscriber</b>: <a href=\"Patient-example.html\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>subscriberId</b>: 12191</p><p><b>beneficiary</b>: <a href=\"Patient-example.html\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>dependent</b>: 0</p><p><b>relationship</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/subscriber-relationship self}\">Self</span></p><p><b>period</b>: 2011-05-23 --&gt; 2012-05-23</p><p><b>payor</b>: <a href=\"Organization-example.html\">Organization Health Level Seven International</a></p><blockquote><p><b>class</b></p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/coverage-class group}\">Group</span></p><p><b>value</b>: CBI35</p><p><b>name</b>: Corporate Baker's Inc. Local #35</p></blockquote><blockquote><p><b>class</b></p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/coverage-class plan}\">Plan</span></p><p><b>value</b>: B37FC</p><p><b>name</b>: Full Coverage: Medical, Dental, Pharmacy, Vision, EHC</p></blockquote><p><b>order</b>: 9</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "MB" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://nahdo.org/sopt"^^xsd:anyURI ;
+         fhir:l <https://nahdo.org/sopt>
+       ] ;
+       fhir:code [ fhir:v "59" ] ;
+       fhir:display [ fhir:v "Other Private Insurance" ]
+     ] )
+  ] ; # 
+  fhir:policyHolder [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:subscriber [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:subscriberId [ fhir:v "12191"] ; # 
+  fhir:beneficiary [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:dependent [ fhir:v "0"] ; # 
+  fhir:relationship [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/subscriber-relationship"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/subscriber-relationship>
+       ] ;
+       fhir:code [ fhir:v "self" ]
+     ] )
+  ] ; # 
+  fhir:period [
+     fhir:start [ fhir:v "2011-05-23"^^xsd:date ] ;
+     fhir:end [ fhir:v "2012-05-23"^^xsd:date ]
+  ] ; # 
+  fhir:payor ( [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Organization/example> ;
+     fhir:reference [ fhir:v "Organization/example" ]
+  ] ) ; # 
+  fhir:class ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/coverage-class"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/coverage-class>
+         ] ;
+         fhir:code [ fhir:v "group" ] ;
+         fhir:display [ fhir:v "Group" ]
+       ] )
+     ] ;
+     fhir:value [ fhir:v "CBI35" ] ;
+     fhir:name [ fhir:v "Corporate Baker's Inc. Local #35" ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/coverage-class"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/coverage-class>
+         ] ;
+         fhir:code [ fhir:v "plan" ] ;
+         fhir:display [ fhir:v "Plan" ]
+       ] )
+     ] ;
+     fhir:value [ fhir:v "B37FC" ] ;
+     fhir:name [ fhir:v "Full Coverage: Medical, Dental, Pharmacy, Vision, EHC" ]
+  ] ) ; # 
+  fhir:order [ fhir:v "9"^^xsd:positiveInteger] . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,73 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/onc/us-quality-core/PractitionerRole/example> a fhir:PractitionerRole ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitionerrole"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitionerrole>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: PractitionerRole example</b></p><a name=\"example\"> </a><a name=\"hcexample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-practitionerrole.html\">US Quality Core PractitionerRole</a></p></div><p><b>identifier</b>: <code>http://www.acme.org/practitionerroles</code>/31 (use: temp, )</p><p><b>active</b>: true</p><p><b>period</b>: 1995 --&gt; (ongoing)</p><p><b>practitioner</b>: <a href=\"Practitioner-example.html\">Dr Adam Careful</a></p><p><b>organization</b>: <a href=\"Organization-example.html\">Organization Health Level Seven International</a></p><p><b>code</b>: <span title=\"Codes:{http://nucc.org/provider-taxonomy 261Q00000X}\">Clinic/Center</span></p><p><b>specialty</b>: <span title=\"Codes:{http://nucc.org/provider-taxonomy 122300000X}\">Dentist</span></p><p><b>location</b>: <a href=\"Location-example.html\">Location South Wing, second floor</a></p><p><b>telecom</b>: ph: 801-123-4567</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "temp" ] ;
+     fhir:system [
+       fhir:v "http://www.acme.org/practitionerroles"^^xsd:anyURI ;
+       fhir:l <http://www.acme.org/practitionerroles>
+     ] ;
+     fhir:value [ fhir:v "31" ]
+  ] ) ; # 
+  fhir:active [ fhir:v true] ; # 
+  fhir:period [
+     fhir:start [ fhir:v "1995"^^xsd:gYear ]
+  ] ; # 
+  fhir:practitioner [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Practitioner/example> ;
+     fhir:reference [ fhir:v "Practitioner/example" ] ;
+     fhir:display [ fhir:v "Dr Adam Careful" ]
+  ] ; # 
+  fhir:organization [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Organization/example> ;
+     fhir:reference [ fhir:v "Organization/example" ]
+  ] ; # 
+  fhir:code ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://nucc.org/provider-taxonomy"^^xsd:anyURI ;
+         fhir:l <http://nucc.org/provider-taxonomy>
+       ] ;
+       fhir:code [ fhir:v "261Q00000X" ] ;
+       fhir:display [ fhir:v "Clinic/Center" ]
+     ] )
+  ] ) ; # 
+  fhir:specialty ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://nucc.org/provider-taxonomy"^^xsd:anyURI ;
+         fhir:l <http://nucc.org/provider-taxonomy>
+       ] ;
+       fhir:code [ fhir:v "122300000X" ] ;
+       fhir:display [ fhir:v "Dentist" ]
+     ] )
+  ] ) ; # 
+  fhir:location ( [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Location/example> ;
+     fhir:reference [ fhir:v "Location/example" ]
+  ] ) ; # 
+  fhir:telecom ( [
+     fhir:system [ fhir:v "phone" ] ;
+     fhir:value [ fhir:v "801-123-4567" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

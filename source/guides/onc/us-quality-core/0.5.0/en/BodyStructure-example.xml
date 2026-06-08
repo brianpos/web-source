@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BodyStructure xmlns="http://hl7.org/fhir">
+  <id value="example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-bodystructure"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: BodyStructure example</b></p><a name="example"> </a><a name="hcexample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-us-quality-core-bodystructure.html">US Quality Core BodyStructure</a></p></div><p><b>identifier</b>: 12345</p><p><b>active</b>: true</p><p><b>morphology</b>: <span title="Codes:{http://snomed.info/sct 4147007}">Splenic mass</span></p><p><b>location</b>: <span title="Codes:{http://snomed.info/sct 78961009}">Splenic mass</span></p><p><b>description</b>: 7 cm maximum diameter</p><h3>Images</h3><table class="grid"><tr><td style="display: none">-</td><td><b>ContentType</b></td><td><b>Url</b></td></tr><tr><td style="display: none">*</td><td>application/dicom</td><td><a href="http://imaging.acme.com/wado/server?requestType=WADO&amp;amp;wado_details">http://imaging.acme.com/wado/server?requestType=WADO&amp;amp;wado_details</a></td></tr></table><p><b>patient</b>: <a href="Patient-example.html">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p></div>
+  </text>
+  <identifier>
+    <value value="12345"/>
+  </identifier>
+  <active value="true"/>
+  <morphology>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="4147007"/>
+      <display value="Mass (morphologic abnormality)"/>
+    </coding>
+    <text value="Splenic mass"/>
+  </morphology>
+  <location>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="78961009"/>
+      <display value="Splenic structure (body structure)"/>
+    </coding>
+    <text value="Splenic mass"/>
+  </location>
+  <description value="7 cm maximum diameter"/>
+  <image>
+    <contentType value="application/dicom"/>
+    <url value="http://imaging.acme.com/wado/server?requestType=WADO&amp;amp;wado_details"/>
+  </image>
+  <patient>
+    <reference value="Patient/example"/>
+  </patient>
+</BodyStructure>

@@ -1,0 +1,41 @@
+{
+  "resourceType" : "Observation",
+  "id" : "example-nonpatient-mechanical-ventilator",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-nonpatient-observation"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation example-nonpatient-mechanical-ventilator</b></p><a name=\"example-nonpatient-mechanical-ventilator\"> </a><a name=\"hcexample-nonpatient-mechanical-ventilator\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-nonpatient-observation.html\">US Quality Core NonPatient Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 49062001}\">Device (physical object)</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 449071006}\">Mechanical ventilator (physical object)</span></p><p><b>subject</b>: Mechanical ventilator inventory</p><p><b>effective</b>: 2023-07-07</p><p><b>performer</b>: <a href=\"Organization-example.html\">Hendricks Country Hospital</a></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 735333005}\">Equipment available (finding)</span></p></div>"
+  },
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "49062001",
+      "display" : "Device (physical object)"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "449071006",
+      "display" : "Mechanical ventilator (physical object)"
+    }]
+  },
+  "subject" : {
+    "display" : "Mechanical ventilator inventory"
+  },
+  "effectiveDateTime" : "2023-07-07",
+  "performer" : [{
+    "reference" : "Organization/example",
+    "display" : "Hendricks Country Hospital"
+  }],
+  "valueCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "735333005",
+      "display" : "Equipment available (finding)"
+    }]
+  }
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Communication xmlns="http://hl7.org/fhir">
+  <id value="negation-example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-communicationnotdone"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Communication negation-example</b></p><a name="negation-example"> </a><a name="hcnegation-example"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-us-quality-core-communicationnotdone.html">US Quality Core Communication Not Done</a></p></div><p><b>US Quality Core Not Done Recorded</b>: 2014-12-12 18:01:10-0800</p><p><b>status</b>: Not Done</p><p><b>statusReason</b>: <span title="Codes:">Patient moved away and could not be reached</span></p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/communication-category alert}">Alert</span></p><p><b>medium</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/v3-ParticipationMode WRITTEN}">written</span></p><p><b>subject</b>: <a href="Patient-example.html">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>topic</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/communication-topic progress-update}">Progress Update</span></p><p><b>encounter</b>: <a href="Encounter-example.html">Encounter: identifier = http://example.org/encounters#ENC-20130404-appendicitis; status = finished; class = inpatient encounter (v3 Code System ActCode#IMP); type = Initial hospital inpatient or observation care, per day, for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making. When using total time on the date of the encounter for code selection, 75 minutes must be met or exceeded.; period = 2013-04-04 18:00:00-0400 --&gt; 2013-04-06 11:00:00-0400</a></p><p><b>recipient</b>: <a href="Patient-example.html">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>sender</b>: <a href="Practitioner-example.html">Practitioner Adam Careful </a></p><h3>Payloads</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Content[x]</b></td></tr><tr><td style="display: none">*</td><td>Patient could not be reached to discuss follow-up care after moving away.</td></tr></table></div>
+  </text>
+  <extension url="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-recorded">
+    <valueDateTime value="2014-12-12T18:01:10-08:00"/>
+  </extension>
+  <status value="not-done"/>
+  <statusReason>
+    <text value="Patient moved away and could not be reached"/>
+  </statusReason>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/communication-category"/>
+      <code value="alert"/>
+    </coding>
+    <text value="Alert"/>
+  </category>
+  <medium>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationMode"/>
+      <code value="WRITTEN"/>
+      <display value="written"/>
+    </coding>
+    <text value="written"/>
+  </medium>
+  <subject>
+    <reference value="Patient/example"/>
+  </subject>
+  <topic>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/communication-topic"/>
+      <code value="progress-update"/>
+      <display value="Progress Update"/>
+    </coding>
+  </topic>
+  <encounter>
+    <reference value="Encounter/example"/>
+  </encounter>
+  <recipient>
+    <reference value="Patient/example"/>
+  </recipient>
+  <sender>
+    <reference value="Practitioner/example"/>
+  </sender>
+  <payload>
+    <contentString value="Patient could not be reached to discuss follow-up care after moving away."/>
+  </payload>
+</Communication>

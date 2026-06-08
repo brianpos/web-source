@@ -1,0 +1,25 @@
+{
+  "list" : [{
+    "version" : "current",
+    "path" : " http://build.fhir.org/guides/onc/us-quality-core",
+    "status" : "ci-build",
+    "sequence" : "ci-build",
+    "desc" : "Continuous Integration Build (latest in version control) - Content subject to frequent changes"
+  },
+  {
+    "version" : "0.5.0",
+    "path" : "http://fhir.org/guides/onc/us-quality-core/0.5.0",
+    "status" : "release",
+    "sequence" : "Releases",
+    "fhirversion" : "4.0.1",
+    "date" : "2026-06-08",
+    "current" : true,
+    "desc" : "US Quality Core",
+    "descmd" : "This version establishes the US Quality Core Implementation Guide"
+  }],
+  "package-id" : "fhir.onc.us-quality-core",
+  "canonical" : "http://fhir.org/guides/onc/us-quality-core",
+  "title" : "US Quality Core",
+  "category" : "Quality / CDS",
+  "introduction" : "The US Quality Core Implementation Guide provides guidance for implementing USCDI+ Quality in FHIR to support consistent, interoperable representation and exchange of quality data for quality measurement and reporting programs. It defines profiles that derive from and extend the base FHIR version R4 resources and US Core profiles to provide a common foundation for implementing, sharing, and evaluating quality-related knowledge artifacts across quality improvement efforts. It also defines basic system capability expectations for exchanging data to support digital quality measurement and reporting over standard FHIR interfaces."
+}

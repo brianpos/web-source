@@ -1,0 +1,54 @@
+{
+  "resourceType" : "ServiceRequest",
+  "id" : "myringotomy-example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest myringotomy-example</b></p><a name=\"myringotomy-example\"> </a><a name=\"hcmyringotomy-example\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-servicerequest.html\">US Quality Core ServiceRequest</a></p></div><p><b>status</b>: On Hold</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 387713003}\">Surgical Procedure</span></p><p><b>priority</b>: Routine</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 172676009}\">Myringotomy and insertion of short-term tympanic ventilation tube (procedure)</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number\u00a0(use:\u00a0usual,\u00a0period:\u00a02001-05-06 --&gt; (ongoing)))</a></p><p><b>encounter</b>: <a href=\"Encounter-example.html\">Encounter: identifier = http://example.org/encounters#ENC-20130404-appendicitis; status = finished; class = inpatient encounter (v3 Code System ActCode#IMP); type = Initial hospital inpatient or observation care, per day, for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making. When using total time on the date of the encounter for code selection, 75 minutes must be met or exceeded.; period = 2013-04-04 18:00:00-0400 --&gt; 2013-04-06 11:00:00-0400</a></p><p><b>occurrence</b>: 2014-02-13 --&gt; 2014-02-13</p><p><b>asNeeded</b>: true</p><p><b>authoredOn</b>: 2014-02-14</p><p><b>performerType</b>: <span title=\"Codes:{http://snomed.info/sct 417887005}\">Pediatric otolaryngology</span></p><p><b>reasonCode</b>: <span title=\"Codes:{http://snomed.info/sct 65363002}\">Otitis media</span></p></div>"
+  },
+  "status" : "on-hold",
+  "intent" : "order",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "387713003",
+      "display" : "Surgical Procedure"
+    }]
+  }],
+  "priority" : "routine",
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "172676009",
+      "display" : "Myringotomy and insertion of short-term tympanic ventilation tube (procedure)"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/example"
+  },
+  "encounter" : {
+    "reference" : "Encounter/example"
+  },
+  "occurrencePeriod" : {
+    "start" : "2014-02-13",
+    "end" : "2014-02-13"
+  },
+  "asNeededBoolean" : true,
+  "authoredOn" : "2014-02-14",
+  "performerType" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "417887005",
+      "display" : "Pediatric otolaryngology"
+    }]
+  },
+  "reasonCode" : [{
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "65363002",
+      "display" : "Otitis media"
+    }]
+  }]
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Task xmlns="http://hl7.org/fhir">
+  <id value="negation-example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-taskrejected"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Task negation-example</b></p><a name="negation-example"> </a><a name="hcnegation-example"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-us-quality-core-taskrejected.html">US Quality Core Task Rejected</a></p></div><p><b>identifier</b>: <code>http://www.acme.org/tasks</code>/19009</p><p><b>basedOn</b>: Medication reconciliation requested before alemtuzumab infusion</p><p><b>status</b>: Rejected</p><p><b>statusReason</b>: <span title="Codes:{http://snomed.info/sct 275936005}">Patient noncompliance - general (situation)</span></p><p><b>intent</b>: proposal</p><p><b>code</b>: <span title="Codes:">Interventions Related to Medication Management, Medication Reconciliation</span> (Not done value set: <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1096.11/expansion">Interventions Related to Medication Management, Medication Reconciliation</a>)</p><p><b>focus</b>: <a href="MedicationRequest-example.html">MedicationRequest: status = active; intent = order; medication[x] = -&gt;Medication alemtuzumab 10 MG/ML [Lemtrada]; authoredOn = 2015-03-25 19:32:52-0500; reasonCode = Multiple sclerosis (disorder)</a></p><p><b>for</b>: <a href="Patient-example.html">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>executionPeriod</b>: 2015-03-25 --&gt; 2015-03-25</p><p><b>reasonCode</b>: <span title="Codes:">Patient declined medication reconciliation before alemtuzumab infusion</span></p></div>
+  </text>
+  <identifier>
+    <system value="http://www.acme.org/tasks"/>
+    <value value="19009"/>
+  </identifier>
+  <basedOn>
+    <display value="Medication reconciliation requested before alemtuzumab infusion"/>
+  </basedOn>
+  <status value="rejected"/>
+  <statusReason>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="275936005"/>
+      <display value="Patient noncompliance - general (situation)"/>
+    </coding>
+  </statusReason>
+  <intent value="proposal"/>
+  <code>
+    <extension url="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-notDoneValueSet">
+      <valueCanonical value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1096.11"/>
+    </extension>
+    <text value="Interventions Related to Medication Management, Medication Reconciliation"/>
+  </code>
+  <focus>
+    <reference value="MedicationRequest/example"/>
+  </focus>
+  <for>
+    <reference value="Patient/example"/>
+  </for>
+  <executionPeriod>
+    <start value="2015-03-25"/>
+    <end value="2015-03-25"/>
+  </executionPeriod>
+  <reasonCode>
+    <text value="Patient declined medication reconciliation before alemtuzumab infusion"/>
+  </reasonCode>
+</Task>

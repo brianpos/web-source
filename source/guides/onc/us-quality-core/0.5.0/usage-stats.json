@@ -1,0 +1,560 @@
+{
+  "package": "fhir.onc.us-quality-core",
+  "version": "0.5.0",
+  "fhirVersion": "4.0.1",
+  "jurisdiction": "US",
+  "extensions": [
+    {
+      "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-doNotPerformReason",
+      "title": "US Quality Core Do Not Perform Reason",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter-diagnosisPresentOnAdmission",
+      "title": "US Quality Core Diagnosis Present on Admission",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-isElective",
+      "title": "US Quality Core IsElective",
+      "types": [
+        "boolean"
+      ]
+    },
+    {
+      "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-notDoneReason",
+      "title": "US Quality Core Not Done Reason",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-notDoneValueSet",
+      "title": "USQualityCore Not Done ValueSet",
+      "types": [
+        "canonical"
+      ]
+    },
+    {
+      "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-recorded",
+      "title": "US Quality Core Not Done Recorded",
+      "types": [
+        "dateTime"
+      ]
+    },
+    {
+      "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest-appropriatenessScore",
+      "title": "USQualityCore Appropriateness Score",
+      "types": [
+        "code",
+        "decimal"
+      ]
+    },
+    {
+      "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+      "title": "US Quality Core USCDI+ Quality Extension",
+      "types": [
+        "boolean"
+      ]
+    }
+  ],
+  "profiles": {
+    "AdverseEvent": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-adverseevent",
+        "title": "US Quality Core AdverseEvent"
+      }
+    ],
+    "AllergyIntolerance": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-allergyintolerance",
+        "title": "US Quality Core AllergyIntolerance"
+      }
+    ],
+    "BodyStructure": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-bodystructure",
+        "title": "US Quality Core BodyStructure"
+      }
+    ],
+    "CarePlan": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-careplan",
+        "title": "US Quality Core CarePlan"
+      }
+    ],
+    "CareTeam": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-careteam",
+        "title": "US Quality Core CareTeam"
+      }
+    ],
+    "Claim": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-claim",
+        "title": "US Quality Core Claim"
+      }
+    ],
+    "ClaimResponse": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-claimresponse",
+        "title": "US Quality Core ClaimResponse"
+      }
+    ],
+    "Communication": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-communication",
+        "title": "US Quality Core Communication"
+      },
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-communicationnotdone",
+        "title": "US Quality Core Communication Not Done"
+      }
+    ],
+    "CommunicationRequest": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-communicationrequest",
+        "title": "US Quality Core CommunicationRequest"
+      }
+    ],
+    "Condition": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-encounter-diagnosis",
+        "title": "US Quality Core Condition Encounter Diagnosis"
+      },
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns",
+        "title": "US Quality Core Condition Problems Health Concerns"
+      }
+    ],
+    "Coverage": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-coverage",
+        "title": "US Quality Core Coverage"
+      }
+    ],
+    "Device": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-device",
+        "title": "US Quality Core Device"
+      }
+    ],
+    "DeviceRequest": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-devicenotrequested",
+        "title": "US Quality Core Device Not Requested"
+      },
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-devicerequest",
+        "title": "US Quality Core DeviceRequest"
+      }
+    ],
+    "DeviceUseStatement": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-deviceusestatement",
+        "title": "US Quality Core DeviceUseStatement"
+      }
+    ],
+    "DiagnosticReport": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-lab",
+        "title": "US Quality Core DiagnosticReport Profile for Laboratory Results Reporting"
+      },
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-note",
+        "title": "US Quality Core DiagnosticReport Profile for Report and Note Exchange"
+      }
+    ],
+    "Encounter": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter",
+        "title": "US Quality Core Encounter"
+      }
+    ],
+    "FamilyMemberHistory": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-familymemberhistory",
+        "title": "US Quality Core FamilyMemberHistory"
+      }
+    ],
+    "Flag": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-flag",
+        "title": "US Quality Core Flag"
+      }
+    ],
+    "Goal": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-goal",
+        "title": "US Quality Core Goal"
+      }
+    ],
+    "ImagingStudy": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-imagingstudy",
+        "title": "US Quality Core ImagingStudy"
+      }
+    ],
+    "Immunization": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunizationnotdone",
+        "title": "US Quality Core Immunization Not Done"
+      }
+    ],
+    "ImmunizationEvaluation": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunizationevaluation",
+        "title": "US Quality Core ImmunizationEvaluation"
+      }
+    ],
+    "ImmunizationRecommendation": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunizationrecommendation",
+        "title": "US Quality Core ImmunizationRecommendation"
+      }
+    ],
+    "Location": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-location",
+        "title": "US Quality Core Location"
+      }
+    ],
+    "Medication": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medication",
+        "title": "US Quality Core Medication"
+      }
+    ],
+    "MedicationAdministration": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationadministration",
+        "title": "US Quality Core MedicationAdministration"
+      },
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationadministrationnotdone",
+        "title": "US Quality Core MedicationAdministration Not Done"
+      }
+    ],
+    "MedicationDispense": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationdispense",
+        "title": "US Quality Core MedicationDispense"
+      },
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationdispensedeclined",
+        "title": "US Quality Core MedicationDispense Declined"
+      }
+    ],
+    "MedicationRequest": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationnotrequested",
+        "title": "US Quality Core Medication Not Requested"
+      },
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationrequest",
+        "title": "US Quality Core MedicationRequest"
+      }
+    ],
+    "MedicationStatement": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationstatement",
+        "title": "US Quality Core MedicationStatement"
+      }
+    ],
+    "Observation": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation",
+        "title": "US Quality Core Simple Observation"
+      }
+    ],
+    "NutritionOrder": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-nutritionorder",
+        "title": "US Quality Core NutritionOrder"
+      }
+    ],
+    "Organization": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-organization",
+        "title": "US Quality Core Organization"
+      }
+    ],
+    "Patient": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient",
+        "title": "US Quality Core Patient"
+      }
+    ],
+    "Practitioner": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitioner",
+        "title": "US Quality Core Practitioner"
+      }
+    ],
+    "PractitionerRole": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitionerrole",
+        "title": "US Quality Core PractitionerRole"
+      }
+    ],
+    "Procedure": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedure",
+        "title": "US Quality Core Procedure"
+      },
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedurenotdone",
+        "title": "US Quality Core Procedure Not Done"
+      }
+    ],
+    "QuestionnaireResponse": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-questionnaireresponse",
+        "title": "US Quality Core QuestionnaireResponse"
+      }
+    ],
+    "RelatedPerson": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-relatedperson",
+        "title": "US Quality Core RelatedPerson"
+      }
+    ],
+    "ServiceRequest": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicenotrequested",
+        "title": "US Quality Core Service Not Requested"
+      },
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest",
+        "title": "US Quality Core ServiceRequest"
+      }
+    ],
+    "Substance": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-substance",
+        "title": "US Quality Core Substance"
+      }
+    ],
+    "Task": [
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-task",
+        "title": "US Quality Core Task"
+      },
+      {
+        "url": "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-taskrejected",
+        "title": "US Quality Core Task Rejected"
+      }
+    ]
+  },
+  "usage": {
+    "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-doNotPerformReason": [
+      "DeviceRequest",
+      "ServiceRequest"
+    ],
+    "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter-diagnosisPresentOnAdmission": [
+      "Encounter.diagnosis"
+    ],
+    "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-isElective": [
+      "ServiceRequest"
+    ],
+    "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-notDoneReason": [
+      "Observation"
+    ],
+    "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-notDoneValueSet": [
+      "Communication.topic",
+      "DeviceRequest.codeCodeableConcept",
+      "DeviceRequest.code[x]",
+      "Immunization.vaccineCode",
+      "MedicationAdministration.medicationCodeableConcept",
+      "MedicationAdministration.medication[x]",
+      "MedicationDispense.medicationCodeableConcept",
+      "MedicationDispense.medication[x]",
+      "MedicationRequest.medicationCodeableConcept",
+      "MedicationRequest.medication[x]",
+      "Observation.code",
+      "Procedure.code",
+      "ServiceRequest.code",
+      "Task.code"
+    ],
+    "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-recorded": [
+      "Communication",
+      "MedicationAdministration",
+      "MedicationDispense",
+      "Procedure"
+    ],
+    "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest-appropriatenessScore": [
+      "ServiceRequest"
+    ],
+    "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality": [
+      "StructureDefinition.differential.element",
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-DeviceRequest.doNotPerform": [
+      "DeviceRequest"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/allergyintolerance-resolutionAge": [
+      "AllergyIntolerance"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation": [
+      "CapabilityStatement.rest.interaction",
+      "CapabilityStatement.rest.resource",
+      "CapabilityStatement.rest.resource.interaction",
+      "CapabilityStatement.rest.resource.searchParam",
+      "CapabilityStatement.rest.resource.searchRevInclude",
+      "SearchParameter.comparator"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination": [
+      "CapabilityStatement.rest.resource"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/condition-assertedDate": [
+      "Condition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/data-absent-reason": [
+      "Observation.valueCodeableConcept",
+      "Procedure.performedDateTime"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/display": [
+      "QuestionnaireResponse.questionnaire"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice-explanation": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName": [
+      "StructureDefinition.differential.element.binding",
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support": [
+      "StructureDefinition.snapshot.element.type",
+      "StructureDefinition.snapshot.element.type.targetProfile"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/familymemberhistory-abatement": [
+      "FamilyMemberHistory.condition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/familymemberhistory-severity": [
+      "FamilyMemberHistory.condition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix": [
+      "Patient.contact.name.family"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/instance-description": [
+      "Condition.meta",
+      "Observation.meta"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/instance-name": [
+      "Condition.meta",
+      "Observation.meta"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-preferred": [
+      "Patient.address",
+      "Patient.telecom"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/observation-bodyPosition": [
+      "Observation"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/ordinalValue": [
+      "Observation.valueCodeableConcept.coding",
+      "QuestionnaireResponse.item.answer"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/patient-birthTime": [
+      "Patient.birthDate"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/questionnaireresponse-completionMode": [
+      "QuestionnaireResponse"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/questionnaireresponse-signature": [
+      "QuestionnaireResponse",
+      "QuestionnaireResponse.item"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/regex": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/valueset-extensible": [
+      "ValueSet"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name": [
+      "ImplementationGuide.definition.page",
+      "ImplementationGuide.definition.page.page",
+      "ImplementationGuide.definition.page.page.page"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment": [
+      "ImplementationGuide.dependsOn"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
+      "ImplementationGuide.definition.resource"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version": [
+      "StructureDefinition.snapshot"
+    ],
+    "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex": [
+      "Patient"
+    ],
+    "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity": [
+      "Patient"
+    ],
+    "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity|6.1.0": [
+      "Patient"
+    ],
+    "http://hl7.org/fhir/us/core/StructureDefinition/us-core-extension-questionnaire-uri": [
+      "QuestionnaireResponse.questionnaire"
+    ],
+    "http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity": [
+      "Patient"
+    ],
+    "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race": [
+      "Patient"
+    ],
+    "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race|6.1.0": [
+      "Patient"
+    ],
+    "http://hl7.org/fhir/us/core/StructureDefinition/us-core-sex": [
+      "Patient"
+    ],
+    "http://hl7.org/fhir/us/core/StructureDefinition/us-core-tribal-affiliation": [
+      "Patient"
+    ],
+    "http://hl7.org/fhir/us/core/StructureDefinition/us-core-tribal-affiliation|6.1.0": [
+      "Patient"
+    ],
+    "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement": [
+      "StructureDefinition.differential.element",
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemAnswerMedia": [
+      "QuestionnaireResponse.item.answer"
+    ],
+    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemMedia": [
+      "QuestionnaireResponse.item"
+    ]
+  }
+}

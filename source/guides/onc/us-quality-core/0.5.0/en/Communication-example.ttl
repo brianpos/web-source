@@ -1,0 +1,91 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/onc/us-quality-core/Communication/example> a fhir:Communication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-communication"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-communication>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Communication example</b></p><a name=\"example\"> </a><a name=\"hcexample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-communication.html\">US Quality Core Communication</a></p></div><p><b>partOf</b>: <a href=\"DiagnosticReport-note-example.html\">Portable chest radiograph report</a></p><p><b>status</b>: Completed</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/communication-category alert}\">Alert</span></p><p><b>medium</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ParticipationMode WRITTEN}\">written</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>topic</b>: <span title=\"Codes:\">Chest radiograph report available</span></p><p><b>about</b>: <a href=\"DiagnosticReport-note-example.html\">Portable chest radiograph report</a></p><p><b>encounter</b>: <a href=\"Encounter-example.html\">Encounter: identifier = http://example.org/encounters#ENC-20130404-appendicitis; status = finished; class = inpatient encounter (v3 Code System ActCode#IMP); type = Initial hospital inpatient or observation care, per day, for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making. When using total time on the date of the encounter for code selection, 75 minutes must be met or exceeded.; period = 2013-04-04 18:00:00-0400 --&gt; 2013-04-06 11:00:00-0400</a></p><p><b>sent</b>: 2019-02-03 19:45:00+0000</p><p><b>received</b>: 2019-02-03 19:45:30+0000</p><p><b>recipient</b>: <a href=\"Practitioner-example.html\">Practitioner Adam Careful </a></p><p><b>sender</b>: <a href=\"Organization-example.html\">Organization Health Level Seven International</a></p><blockquote><p><b>payload</b></p><p><b>content</b>: Portable chest radiograph report is final with no acute cardiopulmonary abnormality.</p></blockquote><blockquote><p><b>payload</b></p><p><b>content</b>: <a href=\"DiagnosticReport-note-example.html\">Portable chest radiograph report</a></p></blockquote></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:partOf ( [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/DiagnosticReport/note-example> ;
+     fhir:reference [ fhir:v "DiagnosticReport/note-example" ] ;
+     fhir:display [ fhir:v "Portable chest radiograph report" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/communication-category"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/communication-category>
+       ] ;
+       fhir:code [ fhir:v "alert" ]
+     ] ) ;
+     fhir:text [ fhir:v "Alert" ]
+  ] ) ; # 
+  fhir:medium ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/v3-ParticipationMode"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/v3-ParticipationMode>
+       ] ;
+       fhir:code [ fhir:v "WRITTEN" ] ;
+       fhir:display [ fhir:v "written" ]
+     ] ) ;
+     fhir:text [ fhir:v "written" ]
+  ] ) ; # 
+  fhir:subject [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:topic [
+     fhir:text [ fhir:v "Chest radiograph report available" ]
+  ] ; # 
+  fhir:about ( [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/DiagnosticReport/note-example> ;
+     fhir:reference [ fhir:v "DiagnosticReport/note-example" ] ;
+     fhir:display [ fhir:v "Portable chest radiograph report" ]
+  ] ) ; # 
+  fhir:encounter [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Encounter/example> ;
+     fhir:reference [ fhir:v "Encounter/example" ]
+  ] ; # 
+  fhir:sent [ fhir:v "2019-02-03T19:45:00Z"^^xsd:dateTime] ; # 
+  fhir:received [ fhir:v "2019-02-03T19:45:30Z"^^xsd:dateTime] ; # 
+  fhir:recipient ( [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Practitioner/example> ;
+     fhir:reference [ fhir:v "Practitioner/example" ]
+  ] ) ; # 
+  fhir:sender [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Organization/example> ;
+     fhir:reference [ fhir:v "Organization/example" ]
+  ] ; # 
+  fhir:payload ( [
+     fhir:content [
+       a fhir:String ;
+       fhir:v "Portable chest radiograph report is final with no acute cardiopulmonary abnormality."
+     ]
+  ] [
+     fhir:content [
+       a fhir:Reference ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/DiagnosticReport/note-example> ;
+       fhir:reference [ fhir:v "DiagnosticReport/note-example" ] ;
+       fhir:display [ fhir:v "Portable chest radiograph report" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CommunicationRequest xmlns="http://hl7.org/fhir">
+  <id value="example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-communicationrequest"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CommunicationRequest example</b></p><a name="example"> </a><a name="hcexample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-us-quality-core-communicationrequest.html">US Quality Core CommunicationRequest</a></p></div><p><b>identifier</b>: ABC123</p><p><b>basedOn</b>: <a href="Claim-example.html">Appendectomy professional claim</a></p><p><b>replaces</b>: Prior request for appendectomy claim documentation</p><p><b>groupIdentifier</b>: 12345</p><p><b>status</b>: Active</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/communication-category notification}">Notification</span></p><p><b>priority</b>: Routine</p><p><b>medium</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/v3-ParticipationMode WRITTEN}">written</span></p><p><b>subject</b>: <a href="Patient-example.html">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>encounter</b>: <a href="Encounter-example.html">Encounter: identifier = http://example.org/encounters#ENC-20130404-appendicitis; status = finished; class = inpatient encounter (v3 Code System ActCode#IMP); type = Initial hospital inpatient or observation care, per day, for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making. When using total time on the date of the encounter for code selection, 75 minutes must be met or exceeded.; period = 2013-04-04 18:00:00-0400 --&gt; 2013-04-06 11:00:00-0400</a></p><h3>Payloads</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Content[x]</b></td></tr><tr><td style="display: none">*</td><td>Please provide the operative report supporting professional claim 6612346 for appendectomy.</td></tr></table><p><b>occurrence</b>: 2014-08-16 11:01:10-0800</p><p><b>authoredOn</b>: 2014-08-16 11:01:10-0800</p><p><b>requester</b>: <a href="Organization-example.html">Organization Health Level Seven International</a></p><p><b>recipient</b>: <a href="Practitioner-example.html">Practitioner Adam Careful </a></p><p><b>sender</b>: <a href="Organization-example.html">Organization Health Level Seven International</a></p></div>
+  </text>
+  <identifier>
+    <value value="ABC123"/>
+  </identifier>
+  <basedOn>
+    <reference value="Claim/example"/>
+    <display value="Appendectomy professional claim"/>
+  </basedOn>
+  <replaces>
+    <display value="Prior request for appendectomy claim documentation"/>
+  </replaces>
+  <groupIdentifier>
+    <value value="12345"/>
+  </groupIdentifier>
+  <status value="active"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/communication-category"/>
+      <code value="notification"/>
+    </coding>
+  </category>
+  <priority value="routine"/>
+  <medium>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationMode"/>
+      <code value="WRITTEN"/>
+      <display value="written"/>
+    </coding>
+    <text value="written"/>
+  </medium>
+  <subject>
+    <reference value="Patient/example"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/example"/>
+  </encounter>
+  <payload>
+    <contentString value="Please provide the operative report supporting professional claim 6612346 for appendectomy."/>
+  </payload>
+  <occurrenceDateTime value="2014-08-16T11:01:10-08:00"/>
+  <authoredOn value="2014-08-16T11:01:10-08:00"/>
+  <requester>
+    <reference value="Organization/example"/>
+  </requester>
+  <recipient>
+    <reference value="Practitioner/example"/>
+  </recipient>
+  <sender>
+    <reference value="Organization/example"/>
+  </sender>
+</CommunicationRequest>

@@ -1,0 +1,79 @@
+{
+  "resourceType" : "Medication",
+  "id" : "example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medication"]
+  },
+  "language" : "en",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Medication example</b></p><a name=\"example\"> </a><a name=\"hcexample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-medication.html\">US Quality Core Medication</a></p></div><p><b>code</b>: <span title=\"Codes:{http://www.nlm.nih.gov/research/umls/rxnorm 1594660}\">alemtuzumab 10 MG/ML [Lemtrada]</span></p><p><b>manufacturer</b>: <a href=\"#hcexample/org6\">Organization Genzyme</a></p><p><b>form</b>: <span title=\"Codes:{http://snomed.info/sct 385219001}\">Conventional release solution for injection (dose form)</span></p><h3>Ingredients</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Item[x]</b></td><td><b>Strength</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://snomed.info/sct 129472003}\">Alemtuzumab (substance)</span></td><td>12 mg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemg = 'mg')</span>/1.2 mL<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemL = 'mL')</span></td></tr></table><h3>Batches</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>LotNumber</b></td><td><b>ExpirationDate</b></td></tr><tr><td style=\"display: none\">*</td><td>9494788</td><td>2017-05-22</td></tr></table><hr/><blockquote><p class=\"res-header-id\"><b>Generated Narrative: Organization #org6</b></p><a name=\"example/org6\"> </a><a name=\"hcexample/org6\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-organization.html\">US Quality Core Organization</a></p></div><p><b>identifier</b>: <a href=\"http://terminology.hl7.org/5.5.0/NamingSystem-npi.html\" title=\"National Provider Identifier\">United States National Provider Identifier</a>/8635143786\u00a0(use:\u00a0temp,\u00a0)</p><p><b>active</b>: true</p><p><b>name</b>: Genzyme</p><p><b>telecom</b>: <a href=\"https://www.sanofigenzyme.com/\">https://www.sanofigenzyme.com/</a></p><p><b>address</b>: Cambridge MA USA (work)</p></blockquote></div>"
+  },
+  "contained" : [{
+    "resourceType" : "Organization",
+    "id" : "org6",
+    "meta" : {
+      "profile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-organization"]
+    },
+    "identifier" : [{
+      "use" : "temp",
+      "system" : "http://hl7.org/fhir/sid/us-npi",
+      "value" : "8635143786"
+    }],
+    "active" : true,
+    "name" : "Genzyme",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.sanofigenzyme.com/",
+      "use" : "work"
+    }],
+    "address" : [{
+      "use" : "work",
+      "city" : "Cambridge",
+      "state" : "MA",
+      "country" : "USA"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "code" : "1594660",
+      "display" : "alemtuzumab 10 MG/ML [Lemtrada]"
+    }]
+  },
+  "manufacturer" : {
+    "reference" : "#org6"
+  },
+  "form" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "385219001",
+      "display" : "Conventional release solution for injection (dose form)"
+    }]
+  },
+  "ingredient" : [{
+    "itemCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "129472003",
+        "display" : "Alemtuzumab (substance)"
+      }]
+    },
+    "strength" : {
+      "numerator" : {
+        "value" : 12,
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mg"
+      },
+      "denominator" : {
+        "value" : 1.2,
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mL"
+      }
+    }
+  }],
+  "batch" : {
+    "lotNumber" : "9494788",
+    "expirationDate" : "2017-05-22"
+  }
+}

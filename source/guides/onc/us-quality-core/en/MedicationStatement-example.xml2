@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MedicationStatement xmlns="http://hl7.org/fhir">
+  <id value="example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationstatement"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: MedicationStatement example</b></p><a name="example"> </a><a name="hcexample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-us-quality-core-medicationstatement.html">US Quality Core MedicationStatement</a></p></div><p><b>status</b>: Active</p><p><b>medication</b>: <a href="Medication-example.html">Medication alemtuzumab 10 MG/ML [Lemtrada]</a></p><p><b>subject</b>: <a href="Patient-example.html">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>effective</b>: 2015-03-26 --&gt; 2015-03-30</p><p><b>dateAsserted</b>: 2015-03-25 15:00:00-0500</p><p><b>informationSource</b>: <a href="Practitioner-example.html">Practitioner Adam Careful </a></p><p><b>derivedFrom</b>: <a href="MedicationRequest-example.html">MedicationRequest: status = active; intent = order; medication[x] = -&gt;Medication alemtuzumab 10 MG/ML [Lemtrada]; authoredOn = 2015-03-25 19:32:52-0500; reasonCode = Multiple sclerosis (disorder)</a></p><blockquote><p><b>dosage</b></p><p><b>text</b>: Infuse alemtuzumab 12 mg intravenously once daily for 5 days.</p><p><b>timing</b>: Once per 1 day</p><p><b>route</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration IV}">Infusion, intravenous</span></p><h3>DoseAndRates</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Dose[x]</b></td></tr><tr><td style="display: none">*</td><td>12 mg<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemg = 'mg')</span></td></tr></table></blockquote></div>
+  </text>
+  <status value="active"/>
+  <medicationReference>
+    <reference value="Medication/example"/>
+  </medicationReference>
+  <subject>
+    <reference value="Patient/example"/>
+  </subject>
+  <effectivePeriod>
+    <start value="2015-03-26"/>
+    <end value="2015-03-30"/>
+  </effectivePeriod>
+  <dateAsserted value="2015-03-25T15:00:00-05:00"/>
+  <informationSource>
+    <reference value="Practitioner/example"/>
+  </informationSource>
+  <derivedFrom>
+    <reference value="MedicationRequest/example"/>
+  </derivedFrom>
+  <dosage>
+    <text value="Infuse alemtuzumab 12 mg intravenously once daily for 5 days."/>
+    <timing>
+      <repeat>
+        <boundsPeriod>
+          <start value="2015-03-26"/>
+          <end value="2015-03-30"/>
+        </boundsPeriod>
+        <frequency value="1"/>
+        <period value="1"/>
+        <periodUnit value="d"/>
+      </repeat>
+    </timing>
+    <route>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration"/>
+        <code value="IV"/>
+        <display value="Infusion, intravenous"/>
+      </coding>
+    </route>
+    <doseAndRate>
+      <doseQuantity>
+        <value value="12"/>
+        <unit value="mg"/>
+        <system value="http://unitsofmeasure.org"/>
+        <code value="mg"/>
+      </doseQuantity>
+    </doseAndRate>
+  </dosage>
+</MedicationStatement>

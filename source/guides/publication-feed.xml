@@ -4,11 +4,22 @@
     <description>New publications by FHIR Foundation&gt;</description>
     <link>http://fhir.org/guides/package-feed.xml</link>
     <generator>HL7, Inc FHIR Publication tooling</generator>
-    <lastBuildDate>Wed, 18 Mar 2026 04:10:11 +1100</lastBuildDate>
+    <lastBuildDate>Mon, 08 Jun 2026 04:44:16 +1000</lastBuildDate>
     <atom:link href="/guides/package-feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 18 Mar 2026 04:10:11 +1100</pubDate>
+    <pubDate>Mon, 08 Jun 2026 04:44:16 +1000</pubDate>
     <language>en</language>
     <ttl>600</ttl>
+    <item>
+      <title>US Quality Core version 0.5.0</title>
+      <description>US Quality Core</description>
+      <link>http://fhir.org/guides/onc/us-quality-core/0.5.0/index.html</link>
+      <guid isPermaLink="true">http://fhir.org/guides/onc/us-quality-core/0.5.0/index.html</guid>
+      <dc:creator>FHIR Foundation</dc:creator>
+      <fhir:version>4.0.1</fhir:version>
+      <fhir:kind>IG</fhir:kind>
+      <pubDate>Mon, 08 Jun 2026 04:44:16 +1000</pubDate>
+      <fhir:details>Publication run at 08/06/2026 by user using Version 2.2.8 (Git# e39e13a432d0). Built 2026-05-23T19:17:05.32Z (15 days old) source id Unknown (todo)</fhir:details>
+    </item>
     <item>
       <title>2022 CDC Clinical Practice Guideline for Prescribing Opioids Implementation Guide version 2022.1.0</title>
       <description>Release publication of the 2022 CDC Clinical Practice Guideline for Prescribing Opioids Implementation Guide, version 2022.1.0</description>

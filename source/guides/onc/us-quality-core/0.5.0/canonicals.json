@@ -1,0 +1,1162 @@
+[{
+  "id" : "us-quality-core-client",
+  "type" : "CapabilityStatement",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/CapabilityStatement/us-quality-core-client",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreClientCapabilityStatement"
+},
+{
+  "id" : "us-quality-core-server",
+  "type" : "CapabilityStatement",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/CapabilityStatement/us-quality-core-server",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreServerCapabilityStatement"
+},
+{
+  "id" : "fhir.onc.us-quality-core",
+  "type" : "ImplementationGuide",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/ImplementationGuide/fhir.onc.us-quality-core",
+  "version" : "0.5.0",
+  "name" : "USQualityCore"
+},
+{
+  "id" : "USQualityCore-ModelInfo",
+  "type" : "Library",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/Library/USQualityCore-ModelInfo",
+  "version" : "0.5.0",
+  "name" : "USQualityCore"
+},
+{
+  "id" : "USQualityCoreCommon",
+  "type" : "Library",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/Library/USQualityCoreCommon",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreCommon"
+},
+{
+  "id" : "USQualityCoreCommonTests",
+  "type" : "Library",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/Library/USQualityCoreCommonTests",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreCommonTests"
+},
+{
+  "id" : "us-quality-core-adverseevent-event",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-adverseevent-event",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreAdverseeventEvent"
+},
+{
+  "id" : "us-quality-core-adverseevent-recorded-date",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-adverseevent-recorded-date",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreAdverseeventRecordedDate"
+},
+{
+  "id" : "us-quality-core-adverseevent-subject",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-adverseevent-subject",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreAdverseeventSubject"
+},
+{
+  "id" : "us-quality-core-allergyintolerance-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-allergyintolerance-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreAllergyintolerancePatient"
+},
+{
+  "id" : "us-quality-core-bodystructure-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-bodystructure-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreBodystructurePatient"
+},
+{
+  "id" : "us-quality-core-careplan-category",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-careplan-category",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreCareplanCategory"
+},
+{
+  "id" : "us-quality-core-careplan-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-careplan-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreCareplanPatient"
+},
+{
+  "id" : "us-quality-core-careteam-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-careteam-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreCareteamPatient"
+},
+{
+  "id" : "us-quality-core-careteam-status",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-careteam-status",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreCareteamStatus"
+},
+{
+  "id" : "us-quality-core-claim-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-claim-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreClaimPatient"
+},
+{
+  "id" : "us-quality-core-claimresponse-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-claimresponse-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreClaimresponsePatient"
+},
+{
+  "id" : "us-quality-core-claimresponse-type",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-claimresponse-type",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreClaimresponseType"
+},
+{
+  "id" : "us-quality-core-communication-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-communication-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreCommunicationPatient"
+},
+{
+  "id" : "us-quality-core-communication-topic",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-communication-topic",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreCommunicationTopic"
+},
+{
+  "id" : "us-quality-core-communicationrequest-category",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-communicationrequest-category",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreCommunicationrequestCategory"
+},
+{
+  "id" : "us-quality-core-communicationrequest-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-communicationrequest-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreCommunicationrequestPatient"
+},
+{
+  "id" : "us-quality-core-condition-abatement-date",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-condition-abatement-date",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreConditionAbatementDate"
+},
+{
+  "id" : "us-quality-core-condition-category",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-condition-category",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreConditionCategory"
+},
+{
+  "id" : "us-quality-core-condition-code",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-condition-code",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreConditionCode"
+},
+{
+  "id" : "us-quality-core-condition-onset-date",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-condition-onset-date",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreConditionOnsetDate"
+},
+{
+  "id" : "us-quality-core-condition-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-condition-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreConditionPatient"
+},
+{
+  "id" : "us-quality-core-coverage-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-coverage-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreCoveragePatient"
+},
+{
+  "id" : "us-quality-core-device-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-device-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreDevicePatient"
+},
+{
+  "id" : "us-quality-core-device-type",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-device-type",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreDeviceType"
+},
+{
+  "id" : "us-quality-core-devicerequest-code",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-devicerequest-code",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreDevicerequestCode"
+},
+{
+  "id" : "us-quality-core-devicerequest-do-not-perform",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-devicerequest-do-not-perform",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreDevicerequestDoNotPerform"
+},
+{
+  "id" : "us-quality-core-devicerequest-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-devicerequest-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreDevicerequestPatient"
+},
+{
+  "id" : "us-quality-core-deviceusestatement-device-type",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-deviceusestatement-device-type",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreDeviceusestatementDeviceType"
+},
+{
+  "id" : "us-quality-core-deviceusestatement-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-deviceusestatement-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreDeviceusestatementPatient"
+},
+{
+  "id" : "us-quality-core-diagnosticreport-category",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-diagnosticreport-category",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreDiagnosticreportCategory"
+},
+{
+  "id" : "us-quality-core-diagnosticreport-code",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-diagnosticreport-code",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreDiagnosticreportCode"
+},
+{
+  "id" : "us-quality-core-diagnosticreport-date",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-diagnosticreport-date",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreDiagnosticreportDate"
+},
+{
+  "id" : "us-quality-core-diagnosticreport-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-diagnosticreport-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreDiagnosticreportPatient"
+},
+{
+  "id" : "us-quality-core-encounter-date",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-encounter-date",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreEncounterDate"
+},
+{
+  "id" : "us-quality-core-encounter-id",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-encounter-id",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreEncounter"
+},
+{
+  "id" : "us-quality-core-encounter-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-encounter-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreEncounterPatient"
+},
+{
+  "id" : "us-quality-core-encounter-type",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-encounter-type",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreEncounterType"
+},
+{
+  "id" : "us-quality-core-familymemberhistory-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-familymemberhistory-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreFamilymemberhistoryPatient"
+},
+{
+  "id" : "us-quality-core-flag-code",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-flag-code",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreFlagCode"
+},
+{
+  "id" : "us-quality-core-flag-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-flag-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreFlagPatient"
+},
+{
+  "id" : "us-quality-core-goal-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-goal-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreGoalPatient"
+},
+{
+  "id" : "us-quality-core-immunization-date",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-immunization-date",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreImmunizationDate"
+},
+{
+  "id" : "us-quality-core-immunization-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-immunization-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreImmunizationPatient"
+},
+{
+  "id" : "us-quality-core-immunization-status",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-immunization-status",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreImmunizationStatus"
+},
+{
+  "id" : "us-quality-core-immunizationevaluation-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-immunizationevaluation-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreImmunizationevaluationPatient"
+},
+{
+  "id" : "us-quality-core-immunizationevaluation-target-disease",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-immunizationevaluation-target-disease",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreImmunizationevaluationTargetDisease"
+},
+{
+  "id" : "us-quality-core-location-id",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-location-id",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreLocation"
+},
+{
+  "id" : "us-quality-core-medication-code",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-medication-code",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreMedicationCode"
+},
+{
+  "id" : "us-quality-core-medicationadministration-code",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-medicationadministration-code",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreMedicationadministrationCode"
+},
+{
+  "id" : "us-quality-core-medicationadministration-effective-time",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-medicationadministration-effective-time",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreMedicationadministrationEffectiveTime"
+},
+{
+  "id" : "us-quality-core-medicationadministration-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-medicationadministration-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreMedicationadministrationPatient"
+},
+{
+  "id" : "us-quality-core-medicationadministration-status",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-medicationadministration-status",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreMedicationadministrationStatus"
+},
+{
+  "id" : "us-quality-core-medicationdispense-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-medicationdispense-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreMedicationdispensePatient"
+},
+{
+  "id" : "us-quality-core-medicationdispense-status",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-medicationdispense-status",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreMedicationdispenseStatus"
+},
+{
+  "id" : "us-quality-core-medicationrequest-do-not-perform",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-medicationrequest-do-not-perform",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreMedicationrequestDoNotPerform"
+},
+{
+  "id" : "us-quality-core-medicationrequest-intent",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-medicationrequest-intent",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreMedicationrequestIntent"
+},
+{
+  "id" : "us-quality-core-medicationrequest-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-medicationrequest-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreMedicationrequestPatient"
+},
+{
+  "id" : "us-quality-core-medicationstatement-code",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-medicationstatement-code",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreMedicationstatementCode"
+},
+{
+  "id" : "us-quality-core-medicationstatement-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-medicationstatement-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreMedicationstatementPatient"
+},
+{
+  "id" : "us-quality-core-observation-category",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-observation-category",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreObservationCategory"
+},
+{
+  "id" : "us-quality-core-observation-code",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-observation-code",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreObservationCode"
+},
+{
+  "id" : "us-quality-core-observation-date",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-observation-date",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreObservationDate"
+},
+{
+  "id" : "us-quality-core-observation-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-observation-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreObservationPatient"
+},
+{
+  "id" : "us-quality-core-observation-status",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-observation-status",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreObservationStatus"
+},
+{
+  "id" : "us-quality-core-patient-id",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-patient-id",
+  "version" : "0.5.0",
+  "name" : "UsQualityCorePatient"
+},
+{
+  "id" : "us-quality-core-practitioner-id",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-practitioner-id",
+  "version" : "0.5.0",
+  "name" : "UsQualityCorePractitioner"
+},
+{
+  "id" : "us-quality-core-practitionerrole-id",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-practitionerrole-id",
+  "version" : "0.5.0",
+  "name" : "UsQualityCorePractitionerrole"
+},
+{
+  "id" : "us-quality-core-procedure-date",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-procedure-date",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreProcedureDate"
+},
+{
+  "id" : "us-quality-core-procedure-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-procedure-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreProcedurePatient"
+},
+{
+  "id" : "us-quality-core-procedure-status",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-procedure-status",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreProcedureStatus"
+},
+{
+  "id" : "us-quality-core-questionnaireresponse-id",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-questionnaireresponse-id",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreQuestionnaireresponse"
+},
+{
+  "id" : "us-quality-core-questionnaireresponse-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-questionnaireresponse-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreQuestionnaireresponsePatient"
+},
+{
+  "id" : "us-quality-core-questionnaireresponse-questionnaire",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-questionnaireresponse-questionnaire",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreQuestionnaireresponseQuestionnaire"
+},
+{
+  "id" : "us-quality-core-relatedperson-id",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-relatedperson-id",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreRelatedperson"
+},
+{
+  "id" : "us-quality-core-relatedperson-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-relatedperson-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreRelatedpersonPatient"
+},
+{
+  "id" : "us-quality-core-servicerequest-authored",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-servicerequest-authored",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreServicerequestAuthored"
+},
+{
+  "id" : "us-quality-core-servicerequest-category",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-servicerequest-category",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreServicerequestCategory"
+},
+{
+  "id" : "us-quality-core-servicerequest-code",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-servicerequest-code",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreServicerequestCode"
+},
+{
+  "id" : "us-quality-core-servicerequest-do-not-perform",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-servicerequest-do-not-perform",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreServicerequestDoNotPerform"
+},
+{
+  "id" : "us-quality-core-servicerequest-id",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-servicerequest-id",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreServicerequest"
+},
+{
+  "id" : "us-quality-core-servicerequest-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-servicerequest-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreServicerequestPatient"
+},
+{
+  "id" : "us-quality-core-substance-code",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-substance-code",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreSubstanceCode"
+},
+{
+  "id" : "us-quality-core-task-code",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-task-code",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreTaskCode"
+},
+{
+  "id" : "us-quality-core-task-patient",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-task-patient",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreTaskPatient"
+},
+{
+  "id" : "us-quality-core-task-status",
+  "type" : "SearchParameter",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-task-status",
+  "version" : "0.5.0",
+  "name" : "UsQualityCoreTaskStatus"
+},
+{
+  "id" : "us-quality-core-adverseevent",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-adverseevent",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreAdverseEvent"
+},
+{
+  "id" : "us-quality-core-allergyintolerance",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-allergyintolerance",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreAllergyIntolerance"
+},
+{
+  "id" : "us-quality-core-bodystructure",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-bodystructure",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreBodyStructure"
+},
+{
+  "id" : "us-quality-core-careplan",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-careplan",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreCarePlan"
+},
+{
+  "id" : "us-quality-core-careteam",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-careteam",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreCareTeam"
+},
+{
+  "id" : "us-quality-core-claim",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-claim",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreClaim"
+},
+{
+  "id" : "us-quality-core-claimresponse",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-claimresponse",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreClaimResponse"
+},
+{
+  "id" : "us-quality-core-communication",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-communication",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreCommunication"
+},
+{
+  "id" : "us-quality-core-communicationnotdone",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-communicationnotdone",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreCommunicationNotDone"
+},
+{
+  "id" : "us-quality-core-communicationrequest",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-communicationrequest",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreCommunicationRequest"
+},
+{
+  "id" : "us-quality-core-condition-encounter-diagnosis",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-encounter-diagnosis",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreConditionEncounterDiagnosis"
+},
+{
+  "id" : "us-quality-core-condition-problems-health-concerns",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreConditionProblemsHealthConcerns"
+},
+{
+  "id" : "us-quality-core-coverage",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-coverage",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreCoverage"
+},
+{
+  "id" : "us-quality-core-device",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-device",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreDevice"
+},
+{
+  "id" : "us-quality-core-devicenotrequested",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-devicenotrequested",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreDeviceNotRequested"
+},
+{
+  "id" : "us-quality-core-devicerequest",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-devicerequest",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreDeviceRequest"
+},
+{
+  "id" : "us-quality-core-deviceusestatement",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-deviceusestatement",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreDeviceUseStatement"
+},
+{
+  "id" : "us-quality-core-diagnosticreport-lab",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-lab",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreDiagnosticReportLab"
+},
+{
+  "id" : "us-quality-core-diagnosticreport-note",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-note",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreDiagnosticReportNote"
+},
+{
+  "id" : "us-quality-core-doNotPerformReason",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-doNotPerformReason",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreDoNotPerformReason"
+},
+{
+  "id" : "us-quality-core-encounter",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreEncounter"
+},
+{
+  "id" : "us-quality-core-encounter-diagnosisPresentOnAdmission",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter-diagnosisPresentOnAdmission",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreDiagnosisPresentOnAdmission"
+},
+{
+  "id" : "us-quality-core-familymemberhistory",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-familymemberhistory",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreFamilyMemberHistory"
+},
+{
+  "id" : "us-quality-core-flag",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-flag",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreFlag"
+},
+{
+  "id" : "us-quality-core-goal",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-goal",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreGoal"
+},
+{
+  "id" : "us-quality-core-imagingstudy",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-imagingstudy",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreImagingStudy"
+},
+{
+  "id" : "us-quality-core-immunization",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunization",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreImmunization"
+},
+{
+  "id" : "us-quality-core-immunizationevaluation",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunizationevaluation",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreImmunizationEvaluation"
+},
+{
+  "id" : "us-quality-core-immunizationnotdone",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunizationnotdone",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreImmunizationNotDone"
+},
+{
+  "id" : "us-quality-core-immunizationrecommendation",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunizationrecommendation",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreImmunizationRecommendation"
+},
+{
+  "id" : "us-quality-core-isElective",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-isElective",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreIsElective"
+},
+{
+  "id" : "us-quality-core-location",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-location",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreLocation"
+},
+{
+  "id" : "us-quality-core-medication",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medication",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreMedication"
+},
+{
+  "id" : "us-quality-core-medicationadministration",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationadministration",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreMedicationAdministration"
+},
+{
+  "id" : "us-quality-core-medicationadministrationnotdone",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationadministrationnotdone",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreMedicationAdministrationNotDone"
+},
+{
+  "id" : "us-quality-core-medicationdispense",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationdispense",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreMedicationDispense"
+},
+{
+  "id" : "us-quality-core-medicationdispensedeclined",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationdispensedeclined",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreMedicationDispenseDeclined"
+},
+{
+  "id" : "us-quality-core-medicationnotrequested",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationnotrequested",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreMedicationNotRequested"
+},
+{
+  "id" : "us-quality-core-medicationrequest",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationrequest",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreMedicationRequest"
+},
+{
+  "id" : "us-quality-core-medicationstatement",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationstatement",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreMedicationStatement"
+},
+{
+  "id" : "us-quality-core-nonpatient-observation",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-nonpatient-observation",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreNonPatientObservation"
+},
+{
+  "id" : "us-quality-core-notDoneReason",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-notDoneReason",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreNotDoneReason"
+},
+{
+  "id" : "us-quality-core-notDoneValueSet",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-notDoneValueSet",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreNotDoneValueSet"
+},
+{
+  "id" : "us-quality-core-nutritionorder",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-nutritionorder",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreNutritionOrder"
+},
+{
+  "id" : "us-quality-core-observation-clinical-result",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-clinical-result",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreObservationClinicalResult"
+},
+{
+  "id" : "us-quality-core-observation-lab",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-lab",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreLaboratoryResultObservation"
+},
+{
+  "id" : "us-quality-core-observation-screening-assessment",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-screening-assessment",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreObservationScreeningAssessment"
+},
+{
+  "id" : "us-quality-core-observationcancelled",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observationcancelled",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreObservationCancelled"
+},
+{
+  "id" : "us-quality-core-organization",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-organization",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreOrganization"
+},
+{
+  "id" : "us-quality-core-patient",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient",
+  "version" : "0.5.0",
+  "name" : "USQualityCorePatient"
+},
+{
+  "id" : "us-quality-core-practitioner",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitioner",
+  "version" : "0.5.0",
+  "name" : "USQualityCorePractitioner"
+},
+{
+  "id" : "us-quality-core-practitionerrole",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitionerrole",
+  "version" : "0.5.0",
+  "name" : "USQualityCorePractitionerRole"
+},
+{
+  "id" : "us-quality-core-procedure",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedure",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreProcedure"
+},
+{
+  "id" : "us-quality-core-procedurenotdone",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedurenotdone",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreProcedureNotDone"
+},
+{
+  "id" : "us-quality-core-questionnaireresponse",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-questionnaireresponse",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreQuestionnaireResponse"
+},
+{
+  "id" : "us-quality-core-recorded",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-recorded",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreNotDoneRecorded"
+},
+{
+  "id" : "us-quality-core-relatedperson",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-relatedperson",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreRelatedPerson"
+},
+{
+  "id" : "us-quality-core-servicenotrequested",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicenotrequested",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreServiceNotRequested"
+},
+{
+  "id" : "us-quality-core-servicerequest",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreServiceRequest"
+},
+{
+  "id" : "us-quality-core-servicerequest-appropriatenessScore",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest-appropriatenessScore",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreServiceRequestAppropriatenessScore"
+},
+{
+  "id" : "us-quality-core-simple-observation",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreSimpleObservation"
+},
+{
+  "id" : "us-quality-core-substance",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-substance",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreSubstance"
+},
+{
+  "id" : "us-quality-core-task",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-task",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreTask"
+},
+{
+  "id" : "us-quality-core-taskrejected",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-taskrejected",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreTaskRejected"
+},
+{
+  "id" : "uscdiplusquality",
+  "type" : "StructureDefinition",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreUSCDIQualityExtension"
+},
+{
+  "id" : "us-quality-core-medication-dose-type",
+  "type" : "ValueSet",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/ValueSet/us-quality-core-medication-dose-type",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreMedicationDoseType"
+},
+{
+  "id" : "us-quality-core-negation-reason",
+  "type" : "ValueSet",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/ValueSet/us-quality-core-negation-reason",
+  "version" : "0.5.0",
+  "name" : "NegationReasonCodes"
+},
+{
+  "id" : "us-quality-core-non-negative-event-status",
+  "type" : "ValueSet",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/ValueSet/us-quality-core-non-negative-event-status",
+  "version" : "0.5.0",
+  "name" : "NonNegativeEventStatus"
+},
+{
+  "id" : "us-quality-core-non-negative-immunization-status",
+  "type" : "ValueSet",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/ValueSet/us-quality-core-non-negative-immunization-status",
+  "version" : "0.5.0",
+  "name" : "NonNegativeImmunizationStatus"
+},
+{
+  "id" : "us-quality-core-non-negative-medication-admin-status",
+  "type" : "ValueSet",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/ValueSet/us-quality-core-non-negative-medication-admin-status",
+  "version" : "0.5.0",
+  "name" : "NonNegativeMedicationAdministrationStatus"
+},
+{
+  "id" : "us-quality-core-non-negative-medicationdispense-status",
+  "type" : "ValueSet",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/ValueSet/us-quality-core-non-negative-medicationdispense-status",
+  "version" : "0.5.0",
+  "name" : "NonNegativeMedicationDispenseStatus"
+},
+{
+  "id" : "us-quality-core-non-negative-observation-status",
+  "type" : "ValueSet",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/ValueSet/us-quality-core-non-negative-observation-status",
+  "version" : "0.5.0",
+  "name" : "NonNegativeObservationStatus"
+},
+{
+  "id" : "us-quality-core-non-negative-task-status",
+  "type" : "ValueSet",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/ValueSet/us-quality-core-non-negative-task-status",
+  "version" : "0.5.0",
+  "name" : "NonNegativeTaskStatus"
+},
+{
+  "id" : "us-quality-core-observation-body-position",
+  "type" : "ValueSet",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/ValueSet/us-quality-core-observation-body-position",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreObservationBodyPosition"
+},
+{
+  "id" : "us-quality-core-present-on-admission",
+  "type" : "ValueSet",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/ValueSet/us-quality-core-present-on-admission",
+  "version" : "0.5.0",
+  "name" : "USQualityCorePresentOnAdmission"
+}]

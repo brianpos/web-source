@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Encounter xmlns="http://hl7.org/fhir">
+  <id value="example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Encounter example</b></p><a name="example"> </a><a name="hcexample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-us-quality-core-encounter.html">US Quality Core Encounter</a></p></div><p><b>identifier</b>: <code>http://example.org/encounters</code>/ENC-20130404-appendicitis</p><p><b>status</b>: Finished</p><p><b>class</b>: <a href="http://hl7.org/fhir/R4/v3/ActCode/cs.html#v3-ActCode-IMP">v3 Code System ActCode: IMP</a> (inpatient encounter)</p><p><b>type</b>: <span title="Codes:{http://www.ama-assn.org/go/cpt 99223}">Initial hospital inpatient or observation care, per day, for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making. When using total time on the date of the encounter for code selection, 75 minutes must be met or exceeded.</span></p><p><b>subject</b>: <a href="Patient-example.html">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>period</b>: 2013-04-04 18:00:00-0400 --&gt; 2013-04-06 11:00:00-0400</p><h3>Diagnoses</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Extension</b></td><td><b>Condition</b></td></tr><tr><td style="display: none">*</td><td/><td><a href="Condition-appendicitis-example.html">Condition Appendicitis (disorder)</a></td></tr></table><h3>Hospitalizations</h3><table class="grid"><tr><td style="display: none">-</td><td><b>DischargeDisposition</b></td></tr><tr><td style="display: none">*</td><td><span title="Codes:{http://terminology.hl7.org/CodeSystem/discharge-disposition home}">Home</span></td></tr></table><h3>Locations</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Location</b></td><td><b>Status</b></td><td><b>Period</b></td></tr><tr><td style="display: none">*</td><td><a href="Location-example.html">South Wing, second floor</a></td><td>Completed</td><td>2013-04-04 18:00:00-0400 --&gt; 2013-04-06 11:00:00-0400</td></tr></table></div>
+  </text>
+  <identifier>
+    <system value="http://example.org/encounters"/>
+    <value value="ENC-20130404-appendicitis"/>
+  </identifier>
+  <status value="finished"/>
+  <class>
+    <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+    <code value="IMP"/>
+    <display value="inpatient encounter"/>
+  </class>
+  <type>
+    <coding>
+      <system value="http://www.ama-assn.org/go/cpt"/>
+      <code value="99223"/>
+      <display value="Initial hospital inpatient or observation care, per day, for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making. When using total time on the date of the encounter for code selection, 75 minutes must be met or exceeded."/>
+    </coding>
+  </type>
+  <subject>
+    <reference value="Patient/example"/>
+  </subject>
+  <period>
+    <start value="2013-04-04T18:00:00-04:00"/>
+    <end value="2013-04-06T11:00:00-04:00"/>
+  </period>
+  <diagnosis>
+    <extension url="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter-diagnosisPresentOnAdmission">
+      <valueCodeableConcept>
+        <coding>
+          <system value="https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/HospitalAcqCond/Coding"/>
+          <code value="Y"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <condition>
+      <reference value="Condition/appendicitis-example"/>
+    </condition>
+  </diagnosis>
+  <hospitalization>
+    <dischargeDisposition>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/discharge-disposition"/>
+        <code value="home"/>
+        <display value="Home"/>
+      </coding>
+    </dischargeDisposition>
+  </hospitalization>
+  <location>
+    <location>
+      <reference value="Location/example"/>
+      <display value="South Wing, second floor"/>
+    </location>
+    <status value="completed"/>
+    <period>
+      <start value="2013-04-04T18:00:00-04:00"/>
+      <end value="2013-04-06T11:00:00-04:00"/>
+    </period>
+  </location>
+</Encounter>

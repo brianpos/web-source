@@ -1,0 +1,80 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/onc/us-quality-core/Observation/example-frailty> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "example-frailty"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation example-frailty</b></p><a name=\"example-frailty\"> </a><a name=\"hcexample-frailty\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-simple-observation.html\">US Quality Core Simple Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">exam</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 99354-3}\">Mobility device or aid is regularly used</span></p><p><b>subject</b>: <a href=\"Patient-example-2.html\">Sarah Hugankiss (official) Female, DoB: 1946-09-25 ( Social Security number (use: usual, period: 1995-05-06 --&gt; (ongoing)))</a></p><p><b>encounter</b>: <a href=\"Encounter-example.html\">Encounter: identifier = http://example.org/encounters#ENC-20130404-appendicitis; status = finished; class = inpatient encounter (v3 Code System ActCode#IMP); type = Initial hospital inpatient or observation care, per day, for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making. When using total time on the date of the encounter for code selection, 75 minutes must be met or exceeded.; period = 2013-04-04 18:00:00-0400 --&gt; 2013-04-06 11:00:00-0400</a></p><p><b>effective</b>: 2013-04-02 10:30:10+0100 --&gt; 2013-04-05 10:30:10+0100</p><p><b>issued</b>: 2013-04-03 15:30:10+0100</p><p><b>performer</b>: <a href=\"Practitioner-example.html\">Practitioner</a></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 105503008}\">Dependence on wheelchair (finding)</span></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/observation-category>
+       ] ;
+       fhir:code [ fhir:v "exam" ] ;
+       fhir:display [ fhir:v "exam" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:99354-3 ;
+       fhir:system [
+         fhir:v "http://loinc.org"^^xsd:anyURI ;
+         fhir:l <http://loinc.org>
+       ] ;
+       fhir:code [ fhir:v "99354-3" ] ;
+       fhir:display [ fhir:v "Mobility device or aid is regularly used" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Patient/example-2> ;
+     fhir:reference [ fhir:v "Patient/example-2" ]
+  ] ; # 
+  fhir:encounter [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Encounter/example> ;
+     fhir:reference [ fhir:v "Encounter/example" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:Period ;
+     fhir:start [ fhir:v "2013-04-02T10:30:10+01:00"^^xsd:dateTime ] ;
+     fhir:end [ fhir:v "2013-04-05T10:30:10+01:00"^^xsd:dateTime ]
+  ] ; # 
+  fhir:issued [ fhir:v "2013-04-03T15:30:10+01:00"^^xsd:dateTime] ; # 
+  fhir:performer ( [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Practitioner/example> ;
+     fhir:reference [ fhir:v "Practitioner/example" ] ;
+     fhir:display [ fhir:v "Practitioner" ]
+  ] ) ; # 
+  fhir:value [
+     a fhir:CodeableConcept ;
+     fhir:coding ( [
+       a sct:105503008 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "105503008" ] ;
+       fhir:display [ fhir:v "Dependence on wheelchair (finding)" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

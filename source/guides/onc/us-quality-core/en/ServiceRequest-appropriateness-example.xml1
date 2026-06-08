@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ServiceRequest xmlns="http://hl7.org/fhir">
+  <id value="appropriateness-example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ServiceRequest appropriateness-example</b></p><a name="appropriateness-example"> </a><a name="hcappropriateness-example"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-us-quality-core-servicerequest.html">US Quality Core ServiceRequest</a></p></div><p><b>USQualityCore Appropriateness Score</b>: appropriate</p><p><b>status</b>: Completed</p><p><b>intent</b>: Order</p><p><b>code</b>: <span title="Codes:{http://www.ama-assn.org/go/cpt 70450}">Computed tomography, head or brain; without contrast material</span></p><p><b>subject</b>: <a href="Patient-example.html">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>authoredOn</b>: 2015-03-30</p><p><b>requester</b>: Dr. Beverly Crusher</p><p><b>reasonCode</b>: <span title="Codes:{http://snomed.info/sct 330007}">Occipital headache</span></p></div>
+  </text>
+  <extension url="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest-appropriatenessScore">
+    <valueCode value="appropriate"/>
+  </extension>
+  <status value="completed"/>
+  <intent value="order"/>
+  <code>
+    <coding>
+      <system value="http://www.ama-assn.org/go/cpt"/>
+      <code value="70450"/>
+      <display value="Computed tomography, head or brain; without contrast material"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/example"/>
+  </subject>
+  <authoredOn value="2015-03-30"/>
+  <requester>
+    <display value="Dr. Beverly Crusher"/>
+  </requester>
+  <reasonCode>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="330007"/>
+      <display value="Occipital headache"/>
+    </coding>
+  </reasonCode>
+</ServiceRequest>

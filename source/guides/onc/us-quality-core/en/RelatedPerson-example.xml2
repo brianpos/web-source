@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RelatedPerson xmlns="http://hl7.org/fhir">
+  <id value="example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-relatedperson"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: RelatedPerson example</b></p><a name="example"> </a><a name="hcexample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-us-quality-core-relatedperson.html">US Quality Core RelatedPerson</a></p></div><p><b>active</b>: true</p><p><b>patient</b>: <a href="Patient-example.html">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>relationship</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/v2-0131 C}">Emergency Contact</span></p><p><b>name</b>: Peter James Chalmers (Official)</p><p><b>telecom</b>: ph: (03) 5555 6473(Work)</p><p><b>gender</b>: Male</p><p><b>address</b>: 534 Erewhon St PleasantVille UT 84414 (home)</p><p><b>period</b>: 2012-03-11 --&gt; (ongoing)</p></div>
+  </text>
+  <active value="true"/>
+  <patient>
+    <reference value="Patient/example"/>
+  </patient>
+  <relationship>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v2-0131"/>
+      <code value="C"/>
+    </coding>
+  </relationship>
+  <name>
+    <use value="official"/>
+    <family value="Chalmers"/>
+    <given value="Peter"/>
+    <given value="James"/>
+  </name>
+  <telecom>
+    <system value="phone"/>
+    <value value="(03) 5555 6473"/>
+    <use value="work"/>
+  </telecom>
+  <gender value="male"/>
+  <address>
+    <use value="home"/>
+    <line value="534 Erewhon St"/>
+    <city value="PleasantVille"/>
+    <state value="UT"/>
+    <postalCode value="84414"/>
+  </address>
+  <period>
+    <start value="2012-03-11"/>
+  </period>
+</RelatedPerson>

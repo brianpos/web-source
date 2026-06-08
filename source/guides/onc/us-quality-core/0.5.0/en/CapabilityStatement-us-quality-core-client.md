@@ -1,0 +1,2127 @@
+# US Quality Core Client CapabilityStatement - 2026 US Quality Core Implementation Guide v0.5.0
+
+## CapabilityStatement: US Quality Core Client CapabilityStatement 
+
+ 
+This capability statement describes the expected capabilities of the US Quality Core Client which is responsible for initiating queries for USCDI+ Quality V1 data from US Quality Core Servers. The set of FHIR RESTful operations and search parameters required to be supported by US Quality Core Servers is provided in the [US Quality Core Server Capability Statement](CapabilityStatement-us-quality-core-server.md). US Quality Core Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements. 
+
+ [Raw OpenAPI-Swagger Definition file](../us-quality-core-client.openapi.json) | [Download](../us-quality-core-client.openapi.json) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CapabilityStatement",
+  "id" : "us-quality-core-client",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/CapabilityStatement/us-quality-core-client",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreClientCapabilityStatement",
+  "title" : "US Quality Core Client CapabilityStatement",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-06-05",
+  "publisher" : "Office of the National Coordinator for Health Information Technology (ONC)",
+  "contact" : [{
+    "name" : "Office of the National Coordinator for Health Information Technology (ONC)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.healthit.gov/feedback"
+    }]
+  }],
+  "description" : "This capability statement describes the expected capabilities of the US Quality\nCore Client which is responsible for initiating queries for USCDI+\nQuality V1 data from US Quality Core Servers.  The set of FHIR RESTful\noperations and search parameters required to be supported by US Quality Core\nServers is provided in the [US Quality Core Server Capability\nStatement](CapabilityStatement-us-quality-core-server.html).  US Quality Core\nClients have the option of choosing from this list to access necessary data\nbased on their local use cases and other contextual requirements.\n",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }],
+    "text" : "USA"
+  }],
+  "kind" : "requirements",
+  "fhirVersion" : "4.0.1",
+  "format" : ["json"],
+  "implementationGuide" : ["http://fhir.org/guides/onc/us-quality-core/ImplementationGuide/fhir.onc.us-quality-core"],
+  "rest" : [{
+    "mode" : "client",
+    "documentation" : "The US Quality Core Client SHALL:\n\n1. Support fetching and querying US Quality Core and US Core profiles that contain at least one in-scope USCDI+ Quality data element, using the supported RESTful interactions and search parameters declared in the US Quality Core Server CapabilityStatement\n2. Recognize and process all MustSupport and USCDI+ Quality flagged elements in US Quality Core, and all MustSupport elements in in-scope US Core profiles\n3. Treat all modifying attributes as MustSupport, even if not explicitly declared\n4. SHALL NOT process resource instances that include unknown modifying attributes\n5. Be simultaneously conformant with US Quality Core profiles and US Core profiles. As such, the more restrictive bindings between US Core and US Quality Core SHALL be adhered to. For example, all value sets that are required in US Core SHALL be required by US Quality Core, regardless of the binding strength in US Quality Core.\n\nNOTE: US Quality Core and US Core SearchParameters referenced in this CapabilityStatement that are derived from standard FHIR SearchParameters are only defined to document Server and Client expectations, such as comparator expectations, and to support generation tooling.  They SHALL NOT be interpreted as search parameters for searching. Actual searches use the standard FHIR SearchParameters.\n",
+    "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "subject"
+        },
+        {
+          "url" : "required",
+          "valueString" : "event"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "subject"
+        },
+        {
+          "url" : "required",
+          "valueString" : "recorded-date"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      }],
+      "type" : "AdverseEvent",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-adverseevent"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). The table below summarizes why each required individual search or required search parameter combination is included for this resource.\n\n| Required search | US Core alignment | Rationale |\n|---|---|---|\n| `subject` | Added in US Quality Core. | Supports subject-scoped retrieval of AdverseEvent resources for quality reporting. This US Quality Core-specific search is needed because AdverseEvent is in scope for USCDI+ Quality but is not profiled by US Core 6.1.0. |\n| `subject` + `event` | Added in US Quality Core. | Supports subject-scoped retrieval filtered by adverse event concept. This US Quality Core-specific combination makes the adverse event concept available as a primary retrieval path for quality logic. |\n| `subject` + `recorded-date` | Added in US Quality Core. | Supports subject-scoped retrieval filtered by recorded date so quality workflows can constrain adverse events to relevant reporting periods. |",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"],
+      "searchRevInclude" : ["Provenance:target"],
+      "_searchRevInclude" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "subject",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-adverseevent-subject",
+        "type" : "reference",
+        "documentation" : "The client **SHALL** provide an id value for the reference."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "event",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-adverseevent-event",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a code value."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "recorded-date",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-adverseevent-recorded-date",
+        "type" : "date",
+        "documentation" : "The client **MAY** provide a date value."
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      }],
+      "type" : "AllergyIntolerance",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-allergyintolerance"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). The table below summarizes why each required individual search or required search parameter combination is included for this resource.\n\n| Required search | US Core alignment | Rationale |\n|---|---|---|\n| `patient` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#allergyintolerance). | Supports patient-scoped retrieval of allergy and intolerance data needed for in-scope USCDI+ Quality data access. |",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"],
+      "searchRevInclude" : ["Provenance:target"],
+      "_searchRevInclude" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "patient",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-allergyintolerance-patient",
+        "type" : "reference",
+        "documentation" : "The client **SHALL** provide an id value for the reference."
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "category"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      }],
+      "type" : "CarePlan",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-careplan"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). The table below summarizes why each required individual search or required search parameter combination is included for this resource.\n\n| Required search | US Core alignment | Rationale |\n|---|---|---|\n| `patient` + `category` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#careplan). | Supports patient-scoped retrieval of care plans filtered to the category relevant for USCDI+ Quality data access. |",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"],
+      "searchRevInclude" : ["Provenance:target"],
+      "_searchRevInclude" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "patient",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-careplan-patient",
+        "type" : "reference",
+        "documentation" : "The client **SHALL** provide an id value for the reference."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "category",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-careplan-category",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a code value."
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "status"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      }],
+      "type" : "CareTeam",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-careteam"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). The table below summarizes why each required individual search or required search parameter combination is included for this resource.\n\n| Required search | US Core alignment | Rationale |\n|---|---|---|\n| `patient` + `status` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#careteam). | Supports patient-scoped retrieval of care teams filtered by status for quality workflows. |",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"],
+      "searchRevInclude" : ["Provenance:target"],
+      "_searchRevInclude" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "patient",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-careteam-patient",
+        "type" : "reference",
+        "documentation" : "The client **SHALL** provide an id value for the reference."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "status",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-careteam-status",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a code value."
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "category"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "code"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      }],
+      "type" : "Condition",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-encounter-diagnosis",
+      "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). The table below summarizes why each required individual search or required search parameter combination is included for this resource.\n\n| Required search | US Core alignment | Rationale |\n|---|---|---|\n| `patient` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#condition). | Supports patient-scoped retrieval of conditions needed for in-scope USCDI+ Quality data access. |\n| `patient` + `category` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#condition). | Supports patient-scoped retrieval filtered by condition category, including problem, health concern, and encounter diagnosis use cases. |\n| `patient` + `code` | Added in US Quality Core. | Supports patient-scoped retrieval filtered by condition code. US Quality Core makes this combination explicit as a primary retrieval path for quality logic that filters by diagnosis, problem, or health concern code. |",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"],
+      "searchRevInclude" : ["Provenance:target"],
+      "_searchRevInclude" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "patient",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-condition-patient",
+        "type" : "reference",
+        "documentation" : "The client **SHALL** provide an id value for the reference."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "category",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-condition-category",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a category."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "code",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-condition-code",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a code value."
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      }],
+      "type" : "Coverage",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-coverage"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). The table below summarizes why each required individual search or required search parameter combination is included for this resource.\n\n| Required search | US Core alignment | Rationale |\n|---|---|---|\n| `patient` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#coverage). | Supports patient-scoped retrieval of coverage data needed for in-scope USCDI+ Quality data access. |",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"],
+      "searchRevInclude" : ["Provenance:target"],
+      "_searchRevInclude" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "patient",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-coverage-patient",
+        "type" : "reference",
+        "documentation" : "The client **SHALL** provide an id value for the reference."
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "code"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "do-not-perform"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      }],
+      "type" : "DeviceRequest",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-devicerequest",
+      "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-devicenotrequested"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). The table below summarizes why each required individual search or required search parameter combination is included for this resource.\n\n| Required search | US Core alignment | Rationale |\n|---|---|---|\n| `patient` | Added in US Quality Core. | Supports patient-scoped retrieval of device requests for quality reporting. This US Quality Core-specific search is needed because DeviceRequest is in scope for USCDI+ Quality but is not profiled by US Core 6.1.0. |\n| `patient` + `code` | Added in US Quality Core. | Supports patient-scoped retrieval filtered by requested device code. This US Quality Core-specific combination makes the device code available as a primary retrieval path for quality logic. |\n| `patient` + `do-not-perform` | Added in US Quality Core. | Supports negation workflows by enabling retrieval of device requests that indicate the requested action should not be performed. |",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"],
+      "searchRevInclude" : ["Provenance:target"],
+      "_searchRevInclude" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "patient",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-devicerequest-patient",
+        "type" : "reference",
+        "documentation" : "The client **SHALL** provide an id value for the reference."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "code",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-devicerequest-code",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a code value."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "do-not-perform",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-devicerequest-do-not-perform",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a token value."
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "category"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "category"
+        },
+        {
+          "url" : "required",
+          "valueString" : "date"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "code"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      }],
+      "type" : "DiagnosticReport",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-note",
+      "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-lab"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). The table below summarizes why each required individual search or required search parameter combination is included for this resource.\n\n| Required search | US Core alignment | Rationale |\n|---|---|---|\n| `patient` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#diagnosticreport). | Supports patient-scoped retrieval of diagnostic reports needed for in-scope USCDI+ Quality data access. |\n| `patient` + `category` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#diagnosticreport). | Supports patient-scoped retrieval filtered by report category, including laboratory and clinical-note report categories. |\n| `patient` + `category` + `date` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#diagnosticreport). | Supports patient-scoped retrieval filtered by report category and date so quality workflows can constrain reports to relevant reporting periods. |\n| `patient` + `code` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#diagnosticreport). | Supports patient-scoped retrieval filtered by report code, including code-oriented retrieval paths used by quality logic. |",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"],
+      "searchRevInclude" : ["Provenance:target"],
+      "_searchRevInclude" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "patient",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-diagnosticreport-patient",
+        "type" : "reference",
+        "documentation" : "The client **SHALL** provide an id value for the reference."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "category",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-diagnosticreport-category",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a category."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "code",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-diagnosticreport-code",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a code value."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "date",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-diagnosticreport-date",
+        "type" : "date",
+        "documentation" : "The client **MAY** provide a date value."
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "type"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "category"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "category"
+        },
+        {
+          "url" : "required",
+          "valueString" : "date"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      }],
+      "type" : "DocumentReference",
+      "supportedProfile" : ["http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). The table below summarizes why each required individual search or required search parameter combination is included for this resource.\n\n| Required search | US Core alignment | Rationale |\n|---|---|---|\n| `_id` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#documentreference). | Supports search retrieval of a known DocumentReference by resource id. |\n| `patient` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#documentreference). | Supports patient-scoped retrieval of document references needed for in-scope USCDI+ Quality data access. |\n| `patient` + `type` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#documentreference). | Supports patient-scoped retrieval filtered by document type, including clinical note type retrieval. |\n| `patient` + `category` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#documentreference). | Supports patient-scoped retrieval filtered by document category. |\n| `patient` + `category` + `date` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#documentreference). | Supports patient-scoped retrieval filtered by document category and date so quality workflows can constrain documents to relevant reporting periods. |",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"],
+      "searchRevInclude" : ["Provenance:target"],
+      "_searchRevInclude" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "patient",
+        "definition" : "http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-patient|6.1.0",
+        "type" : "reference",
+        "documentation" : "The client **SHALL** provide an id value for the reference."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "_id",
+        "definition" : "http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-id|6.1.0",
+        "type" : "token",
+        "documentation" : "The client **SHALL** provide a token value."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "category",
+        "definition" : "http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-category|6.1.0",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a token value."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "date",
+        "definition" : "http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-date|6.1.0",
+        "type" : "date",
+        "documentation" : "The client **MAY** provide a date value."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "type",
+        "definition" : "http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-type|6.1.0",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a token value."
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "type"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "date"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      }],
+      "type" : "Encounter",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). The table below summarizes why each required individual search or required search parameter combination is included for this resource.\n\n| Required search | US Core alignment | Rationale |\n|---|---|---|\n| `_id` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#encounter). | Supports search retrieval of a known Encounter by resource id. |\n| `patient` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#encounter). | Supports patient-scoped retrieval of encounters needed for in-scope USCDI+ Quality data access. |\n| `patient` + `type` | Added in US Quality Core. | Supports patient-scoped retrieval filtered by encounter type. US Quality Core makes this combination explicit as a primary retrieval path for quality logic that filters by visit or service type. |\n| `patient` + `date` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#encounter). | Supports patient-scoped retrieval filtered by encounter date so quality workflows can constrain encounters to relevant reporting periods. |",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"],
+      "searchRevInclude" : ["Provenance:target"],
+      "_searchRevInclude" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "_id",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-encounter-id",
+        "type" : "token",
+        "documentation" : "The client **SHALL** provide an id value."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "patient",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-encounter-patient",
+        "type" : "reference",
+        "documentation" : "The client **SHALL** provide an id value for the reference."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "type",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-encounter-type",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a code value."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "date",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-encounter-date",
+        "type" : "date",
+        "documentation" : "The client **MAY** provide a date value."
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      }],
+      "type" : "FamilyMemberHistory",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-familymemberhistory"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). The table below summarizes why each required individual search or required search parameter combination is included for this resource.\n\n| Required search | US Core alignment | Rationale |\n|---|---|---|\n| `patient` | Added in US Quality Core. | Supports patient-scoped retrieval of family member history for quality reporting. This US Quality Core-specific search is needed because FamilyMemberHistory is in scope for USCDI+ Quality but is not profiled by US Core 6.1.0. |",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"],
+      "searchRevInclude" : ["Provenance:target"],
+      "_searchRevInclude" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "patient",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-familymemberhistory-patient",
+        "type" : "reference",
+        "documentation" : "The client **SHALL** provide an id value for the reference."
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      }],
+      "type" : "Goal",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-goal"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). The table below summarizes why each required individual search or required search parameter combination is included for this resource.\n\n| Required search | US Core alignment | Rationale |\n|---|---|---|\n| `patient` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#goal). | Supports patient-scoped retrieval of goals needed for in-scope USCDI+ Quality data access. |",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"],
+      "searchRevInclude" : ["Provenance:target"],
+      "_searchRevInclude" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "patient",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-goal-patient",
+        "type" : "reference",
+        "documentation" : "The client **SHALL** provide an id value for the reference."
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "status"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      }],
+      "type" : "Immunization",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunization",
+      "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunizationnotdone"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). The table below summarizes why each required individual search or required search parameter combination is included for this resource.\n\n| Required search | US Core alignment | Rationale |\n|---|---|---|\n| `patient` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#immunization). | Supports patient-scoped retrieval of immunizations needed for in-scope USCDI+ Quality data access. |\n| `patient` + `status` | Added in US Quality Core. | Supports patient-scoped retrieval filtered by immunization status. US Quality Core makes this combination explicit for status-sensitive quality workflows, including not-done immunization cases. |",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"],
+      "searchRevInclude" : ["Provenance:target"],
+      "_searchRevInclude" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "patient",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-immunization-patient",
+        "type" : "reference",
+        "documentation" : "The client **SHALL** provide an id value for the reference."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "status",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-immunization-status",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a status."
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      }],
+      "type" : "Location",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-location"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). US Quality Core does not define additional required individual search parameters or required search parameter combinations for this resource. Implementations still support the required interactions in this CapabilityStatement and any applicable US Core requirements independently.",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      }],
+      "referencePolicy" : ["resolves"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      }],
+      "type" : "Medication",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medication"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). The table below summarizes why each required individual search or required search parameter combination is included for this resource.\n\n| Required search | US Core alignment | Rationale |\n|---|---|---|\n| `code` | Added in US Quality Core. | Supports retrieval of Medication resources by clinical code. This search is included as a primary code path for quality logic when Medication is represented as a referenced resource. |",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "code",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-medication-code",
+        "type" : "token",
+        "documentation" : "The client **SHALL** provide a code value."
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "status"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "code"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "effective-time"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      }],
+      "type" : "MedicationAdministration",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationadministration",
+      "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationadministrationnotdone"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). The table below summarizes why each required individual search or required search parameter combination is included for this resource.\n\n| Required search | US Core alignment | Rationale |\n|---|---|---|\n| `patient` | Added in US Quality Core. | Supports patient-scoped retrieval of medication administrations for quality reporting. This US Quality Core-specific search is needed because MedicationAdministration is in scope for USCDI+ Quality but is not profiled by US Core 6.1.0. |\n| `patient` + `status` | Added in US Quality Core. | Supports patient-scoped retrieval filtered by administration status for status-sensitive quality workflows. |\n| `patient` + `code` | Added in US Quality Core. | Supports patient-scoped retrieval filtered by medication code. This US Quality Core-specific combination makes the medication code available as a primary retrieval path for quality logic. |\n| `patient` + `effective-time` | Added in US Quality Core. | Supports patient-scoped retrieval filtered by administration time so quality workflows can constrain administrations to relevant reporting periods. |",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"],
+      "searchRevInclude" : ["Provenance:target"],
+      "_searchRevInclude" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "patient",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-medicationadministration-patient",
+        "type" : "reference",
+        "documentation" : "The client **SHALL** provide an id value for the reference."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "status",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-medicationadministration-status",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a status."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "code",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-medicationadministration-code",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a code value."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "effective-time",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-medicationadministration-effective-time",
+        "type" : "date",
+        "documentation" : "The client **MAY** provide a date value."
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "status"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      }],
+      "type" : "MedicationDispense",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationdispense",
+      "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationdispensedeclined"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). The table below summarizes why each required individual search or required search parameter combination is included for this resource.\n\n| Required search | US Core alignment | Rationale |\n|---|---|---|\n| `patient` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#medicationdispense). | Supports patient-scoped retrieval of medication dispenses needed for in-scope USCDI+ Quality data access. |\n| `patient` + `status` | Added in US Quality Core. | Supports patient-scoped retrieval filtered by dispense status. US Quality Core makes this combination explicit for status-sensitive quality workflows, including declined dispense cases. |",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"],
+      "searchRevInclude" : ["Provenance:target"],
+      "_searchRevInclude" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "patient",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-medicationdispense-patient",
+        "type" : "reference",
+        "documentation" : "The client **SHALL** provide an id value for the reference."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "status",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-medicationdispense-status",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a status."
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "intent"
+        },
+        {
+          "url" : "required",
+          "valueString" : "do-not-perform"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "intent"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      }],
+      "type" : "MedicationRequest",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationrequest",
+      "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationnotrequested"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). The table below summarizes why each required individual search or required search parameter combination is included for this resource.\n\n| Required search | US Core alignment | Rationale |\n|---|---|---|\n| `patient` + `intent` + `do-not-perform` | Added in US Quality Core. | Supports negation workflows by enabling retrieval of medication requests that indicate the requested medication should not be performed, while preserving the patient and intent context. |\n| `patient` + `intent` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#medicationrequest). | Supports patient-scoped retrieval of medication requests filtered by intent, including medication orders relevant to quality reporting. |",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"],
+      "searchRevInclude" : ["Provenance:target"],
+      "_searchRevInclude" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "patient",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-medicationrequest-patient",
+        "type" : "reference",
+        "documentation" : "The client **SHALL** provide an id value for the reference."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "intent",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-medicationrequest-intent",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a token value."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "do-not-perform",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-medicationrequest-do-not-perform",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a token value."
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "category"
+        },
+        {
+          "url" : "required",
+          "valueString" : "status"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "category"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "category"
+        },
+        {
+          "url" : "required",
+          "valueString" : "date"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "code"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      }],
+      "type" : "Observation",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-clinical-result",
+      "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation",
+      "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-screening-assessment",
+      "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observationcancelled",
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancyintent|6.1.0",
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancystatus|6.1.0",
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus|6.1.0",
+      "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-lab",
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-occupation|6.1.0",
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure|6.1.0",
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-bmi|6.1.0",
+      "http://hl7.org/fhir/us/core/StructureDefinition/pediatric-bmi-for-age|6.1.0",
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-height|6.1.0",
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-temperature|6.1.0",
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-weight|6.1.0",
+      "http://hl7.org/fhir/us/core/StructureDefinition/head-occipital-frontal-circumference-percentile|6.1.0",
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-heart-rate|6.1.0",
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-pulse-oximetry|6.1.0",
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-respiratory-rate|6.1.0",
+      "http://hl7.org/fhir/us/core/StructureDefinition/pediatric-weight-for-height|6.1.0"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). The table below summarizes why each required individual search or required search parameter combination is included for this resource.\n\n| Required search | US Core alignment | Rationale |\n|---|---|---|\n| `patient` + `category` + `status` | Added in US Quality Core. | Supports patient-scoped retrieval filtered by observation category and status. US Quality Core makes this combination explicit for status-sensitive quality workflows, including cancelled or otherwise not-final observations. |\n| `patient` + `category` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#observation). | Supports patient-scoped retrieval filtered by observation category for in-scope USCDI+ Quality data access. |\n| `patient` + `category` + `date` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#observation). | Supports patient-scoped retrieval filtered by category and date so quality workflows can constrain observations to relevant reporting periods. |\n| `patient` + `code` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#observation). | Supports patient-scoped retrieval filtered by observation code, including primary code paths used by quality logic. |",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"],
+      "searchRevInclude" : ["Provenance:target"],
+      "_searchRevInclude" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "patient",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-observation-patient",
+        "type" : "reference",
+        "documentation" : "The client **SHALL** provide an id value for the reference."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "category",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-observation-category",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a category."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "status",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-observation-status",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a status."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "code",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-observation-code",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a code value."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "date",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-observation-date",
+        "type" : "date",
+        "documentation" : "The client **MAY** provide a date value."
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      }],
+      "type" : "Organization",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-organization"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). US Quality Core does not define additional required individual search parameters or required search parameter combinations for this resource. Implementations still support the required interactions in this CapabilityStatement and any applicable US Core requirements independently.",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      }],
+      "type" : "Patient",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). The table below summarizes why each required individual search or required search parameter combination is included for this resource.\n\n| Required search | US Core alignment | Rationale |\n|---|---|---|\n| `_id` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#patient). | Supports retrieval of a known Patient by resource id, which is the normal starting point for patient-scoped USCDI+ Quality data access. |",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"],
+      "searchRevInclude" : ["Provenance:target"],
+      "_searchRevInclude" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "_id",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-patient-id",
+        "type" : "token",
+        "documentation" : "The client **SHALL** provide an id value."
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      }],
+      "type" : "Practitioner",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitioner"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). US Quality Core does not define additional required individual search parameters or required search parameter combinations for this resource. Implementations still support the required interactions in this CapabilityStatement and any applicable US Core requirements independently.",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      }],
+      "referencePolicy" : ["resolves"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      }],
+      "type" : "PractitionerRole",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitionerrole"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). US Quality Core does not define additional required individual search parameters or required search parameter combinations for this resource. Implementations still support the required interactions in this CapabilityStatement and any applicable US Core requirements independently.",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      }],
+      "referencePolicy" : ["resolves"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "status"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "date"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      }],
+      "type" : "Procedure",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedure",
+      "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedurenotdone"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). The table below summarizes why each required individual search or required search parameter combination is included for this resource.\n\n| Required search | US Core alignment | Rationale |\n|---|---|---|\n| `patient` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#procedure). | Supports patient-scoped retrieval of procedures needed for in-scope USCDI+ Quality data access. |\n| `patient` + `status` | Added in US Quality Core. | Supports patient-scoped retrieval filtered by procedure status. US Quality Core makes this combination explicit for status-sensitive quality workflows, including not-done procedure cases. |\n| `patient` + `date` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#procedure). | Supports patient-scoped retrieval filtered by procedure date so quality workflows can constrain procedures to relevant reporting periods. |",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"],
+      "searchRevInclude" : ["Provenance:target"],
+      "_searchRevInclude" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "patient",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-procedure-patient",
+        "type" : "reference",
+        "documentation" : "The client **SHALL** provide an id value for the reference."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "status",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-procedure-status",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a status."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "date",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-procedure-date",
+        "type" : "date",
+        "documentation" : "The client **MAY** provide a date value."
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      }],
+      "type" : "Provenance",
+      "supportedProfile" : ["http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance|6.1.0"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). US Quality Core does not define additional required individual search parameters or required search parameter combinations for this resource. Implementations still support the required interactions in this CapabilityStatement and any applicable US Core requirements independently.",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      }],
+      "type" : "RelatedPerson",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-relatedperson"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). The table below summarizes why each required individual search or required search parameter combination is included for this resource.\n\n| Required search | US Core alignment | Rationale |\n|---|---|---|\n| `_id` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#relatedperson). | Supports search retrieval of a known RelatedPerson by resource id. |\n| `patient` | Added in US Quality Core. | Supports retrieval of related persons associated with a patient for in-scope USCDI+ Quality data access. |",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"],
+      "searchRevInclude" : ["Provenance:target"],
+      "_searchRevInclude" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "_id",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-relatedperson-id",
+        "type" : "token",
+        "documentation" : "The client **SHALL** provide an id value."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "patient",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-relatedperson-patient",
+        "type" : "reference",
+        "documentation" : "The client **SHALL** provide an id value for the reference."
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "category"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "category"
+        },
+        {
+          "url" : "required",
+          "valueString" : "authored"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "code"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "do-not-perform"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      }],
+      "type" : "ServiceRequest",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest",
+      "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicenotrequested"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). The table below summarizes why each required individual search or required search parameter combination is included for this resource.\n\n| Required search | US Core alignment | Rationale |\n|---|---|---|\n| `_id` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#servicerequest). | Supports search retrieval of a known ServiceRequest by resource id. |\n| `patient` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#servicerequest). | Supports patient-scoped retrieval of service requests needed for in-scope USCDI+ Quality data access. |\n| `patient` + `category` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#servicerequest). | Supports patient-scoped retrieval filtered by service request category. |\n| `patient` + `category` + `authored` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#servicerequest). | Supports patient-scoped retrieval filtered by category and authored date so quality workflows can constrain service requests to relevant reporting periods. |\n| `patient` + `code` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#servicerequest). | Supports patient-scoped retrieval filtered by service request code, including primary code paths used by quality logic. |\n| `patient` + `do-not-perform` | Added in US Quality Core. | Supports negation workflows by enabling retrieval of service requests that indicate the requested action should not be performed. |",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"],
+      "searchRevInclude" : ["Provenance:target"],
+      "_searchRevInclude" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "_id",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-servicerequest-id",
+        "type" : "token",
+        "documentation" : "The client **SHALL** provide an id value."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "patient",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-servicerequest-patient",
+        "type" : "reference",
+        "documentation" : "The client **SHALL** provide an id value for the reference."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "category",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-servicerequest-category",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a category."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "code",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-servicerequest-code",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a code value."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "authored",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-servicerequest-authored",
+        "type" : "date",
+        "documentation" : "The client **MAY** provide a date value."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "do-not-perform",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-servicerequest-do-not-perform",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a token value."
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      }],
+      "type" : "Specimen",
+      "supportedProfile" : ["http://hl7.org/fhir/us/core/StructureDefinition/us-core-specimen|6.1.0"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). The table below summarizes why each required individual search or required search parameter combination is included for this resource.\n\n| Required search | US Core alignment | Rationale |\n|---|---|---|\n| `_id` | Required by [US Core](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#specimen). | Supports search retrieval of a known Specimen by resource id, including specimens referenced by quality-relevant observations and diagnostic reports. |",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "patient",
+        "definition" : "http://hl7.org/fhir/us/core/SearchParameter/us-core-specimen-patient|6.1.0",
+        "type" : "reference",
+        "documentation" : "The client **SHALL** provide an id value for the reference."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "_id",
+        "definition" : "http://hl7.org/fhir/us/core/SearchParameter/us-core-specimen-id|6.1.0",
+        "type" : "token",
+        "documentation" : "The client **SHALL** provide a token value."
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "status"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "url" : "required",
+          "valueString" : "patient"
+        },
+        {
+          "url" : "required",
+          "valueString" : "code"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+      }],
+      "type" : "Task",
+      "supportedProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-task",
+      "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-taskrejected"],
+      "documentation" : "Search requirements are selected according to the rules described in [Search Requirement Selection](general-requirements.html#search-requirement-selection). The table below summarizes why each required individual search or required search parameter combination is included for this resource.\n\n| Required search | US Core alignment | Rationale |\n|---|---|---|\n| `patient` | Added in US Quality Core. | Supports patient-scoped retrieval of tasks for quality reporting. This US Quality Core-specific search is needed because Task is in scope for USCDI+ Quality but is not profiled by US Core 6.1.0. |\n| `patient` + `status` | Added in US Quality Core. | Supports patient-scoped retrieval filtered by task status for status-sensitive quality workflows. |\n| `patient` + `code` | Added in US Quality Core. | Supports patient-scoped retrieval filtered by task code. This US Quality Core-specific combination makes the task code available as a primary retrieval path for quality logic. |",
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "referencePolicy" : ["resolves"],
+      "searchRevInclude" : ["Provenance:target"],
+      "_searchRevInclude" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "patient",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-task-patient",
+        "type" : "reference",
+        "documentation" : "The client **SHALL** provide an id value for the reference."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "status",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-task-status",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a status."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "code",
+        "definition" : "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-task-code",
+        "type" : "token",
+        "documentation" : "The client **MAY** provide a code value."
+      }]
+    }],
+    "interaction" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "MAY"
+      }],
+      "code" : "transaction"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "MAY"
+      }],
+      "code" : "batch"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "MAY"
+      }],
+      "code" : "search-system"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "MAY"
+      }],
+      "code" : "history-system"
+    }]
+  }]
+}
+
+```

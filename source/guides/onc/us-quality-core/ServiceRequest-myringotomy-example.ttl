@@ -1,0 +1,90 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/onc/us-quality-core/ServiceRequest/myringotomy-example> a fhir:ServiceRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "myringotomy-example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest myringotomy-example</b></p><a name=\"myringotomy-example\"> </a><a name=\"hcmyringotomy-example\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-servicerequest.html\">US Quality Core ServiceRequest</a></p></div><p><b>status</b>: On Hold</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 387713003}\">Surgical Procedure</span></p><p><b>priority</b>: Routine</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 172676009}\">Myringotomy and insertion of short-term tympanic ventilation tube (procedure)</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>encounter</b>: <a href=\"Encounter-example.html\">Encounter: identifier = http://example.org/encounters#ENC-20130404-appendicitis; status = finished; class = inpatient encounter (v3 Code System ActCode#IMP); type = Initial hospital inpatient or observation care, per day, for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making. When using total time on the date of the encounter for code selection, 75 minutes must be met or exceeded.; period = 2013-04-04 18:00:00-0400 --&gt; 2013-04-06 11:00:00-0400</a></p><p><b>occurrence</b>: 2014-02-13 --&gt; 2014-02-13</p><p><b>asNeeded</b>: true</p><p><b>authoredOn</b>: 2014-02-14</p><p><b>performerType</b>: <span title=\"Codes:{http://snomed.info/sct 417887005}\">Pediatric otolaryngology</span></p><p><b>reasonCode</b>: <span title=\"Codes:{http://snomed.info/sct 65363002}\">Otitis media</span></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "on-hold"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       a sct:387713003 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "387713003" ] ;
+       fhir:display [ fhir:v "Surgical Procedure" ]
+     ] )
+  ] ) ; # 
+  fhir:priority [ fhir:v "routine"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:172676009 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "172676009" ] ;
+       fhir:display [ fhir:v "Myringotomy and insertion of short-term tympanic ventilation tube (procedure)" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:encounter [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Encounter/example> ;
+     fhir:reference [ fhir:v "Encounter/example" ]
+  ] ; # 
+  fhir:occurrence [
+     a fhir:Period ;
+     fhir:start [ fhir:v "2014-02-13"^^xsd:date ] ;
+     fhir:end [ fhir:v "2014-02-13"^^xsd:date ]
+  ] ; # 
+  fhir:asNeeded [
+     a fhir:Boolean ;
+     fhir:v true
+  ] ; # 
+  fhir:authoredOn [ fhir:v "2014-02-14"^^xsd:date] ; # 
+  fhir:performerType [
+     fhir:coding ( [
+       a sct:417887005 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "417887005" ] ;
+       fhir:display [ fhir:v "Pediatric otolaryngology" ]
+     ] )
+  ] ; # 
+  fhir:reasonCode ( [
+     fhir:coding ( [
+       a sct:65363002 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "65363002" ] ;
+       fhir:display [ fhir:v "Otitis media" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

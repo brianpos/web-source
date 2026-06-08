@@ -1,0 +1,382 @@
+# US Quality Core Laboratory Result Observation - 2026 US Quality Core Implementation Guide v0.5.0
+
+## Resource Profile: US Quality Core Laboratory Result Observation 
+
+ 
+The US Quality Core Laboratory Result Observation Profile is based upon the US Laboratory Result Observation Resource. Defines the core set of elements and extensions for quality rule and measure authors. 
+
+### USCDI+ Quality Element Support Expectations
+
+Systems are expected to support this profile as part of implementing USCDI+ Quality V1 in FHIR and meeting the conformance requirements of this guide.
+
+The following elements are specifically relevant to USCDI+ Quality V1 data classes and elements. Systems are expected to support these elements as applicable to their role in US Quality Core data exchange. See the [Must Support](must-support.md) section of this guide for more information. These elements are tagged as (USCDI+ Quality) in the formal profile views.
+
+**USCDI+ Quality Elements:**
+
+* status: (USCDI+ Quality) registered | preliminary | final | amended | corrected | entered-in-error | unknown
+* category: (USCDI+ Quality) Classification of type of observation
+* category:us-core: (USCDI+ Quality) (USCDI) Classification of type of observation
+* code: (USCDI+ Quality) (USCDI) Laboratory Test Name
+* issued: (USCDI+ Quality) Date/Time this version was made available
+* value[x]: (USCDI+ Quality) (USCDI) Result Value
+* interpretation: (USCDI+ Quality) High, low, normal, etc.
+
+Because this profile is derived from US Core, systems are also expected to support Must Support requirements and (USCDI) tagged elements inherited from US Core. The [Formal Views](#profile) section also provides the formal summary, definitions, terminology requirements, and mandatory element requirements.
+
+### Profile Specific Implementation Guidance
+
+To represent that an observation of this type intentionally did not occur for a medical, patient, or system reason, use the [US Quality Core Observation Cancelled](StructureDefinition-us-quality-core-observationcancelled.md) profile.
+
+**Usages:**
+
+* Refer to this Profile: [US Quality Core DiagnosticReport Profile for Laboratory Results Reporting](StructureDefinition-us-quality-core-diagnosticreport-lab.md) and [US Quality Core DiagnosticReport Profile for Report and Note Exchange](StructureDefinition-us-quality-core-diagnosticreport-note.md)
+* Examples for this Profile: [Observation/laboratory-result-observation-example-blood-glucose](Observation-laboratory-result-observation-example-blood-glucose.md)
+* CapabilityStatements using this Profile: [US Quality Core Client CapabilityStatement](CapabilityStatement-us-quality-core-client.md) and [US Quality Core Server CapabilityStatement](CapabilityStatement-us-quality-core-server.md)
+
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.onc.us-quality-core|current/StructureDefinition/StructureDefinition-us-quality-core-observation-lab.json)
+
+### Formal Views of Profile Content
+
+ [Description Differentials, Snapshots, and other representations](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+
+ 
+
+Other representations of profile: [CSV](../StructureDefinition-us-quality-core-observation-lab.csv), [Excel](../StructureDefinition-us-quality-core-observation-lab.xlsx), [Schematron](../StructureDefinition-us-quality-core-observation-lab.sch) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "us-quality-core-observation-lab",
+  "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-lab",
+  "version" : "0.5.0",
+  "name" : "USQualityCoreLaboratoryResultObservation",
+  "title" : "US Quality Core Laboratory Result Observation",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-06-05",
+  "publisher" : "Office of the National Coordinator for Health Information Technology (ONC)",
+  "contact" : [{
+    "name" : "Office of the National Coordinator for Health Information Technology (ONC)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.healthit.gov/feedback"
+    }]
+  }],
+  "description" : "The US Quality Core Laboratory Result Observation Profile is based upon the US Laboratory Result Observation Resource.  Defines the core set of elements and extensions for quality rule and measure authors.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }],
+    "text" : "USA"
+  }],
+  "fhirVersion" : "4.0.1",
+  "mapping" : [{
+    "identity" : "workflow",
+    "uri" : "http://hl7.org/fhir/workflow",
+    "name" : "Workflow Pattern"
+  },
+  {
+    "identity" : "sct-concept",
+    "uri" : "http://snomed.info/conceptdomain",
+    "name" : "SNOMED CT Concept Domain Binding"
+  },
+  {
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "sct-attr",
+    "uri" : "http://snomed.org/attributebinding",
+    "name" : "SNOMED CT Attribute Binding"
+  }],
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Observation",
+  "baseDefinition" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [{
+      "id" : "Observation",
+      "path" : "Observation"
+    },
+    {
+      "id" : "Observation.status",
+      "extension" : [{
+        "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+        "valueBoolean" : true
+      }],
+      "path" : "Observation.status",
+      "short" : "(USCDI+ Quality) registered | preliminary | final | amended | corrected | entered-in-error | unknown",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://fhir.org/guides/onc/us-quality-core/ValueSet/us-quality-core-non-negative-observation-status"
+      }
+    },
+    {
+      "id" : "Observation.category",
+      "extension" : [{
+        "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+        "valueBoolean" : true
+      }],
+      "path" : "Observation.category",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
+      "short" : "(USCDI+ Quality) Classification of type of observation",
+      "definition" : "A code that classifies the general type of observation being made.",
+      "comment" : "In addition to the required category valueset, this element allows various categorization schemes based on the owner’s definition of the category and effectively multiple categories can be used at once.  The level of granularity is defined by the category concepts in the value set.",
+      "requirements" : "Used for filtering what observations are retrieved and displayed.",
+      "min" : 1,
+      "max" : "*",
+      "base" : {
+        "path" : "Observation.category",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "isModifier" : false,
+      "isSummary" : false,
+      "binding" : {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString" : "ObservationCategory"
+        }],
+        "strength" : "preferred",
+        "description" : "Codes for high level observation categories.",
+        "valueSet" : "http://hl7.org/fhir/ValueSet/observation-category"
+      }
+    },
+    {
+      "id" : "Observation.category:us-core",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement",
+        "valueBoolean" : true
+      },
+      {
+        "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+        "valueBoolean" : true
+      }],
+      "path" : "Observation.category",
+      "sliceName" : "us-core",
+      "short" : "(USCDI+ Quality) (USCDI) Classification of type of observation",
+      "definition" : "A code that classifies the general type of observation being made.",
+      "comment" : "In addition to the required category valueset, this element allows various categorization schemes based on the owner’s definition of the category and effectively multiple categories can be used at once.  The level of granularity is defined by the category concepts in the value set.",
+      "requirements" : "Used for filtering what observations are retrieved and displayed.",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "Observation.category",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory"
+        }]
+      },
+      "isModifier" : false,
+      "isSummary" : false,
+      "binding" : {
+        "strength" : "required",
+        "description" : "Note that other codes are permitted, see [Required Bindings When Slicing by Value Sets](http://hl7.org/fhir/us/core/general-requirements.html#required-bindings-when-slicing-by-valuesets)",
+        "valueSet" : "http://hl7.org/fhir/us/core/ValueSet/us-core-clinical-result-observation-category"
+      }
+    },
+    {
+      "id" : "Observation.code",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement",
+        "valueBoolean" : true
+      },
+      {
+        "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+        "valueBoolean" : true
+      }],
+      "path" : "Observation.code",
+      "short" : "(USCDI+ Quality) (USCDI) Laboratory Test Name",
+      "definition" : "The name of the clinical test or procedure performed on a patient.  A LOINC **SHALL** be used if the concept is present in LOINC.",
+      "comment" : "The typical patterns for codes are:  1)  a LOINC code either as a translation from a \"local\" code or as a primary code, or 2)  a local code only if no suitable LOINC exists,  or 3)  both the local and the LOINC translation.   Systems SHALL be capable of sending the local code if one exists.  When using LOINC , Use either the SHORTNAME or LONG_COMMON_NAME field for the display.",
+      "requirements" : "Knowing what kind of observation is being made is essential to understanding the observation.",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "isModifier" : false,
+      "isSummary" : true,
+      "binding" : {
+        "strength" : "extensible",
+        "description" : "Laboratory LOINC Codes",
+        "valueSet" : "http://hl7.org/fhir/us/core/ValueSet/us-core-laboratory-test-codes"
+      }
+    },
+    {
+      "id" : "Observation.subject",
+      "path" : "Observation.subject",
+      "short" : "Who and/or what the observation is about",
+      "min" : 1,
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"]
+      }]
+    },
+    {
+      "id" : "Observation.effective[x]",
+      "path" : "Observation.effective[x]",
+      "short" : "Clinically relevant time/time-period for observation",
+      "definition" : "The time or time-period the observed value is asserted as being true. For biological subjects - e.g. human patients - this is usually called the \"physiologically relevant time\". This is usually either the time of the procedure or of specimen collection, but very often the source of the date/time is not known, only the date/time itself.",
+      "comment" : "At least a date should be present unless this observation is a historical report.  For recording imprecise or \"fuzzy\" times (For example, a blood glucose measurement taken \"after breakfast\") use the [Timing](http://hl7.org/fhir/R4/datatypes.html#timing) datatype which allow the measurement to be tied to regular life events.",
+      "requirements" : "Knowing when an observation was deemed true is important to its relevance as well as determining trends.",
+      "alias" : ["Occurrence"],
+      "type" : [{
+        "code" : "dateTime"
+      },
+      {
+        "code" : "Period"
+      },
+      {
+        "code" : "Timing"
+      },
+      {
+        "code" : "instant"
+      }],
+      "isModifier" : false,
+      "isSummary" : true
+    },
+    {
+      "id" : "Observation.issued",
+      "extension" : [{
+        "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+        "valueBoolean" : true
+      }],
+      "path" : "Observation.issued",
+      "short" : "(USCDI+ Quality) Date/Time this version was made available",
+      "definition" : "The date and time this version of the observation was made available to providers, typically after the results have been reviewed and verified.",
+      "comment" : "For Observations that don’t require review and verification, it may be the same as the [`lastUpdated` ](http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated) time of the resource itself.  For Observations that do require review and verification for certain updates, it might not be the same as the `lastUpdated` time of the resource itself due to a non-clinically significant update that doesn’t require the new version to be reviewed and verified again.",
+      "type" : [{
+        "code" : "instant"
+      }],
+      "isModifier" : false,
+      "isSummary" : true
+    },
+    {
+      "id" : "Observation.value[x]",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement",
+        "valueBoolean" : true
+      },
+      {
+        "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+        "valueBoolean" : true
+      }],
+      "path" : "Observation.value[x]",
+      "short" : "(USCDI+ Quality) (USCDI) Result Value",
+      "definition" : "The Laboratory result value.  If a coded value,  the valueCodeableConcept.code **SHOULD** be selected from [SNOMED CT](http://hl7.org/fhir/ValueSet/uslab-obs-codedresults) if the concept exists. If a numeric value, valueQuantity.code **SHALL** be selected from [UCUM](http://unitsofmeasure.org).  A FHIR [UCUM Codes value set](http://hl7.org/fhir/STU3/valueset-ucum-units.html) that defines all UCUM codes is in the FHIR specification.",
+      "type" : [{
+        "code" : "Quantity"
+      },
+      {
+        "code" : "CodeableConcept"
+      },
+      {
+        "code" : "string"
+      },
+      {
+        "code" : "boolean"
+      },
+      {
+        "code" : "integer"
+      },
+      {
+        "code" : "Range"
+      },
+      {
+        "code" : "Ratio"
+      },
+      {
+        "code" : "time"
+      },
+      {
+        "code" : "dateTime"
+      },
+      {
+        "code" : "Period"
+      }]
+    },
+    {
+      "id" : "Observation.interpretation",
+      "extension" : [{
+        "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/uscdiplusquality",
+        "valueBoolean" : true
+      }],
+      "path" : "Observation.interpretation",
+      "short" : "(USCDI+ Quality) High, low, normal, etc.",
+      "definition" : "A categorical assessment of an observation value.  For example, high, low, normal.",
+      "comment" : "Historically used for laboratory results (known as 'abnormal flag' ),  its use extends to other use cases where coded interpretations  are relevant.  Often reported as one or more simple compact codes this element is often placed adjacent to the result value in reports and flow sheets to signal the meaning/normalcy status of the result.",
+      "requirements" : "For some results, particularly numeric results, an interpretation is necessary to fully understand the significance of a result.",
+      "alias" : ["Abnormal Flag"],
+      "min" : 0,
+      "max" : "*",
+      "base" : {
+        "path" : "Observation.interpretation",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "isModifier" : false,
+      "isSummary" : false,
+      "binding" : {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString" : "ObservationInterpretation"
+        }],
+        "strength" : "extensible",
+        "description" : "Codes identifying interpretations of observations.",
+        "valueSet" : "http://hl7.org/fhir/ValueSet/observation-interpretation"
+      }
+    },
+    {
+      "id" : "Observation.specimen",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement",
+        "valueBoolean" : true
+      }],
+      "path" : "Observation.specimen",
+      "short" : "(USCDI) Specimen used for this observation"
+    },
+    {
+      "id" : "Observation.referenceRange",
+      "path" : "Observation.referenceRange",
+      "short" : "Result reference range"
+    }]
+  }
+}
+
+```

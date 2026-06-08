@@ -1,0 +1,139 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/onc/us-quality-core/AllergyIntolerance/example> a fhir:AllergyIntolerance ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-allergyintolerance"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-allergyintolerance>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: AllergyIntolerance example</b></p><a name=\"example\"> </a><a name=\"hcexample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-allergyintolerance.html\">US Quality Core AllergyIntolerance</a></p></div><p><b>identifier</b>: <code>http://acme.com/ids/patients/risks</code>/49476534</p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-verification confirmed}\">Confirmed</span></p><p><b>type</b>: Allergy</p><p><b>category</b>: Food</p><p><b>criticality</b>: High Risk</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 227493005}\">Cashew nuts</span></p><p><b>patient</b>: <a href=\"Patient-example.html\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>onset</b>: 2004</p><p><b>recordedDate</b>: 2014-10-09 14:58:00+1100</p><p><b>recorder</b>: <a href=\"Practitioner-example.html\">Practitioner Adam Careful </a></p><p><b>asserter</b>: <a href=\"Patient-example.html\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>lastOccurrence</b>: 2012-06-02 01:45:31+0000</p><p><b>note</b>: </p><blockquote><div><p>The criticality is high becasue of the observed anaphylactic reaction when challenged     with cashew extract.</p>\n</div></blockquote><blockquote><p><b>reaction</b></p><p><b>substance</b>: <span title=\"Codes:{http://www.nlm.nih.gov/research/umls/rxnorm 1160593}\">cashew nut allergenic extract Injectable Product</span></p><p><b>manifestation</b>: <span title=\"Codes:{http://snomed.info/sct 39579001}\">Anaphylactic reaction</span></p><p><b>description</b>: Challenge Protocol. Severe reaction to subcutaneous cashew extract. Epinephrine administered</p><p><b>onset</b>: 2012-06-12</p><p><b>severity</b>: Severe</p><p><b>exposureRoute</b>: <span title=\"Codes:{http://snomed.info/sct 34206005}\">Subcutaneous route</span></p></blockquote><blockquote><p><b>reaction</b></p><p><b>manifestation</b>: <span title=\"Codes:{http://snomed.info/sct 64305001}\">Urticaria</span></p><p><b>onset</b>: 2004</p><p><b>severity</b>: Moderate</p><p><b>note</b>: </p><blockquote><div><p>The patient reports that the onset of urticaria was within 15 minutes of eating cashews.</p>\n</div></blockquote></blockquote></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "http://acme.com/ids/patients/risks"^^xsd:anyURI ;
+       fhir:l <http://acme.com/ids/patients/risks>
+     ] ;
+     fhir:value [ fhir:v "49476534" ]
+  ] ) ; # 
+  fhir:clinicalStatus [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical>
+       ] ;
+       fhir:code [ fhir:v "active" ]
+     ] )
+  ] ; # 
+  fhir:verificationStatus [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/allergyintolerance-verification>
+       ] ;
+       fhir:code [ fhir:v "confirmed" ]
+     ] )
+  ] ; # 
+  fhir:type [ fhir:v "allergy"] ; # 
+  fhir:category ( [ fhir:v "food"] ) ; # 
+  fhir:criticality [ fhir:v "high"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:227493005 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "227493005" ] ;
+       fhir:display [ fhir:v "Cashew nuts" ]
+     ] )
+  ] ; # 
+  fhir:patient [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:onset [
+     a fhir:DateTime ;
+     fhir:v "2004"^^xsd:gYear
+  ] ; # 
+  fhir:recordedDate [ fhir:v "2014-10-09T14:58:00+11:00"^^xsd:dateTime] ; # 
+  fhir:recorder [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Practitioner/example> ;
+     fhir:reference [ fhir:v "Practitioner/example" ]
+  ] ; # 
+  fhir:asserter [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:lastOccurrence [ fhir:v "2012-06-02T01:45:31+00:00"^^xsd:dateTime] ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "The criticality is high becasue of the observed anaphylactic reaction when challenged     with cashew extract." ]
+  ] ) ; # 
+  fhir:reaction ( [
+     fhir:substance [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://www.nlm.nih.gov/research/umls/rxnorm"^^xsd:anyURI ;
+           fhir:l <http://www.nlm.nih.gov/research/umls/rxnorm>
+         ] ;
+         fhir:code [ fhir:v "1160593" ] ;
+         fhir:display [ fhir:v "cashew nut allergenic extract Injectable Product" ]
+       ] )
+     ] ;
+     fhir:manifestation ( [
+       fhir:coding ( [
+         a sct:39579001 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "39579001" ] ;
+         fhir:display [ fhir:v "Anaphylactic reaction" ]
+       ] )
+     ] ) ;
+     fhir:description [ fhir:v "Challenge Protocol. Severe reaction to subcutaneous cashew extract. Epinephrine administered" ] ;
+     fhir:onset [ fhir:v "2012-06-12"^^xsd:date ] ;
+     fhir:severity [ fhir:v "severe" ] ;
+     fhir:exposureRoute [
+       fhir:coding ( [
+         a sct:34206005 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "34206005" ] ;
+         fhir:display [ fhir:v "Subcutaneous route" ]
+       ] )
+     ]
+  ] [
+     fhir:manifestation ( [
+       fhir:coding ( [
+         a sct:64305001 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "64305001" ] ;
+         fhir:display [ fhir:v "Urticaria" ]
+       ] )
+     ] ) ;
+     fhir:onset [ fhir:v "2004"^^xsd:gYear ] ;
+     fhir:severity [ fhir:v "moderate" ] ;
+     fhir:note ( [
+       fhir:text [ fhir:v "The patient reports that the onset of urticaria was within 15 minutes of eating cashews." ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

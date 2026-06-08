@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Parameters xmlns="http://hl7.org/fhir">
+  <id value="manifest"/>
+  <parameter>
+    <name value="system-version"/>
+    <valueCanonical value="http://snomed.info/sct|http://snomed.info/sct/731000124108"/>
+  </parameter>
+  <parameter>
+    <name value="system-version"/>
+    <valueCanonical value="http://terminology.hl7.org/CodeSystem/v3-ActCode|10.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="system-version"/>
+    <valueCanonical value="http://terminology.hl7.org/CodeSystem/v3-MaritalStatus|4.0.0"/>
+  </parameter>
+</Parameters>

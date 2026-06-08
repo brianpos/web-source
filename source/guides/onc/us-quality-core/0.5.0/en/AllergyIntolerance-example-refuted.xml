@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<AllergyIntolerance xmlns="http://hl7.org/fhir">
+  <id value="example-refuted"/>
+  <meta>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-allergyintolerance"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: AllergyIntolerance example-refuted</b></p><a name="example-refuted"> </a><a name="hcexample-refuted"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-us-quality-core-allergyintolerance.html">US Quality Core AllergyIntolerance</a></p></div><p><b>identifier</b>: <code>http://acme.com/ids/patients/risks</code>/49476534</p><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical inactive}">Inactive</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-verification refuted}">Refuted</span></p><p><b>type</b>: Allergy</p><p><b>category</b>: Food</p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 227493005}">Cashew nuts</span></p><p><b>patient</b>: <a href="Patient-example.html">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>recordedDate</b>: 2014-10-09 14:58:00+1100</p><p><b>recorder</b>: <a href="Practitioner-example.html">Practitioner Adam Careful </a></p><p><b>asserter</b>: <a href="Patient-example.html">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p></div>
+  </text>
+  <identifier>
+    <system value="http://acme.com/ids/patients/risks"/>
+    <value value="49476534"/>
+  </identifier>
+  <clinicalStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"/>
+      <code value="inactive"/>
+    </coding>
+  </clinicalStatus>
+  <verificationStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"/>
+      <code value="refuted"/>
+    </coding>
+  </verificationStatus>
+  <type value="allergy"/>
+  <category value="food"/>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="227493005"/>
+      <display value="Cashew nuts"/>
+    </coding>
+  </code>
+  <patient>
+    <reference value="Patient/example"/>
+  </patient>
+  <recordedDate value="2014-10-09T14:58:00+11:00"/>
+  <recorder>
+    <reference value="Practitioner/example"/>
+  </recorder>
+  <asserter>
+    <reference value="Patient/example"/>
+  </asserter>
+</AllergyIntolerance>

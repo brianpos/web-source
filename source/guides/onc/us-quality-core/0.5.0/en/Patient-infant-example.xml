@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Patient xmlns="http://hl7.org/fhir">
+  <id value="infant-example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Patient infant-example</b></p><a name="infant-example"> </a><a name="hcinfant-example"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-us-quality-core-patient.html">US Quality Core Patient</a></p></div><p style="border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;">Infant Example  Male, DoB: 2020-06-02 ( Social Security number: United States Social Security Number#999123458 (use: usual, ))</p><hr/><table class="grid"><tr><td style="background-color: #f3f5da" title="Record is active">Active:</td><td colspan="3">true</td></tr><tr><td style="background-color: #f3f5da" title="Ways to contact the Patient">Contact Detail</td><td colspan="3"><ul><li>ph: 555-555-5555(Home)</li><li>49 Meadow St Mounds OK 74047 US </li></ul></td></tr></table></div>
+  </text>
+  <identifier>
+    <use value="usual"/>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="SS"/>
+        <display value="Social Security number"/>
+      </coding>
+      <text value="Social Security number"/>
+    </type>
+    <system value="http://hl7.org/fhir/sid/us-ssn"/>
+    <value value="999123458"/>
+  </identifier>
+  <active value="true"/>
+  <name>
+    <family value="Example"/>
+    <given value="Infant"/>
+  </name>
+  <telecom>
+    <system value="phone"/>
+    <value value="555-555-5555"/>
+    <use value="home"/>
+  </telecom>
+  <gender value="male"/>
+  <birthDate value="2020-06-02"/>
+  <address>
+    <line value="49 Meadow St"/>
+    <city value="Mounds"/>
+    <state value="OK"/>
+    <postalCode value="74047"/>
+    <country value="US"/>
+  </address>
+</Patient>

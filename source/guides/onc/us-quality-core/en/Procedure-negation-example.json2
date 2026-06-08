@@ -1,0 +1,59 @@
+{
+  "resourceType" : "Procedure",
+  "id" : "negation-example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedurenotdone"]
+  },
+  "language" : "en",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Procedure negation-example</b></p><a name=\"negation-example\"> </a><a name=\"hcnegation-example\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-procedurenotdone.html\">US Quality Core Procedure Not Done</a></p></div><p><b>US Quality Core Not Done Recorded</b>: 2013-04-05 10:30:00-0400</p><p><b>partOf</b>: <a href=\"Procedure-example.html\">Appendectomy admission surgical care</a></p><p><b>status</b>: Not Done</p><p><b>statusReason</b>: <span title=\"Codes:{http://snomed.info/sct 35688006}\">Complication of medical care (disorder)</span></p><p><b>code</b>: <span title=\"Codes:\">Not Done Value Set: Intermittent pneumatic compression devices (IPC)</span> (Not done value set: <a href=\"https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.3.117.1.7.1.214/expansion\">Intermittent pneumatic compression devices</a>)</p><p><b>subject</b>: <a href=\"Patient-example.html\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number\u00a0(use:\u00a0usual,\u00a0period:\u00a02001-05-06 --&gt; (ongoing)))</a></p><p><b>encounter</b>: <a href=\"Encounter-example.html\">Encounter: identifier = http://example.org/encounters#ENC-20130404-appendicitis; status = finished; class = inpatient encounter (v3 Code System ActCode#IMP); type = Initial hospital inpatient or observation care, per day, for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making. When using total time on the date of the encounter for code selection, 75 minutes must be met or exceeded.; period = 2013-04-04 18:00:00-0400 --&gt; 2013-04-06 11:00:00-0400</a></p><p><b>performed</b>: Absent because : not-performed</p><h3>Performers</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Actor</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Practitioner-example.html\">Dr Cecil Surgeon</a></td></tr></table><p><b>reasonCode</b>: <span title=\"Codes:\">Postoperative venous thromboembolism prophylaxis was considered during the appendicitis admission</span></p><p><b>reasonReference</b>: <a href=\"Condition-appendicitis-example.html\">Condition Appendicitis (disorder)</a></p></div>"
+  },
+  "extension" : [{
+    "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-recorded",
+    "valueDateTime" : "2013-04-05T10:30:00-04:00"
+  }],
+  "partOf" : [{
+    "reference" : "Procedure/example",
+    "display" : "Appendectomy admission surgical care"
+  }],
+  "status" : "not-done",
+  "statusReason" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "35688006",
+      "display" : "Complication of medical care (disorder)"
+    }]
+  },
+  "code" : {
+    "extension" : [{
+      "url" : "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-notDoneValueSet",
+      "valueCanonical" : "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.214"
+    }],
+    "text" : "Not Done Value Set: Intermittent pneumatic compression devices (IPC)"
+  },
+  "subject" : {
+    "reference" : "Patient/example"
+  },
+  "encounter" : {
+    "reference" : "Encounter/example"
+  },
+  "_performedDateTime" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+      "valueCode" : "not-performed"
+    }]
+  },
+  "performer" : [{
+    "actor" : {
+      "reference" : "Practitioner/example",
+      "display" : "Dr Cecil Surgeon"
+    }
+  }],
+  "reasonCode" : [{
+    "text" : "Postoperative venous thromboembolism prophylaxis was considered during the appendicitis admission"
+  }],
+  "reasonReference" : [{
+    "reference" : "Condition/appendicitis-example"
+  }]
+}

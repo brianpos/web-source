@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DeviceRequest xmlns="http://hl7.org/fhir">
+  <id value="negation-with-code-example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-devicenotrequested"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: DeviceRequest negation-with-code-example</b></p><a name="negation-with-code-example"> </a><a name="hcnegation-with-code-example"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-us-quality-core-devicenotrequested.html">US Quality Core Device Not Requested</a></p></div><p><b>US Quality Core Do Not Perform Reason</b>: <span title="Codes:{http://snomed.info/sct 410534003}">Not indicated (qualifier value)</span></p><p><b>Extension Definition for DeviceRequest.doNotPerform for Version 5.0</b>: true</p><p><b>status</b>: Completed</p><p><b>intent</b>: Original Order</p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 442023007}">Venous foot pump, device (physical object)</span></p><p><b>subject</b>: <a href="Patient-example.html">Peter Chalmers</a></p><p><b>authoredOn</b>: 2016-04-05 09:20:00-0400</p></div>
+  </text>
+  <extension url="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-doNotPerformReason">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="410534003"/>
+        <display value="Not indicated (qualifier value)"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <modifierExtension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-DeviceRequest.doNotPerform">
+    <valueBoolean value="true"/>
+  </modifierExtension>
+  <status value="completed"/>
+  <intent value="original-order"/>
+  <codeCodeableConcept>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <version value="http://snomed.info/sct/731000124108"/>
+      <code value="442023007"/>
+      <display value="Venous foot pump, device (physical object)"/>
+    </coding>
+    <text value="Venous foot pump, device (physical object)"/>
+  </codeCodeableConcept>
+  <subject>
+    <reference value="Patient/example"/>
+    <display value="Peter Chalmers"/>
+  </subject>
+  <authoredOn value="2016-04-05T09:20:00-04:00"/>
+</DeviceRequest>

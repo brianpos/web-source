@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PractitionerRole xmlns="http://hl7.org/fhir">
+  <id value="example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitionerrole"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: PractitionerRole example</b></p><a name="example"> </a><a name="hcexample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-us-quality-core-practitionerrole.html">US Quality Core PractitionerRole</a></p></div><p><b>identifier</b>: <code>http://www.acme.org/practitionerroles</code>/31 (use: temp, )</p><p><b>active</b>: true</p><p><b>period</b>: 1995 --&gt; (ongoing)</p><p><b>practitioner</b>: <a href="Practitioner-example.html">Dr Adam Careful</a></p><p><b>organization</b>: <a href="Organization-example.html">Organization Health Level Seven International</a></p><p><b>code</b>: <span title="Codes:{http://nucc.org/provider-taxonomy 261Q00000X}">Clinic/Center</span></p><p><b>specialty</b>: <span title="Codes:{http://nucc.org/provider-taxonomy 122300000X}">Dentist</span></p><p><b>location</b>: <a href="Location-example.html">Location South Wing, second floor</a></p><p><b>telecom</b>: ph: 801-123-4567</p></div>
+  </text>
+  <identifier>
+    <use value="temp"/>
+    <system value="http://www.acme.org/practitionerroles"/>
+    <value value="31"/>
+  </identifier>
+  <active value="true"/>
+  <period>
+    <start value="1995"/>
+  </period>
+  <practitioner>
+    <reference value="Practitioner/example"/>
+    <display value="Dr Adam Careful"/>
+  </practitioner>
+  <organization>
+    <reference value="Organization/example"/>
+  </organization>
+  <code>
+    <coding>
+      <system value="http://nucc.org/provider-taxonomy"/>
+      <code value="261Q00000X"/>
+      <display value="Clinic/Center"/>
+    </coding>
+  </code>
+  <specialty>
+    <coding>
+      <system value="http://nucc.org/provider-taxonomy"/>
+      <code value="122300000X"/>
+      <display value="Dentist"/>
+    </coding>
+  </specialty>
+  <location>
+    <reference value="Location/example"/>
+  </location>
+  <telecom>
+    <system value="phone"/>
+    <value value="801-123-4567"/>
+  </telecom>
+</PractitionerRole>

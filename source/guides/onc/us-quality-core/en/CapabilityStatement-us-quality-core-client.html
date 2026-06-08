@@ -1,0 +1,1062 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>US Quality Core Client CapabilityStatement - 2026 US Quality Core Implementation Guide v0.5.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <style type="text/css">
+blockquote.note {
+  margin: 5px;
+  padding: 10px;
+  border-left-style: solid;
+  background-color: var(--stu-note-background-color);
+  border-left-color: var(--stu-note-border-left-color);
+}
+
+blockquote.note::before {
+  white-space: pre;
+  content: "Note\A ";
+  background-color: yellow;
+  color: red;
+  font-weight: bold;
+}
+</style>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script type="text/javascript" src="assets/js/prism.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-fhirpath.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"12.1"}
+    h3,h4,h5,h6{--heading-prefix:"12.1"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <div id="hl7-nav">
+  <a id="hl7-logo" no-external="true" href="https://healthit.gov">
+    <img height="50" alt="Visit the ONC website" src="onc-logo.png"/>
+  </a>
+</div>
+<div id="family-nav">
+  <a id="family-logo" no-external="true" href="https://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+<div id="hl7-search">
+  <a id="hl7-search-lnk" no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+</div>
+<!-- TODO: Push this into the base template -->
+<script type="text/javascript" src="assets/cql.js"> </script>
+
+
+        <div id="ig-status" data-fhir="generated">
+          <p><span style="font-size:12pt;font-weight:bold">2026 US Quality Core Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.5.0 - release
+
+
+
+  <img alt="United States of America flag" src="../assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment" data-fhir="generated">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">Home</a></li>
+  
+  <li class="dropdown">
+    <a data-toggle="dropdown" class="dropdown-toggle">Conformance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="general-requirements.html" class="item">General Requirements</a></li>
+      <li><a href="must-support.html" class="item">Must Support</a></li>
+      <li><a href="security.html" class="item">Security</a></li>
+    </ul>
+  </li>
+
+  <li class="dropdown">
+    <a data-toggle="dropdown" class="dropdown-toggle">Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="uscdiquality.html" class="item">USCDI+ Quality</a></li>    
+      <li><a href="negation.html" class="item">US Quality Core Negation</a></li>
+      <li><a href="provenance.html" class="item">Provenance</a></li>
+      <li><a href="relationship-with-uscore-qicore.html" class="item">Relationship with US Core and QI-Core</a></li> 
+      <li><a href="qdm-to-us-quality-core.html" class="item">QDM to US Quality Core</a></li>
+    </ul>
+  </li>
+
+  <li class="dropdown">
+    <a data-toggle="dropdown" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="capability-statements.html" class="item">Capability Statements</a></li>
+      <li><a href="profiles.html" class="item">Profiles</a></li>
+      <li><a href="extensions.html" class="item">Extensions</a></li>
+      <li><a href="terminology.html" class="item">Terminology</a></li>
+      <li><a href="examples.html" class="item">Examples</a></li>
+    </ul>
+  </li>
+
+  <li class="dropdown">
+    <a data-toggle="dropdown" class="dropdown-toggle">CQL Artifacts and Patterns (Informational)
+       <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="modelinfo.html" class="item">US Quality Core ModelInfo (Informational)</a></li>
+      <li><a href="patterns.html" class="item">US Quality Core Patterns (Informational)</a></li>
+    </ul>
+  </li>
+
+  <li><a href="downloads.html" class="item">Downloads</a></li>
+  <li><a href="changes.html" class="item">Change Log</a></li>
+
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment" data-fhir="generated">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>US Quality Core Client CapabilityStatement</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<!-- layouts\layout-canonical -->
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the US Quality Core (v0.5.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="http://fhir.org/guides/onc/us-quality-core/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="CapabilityStatement-us-quality-core-client.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="CapabilityStatement-us-quality-core-client.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="CapabilityStatement-us-quality-core-client.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+
+
+  <h2 id="root">CapabilityStatement: US Quality Core Client CapabilityStatement
+
+  </h2>
+
+  <table class="colsi" data-fhir="generated">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://fhir.org/guides/onc/us-quality-core/CapabilityStatement/us-quality-core-client<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://fhir.org/guides/onc/us-quality-core/CapabilityStatement/us-quality-core-client"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">0.5.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://fhir.org/guides/onc/us-quality-core/CapabilityStatement/us-quality-core-client|0.5.0"/></span>
+      </td>
+      <td style="text-align: right;border-left-style: hidden" title="Enable this to see changes since the last official release">
+        <span id="toggle-change-display"><label style="margin:0;font-weight:normal" for="showChanges">Highlight text changes?</label>
+  
+        <input style="margin:0" type="checkbox" id="showChanges" onchange="toggleChanges()"/>
+  
+      </span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="5">
+        
+          Active
+          
+
+            as of 
+2026-06-05
+
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">USQualityCoreClientCapabilityStatement</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+
+<p>
+<p>This capability statement describes the expected capabilities of the US Quality
+Core Client which is responsible for initiating queries for USCDI+
+Quality V1 data from US Quality Core Servers.  The set of FHIR RESTful
+operations and search parameters required to be supported by US Quality Core
+Servers is provided in the <a href="CapabilityStatement-us-quality-core-server.html">US Quality Core Server Capability
+Statement</a>.  US Quality Core
+Clients have the option of choosing from this list to access necessary data
+based on their local use cases and other contextual requirements.</p>
+
+</p>
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+<!--  <p>
+  Formats: <a href="CapabilityStatement-us-quality-core-client.xml.html">XML</a>, <a href="CapabilityStatement-us-quality-core-client.json.html">JSON</a>, <a href="CapabilityStatement-us-quality-core-client.ttl.html">Turtle</a>
+  </p>-->
+
+  
+  <p>
+      <a href="../us-quality-core-client.openapi.json" no-download="true">Raw OpenAPI-Swagger Definition file</a> | <a href="../us-quality-core-client.openapi.json" download>Download</a>
+  </p>
+  
+
+
+  <div data-fhir="generated"><p class="res-header-id"/><a name="us-quality-core-client"> </a><a name="hcus-quality-core-client"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: en</p></div><h2 id="title">US Quality Core Client CapabilityStatement</h2><ul><li>Implementation Guide Version: 0.5.0 </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>json</code></li><li>Published on: 2026-06-05 </li><li>Published by: Office of the National Coordinator for Health Information Technology (ONC) </li></ul><blockquote class="impl-note"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h3 id="shallIGs">SHALL Support the Following Implementation Guides</h3><ul><li><a href="index.html">http://fhir.org/guides/onc/us-quality-core/ImplementationGuide/fhir.onc.us-quality-core</a></li></ul><h2 id="rest">FHIR RESTful Capabilities</h2><div class="panel panel-default"><div class="panel-heading"><h3 id="mode1" class="panel-title">Mode: <code>client</code></h3></div><div class="panel-body"><div><p>The US Quality Core Client SHALL:</p>
+<ol>
+<li>Support fetching and querying US Quality Core and US Core profiles that contain at least one in-scope USCDI+ Quality data element, using the supported RESTful interactions and search parameters declared in the US Quality Core Server CapabilityStatement</li>
+<li>Recognize and process all MustSupport and USCDI+ Quality flagged elements in US Quality Core, and all MustSupport elements in in-scope US Core profiles</li>
+<li>Treat all modifying attributes as MustSupport, even if not explicitly declared</li>
+<li>SHALL NOT process resource instances that include unknown modifying attributes</li>
+<li>Be simultaneously conformant with US Quality Core profiles and US Core profiles. As such, the more restrictive bindings between US Core and US Quality Core SHALL be adhered to. For example, all value sets that are required in US Core SHALL be required by US Quality Core, regardless of the binding strength in US Quality Core.</li>
+</ol>
+<p>NOTE: US Quality Core and US Core SearchParameters referenced in this CapabilityStatement that are derived from standard FHIR SearchParameters are only defined to document Server and Client expectations, such as comparator expectations, and to support generation tooling.  They SHALL NOT be interpreted as search parameters for searching. Actual searches use the standard FHIR SearchParameters.</p>
+</div><div class="lead"><em>Summary of System-wide Interactions</em></div><ul><li><strong>MAY </strong>support the <code>transaction</code>interaction.</li><li><strong>MAY </strong>support the <code>batch</code>interaction.</li><li><strong>MAY </strong>support the <code>search-system</code>interaction.</li><li><strong>MAY </strong>support the <code>history-system</code>interaction.</li></ul></div></div><h3 id="resourcesCap1">Capabilities by Resource/Profile</h3><h4 id="resourcesSummary1">Summary</h4><p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul><li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class="bg-info">R</span></b>ead, <b><span class="bg-info">S</span></b>earch, <b><span class="bg-info">U</span></b>pdate, and <b><span class="bg-info">C</span></b>reate, are always shown, while <b><span class="bg-info">VR</span></b>ead, <b><span class="bg-info">P</span></b>atch, <b><span class="bg-info">D</span></b>elete, <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">I</span></b>nstance, or <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class="table-responsive"><table class="table table-condensed table-hover"><thead><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th class="text-center"><b title="GET a resource (read interaction)">R</b></th><th class="text-center"><b title="GET all set of resources of the type (search interaction)">S</b></th><th class="text-center"><b title="PUT a new resource version (update interaction)">U</b></th><th class="text-center"><b title="POST a new resource (create interaction)">C</b></th><th><b title="Required and recommended search parameters">Searches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Operations</b></th></tr></thead><tbody><tr><td><a href="#AdverseEvent1-1">AdverseEvent</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-adverseevent.html">US Quality Core AdverseEvent</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>subject, event, recorded-date, subject+event, subject+recorded-date</td><td/><td><code>Provenance:target</code></td><td/></tr><tr><td><a href="#AllergyIntolerance1-2">AllergyIntolerance</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-allergyintolerance.html">US Quality Core AllergyIntolerance</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>patient</td><td/><td><code>Provenance:target</code></td><td/></tr><tr><td><a href="#CarePlan1-3">CarePlan</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-careplan.html">US Quality Core CarePlan</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>patient, category, patient+category</td><td/><td><code>Provenance:target</code></td><td/></tr><tr><td><a href="#CareTeam1-4">CareTeam</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-careteam.html">US Quality Core CareTeam</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>patient, status, patient+status</td><td/><td><code>Provenance:target</code></td><td/></tr><tr><td><a href="#Condition1-5">Condition</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-condition-encounter-diagnosis.html">US Quality Core Condition Encounter Diagnosis</a><br/>  <a href="StructureDefinition-us-quality-core-condition-problems-health-concerns.html">US Quality Core Condition Problems Health Concerns</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>patient, category, code, patient+category, patient+code</td><td/><td><code>Provenance:target</code></td><td/></tr><tr><td><a href="#Coverage1-6">Coverage</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-coverage.html">US Quality Core Coverage</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>patient</td><td/><td><code>Provenance:target</code></td><td/></tr><tr><td><a href="#DeviceRequest1-7">DeviceRequest</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-devicerequest.html">US Quality Core DeviceRequest</a><br/>  <a href="StructureDefinition-us-quality-core-devicenotrequested.html">US Quality Core Device Not Requested</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>patient, code, do-not-perform, patient+code, patient+do-not-perform</td><td/><td><code>Provenance:target</code></td><td/></tr><tr><td><a href="#DiagnosticReport1-8">DiagnosticReport</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-diagnosticreport-note.html">US Quality Core DiagnosticReport Profile for Report and Note Exchange</a><br/>  <a href="StructureDefinition-us-quality-core-diagnosticreport-lab.html">US Quality Core DiagnosticReport Profile for Laboratory Results Reporting</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>patient, category, code, date, patient+category, patient+category+date, patient+code</td><td/><td><code>Provenance:target</code></td><td/></tr><tr><td><a href="#DocumentReference1-9">DocumentReference</a></td><td>Supported Profiles<br/>  <a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-documentreference.html">US Core DocumentReference Profileversion: 6.1.0)</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>patient, _id, category, date, type, patient+type, patient+category, patient+category+date</td><td/><td><code>Provenance:target</code></td><td/></tr><tr><td><a href="#Encounter1-10">Encounter</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-encounter.html">US Quality Core Encounter</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>_id, patient, type, date, patient+type, patient+date</td><td/><td><code>Provenance:target</code></td><td/></tr><tr><td><a href="#FamilyMemberHistory1-11">FamilyMemberHistory</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-familymemberhistory.html">US Quality Core FamilyMemberHistory</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>patient</td><td/><td><code>Provenance:target</code></td><td/></tr><tr><td><a href="#Goal1-12">Goal</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-goal.html">US Quality Core Goal</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>patient</td><td/><td><code>Provenance:target</code></td><td/></tr><tr><td><a href="#Immunization1-13">Immunization</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-immunization.html">US Quality Core Immunization</a><br/>  <a href="StructureDefinition-us-quality-core-immunizationnotdone.html">US Quality Core Immunization Not Done</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>patient, status, patient+status</td><td/><td><code>Provenance:target</code></td><td/></tr><tr><td><a href="#Location1-14">Location</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-location.html">US Quality Core Location</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td class="text-center"/><td></td><td/><td/><td/></tr><tr><td><a href="#Medication1-15">Medication</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-medication.html">US Quality Core Medication</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>code</td><td/><td/><td/></tr><tr><td><a href="#MedicationAdministration1-16">MedicationAdministration</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-medicationadministration.html">US Quality Core MedicationAdministration</a><br/>  <a href="StructureDefinition-us-quality-core-medicationadministrationnotdone.html">US Quality Core MedicationAdministration Not Done</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>patient, status, code, effective-time, patient+status, patient+code, patient+effective-time</td><td/><td><code>Provenance:target</code></td><td/></tr><tr><td><a href="#MedicationDispense1-17">MedicationDispense</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-medicationdispense.html">US Quality Core MedicationDispense</a><br/>  <a href="StructureDefinition-us-quality-core-medicationdispensedeclined.html">US Quality Core MedicationDispense Declined</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>patient, status, patient+status</td><td/><td><code>Provenance:target</code></td><td/></tr><tr><td><a href="#MedicationRequest1-18">MedicationRequest</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-medicationrequest.html">US Quality Core MedicationRequest</a><br/>  <a href="StructureDefinition-us-quality-core-medicationnotrequested.html">US Quality Core Medication Not Requested</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>patient, intent, do-not-perform, patient+intent+do-not-perform, patient+intent</td><td/><td><code>Provenance:target</code></td><td/></tr><tr><td><a href="#Observation1-19">Observation</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-observation-clinical-result.html">US Quality Core Observation Clinical Result</a><br/>  <a href="StructureDefinition-us-quality-core-simple-observation.html">US Quality Core Simple Observation</a><br/>  <a href="StructureDefinition-us-quality-core-observation-screening-assessment.html">US Quality Core Observation Screening Assessment</a><br/>  <a href="StructureDefinition-us-quality-core-observationcancelled.html">US Quality Core Observation Cancelled</a><br/>  <a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-observation-pregnancyintent.html">US Core Observation Pregnancy Intent Profileversion: 6.1.0)</a><br/>  <a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-observation-pregnancystatus.html">US Core Observation Pregnancy Status Profileversion: 6.1.0)</a><br/>  <a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-smokingstatus.html">US Core Smoking Status Observation Profileversion: 6.1.0)</a><br/>  <a href="StructureDefinition-us-quality-core-observation-lab.html">US Quality Core Laboratory Result Observation</a><br/>  <a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-observation-occupation.html">US Core Observation Occupation Profileversion: 6.1.0)</a><br/>  <a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-blood-pressure.html">US Core Blood Pressure Profileversion: 6.1.0)</a><br/>  <a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-bmi.html">US Core BMI Profileversion: 6.1.0)</a><br/>  <a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-pediatric-bmi-for-age.html">US Core Pediatric BMI for Age Observation Profileversion: 6.1.0)</a><br/>  <a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-body-height.html">US Core Body Height Profileversion: 6.1.0)</a><br/>  <a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-body-temperature.html">US Core Body Temperature Profileversion: 6.1.0)</a><br/>  <a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-body-weight.html">US Core Body Weight Profileversion: 6.1.0)</a><br/>  <a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-head-occipital-frontal-circumference-percentile.html">US Core Pediatric Head Occipital Frontal Circumference Percentile Profileversion: 6.1.0)</a><br/>  <a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-heart-rate.html">US Core Heart Rate Profileversion: 6.1.0)</a><br/>  <a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-pulse-oximetry.html">US Core Pulse Oximetry Profileversion: 6.1.0)</a><br/>  <a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-respiratory-rate.html">US Core Respiratory Rate Profileversion: 6.1.0)</a><br/>  <a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-pediatric-weight-for-height.html">US Core Pediatric Weight for Height Observation Profileversion: 6.1.0)</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>patient, category, status, code, date, patient+category+status, patient+category, patient+category+date, patient+code</td><td/><td><code>Provenance:target</code></td><td/></tr><tr><td><a href="#Organization1-20">Organization</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-organization.html">US Quality Core Organization</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="MAY">y?</span></td><td class="text-center"/><td class="text-center"/><td></td><td/><td/><td/></tr><tr><td><a href="#Patient1-21">Patient</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-patient.html">US Quality Core Patient</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>_id</td><td/><td><code>Provenance:target</code></td><td/></tr><tr><td><a href="#Practitioner1-22">Practitioner</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-practitioner.html">US Quality Core Practitioner</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td class="text-center"/><td></td><td/><td/><td/></tr><tr><td><a href="#PractitionerRole1-23">PractitionerRole</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-practitionerrole.html">US Quality Core PractitionerRole</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td class="text-center"/><td></td><td/><td/><td/></tr><tr><td><a href="#Procedure1-24">Procedure</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-procedure.html">US Quality Core Procedure</a><br/>  <a href="StructureDefinition-us-quality-core-procedurenotdone.html">US Quality Core Procedure Not Done</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>patient, status, date, patient+status, patient+date</td><td/><td><code>Provenance:target</code></td><td/></tr><tr><td><a href="#Provenance1-25">Provenance</a></td><td>Supported Profiles<br/>  <a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-provenance.html">US Core Provenance Profileversion: 6.1.0)</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="MAY">y?</span></td><td class="text-center"/><td class="text-center"/><td></td><td/><td/><td/></tr><tr><td><a href="#RelatedPerson1-26">RelatedPerson</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-relatedperson.html">US Quality Core RelatedPerson</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>_id, patient</td><td/><td><code>Provenance:target</code></td><td/></tr><tr><td><a href="#ServiceRequest1-27">ServiceRequest</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-servicerequest.html">US Quality Core ServiceRequest</a><br/>  <a href="StructureDefinition-us-quality-core-servicenotrequested.html">US Quality Core Service Not Requested</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>_id, patient, category, code, authored, do-not-perform, patient+category, patient+category+authored, patient+code, patient+do-not-perform</td><td/><td><code>Provenance:target</code></td><td/></tr><tr><td><a href="#Specimen1-28">Specimen</a></td><td>Supported Profiles<br/>  <a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-specimen.html">US Core Specimen Profileversion: 6.1.0)</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>patient, _id</td><td/><td/><td/></tr><tr><td><a href="#Task1-29">Task</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-us-quality-core-task.html">US Quality Core Task</a><br/>  <a href="StructureDefinition-us-quality-core-taskrejected.html">US Quality Core Task Rejected</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>patient, status, code, patient+status, patient+code</td><td/><td><code>Provenance:target</code></td><td/></tr></tbody></table></div><hr/><div class="panel panel-default"><div role="tab" id="heading1-1" class="panel-heading"><h4 id="AdverseEvent1-1" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-1" aria-expanded="true" href="#collapse1-1"><span style="float: right;">Resource Conformance: SHALL</span>AdverseEvent</a></h4></div><div role="tabpanel" aria-labelledby="heading1-1" id="collapse1-1" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/adverseevent.html">AdverseEvent</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-adverseevent.html">US Quality Core AdverseEvent</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. The table below summarizes why each required individual search or required search parameter combination is included for this resource.</p>
+<table class="grid">
+<thead>
+<tr>
+<th>Required search</th>
+<th>US Core alignment</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>subject</code></td>
+<td>Added in US Quality Core.</td>
+<td>Supports subject-scoped retrieval of AdverseEvent resources for quality reporting. This US Quality Core-specific search is needed because AdverseEvent is in scope for USCDI+ Quality but is not profiled by US Core 6.1.0.</td>
+</tr>
+<tr>
+<td><code>subject</code> + <code>event</code></td>
+<td>Added in US Quality Core.</td>
+<td>Supports subject-scoped retrieval filtered by adverse event concept. This US Quality Core-specific combination makes the adverse event concept available as a primary retrieval path for quality logic.</td>
+</tr>
+<tr>
+<td><code>subject</code> + <code>recorded-date</code></td>
+<td>Added in US Quality Core.</td>
+<td>Supports subject-scoped retrieval filtered by recorded date so quality workflows can constrain adverse events to relevant reporting periods.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote></div></div><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-adverseevent-subject.html">subject</a></td><td><code>reference</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value for the reference.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-adverseevent-event.html">event</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a code value.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-adverseevent-recorded-date.html">recorded-date</a></td><td><code>date</code></td><td><div><p>The client <strong>MAY</strong> provide a date value.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"><span class="lead">Combined Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameters</th><th>Types</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-adverseevent-subject.html">subject</a>+<a href="SearchParameter-us-quality-core-adverseevent-event.html">event</a></td><td><code>reference</code>+<code>token</code></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-adverseevent-subject.html">subject</a>+<a href="SearchParameter-us-quality-core-adverseevent-recorded-date.html">recorded-date</a></td><td><code>reference</code>+<code>date</code></td></tr></tbody></table></div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-2" class="panel-heading"><h4 id="AllergyIntolerance1-2" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-2" aria-expanded="true" href="#collapse1-2"><span style="float: right;">Resource Conformance: SHALL</span>AllergyIntolerance</a></h4></div><div role="tabpanel" aria-labelledby="heading1-2" id="collapse1-2" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/allergyintolerance.html">AllergyIntolerance</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-allergyintolerance.html">US Quality Core AllergyIntolerance</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. The table below summarizes why each required individual search or required search parameter combination is included for this resource.</p>
+<table class="grid">
+<thead>
+<tr>
+<th>Required search</th>
+<th>US Core alignment</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>patient</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#allergyintolerance">US Core</a>.</td>
+<td>Supports patient-scoped retrieval of allergy and intolerance data needed for in-scope USCDI+ Quality data access.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote></div></div><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-allergyintolerance-patient.html">patient</a></td><td><code>reference</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value for the reference.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-3" class="panel-heading"><h4 id="CarePlan1-3" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-3" aria-expanded="true" href="#collapse1-3"><span style="float: right;">Resource Conformance: SHALL</span>CarePlan</a></h4></div><div role="tabpanel" aria-labelledby="heading1-3" id="collapse1-3" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/careplan.html">CarePlan</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-careplan.html">US Quality Core CarePlan</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. The table below summarizes why each required individual search or required search parameter combination is included for this resource.</p>
+<table class="grid">
+<thead>
+<tr>
+<th>Required search</th>
+<th>US Core alignment</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>patient</code> + <code>category</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#careplan">US Core</a>.</td>
+<td>Supports patient-scoped retrieval of care plans filtered to the category relevant for USCDI+ Quality data access.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote></div></div><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-careplan-patient.html">patient</a></td><td><code>reference</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value for the reference.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-careplan-category.html">category</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a code value.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"><span class="lead">Combined Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameters</th><th>Types</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-careplan-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-careplan-category.html">category</a></td><td><code>reference</code>+<code>token</code></td></tr></tbody></table></div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-4" class="panel-heading"><h4 id="CareTeam1-4" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-4" aria-expanded="true" href="#collapse1-4"><span style="float: right;">Resource Conformance: SHALL</span>CareTeam</a></h4></div><div role="tabpanel" aria-labelledby="heading1-4" id="collapse1-4" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/careteam.html">CareTeam</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-careteam.html">US Quality Core CareTeam</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. The table below summarizes why each required individual search or required search parameter combination is included for this resource.</p>
+<table class="grid">
+<thead>
+<tr>
+<th>Required search</th>
+<th>US Core alignment</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>patient</code> + <code>status</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#careteam">US Core</a>.</td>
+<td>Supports patient-scoped retrieval of care teams filtered by status for quality workflows.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote></div></div><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-careteam-patient.html">patient</a></td><td><code>reference</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value for the reference.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-careteam-status.html">status</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a code value.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"><span class="lead">Combined Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameters</th><th>Types</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-careteam-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-careteam-status.html">status</a></td><td><code>reference</code>+<code>token</code></td></tr></tbody></table></div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-5" class="panel-heading"><h4 id="Condition1-5" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-5" aria-expanded="true" href="#collapse1-5"><span style="float: right;">Resource Conformance: SHALL</span>Condition</a></h4></div><div role="tabpanel" aria-labelledby="heading1-5" id="collapse1-5" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/condition.html">Condition</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-condition-encounter-diagnosis.html">US Quality Core Condition Encounter Diagnosis</a><br/><a href="StructureDefinition-us-quality-core-condition-problems-health-concerns.html">US Quality Core Condition Problems Health Concerns</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. The table below summarizes why each required individual search or required search parameter combination is included for this resource.</p>
+<table class="grid">
+<thead>
+<tr>
+<th>Required search</th>
+<th>US Core alignment</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>patient</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#condition">US Core</a>.</td>
+<td>Supports patient-scoped retrieval of conditions needed for in-scope USCDI+ Quality data access.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>category</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#condition">US Core</a>.</td>
+<td>Supports patient-scoped retrieval filtered by condition category, including problem, health concern, and encounter diagnosis use cases.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>code</code></td>
+<td>Added in US Quality Core.</td>
+<td>Supports patient-scoped retrieval filtered by condition code. US Quality Core makes this combination explicit as a primary retrieval path for quality logic that filters by diagnosis, problem, or health concern code.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote></div></div><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-condition-patient.html">patient</a></td><td><code>reference</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value for the reference.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-condition-category.html">category</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a category.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-condition-code.html">code</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a code value.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"><span class="lead">Combined Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameters</th><th>Types</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-condition-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-condition-category.html">category</a></td><td><code>reference</code>+<code>token</code></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-condition-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-condition-code.html">code</a></td><td><code>reference</code>+<code>token</code></td></tr></tbody></table></div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-6" class="panel-heading"><h4 id="Coverage1-6" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-6" aria-expanded="true" href="#collapse1-6"><span style="float: right;">Resource Conformance: SHALL</span>Coverage</a></h4></div><div role="tabpanel" aria-labelledby="heading1-6" id="collapse1-6" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/coverage.html">Coverage</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-coverage.html">US Quality Core Coverage</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. The table below summarizes why each required individual search or required search parameter combination is included for this resource.</p>
+<table class="grid">
+<thead>
+<tr>
+<th>Required search</th>
+<th>US Core alignment</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>patient</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#coverage">US Core</a>.</td>
+<td>Supports patient-scoped retrieval of coverage data needed for in-scope USCDI+ Quality data access.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote></div></div><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-coverage-patient.html">patient</a></td><td><code>reference</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value for the reference.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-7" class="panel-heading"><h4 id="DeviceRequest1-7" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-7" aria-expanded="true" href="#collapse1-7"><span style="float: right;">Resource Conformance: SHALL</span>DeviceRequest</a></h4></div><div role="tabpanel" aria-labelledby="heading1-7" id="collapse1-7" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/devicerequest.html">DeviceRequest</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-devicerequest.html">US Quality Core DeviceRequest</a><br/><a href="StructureDefinition-us-quality-core-devicenotrequested.html">US Quality Core Device Not Requested</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. The table below summarizes why each required individual search or required search parameter combination is included for this resource.</p>
+<table class="grid">
+<thead>
+<tr>
+<th>Required search</th>
+<th>US Core alignment</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>patient</code></td>
+<td>Added in US Quality Core.</td>
+<td>Supports patient-scoped retrieval of device requests for quality reporting. This US Quality Core-specific search is needed because DeviceRequest is in scope for USCDI+ Quality but is not profiled by US Core 6.1.0.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>code</code></td>
+<td>Added in US Quality Core.</td>
+<td>Supports patient-scoped retrieval filtered by requested device code. This US Quality Core-specific combination makes the device code available as a primary retrieval path for quality logic.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>do-not-perform</code></td>
+<td>Added in US Quality Core.</td>
+<td>Supports negation workflows by enabling retrieval of device requests that indicate the requested action should not be performed.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote></div></div><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-devicerequest-patient.html">patient</a></td><td><code>reference</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value for the reference.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-devicerequest-code.html">code</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a code value.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-devicerequest-do-not-perform.html">do-not-perform</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a token value.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"><span class="lead">Combined Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameters</th><th>Types</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-devicerequest-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-devicerequest-code.html">code</a></td><td><code>reference</code>+<code>token</code></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-devicerequest-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-devicerequest-do-not-perform.html">do-not-perform</a></td><td><code>reference</code>+<code>token</code></td></tr></tbody></table></div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-8" class="panel-heading"><h4 id="DiagnosticReport1-8" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-8" aria-expanded="true" href="#collapse1-8"><span style="float: right;">Resource Conformance: SHALL</span>DiagnosticReport</a></h4></div><div role="tabpanel" aria-labelledby="heading1-8" id="collapse1-8" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/diagnosticreport.html">DiagnosticReport</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-diagnosticreport-note.html">US Quality Core DiagnosticReport Profile for Report and Note Exchange</a><br/><a href="StructureDefinition-us-quality-core-diagnosticreport-lab.html">US Quality Core DiagnosticReport Profile for Laboratory Results Reporting</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. The table below summarizes why each required individual search or required search parameter combination is included for this resource.</p>
+<table class="grid">
+<thead>
+<tr>
+<th>Required search</th>
+<th>US Core alignment</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>patient</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#diagnosticreport">US Core</a>.</td>
+<td>Supports patient-scoped retrieval of diagnostic reports needed for in-scope USCDI+ Quality data access.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>category</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#diagnosticreport">US Core</a>.</td>
+<td>Supports patient-scoped retrieval filtered by report category, including laboratory and clinical-note report categories.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>category</code> + <code>date</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#diagnosticreport">US Core</a>.</td>
+<td>Supports patient-scoped retrieval filtered by report category and date so quality workflows can constrain reports to relevant reporting periods.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>code</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#diagnosticreport">US Core</a>.</td>
+<td>Supports patient-scoped retrieval filtered by report code, including code-oriented retrieval paths used by quality logic.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote></div></div><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-diagnosticreport-patient.html">patient</a></td><td><code>reference</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value for the reference.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-diagnosticreport-category.html">category</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a category.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-diagnosticreport-code.html">code</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a code value.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-diagnosticreport-date.html">date</a></td><td><code>date</code></td><td><div><p>The client <strong>MAY</strong> provide a date value.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"><span class="lead">Combined Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameters</th><th>Types</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-diagnosticreport-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-diagnosticreport-category.html">category</a></td><td><code>reference</code>+<code>token</code></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-diagnosticreport-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-diagnosticreport-category.html">category</a>+<a href="SearchParameter-us-quality-core-diagnosticreport-date.html">date</a></td><td><code>reference</code>+<code>token</code>+<code>date</code></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-diagnosticreport-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-diagnosticreport-code.html">code</a></td><td><code>reference</code>+<code>token</code></td></tr></tbody></table></div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-9" class="panel-heading"><h4 id="DocumentReference1-9" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-9" aria-expanded="true" href="#collapse1-9"><span style="float: right;">Resource Conformance: SHALL</span>DocumentReference</a></h4></div><div role="tabpanel" aria-labelledby="heading1-9" id="collapse1-9" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/documentreference.html">DocumentReference</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-documentreference.html">US Core DocumentReference Profileversion: 6.1.0)</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. The table below summarizes why each required individual search or required search parameter combination is included for this resource.</p>
+<table class="grid">
+<thead>
+<tr>
+<th>Required search</th>
+<th>US Core alignment</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_id</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#documentreference">US Core</a>.</td>
+<td>Supports search retrieval of a known DocumentReference by resource id.</td>
+</tr>
+<tr>
+<td><code>patient</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#documentreference">US Core</a>.</td>
+<td>Supports patient-scoped retrieval of document references needed for in-scope USCDI+ Quality data access.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>type</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#documentreference">US Core</a>.</td>
+<td>Supports patient-scoped retrieval filtered by document type, including clinical note type retrieval.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>category</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#documentreference">US Core</a>.</td>
+<td>Supports patient-scoped retrieval filtered by document category.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>category</code> + <code>date</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#documentreference">US Core</a>.</td>
+<td>Supports patient-scoped retrieval filtered by document category and date so quality workflows can constrain documents to relevant reporting periods.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote></div></div><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/us/core/STU6.1/SearchParameter-us-core-documentreference-patient.html">patient</a></td><td><code>reference</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value for the reference.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/us/core/STU6.1/SearchParameter-us-core-documentreference-id.html">_id</a></td><td><code>token</code></td><td><div><p>The client <strong>SHALL</strong> provide a token value.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="http://hl7.org/fhir/us/core/STU6.1/SearchParameter-us-core-documentreference-category.html">category</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a token value.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="http://hl7.org/fhir/us/core/STU6.1/SearchParameter-us-core-documentreference-date.html">date</a></td><td><code>date</code></td><td><div><p>The client <strong>MAY</strong> provide a date value.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="http://hl7.org/fhir/us/core/STU6.1/SearchParameter-us-core-documentreference-type.html">type</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a token value.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"><span class="lead">Combined Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameters</th><th>Types</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/us/core/STU6.1/SearchParameter-us-core-documentreference-patient.html">patient</a>+<a href="http://hl7.org/fhir/us/core/STU6.1/SearchParameter-us-core-documentreference-type.html">type</a></td><td><code>reference</code>+<code>token</code></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/us/core/STU6.1/SearchParameter-us-core-documentreference-patient.html">patient</a>+<a href="http://hl7.org/fhir/us/core/STU6.1/SearchParameter-us-core-documentreference-category.html">category</a></td><td><code>reference</code>+<code>token</code></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/us/core/STU6.1/SearchParameter-us-core-documentreference-patient.html">patient</a>+<a href="http://hl7.org/fhir/us/core/STU6.1/SearchParameter-us-core-documentreference-category.html">category</a>+<a href="http://hl7.org/fhir/us/core/STU6.1/SearchParameter-us-core-documentreference-date.html">date</a></td><td><code>reference</code>+<code>token</code>+<code>date</code></td></tr></tbody></table></div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-10" class="panel-heading"><h4 id="Encounter1-10" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-10" aria-expanded="true" href="#collapse1-10"><span style="float: right;">Resource Conformance: SHALL</span>Encounter</a></h4></div><div role="tabpanel" aria-labelledby="heading1-10" id="collapse1-10" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/encounter.html">Encounter</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-encounter.html">US Quality Core Encounter</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. The table below summarizes why each required individual search or required search parameter combination is included for this resource.</p>
+<table class="grid">
+<thead>
+<tr>
+<th>Required search</th>
+<th>US Core alignment</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_id</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#encounter">US Core</a>.</td>
+<td>Supports search retrieval of a known Encounter by resource id.</td>
+</tr>
+<tr>
+<td><code>patient</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#encounter">US Core</a>.</td>
+<td>Supports patient-scoped retrieval of encounters needed for in-scope USCDI+ Quality data access.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>type</code></td>
+<td>Added in US Quality Core.</td>
+<td>Supports patient-scoped retrieval filtered by encounter type. US Quality Core makes this combination explicit as a primary retrieval path for quality logic that filters by visit or service type.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>date</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#encounter">US Core</a>.</td>
+<td>Supports patient-scoped retrieval filtered by encounter date so quality workflows can constrain encounters to relevant reporting periods.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote></div></div><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-encounter-id.html">_id</a></td><td><code>token</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-encounter-patient.html">patient</a></td><td><code>reference</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value for the reference.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-encounter-type.html">type</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a code value.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-encounter-date.html">date</a></td><td><code>date</code></td><td><div><p>The client <strong>MAY</strong> provide a date value.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"><span class="lead">Combined Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameters</th><th>Types</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-encounter-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-encounter-type.html">type</a></td><td><code>reference</code>+<code>token</code></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-encounter-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-encounter-date.html">date</a></td><td><code>reference</code>+<code>date</code></td></tr></tbody></table></div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-11" class="panel-heading"><h4 id="FamilyMemberHistory1-11" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-11" aria-expanded="true" href="#collapse1-11"><span style="float: right;">Resource Conformance: SHALL</span>FamilyMemberHistory</a></h4></div><div role="tabpanel" aria-labelledby="heading1-11" id="collapse1-11" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/familymemberhistory.html">FamilyMemberHistory</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-familymemberhistory.html">US Quality Core FamilyMemberHistory</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. The table below summarizes why each required individual search or required search parameter combination is included for this resource.</p>
+<table class="grid">
+<thead>
+<tr>
+<th>Required search</th>
+<th>US Core alignment</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>patient</code></td>
+<td>Added in US Quality Core.</td>
+<td>Supports patient-scoped retrieval of family member history for quality reporting. This US Quality Core-specific search is needed because FamilyMemberHistory is in scope for USCDI+ Quality but is not profiled by US Core 6.1.0.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote></div></div><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-familymemberhistory-patient.html">patient</a></td><td><code>reference</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value for the reference.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-12" class="panel-heading"><h4 id="Goal1-12" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-12" aria-expanded="true" href="#collapse1-12"><span style="float: right;">Resource Conformance: SHALL</span>Goal</a></h4></div><div role="tabpanel" aria-labelledby="heading1-12" id="collapse1-12" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/goal.html">Goal</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-goal.html">US Quality Core Goal</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. The table below summarizes why each required individual search or required search parameter combination is included for this resource.</p>
+<table class="grid">
+<thead>
+<tr>
+<th>Required search</th>
+<th>US Core alignment</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>patient</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#goal">US Core</a>.</td>
+<td>Supports patient-scoped retrieval of goals needed for in-scope USCDI+ Quality data access.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote></div></div><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-goal-patient.html">patient</a></td><td><code>reference</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value for the reference.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-13" class="panel-heading"><h4 id="Immunization1-13" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-13" aria-expanded="true" href="#collapse1-13"><span style="float: right;">Resource Conformance: SHALL</span>Immunization</a></h4></div><div role="tabpanel" aria-labelledby="heading1-13" id="collapse1-13" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/immunization.html">Immunization</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-immunization.html">US Quality Core Immunization</a><br/><a href="StructureDefinition-us-quality-core-immunizationnotdone.html">US Quality Core Immunization Not Done</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. The table below summarizes why each required individual search or required search parameter combination is included for this resource.</p>
+<table class="grid">
+<thead>
+<tr>
+<th>Required search</th>
+<th>US Core alignment</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>patient</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#immunization">US Core</a>.</td>
+<td>Supports patient-scoped retrieval of immunizations needed for in-scope USCDI+ Quality data access.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>status</code></td>
+<td>Added in US Quality Core.</td>
+<td>Supports patient-scoped retrieval filtered by immunization status. US Quality Core makes this combination explicit for status-sensitive quality workflows, including not-done immunization cases.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote></div></div><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-immunization-patient.html">patient</a></td><td><code>reference</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value for the reference.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-immunization-status.html">status</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a status.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"><span class="lead">Combined Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameters</th><th>Types</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-immunization-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-immunization-status.html">status</a></td><td><code>reference</code>+<code>token</code></td></tr></tbody></table></div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-14" class="panel-heading"><h4 id="Location1-14" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-14" aria-expanded="true" href="#collapse1-14"><span style="float: right;">Resource Conformance: SHALL</span>Location</a></h4></div><div role="tabpanel" aria-labelledby="heading1-14" id="collapse1-14" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/location.html">Location</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-location.html">US Quality Core Location</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. US Quality Core does not define additional required individual search parameters or required search parameter combinations for this resource. Implementations still support the required interactions in this CapabilityStatement and any applicable US Core requirements independently.</p>
+</div></blockquote></div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-15" class="panel-heading"><h4 id="Medication1-15" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-15" aria-expanded="true" href="#collapse1-15"><span style="float: right;">Resource Conformance: SHALL</span>Medication</a></h4></div><div role="tabpanel" aria-labelledby="heading1-15" id="collapse1-15" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/medication.html">Medication</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-medication.html">US Quality Core Medication</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. The table below summarizes why each required individual search or required search parameter combination is included for this resource.</p>
+<table class="grid">
+<thead>
+<tr>
+<th>Required search</th>
+<th>US Core alignment</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>code</code></td>
+<td>Added in US Quality Core.</td>
+<td>Supports retrieval of Medication resources by clinical code. This search is included as a primary code path for quality logic when Medication is represented as a referenced resource.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote></div></div><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-medication-code.html">code</a></td><td><code>token</code></td><td><div><p>The client <strong>SHALL</strong> provide a code value.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-16" class="panel-heading"><h4 id="MedicationAdministration1-16" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-16" aria-expanded="true" href="#collapse1-16"><span style="float: right;">Resource Conformance: SHALL</span>MedicationAdministration</a></h4></div><div role="tabpanel" aria-labelledby="heading1-16" id="collapse1-16" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/medicationadministration.html">MedicationAdministration</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-medicationadministration.html">US Quality Core MedicationAdministration</a><br/><a href="StructureDefinition-us-quality-core-medicationadministrationnotdone.html">US Quality Core MedicationAdministration Not Done</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. The table below summarizes why each required individual search or required search parameter combination is included for this resource.</p>
+<table class="grid">
+<thead>
+<tr>
+<th>Required search</th>
+<th>US Core alignment</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>patient</code></td>
+<td>Added in US Quality Core.</td>
+<td>Supports patient-scoped retrieval of medication administrations for quality reporting. This US Quality Core-specific search is needed because MedicationAdministration is in scope for USCDI+ Quality but is not profiled by US Core 6.1.0.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>status</code></td>
+<td>Added in US Quality Core.</td>
+<td>Supports patient-scoped retrieval filtered by administration status for status-sensitive quality workflows.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>code</code></td>
+<td>Added in US Quality Core.</td>
+<td>Supports patient-scoped retrieval filtered by medication code. This US Quality Core-specific combination makes the medication code available as a primary retrieval path for quality logic.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>effective-time</code></td>
+<td>Added in US Quality Core.</td>
+<td>Supports patient-scoped retrieval filtered by administration time so quality workflows can constrain administrations to relevant reporting periods.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote></div></div><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-medicationadministration-patient.html">patient</a></td><td><code>reference</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value for the reference.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-medicationadministration-status.html">status</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a status.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-medicationadministration-code.html">code</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a code value.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-medicationadministration-effective-time.html">effective-time</a></td><td><code>date</code></td><td><div><p>The client <strong>MAY</strong> provide a date value.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"><span class="lead">Combined Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameters</th><th>Types</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-medicationadministration-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-medicationadministration-status.html">status</a></td><td><code>reference</code>+<code>token</code></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-medicationadministration-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-medicationadministration-code.html">code</a></td><td><code>reference</code>+<code>token</code></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-medicationadministration-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-medicationadministration-effective-time.html">effective-time</a></td><td><code>reference</code>+<code>date</code></td></tr></tbody></table></div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-17" class="panel-heading"><h4 id="MedicationDispense1-17" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-17" aria-expanded="true" href="#collapse1-17"><span style="float: right;">Resource Conformance: SHALL</span>MedicationDispense</a></h4></div><div role="tabpanel" aria-labelledby="heading1-17" id="collapse1-17" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/medicationdispense.html">MedicationDispense</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-medicationdispense.html">US Quality Core MedicationDispense</a><br/><a href="StructureDefinition-us-quality-core-medicationdispensedeclined.html">US Quality Core MedicationDispense Declined</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. The table below summarizes why each required individual search or required search parameter combination is included for this resource.</p>
+<table class="grid">
+<thead>
+<tr>
+<th>Required search</th>
+<th>US Core alignment</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>patient</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#medicationdispense">US Core</a>.</td>
+<td>Supports patient-scoped retrieval of medication dispenses needed for in-scope USCDI+ Quality data access.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>status</code></td>
+<td>Added in US Quality Core.</td>
+<td>Supports patient-scoped retrieval filtered by dispense status. US Quality Core makes this combination explicit for status-sensitive quality workflows, including declined dispense cases.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote></div></div><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-medicationdispense-patient.html">patient</a></td><td><code>reference</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value for the reference.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-medicationdispense-status.html">status</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a status.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"><span class="lead">Combined Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameters</th><th>Types</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-medicationdispense-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-medicationdispense-status.html">status</a></td><td><code>reference</code>+<code>token</code></td></tr></tbody></table></div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-18" class="panel-heading"><h4 id="MedicationRequest1-18" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-18" aria-expanded="true" href="#collapse1-18"><span style="float: right;">Resource Conformance: SHALL</span>MedicationRequest</a></h4></div><div role="tabpanel" aria-labelledby="heading1-18" id="collapse1-18" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/medicationrequest.html">MedicationRequest</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-medicationrequest.html">US Quality Core MedicationRequest</a><br/><a href="StructureDefinition-us-quality-core-medicationnotrequested.html">US Quality Core Medication Not Requested</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. The table below summarizes why each required individual search or required search parameter combination is included for this resource.</p>
+<table class="grid">
+<thead>
+<tr>
+<th>Required search</th>
+<th>US Core alignment</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>patient</code> + <code>intent</code> + <code>do-not-perform</code></td>
+<td>Added in US Quality Core.</td>
+<td>Supports negation workflows by enabling retrieval of medication requests that indicate the requested medication should not be performed, while preserving the patient and intent context.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>intent</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#medicationrequest">US Core</a>.</td>
+<td>Supports patient-scoped retrieval of medication requests filtered by intent, including medication orders relevant to quality reporting.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote></div></div><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-medicationrequest-patient.html">patient</a></td><td><code>reference</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value for the reference.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-medicationrequest-intent.html">intent</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a token value.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-medicationrequest-do-not-perform.html">do-not-perform</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a token value.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"><span class="lead">Combined Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameters</th><th>Types</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-medicationrequest-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-medicationrequest-intent.html">intent</a>+<a href="SearchParameter-us-quality-core-medicationrequest-do-not-perform.html">do-not-perform</a></td><td><code>reference</code>+<code>token</code>+<code>token</code></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-medicationrequest-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-medicationrequest-intent.html">intent</a></td><td><code>reference</code>+<code>token</code></td></tr></tbody></table></div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-19" class="panel-heading"><h4 id="Observation1-19" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-19" aria-expanded="true" href="#collapse1-19"><span style="float: right;">Resource Conformance: SHALL</span>Observation</a></h4></div><div role="tabpanel" aria-labelledby="heading1-19" id="collapse1-19" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/observation.html">Observation</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-observation-clinical-result.html">US Quality Core Observation Clinical Result</a><br/><a href="StructureDefinition-us-quality-core-simple-observation.html">US Quality Core Simple Observation</a><br/><a href="StructureDefinition-us-quality-core-observation-screening-assessment.html">US Quality Core Observation Screening Assessment</a><br/><a href="StructureDefinition-us-quality-core-observationcancelled.html">US Quality Core Observation Cancelled</a><br/><a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-observation-pregnancyintent.html">US Core Observation Pregnancy Intent Profileversion: 6.1.0)</a><br/><a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-observation-pregnancystatus.html">US Core Observation Pregnancy Status Profileversion: 6.1.0)</a><br/><a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-smokingstatus.html">US Core Smoking Status Observation Profileversion: 6.1.0)</a><br/><a href="StructureDefinition-us-quality-core-observation-lab.html">US Quality Core Laboratory Result Observation</a><br/><a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-observation-occupation.html">US Core Observation Occupation Profileversion: 6.1.0)</a><br/><a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-blood-pressure.html">US Core Blood Pressure Profileversion: 6.1.0)</a><br/><a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-bmi.html">US Core BMI Profileversion: 6.1.0)</a><br/><a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-pediatric-bmi-for-age.html">US Core Pediatric BMI for Age Observation Profileversion: 6.1.0)</a><br/><a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-body-height.html">US Core Body Height Profileversion: 6.1.0)</a><br/><a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-body-temperature.html">US Core Body Temperature Profileversion: 6.1.0)</a><br/><a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-body-weight.html">US Core Body Weight Profileversion: 6.1.0)</a><br/><a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-head-occipital-frontal-circumference-percentile.html">US Core Pediatric Head Occipital Frontal Circumference Percentile Profileversion: 6.1.0)</a><br/><a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-heart-rate.html">US Core Heart Rate Profileversion: 6.1.0)</a><br/><a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-pulse-oximetry.html">US Core Pulse Oximetry Profileversion: 6.1.0)</a><br/><a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-respiratory-rate.html">US Core Respiratory Rate Profileversion: 6.1.0)</a><br/><a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-pediatric-weight-for-height.html">US Core Pediatric Weight for Height Observation Profileversion: 6.1.0)</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. The table below summarizes why each required individual search or required search parameter combination is included for this resource.</p>
+<table class="grid">
+<thead>
+<tr>
+<th>Required search</th>
+<th>US Core alignment</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>patient</code> + <code>category</code> + <code>status</code></td>
+<td>Added in US Quality Core.</td>
+<td>Supports patient-scoped retrieval filtered by observation category and status. US Quality Core makes this combination explicit for status-sensitive quality workflows, including cancelled or otherwise not-final observations.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>category</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#observation">US Core</a>.</td>
+<td>Supports patient-scoped retrieval filtered by observation category for in-scope USCDI+ Quality data access.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>category</code> + <code>date</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#observation">US Core</a>.</td>
+<td>Supports patient-scoped retrieval filtered by category and date so quality workflows can constrain observations to relevant reporting periods.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>code</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#observation">US Core</a>.</td>
+<td>Supports patient-scoped retrieval filtered by observation code, including primary code paths used by quality logic.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote></div></div><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-observation-patient.html">patient</a></td><td><code>reference</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value for the reference.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-observation-category.html">category</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a category.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-observation-status.html">status</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a status.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-observation-code.html">code</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a code value.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-observation-date.html">date</a></td><td><code>date</code></td><td><div><p>The client <strong>MAY</strong> provide a date value.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"><span class="lead">Combined Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameters</th><th>Types</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-observation-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-observation-category.html">category</a>+<a href="SearchParameter-us-quality-core-observation-status.html">status</a></td><td><code>reference</code>+<code>token</code>+<code>token</code></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-observation-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-observation-category.html">category</a></td><td><code>reference</code>+<code>token</code></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-observation-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-observation-category.html">category</a>+<a href="SearchParameter-us-quality-core-observation-date.html">date</a></td><td><code>reference</code>+<code>token</code>+<code>date</code></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-observation-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-observation-code.html">code</a></td><td><code>reference</code>+<code>token</code></td></tr></tbody></table></div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-20" class="panel-heading"><h4 id="Organization1-20" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-20" aria-expanded="true" href="#collapse1-20"><span style="float: right;">Resource Conformance: SHALL</span>Organization</a></h4></div><div role="tabpanel" aria-labelledby="heading1-20" id="collapse1-20" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/organization.html">Organization</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>.</li><li><strong>MAY</strong> support <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-organization.html">US Quality Core Organization</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. US Quality Core does not define additional required individual search parameters or required search parameter combinations for this resource. Implementations still support the required interactions in this CapabilityStatement and any applicable US Core requirements independently.</p>
+</div></blockquote></div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-21" class="panel-heading"><h4 id="Patient1-21" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-21" aria-expanded="true" href="#collapse1-21"><span style="float: right;">Resource Conformance: SHALL</span>Patient</a></h4></div><div role="tabpanel" aria-labelledby="heading1-21" id="collapse1-21" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/patient.html">Patient</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-patient.html">US Quality Core Patient</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. The table below summarizes why each required individual search or required search parameter combination is included for this resource.</p>
+<table class="grid">
+<thead>
+<tr>
+<th>Required search</th>
+<th>US Core alignment</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_id</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#patient">US Core</a>.</td>
+<td>Supports retrieval of a known Patient by resource id, which is the normal starting point for patient-scoped USCDI+ Quality data access.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote></div></div><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-patient-id.html">_id</a></td><td><code>token</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-22" class="panel-heading"><h4 id="Practitioner1-22" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-22" aria-expanded="true" href="#collapse1-22"><span style="float: right;">Resource Conformance: SHALL</span>Practitioner</a></h4></div><div role="tabpanel" aria-labelledby="heading1-22" id="collapse1-22" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/practitioner.html">Practitioner</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-practitioner.html">US Quality Core Practitioner</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. US Quality Core does not define additional required individual search parameters or required search parameter combinations for this resource. Implementations still support the required interactions in this CapabilityStatement and any applicable US Core requirements independently.</p>
+</div></blockquote></div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-23" class="panel-heading"><h4 id="PractitionerRole1-23" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-23" aria-expanded="true" href="#collapse1-23"><span style="float: right;">Resource Conformance: SHALL</span>PractitionerRole</a></h4></div><div role="tabpanel" aria-labelledby="heading1-23" id="collapse1-23" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/practitionerrole.html">PractitionerRole</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-practitionerrole.html">US Quality Core PractitionerRole</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. US Quality Core does not define additional required individual search parameters or required search parameter combinations for this resource. Implementations still support the required interactions in this CapabilityStatement and any applicable US Core requirements independently.</p>
+</div></blockquote></div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-24" class="panel-heading"><h4 id="Procedure1-24" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-24" aria-expanded="true" href="#collapse1-24"><span style="float: right;">Resource Conformance: SHALL</span>Procedure</a></h4></div><div role="tabpanel" aria-labelledby="heading1-24" id="collapse1-24" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/procedure.html">Procedure</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-procedure.html">US Quality Core Procedure</a><br/><a href="StructureDefinition-us-quality-core-procedurenotdone.html">US Quality Core Procedure Not Done</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. The table below summarizes why each required individual search or required search parameter combination is included for this resource.</p>
+<table class="grid">
+<thead>
+<tr>
+<th>Required search</th>
+<th>US Core alignment</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>patient</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#procedure">US Core</a>.</td>
+<td>Supports patient-scoped retrieval of procedures needed for in-scope USCDI+ Quality data access.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>status</code></td>
+<td>Added in US Quality Core.</td>
+<td>Supports patient-scoped retrieval filtered by procedure status. US Quality Core makes this combination explicit for status-sensitive quality workflows, including not-done procedure cases.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>date</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#procedure">US Core</a>.</td>
+<td>Supports patient-scoped retrieval filtered by procedure date so quality workflows can constrain procedures to relevant reporting periods.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote></div></div><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-procedure-patient.html">patient</a></td><td><code>reference</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value for the reference.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-procedure-status.html">status</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a status.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-procedure-date.html">date</a></td><td><code>date</code></td><td><div><p>The client <strong>MAY</strong> provide a date value.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"><span class="lead">Combined Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameters</th><th>Types</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-procedure-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-procedure-status.html">status</a></td><td><code>reference</code>+<code>token</code></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-procedure-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-procedure-date.html">date</a></td><td><code>reference</code>+<code>date</code></td></tr></tbody></table></div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-25" class="panel-heading"><h4 id="Provenance1-25" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-25" aria-expanded="true" href="#collapse1-25"><span style="float: right;">Resource Conformance: SHALL</span>Provenance</a></h4></div><div role="tabpanel" aria-labelledby="heading1-25" id="collapse1-25" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/provenance.html">Provenance</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>.</li><li><strong>MAY</strong> support <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-provenance.html">US Core Provenance Profileversion: 6.1.0)</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. US Quality Core does not define additional required individual search parameters or required search parameter combinations for this resource. Implementations still support the required interactions in this CapabilityStatement and any applicable US Core requirements independently.</p>
+</div></blockquote></div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-26" class="panel-heading"><h4 id="RelatedPerson1-26" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-26" aria-expanded="true" href="#collapse1-26"><span style="float: right;">Resource Conformance: SHALL</span>RelatedPerson</a></h4></div><div role="tabpanel" aria-labelledby="heading1-26" id="collapse1-26" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/relatedperson.html">RelatedPerson</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-relatedperson.html">US Quality Core RelatedPerson</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. The table below summarizes why each required individual search or required search parameter combination is included for this resource.</p>
+<table class="grid">
+<thead>
+<tr>
+<th>Required search</th>
+<th>US Core alignment</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_id</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#relatedperson">US Core</a>.</td>
+<td>Supports search retrieval of a known RelatedPerson by resource id.</td>
+</tr>
+<tr>
+<td><code>patient</code></td>
+<td>Added in US Quality Core.</td>
+<td>Supports retrieval of related persons associated with a patient for in-scope USCDI+ Quality data access.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote></div></div><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-relatedperson-id.html">_id</a></td><td><code>token</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-relatedperson-patient.html">patient</a></td><td><code>reference</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value for the reference.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-27" class="panel-heading"><h4 id="ServiceRequest1-27" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-27" aria-expanded="true" href="#collapse1-27"><span style="float: right;">Resource Conformance: SHALL</span>ServiceRequest</a></h4></div><div role="tabpanel" aria-labelledby="heading1-27" id="collapse1-27" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/servicerequest.html">ServiceRequest</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-servicerequest.html">US Quality Core ServiceRequest</a><br/><a href="StructureDefinition-us-quality-core-servicenotrequested.html">US Quality Core Service Not Requested</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. The table below summarizes why each required individual search or required search parameter combination is included for this resource.</p>
+<table class="grid">
+<thead>
+<tr>
+<th>Required search</th>
+<th>US Core alignment</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_id</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#servicerequest">US Core</a>.</td>
+<td>Supports search retrieval of a known ServiceRequest by resource id.</td>
+</tr>
+<tr>
+<td><code>patient</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#servicerequest">US Core</a>.</td>
+<td>Supports patient-scoped retrieval of service requests needed for in-scope USCDI+ Quality data access.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>category</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#servicerequest">US Core</a>.</td>
+<td>Supports patient-scoped retrieval filtered by service request category.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>category</code> + <code>authored</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#servicerequest">US Core</a>.</td>
+<td>Supports patient-scoped retrieval filtered by category and authored date so quality workflows can constrain service requests to relevant reporting periods.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>code</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#servicerequest">US Core</a>.</td>
+<td>Supports patient-scoped retrieval filtered by service request code, including primary code paths used by quality logic.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>do-not-perform</code></td>
+<td>Added in US Quality Core.</td>
+<td>Supports negation workflows by enabling retrieval of service requests that indicate the requested action should not be performed.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote></div></div><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-servicerequest-id.html">_id</a></td><td><code>token</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-servicerequest-patient.html">patient</a></td><td><code>reference</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value for the reference.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-servicerequest-category.html">category</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a category.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-servicerequest-code.html">code</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a code value.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-servicerequest-authored.html">authored</a></td><td><code>date</code></td><td><div><p>The client <strong>MAY</strong> provide a date value.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-servicerequest-do-not-perform.html">do-not-perform</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a token value.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"><span class="lead">Combined Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameters</th><th>Types</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-servicerequest-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-servicerequest-category.html">category</a></td><td><code>reference</code>+<code>token</code></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-servicerequest-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-servicerequest-category.html">category</a>+<a href="SearchParameter-us-quality-core-servicerequest-authored.html">authored</a></td><td><code>reference</code>+<code>token</code>+<code>date</code></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-servicerequest-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-servicerequest-code.html">code</a></td><td><code>reference</code>+<code>token</code></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-servicerequest-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-servicerequest-do-not-perform.html">do-not-perform</a></td><td><code>reference</code>+<code>token</code></td></tr></tbody></table></div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-28" class="panel-heading"><h4 id="Specimen1-28" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-28" aria-expanded="true" href="#collapse1-28"><span style="float: right;">Resource Conformance: SHALL</span>Specimen</a></h4></div><div role="tabpanel" aria-labelledby="heading1-28" id="collapse1-28" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/specimen.html">Specimen</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-specimen.html">US Core Specimen Profileversion: 6.1.0)</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. The table below summarizes why each required individual search or required search parameter combination is included for this resource.</p>
+<table class="grid">
+<thead>
+<tr>
+<th>Required search</th>
+<th>US Core alignment</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_id</code></td>
+<td>Required by <a href="https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html#specimen">US Core</a>.</td>
+<td>Supports search retrieval of a known Specimen by resource id, including specimens referenced by quality-relevant observations and diagnostic reports.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote></div></div><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/us/core/STU6.1/SearchParameter-us-core-specimen-id.html">_id</a></td><td><code>token</code></td><td><div><p>The client <strong>SHALL</strong> provide a token value.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="http://hl7.org/fhir/us/core/STU6.1/SearchParameter-us-core-specimen-patient.html">patient</a></td><td><code>reference</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value for the reference.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-29" class="panel-heading"><h4 id="Task1-29" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-29" aria-expanded="true" href="#collapse1-29"><span style="float: right;">Resource Conformance: SHALL</span>Task</a></h4></div><div role="tabpanel" aria-labelledby="heading1-29" id="collapse1-29" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/task.html">Task</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>resolves</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-us-quality-core-task.html">US Quality Core Task</a><br/><a href="StructureDefinition-us-quality-core-taskrejected.html">US Quality Core Task Rejected</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Search requirements are selected according to the rules described in <a href="general-requirements.html#search-requirement-selection">Search Requirement Selection</a>. The table below summarizes why each required individual search or required search parameter combination is included for this resource.</p>
+<table class="grid">
+<thead>
+<tr>
+<th>Required search</th>
+<th>US Core alignment</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>patient</code></td>
+<td>Added in US Quality Core.</td>
+<td>Supports patient-scoped retrieval of tasks for quality reporting. This US Quality Core-specific search is needed because Task is in scope for USCDI+ Quality but is not profiled by US Core 6.1.0.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>status</code></td>
+<td>Added in US Quality Core.</td>
+<td>Supports patient-scoped retrieval filtered by task status for status-sensitive quality workflows.</td>
+</tr>
+<tr>
+<td><code>patient</code> + <code>code</code></td>
+<td>Added in US Quality Core.</td>
+<td>Supports patient-scoped retrieval filtered by task code. This US Quality Core-specific combination makes the task code available as a primary retrieval path for quality logic.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote></div></div><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-task-patient.html">patient</a></td><td><code>reference</code></td><td><div><p>The client <strong>SHALL</strong> provide an id value for the reference.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-task-status.html">status</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a status.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td><a href="SearchParameter-us-quality-core-task-code.html">code</a></td><td><code>token</code></td><td><div><p>The client <strong>MAY</strong> provide a code value.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"><span class="lead">Combined Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameters</th><th>Types</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-task-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-task-status.html">status</a></td><td><code>reference</code>+<code>token</code></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-us-quality-core-task-patient.html">patient</a>+<a href="SearchParameter-us-quality-core-task-code.html">code</a></td><td><code>reference</code>+<code>token</code></td></tr></tbody></table></div></div></div></div></div></div></div>
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <script type="text/javascript" src="assets/js/togglechanges.js"> </script>
+  <script type="text/javascript" src="assets/js/requirements-table.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container" data-fhir="generated">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.healthit.gov/feedback">Office of the National Coordinator for Health Information Technology (ONC)</a>.  
+          Package fhir.onc.us-quality-core#0.5.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated 
+  <span title="2026-06-08 16:55:00 +1000">
+    2026-06-08
+  </span>
+
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

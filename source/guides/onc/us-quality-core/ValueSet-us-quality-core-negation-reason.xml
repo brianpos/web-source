@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="us-quality-core-negation-reason"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet us-quality-core-negation-reason</b></p><a name="us-quality-core-negation-reason"> </a><a name="hcus-quality-core-negation-reason"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Import all the codes that are contained in <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1021.56/expansion">Medical Reason Not Done SCT</a></li><li>Import all the codes that are contained in <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1021.58/expansion">Patient Reason Not Done SCT</a></li><li>Import all the codes that are contained in <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.3.526.3.1009/expansion">System Reason</a></li></ul></div>
+  </text>
+  <url value="http://fhir.org/guides/onc/us-quality-core/ValueSet/us-quality-core-negation-reason"/>
+  <version value="0.5.0"/>
+  <name value="NegationReasonCodes"/>
+  <title value="USQualityCore Negation Reason Codes"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-06-05"/>
+  <publisher value="Office of the National Coordinator for Health Information Technology (ONC)"/>
+  <contact>
+    <name value="Office of the National Coordinator for Health Information Technology (ONC)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.healthit.gov/feedback"/>
+    </telecom>
+  </contact>
+  <description value="This value set defines the set of codes that can be used to indicate the reason an action was not taken"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+    <text value="USA"/>
+  </jurisdiction>
+  <purpose value="This value set was defined to support identifying any of the possible negation reason codes as part of USQualityCore profiles. The value set is composed of the codes from [Medical Reason Not Done SCT](http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1021.56), [Patient Reason Not Done SCT](http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1021.58), and [System Reason](http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1009) as defined and available in the Value Set Authority Center."/>
+  <compose>
+    <include>
+      <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1021.56"/>
+    </include>
+    <include>
+      <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1021.58"/>
+    </include>
+    <include>
+      <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1009"/>
+    </include>
+  </compose>
+</ValueSet>

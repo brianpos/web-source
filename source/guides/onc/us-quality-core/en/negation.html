@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>US Quality Core Negation - 2026 US Quality Core Implementation Guide v0.5.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <style type="text/css">
+blockquote.note {
+  margin: 5px;
+  padding: 10px;
+  border-left-style: solid;
+  background-color: var(--stu-note-background-color);
+  border-left-color: var(--stu-note-border-left-color);
+}
+
+blockquote.note::before {
+  white-space: pre;
+  content: "Note\A ";
+  background-color: yellow;
+  color: red;
+  font-weight: bold;
+}
+</style>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script type="text/javascript" src="assets/js/prism.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-fhirpath.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"3.2"}
+    h3,h4,h5,h6{--heading-prefix:"3.2"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <div id="hl7-nav">
+  <a id="hl7-logo" no-external="true" href="https://healthit.gov">
+    <img height="50" alt="Visit the ONC website" src="onc-logo.png"/>
+  </a>
+</div>
+<div id="family-nav">
+  <a id="family-logo" no-external="true" href="https://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+<div id="hl7-search">
+  <a id="hl7-search-lnk" no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+</div>
+<!-- TODO: Push this into the base template -->
+<script type="text/javascript" src="assets/cql.js"> </script>
+
+
+        <div id="ig-status" data-fhir="generated">
+          <p><span style="font-size:12pt;font-weight:bold">2026 US Quality Core Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.5.0 - release
+
+
+
+  <img alt="United States of America flag" src="../assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment" data-fhir="generated">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">Home</a></li>
+  
+  <li class="dropdown">
+    <a data-toggle="dropdown" class="dropdown-toggle">Conformance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="general-requirements.html" class="item">General Requirements</a></li>
+      <li><a href="must-support.html" class="item">Must Support</a></li>
+      <li><a href="security.html" class="item">Security</a></li>
+    </ul>
+  </li>
+
+  <li class="dropdown">
+    <a data-toggle="dropdown" class="dropdown-toggle">Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="uscdiquality.html" class="item">USCDI+ Quality</a></li>    
+      <li><a href="negation.html" class="item">US Quality Core Negation</a></li>
+      <li><a href="provenance.html" class="item">Provenance</a></li>
+      <li><a href="relationship-with-uscore-qicore.html" class="item">Relationship with US Core and QI-Core</a></li> 
+      <li><a href="qdm-to-us-quality-core.html" class="item">QDM to US Quality Core</a></li>
+    </ul>
+  </li>
+
+  <li class="dropdown">
+    <a data-toggle="dropdown" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="capability-statements.html" class="item">Capability Statements</a></li>
+      <li><a href="profiles.html" class="item">Profiles</a></li>
+      <li><a href="extensions.html" class="item">Extensions</a></li>
+      <li><a href="terminology.html" class="item">Terminology</a></li>
+      <li><a href="examples.html" class="item">Examples</a></li>
+    </ul>
+  </li>
+
+  <li class="dropdown">
+    <a data-toggle="dropdown" class="dropdown-toggle">CQL Artifacts and Patterns (Informational)
+       <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="modelinfo.html" class="item">US Quality Core ModelInfo (Informational)</a></li>
+      <li><a href="patterns.html" class="item">US Quality Core Patterns (Informational)</a></li>
+    </ul>
+  </li>
+
+  <li><a href="downloads.html" class="item">Downloads</a></li>
+  <li><a href="changes.html" class="item">Change Log</a></li>
+
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment" data-fhir="generated">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='guidance.html'><b>Guidance</b></a></li><li><b>US Quality Core Negation</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the US Quality Core (v0.5.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="http://fhir.org/guides/onc/us-quality-core/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>US Quality Core Negation</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#USQualityCore-Negation" id="markdown-toc-USQualityCore-Negation">US Quality Core Negation Profile Index</a></li>
+  <li><a href="#using-us-quality-core-negation-profiles" id="markdown-toc-using-us-quality-core-negation-profiles">Using US Quality Core Negation Profiles</a></li>
+  <li><a href="#negation-in-cql" id="markdown-toc-negation-in-cql">Negation in CQL</a></li>
+</ul>
+
+</div>
+
+<h3 id="USQualityCore-Negation">US Quality Core Negation Profile Index</h3>
+
+<p>US Quality Core includes ten specific negation profiles, parallel to the existing action-related profile:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>US Quality Core Positive Profile</strong></th>
+      <th><strong>US Quality Core Negation Profile</strong></th>
+      <th><strong>Base Resource</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="StructureDefinition-us-quality-core-communication.html">USQualityCore Communication</a>*</td>
+      <td><a href="StructureDefinition-us-quality-core-communicationnotdone.html">USQualityCore Communication Not Done</a>*</td>
+      <td><a href="http://hl7.org/fhir/R4/communication.html">Communication</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-us-quality-core-devicerequest.html">USQualityCore DeviceRequest</a></td>
+      <td><a href="StructureDefinition-us-quality-core-devicenotrequested.html">USQualityCore Device Not Requested</a></td>
+      <td><a href="http://hl7.org/fhir/R4/devicerequest.html">DeviceRequest</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-us-quality-core-immunization.html">USQualityCore Immunization</a></td>
+      <td><a href="StructureDefinition-us-quality-core-immunizationnotdone.html">USQualityCore Immunization Not Done</a></td>
+      <td><a href="http://hl7.org/fhir/R4/immunization.html">Immunization</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-us-quality-core-medicationadministration.html">USQualityCore MedicationAdministration</a></td>
+      <td><a href="StructureDefinition-us-quality-core-medicationadministrationnotdone.html">USQualityCore MedicationAdministration Not Done</a></td>
+      <td><a href="http://hl7.org/fhir/R4/medicationadministration.html">MedicationAdministration</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-us-quality-core-medicationdispense.html">USQualityCore MedicationDispense</a></td>
+      <td><a href="StructureDefinition-us-quality-core-medicationdispensedeclined.html">USQualityCore MedicationDispense Declined</a></td>
+      <td><a href="http://hl7.org/fhir/R4/medicationdispense.html">MedicationDispense</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-us-quality-core-medicationrequest.html">USQualityCore MedicationRequest</a></td>
+      <td><a href="StructureDefinition-us-quality-core-medicationnotrequested.html">USQualityCore Medication Not Requested</a></td>
+      <td><a href="http://hl7.org/fhir/R4/medicationrequest.html">MedicationRequest</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-us-quality-core-simple-observation.html">USQualityCore Simple Observation</a></td>
+      <td><a href="StructureDefinition-us-quality-core-observationcancelled.html">USQualityCore Observation Cancelled</a></td>
+      <td><a href="http://hl7.org/fhir/R4/observation.html">Observation</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-us-quality-core-procedure.html">USQualityCore Procedure</a></td>
+      <td><a href="StructureDefinition-us-quality-core-procedurenotdone.html">USQualityCore Procedure Not Done</a></td>
+      <td><a href="http://hl7.org/fhir/R4/procedure.html">Procedure</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-us-quality-core-servicerequest.html">USQualityCore ServiceRequest</a></td>
+      <td><a href="StructureDefinition-us-quality-core-servicenotrequested.html">USQualityCore Service Not Requested</a></td>
+      <td><a href="http://hl7.org/fhir/R4/servicerequest.html">ServiceRequest</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-us-quality-core-task.html">USQualityCore Task</a></td>
+      <td><a href="StructureDefinition-us-quality-core-taskrejected.html">USQualityCore Task Rejected</a></td>
+      <td><a href="http://hl7.org/fhir/R4/task.html">Task</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Profiles marked with an asterisk (<code class="language-plaintext highlighter-rouge">*</code>) are not part of the conformance expectations of this guide because they do not include USCDI+ Quality flagged data elements. See the <a href="general-requirements.html#summary-of-conformance-requirements">Summary of Conformance Requirements</a> and the <a href="uscdiquality.html#summary-list-of-out-of-scope-profiles-for-conformance">USCDI+ Quality out-of-scope profile summary</a>.</p>
+
+<p>The <a href="StructureDefinition-us-quality-core-observationcancelled.html">USQualityCore ObservationCancelled</a> profile <strong>SHOULD</strong> be used to represent negation statements for all specific observation profiles including:</p>
+
+<ul>
+  <li><a href="http://hl7.org/fhir/us/core/StructureDefinition/head-occipital-frontal-circumference-percentile">US Core Pediatric Head Occipital-frontal Circumference Percentile Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure">US Core Blood Pressure Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/core/StructureDefinition/us-core-bmi">US Core BMI Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-height">US Core Body Height Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-temperature">US Core Body Temperature Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-weight">US Core Body Weight Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/core/StructureDefinition/us-core-head-circumference">US Core Head Circumference Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/core/StructureDefinition/us-core-heart-rate">US Core Heart Rate Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/core/StructureDefinition/pediatric-bmi-for-age">US Core Pediatric BMI for Age Observation Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/core/StructureDefinition/pediatric-weight-for-height">US Core Pediatric Weight for Height Observation Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/core/StructureDefinition/us-core-pulse-oximetry">US Core Pulse Oximetry Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/core/StructureDefinition/us-core-respiratory-rate">US Core Respiratory Rate Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus">US Core Smoking Status Observation Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-sexual-orientation">US Core Observation Sexual Orientation Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancyintent">US Core Observation Pregnancy Intent Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancystatus">US Core Observation Pregnancy Status Profile</a></li>
+  <li><a href="StructureDefinition-us-quality-core-simple-observation.html">USQualityCore Simple Observation Profile</a></li>
+  <li><a href="StructureDefinition-us-quality-core-observation-clinical-result.html">USQualityCore Observation Clinical Result</a></li>
+  <li><a href="StructureDefinition-us-quality-core-observation-lab.html">USQualityCore Laboratory Result Observation</a></li>
+  <li><a href="StructureDefinition-us-quality-core-observation-screening-assessment.html">USQualityCore Observation Screening Assessment</a></li>
+</ul>
+
+<p>Each of the US Quality Core negation rationale profiles define at least the following information:</p>
+
+<ul>
+  <li>What activity/event did not occur (typically in terms of a value set or list of codes)</li>
+  <li>Explicit indication that the action/event did not occur (such as doNotPerform or a status of notDone)</li>
+  <li>Date, and optionally, a time a clinician indicated a reason for avoiding the activity/event</li>
+  <li>The reason the activity/event did not occur (Preferably represented using one of an established set of <a href="ValueSet-us-quality-core-negation-reason.html">Negation Reason Codes</a>)</li>
+</ul>
+
+<p><strong>NOTE:</strong> Although these aspects are all present within each negation profile defined by US Quality Core, they are represented differently in the various FHIR resources. As a result, each negation profile uses a combination of constraints and extensions to ensure complete representation of negated actions or events within US Quality Core.</p>
+
+<h3 id="using-us-quality-core-negation-profiles">Using US Quality Core Negation Profiles</h3>
+
+<p><strong>Extent of Negation</strong></p>
+
+<p>The negation profiles in US Quality Core can be used to make two different types of negative statements:</p>
+
+<ol>
+  <li>Documentation that a specific activity was not performed for a given reason</li>
+  <li>Documentation that none of the activities in a given value set were performed for a given reason</li>
+</ol>
+
+<h4 id="documenting-one-member-of-a-value-set-was-not-performed-for-a-given-reason">Documenting one member of a value set was not performed for a given reason.</h4>
+
+<p>In the following example the measure numerator criterion allows for documentation that specifies a single antithrombotic medication using a CodeableConcept drawn from the list of possible expected medications (in the value set) was not administered. In the example the Profiled MedicationAdministration resource documents that the clinician specifically did not administer ticagrelor 90 MG Oral Tablet because drug treatment is not indicated. The evidence of a reason for not administering this single member of the value set “Antithrombotic Therapy for Ischemic Stroke” fulfills criteria for the numerator.</p>
+
+<p>See the <a href="MedicationAdministration-negation-with-code-example.html">MedicationAdministration</a> example using a specific code) for a complete example.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"resourceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"MedicationAdministration"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"negation-with-code-example"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"meta"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"profile"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationadministrationnotdone"</span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"extension"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-recorded"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"valueDateTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-15"</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"not-done"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"statusReason"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"coding"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nl">"system"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"183966005"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"display"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug treatment not indicated (situation)"</span><span class="w">
+        </span><span class="p">}]</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="nl">"medicationCodeableConcept"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"coding"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nl">"system"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.nlm.nih.gov/research/umls/rxnorm"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"1116635"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"display"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ticagrelor 90 MG Oral Tablet"</span><span class="w">
+        </span><span class="p">}]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"subject"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">...</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"effectivePeriod"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="documenting-no-members-of-an-entire-value-set-were-performed-for-a-given-reason">Documenting no members of an entire value set were performed for a given reason.</h4>
+
+<p>This is applicable when a measure criterion can be satisfied when none of the medications in a value set is administered for a specified reason. This can occur when the no treatment of the type included in the value set is appropriate. The approach provided allows systems to document using one profiled data instance that none of the activities in a particular value set were performed, rather than requiring documentation of multiple individual activities from the value set.</p>
+
+<p>The following example documents that providers did not prescribe any of the medications in the “Antithrombotic Therapy for Ischemic Stroke” value set using the <a href="StructureDefinition-us-quality-core-notDoneValueSet.html">notDoneValueSet</a> extension fulfills criteria for the numerator:</p>
+
+<p><strong>NOTE:</strong> Implementing systems must ensure that this approach does not result in conflicting data. For example, the above example indicating no administration of a medication in the Antithrombotic Therapy value set should not be used if there are administrations of individual medications in the same value set. In other words, it is a contradiction to say “a provider administered a specific medication” at the same time as “a provider did not administer any of the medications in this value set” if that value set includes the medication that was administered in the specific case.</p>
+
+<p>See the <a href="MedicationAdministration-negation-example.html">MedicationAdministration example using a value set</a> for a complete example.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"resourceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"MedicationAdministration"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"negation-example"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"meta"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"profile"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationadministrationnotdone"</span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"extension"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-recorded"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"valueDateTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-15"</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"not-done"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"statusReason"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"coding"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nl">"system"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"183966005"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"display"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug treatment not indicated (situation)"</span><span class="w">
+        </span><span class="p">}]</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="nl">"medicationCodeableConcept"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"extension"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nl">"url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-notDoneValueSet"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"valueCanonical"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.62"</span><span class="w">
+        </span><span class="p">}],</span><span class="w">
+        </span><span class="nl">"text"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Not Done Value Set: Antithrombotic Therapy for Ischemic Stroke"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"subject"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">...</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"effectivePeriod"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>When using a retrieve to access negated information, whether the activity extent is recorded as a CodeableConcept or a ValueSet is handled by the CQL. In most cases, the terminology can be provided as part of the retrieve directly. However, there are situations where authors may want to perform the terminology filtering for a negation activity outside of a retrieve. In these cases, authors can use the appropriate extension to access the negated element. For example, for MedicationAdministrationNotDone, the medication element has the notDoneValueSet extension defined, so the negation can be accessed using the <code class="language-plaintext highlighter-rouge">medication()</code> fluent function.</p>
+
+<p>The first case is when the negation is for a specific activity, so the terminology is provided as a direct-reference code. This case cannot be handled in the retrieve directly due to a known issue. CQL R2 introduces a terminology contains operator to support this, and until that operator is available, the filtering needs to be handled outside the retrieve, as illustrated by the following example.</p>
+
+<p>The following illustrative CQL example shows indication that a specific medication was not administered (using a direct-reference code). CQL examples in this guide are informational and are not part of the conformance requirements.</p>
+
+<pre><code class="language-cql">define TestSpecificMedicationAdministrationNotDoneExplicit:
+  ["MedicationAdministrationNotDone"] I
+    where I.medication() ~ MedicationCode
+      or MedicationCode in I.medication()
+</code></pre>
+
+<p>The second case is when an alternative filter is being used in the retrieve, so the negated value set is provided in an addition filtering clause.</p>
+
+<p>The following illustrative CQL example shows indication that a class of medications were not administered (using a value set):</p>
+
+<pre><code class="language-cql">define TestGeneralMedicationAdministrationNotDoneExplicit:
+  ["MedicationAdministrationNotDone": status in "MedicationAdministrationCompletedCodes"] I
+    where I.medication() in MedicationCodes
+      or I.medication() ~ MedicationCodes
+</code></pre>
+
+<h3 id="negation-in-cql">Negation in CQL</h3>
+
+<p>For quality measurement and reporting, measure expression may only need to determine the existence or absence of an activity or event to determine if criteria have been met. If the reason for absence is not relevant to the measure evaluation, the absence of evidence pattern should be used as described in the <a href="https://hl7.org/fhir/uv/cql/STU1/patterns.html#negation-in-fhir">Negation section of the Using CQL IG</a>.</p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <script type="text/javascript" src="assets/js/togglechanges.js"> </script>
+  <script type="text/javascript" src="assets/js/requirements-table.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container" data-fhir="generated">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.healthit.gov/feedback">Office of the National Coordinator for Health Information Technology (ONC)</a>.  
+          Package fhir.onc.us-quality-core#0.5.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated 
+  <span title="2026-06-08 16:55:00 +1000">
+    2026-06-08
+  </span>
+
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

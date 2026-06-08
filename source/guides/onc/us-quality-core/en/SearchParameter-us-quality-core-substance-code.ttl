@@ -1,0 +1,54 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-substance-code> a fhir:SearchParameter ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "us-quality-core-substance-code"] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: SearchParameter us-quality-core-substance-code</b></p><a name=\"us-quality-core-substance-code\"> </a><a name=\"hcus-quality-core-substance-code\"> </a><h2>UsQualityCoreSubstanceCode</h2><p>Parameter <code>code</code>:<code>token</code></p><div><p>US Quality Core Substance Code Search Parameter</p>\n</div><table class=\"grid\"><tr><td>Resource</td><td><a href=\"http://hl7.org/fhir/R4/substance.html\">Substance</a></td></tr><tr><td>Expression</td><td><code>Substance.code</code></td></tr><tr><td>Processing Mode</td><td>Normal</td></tr><tr><td>Multiples</td><td><ul><li>multipleAnd: The parameter may repeat in order to specify multiple values that must all be true</li><li>multipleOr: The parameter may have multiple values (separated by comma) where at least one must be true</li></ul></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-substance-code"^^xsd:anyURI ;
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/SearchParameter/us-quality-core-substance-code>
+  ] ; # 
+  fhir:version [ fhir:v "0.5.0"] ; # 
+  fhir:name [ fhir:v "UsQualityCoreSubstanceCode"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-06-05"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "Office of the National Coordinator for Health Information Technology (ONC)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Office of the National Coordinator for Health Information Technology (ONC)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.healthit.gov/feedback" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "US Quality Core Substance Code Search Parameter"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] ) ;
+     fhir:text [ fhir:v "USA" ]
+  ] ) ; # 
+  fhir:code [ fhir:v "code"] ; # 
+  fhir:base ( [ fhir:v "Substance"] ) ; # 
+  fhir:type [ fhir:v "token"] ; # 
+  fhir:expression [ fhir:v "Substance.code"] ; # 
+  fhir:xpathUsage [ fhir:v "normal"] ; # 
+  fhir:multipleOr [ fhir:v true] ; # 
+  fhir:multipleAnd [ fhir:v true] . # 
+
+# -------------------------------------------------------------------------------------
+

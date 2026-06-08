@@ -1,0 +1,104 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/onc/us-quality-core/MedicationAdministration/negation-with-code-example> a fhir:MedicationAdministration ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "negation-with-code-example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationadministrationnotdone"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationadministrationnotdone>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: MedicationAdministration negation-with-code-example</b></p><a name=\"negation-with-code-example\"> </a><a name=\"hcnegation-with-code-example\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-medicationadministrationnotdone.html\">US Quality Core MedicationAdministration Not Done</a></p></div><p><b>US Quality Core Not Done Recorded</b>: 2015-01-15</p><p><b>status</b>: Not Done</p><p><b>statusReason</b>: <span title=\"Codes:{http://snomed.info/sct 183966005}\">Drug treatment not indicated (situation)</span></p><p><b>medication</b>: <span title=\"Codes:{http://www.nlm.nih.gov/research/umls/rxnorm 1594660}\">alemtuzumab 10 MG/ML [Lemtrada]</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>context</b>: <a href=\"Encounter-example.html\">Encounter: identifier = http://example.org/encounters#ENC-20130404-appendicitis; status = finished; class = inpatient encounter (v3 Code System ActCode#IMP); type = Initial hospital inpatient or observation care, per day, for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making. When using total time on the date of the encounter for code selection, 75 minutes must be met or exceeded.; period = 2013-04-04 18:00:00-0400 --&gt; 2013-04-06 11:00:00-0400</a></p><p><b>supportingInformation</b>: <a href=\"Condition-example.html\">Condition Burn of ear</a></p><p><b>effective</b>: 2015-01-15 14:30:00+0100 --&gt; 2015-01-15 14:30:00+0100</p><p><b>request</b>: <a href=\"MedicationRequest-example.html\">MedicationRequest: status = active; intent = order; medication[x] = -&gt;Medication alemtuzumab 10 MG/ML [Lemtrada]; authoredOn = 2015-03-25 19:32:52-0500; reasonCode = Multiple sclerosis (disorder)</a></p><p><b>note</b>: </p><blockquote><div><p>Patient started Bupropion this morning - will administer in a reduced dose tomorrow</p>\n</div></blockquote><h3>Dosages</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Route</b></td><td><b>Dose</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://snomed.info/sct 47625008}\">Intravenous route (qualifier value)</span></td><td>3 mg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemg = 'mg')</span></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-recorded"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-recorded>
+     ] ;
+     fhir:value [
+       a fhir:DateTime ;
+       fhir:v "2015-01-15"^^xsd:date
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "not-done"] ; # 
+  fhir:statusReason ( [
+     fhir:coding ( [
+       a sct:183966005 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "183966005" ] ;
+       fhir:display [ fhir:v "Drug treatment not indicated (situation)" ]
+     ] )
+  ] ) ; # 
+  fhir:medication [
+     a fhir:CodeableConcept ;
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://www.nlm.nih.gov/research/umls/rxnorm"^^xsd:anyURI ;
+         fhir:l <http://www.nlm.nih.gov/research/umls/rxnorm>
+       ] ;
+       fhir:code [ fhir:v "1594660" ] ;
+       fhir:display [ fhir:v "alemtuzumab 10 MG/ML [Lemtrada]" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:context [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Encounter/example> ;
+     fhir:reference [ fhir:v "Encounter/example" ]
+  ] ; # 
+  fhir:supportingInformation ( [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Condition/example> ;
+     fhir:reference [ fhir:v "Condition/example" ]
+  ] ) ; # 
+  fhir:effective [
+     a fhir:Period ;
+     fhir:start [ fhir:v "2015-01-15T14:30:00+01:00"^^xsd:dateTime ] ;
+     fhir:end [ fhir:v "2015-01-15T14:30:00+01:00"^^xsd:dateTime ]
+  ] ; # 
+  fhir:request [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/MedicationRequest/example> ;
+     fhir:reference [ fhir:v "MedicationRequest/example" ]
+  ] ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "Patient started Bupropion this morning - will administer in a reduced dose tomorrow" ]
+  ] ) ; # 
+  fhir:dosage [
+     fhir:route [
+       fhir:coding ( [
+         a sct:47625008 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "47625008" ] ;
+         fhir:display [ fhir:v "Intravenous route (qualifier value)" ]
+       ] )
+     ] ;
+     fhir:dose [
+       fhir:value [ fhir:v "3"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "mg" ] ;
+       fhir:system [
+         fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+         fhir:l <http://unitsofmeasure.org>
+       ] ;
+       fhir:code [ fhir:v "mg" ]
+     ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

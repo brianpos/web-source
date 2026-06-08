@@ -1,0 +1,76 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/onc/us-quality-core/DeviceRequest/negation-example> a fhir:_DeviceRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "negation-example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-devicenotrequested"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-devicenotrequested>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: DeviceRequest negation-example</b></p><a name=\"negation-example\"> </a><a name=\"hcnegation-example\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-devicenotrequested.html\">US Quality Core Device Not Requested</a></p></div><p><b>US Quality Core Do Not Perform Reason</b>: <span title=\"Codes:{http://snomed.info/sct 410534003}\">Not indicated (qualifier value)</span></p><p><b>Extension Definition for DeviceRequest.doNotPerform for Version 5.0</b>: true</p><p><b>status</b>: Completed</p><p><b>intent</b>: Original Order</p><p><b>code</b>: <span title=\"Codes:\">Not Done Value Set: Venous Foot Pumps (VFP)</span> (Not done value set: <a href=\"https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.3.117.1.7.1.230/expansion\">Venous foot pumps</a>)</p><p><b>subject</b>: <a href=\"Patient-example.html\">Peter Chalmers</a></p><p><b>authoredOn</b>: 2016-04-05 09:20:00-0400</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-doNotPerformReason"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-doNotPerformReason>
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         a sct:410534003 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "410534003" ] ;
+         fhir:display [ fhir:v "Not indicated (qualifier value)" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:modifierExtension ( [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/5.0/StructureDefinition/extension-DeviceRequest.doNotPerform"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/5.0/StructureDefinition/extension-DeviceRequest.doNotPerform>
+     ] ;
+     fhir:value [
+       a fhir:Boolean ;
+       fhir:v true
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:intent [ fhir:v "original-order"] ; # 
+  fhir:code [
+     a fhir:CodeableConcept ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-notDoneValueSet"^^xsd:anyURI ;
+         fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-notDoneValueSet>
+       ] ;
+       fhir:value [
+         a fhir:Canonical ;
+         fhir:v "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.230"^^xsd:anyURI ;
+         fhir:l <http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.230>
+       ]
+     ] ) ;
+     fhir:text [ fhir:v "Not Done Value Set: Venous Foot Pumps (VFP)" ]
+  ] ; # 
+  fhir:subject [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ] ;
+     fhir:display [ fhir:v "Peter Chalmers" ]
+  ] ; # 
+  fhir:authoredOn [ fhir:v "2016-04-05T09:20:00-04:00"^^xsd:dateTime] . # 
+
+# -------------------------------------------------------------------------------------
+

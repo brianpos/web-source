@@ -1,0 +1,40 @@
+{
+  "resourceType" : "BodyStructure",
+  "id" : "example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-bodystructure"]
+  },
+  "language" : "en",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: BodyStructure example</b></p><a name=\"example\"> </a><a name=\"hcexample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-bodystructure.html\">US Quality Core BodyStructure</a></p></div><p><b>identifier</b>: 12345</p><p><b>active</b>: true</p><p><b>morphology</b>: <span title=\"Codes:{http://snomed.info/sct 4147007}\">Splenic mass</span></p><p><b>location</b>: <span title=\"Codes:{http://snomed.info/sct 78961009}\">Splenic mass</span></p><p><b>description</b>: 7 cm maximum diameter</p><h3>Images</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ContentType</b></td><td><b>Url</b></td></tr><tr><td style=\"display: none\">*</td><td>application/dicom</td><td><a href=\"http://imaging.acme.com/wado/server?requestType=WADO&amp;amp;wado_details\">http://imaging.acme.com/wado/server?requestType=WADO&amp;amp;wado_details</a></td></tr></table><p><b>patient</b>: <a href=\"Patient-example.html\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number\u00a0(use:\u00a0usual,\u00a0period:\u00a02001-05-06 --&gt; (ongoing)))</a></p></div>"
+  },
+  "identifier" : [{
+    "value" : "12345"
+  }],
+  "active" : true,
+  "morphology" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "4147007",
+      "display" : "Mass (morphologic abnormality)"
+    }],
+    "text" : "Splenic mass"
+  },
+  "location" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "78961009",
+      "display" : "Splenic structure (body structure)"
+    }],
+    "text" : "Splenic mass"
+  },
+  "description" : "7 cm maximum diameter",
+  "image" : [{
+    "contentType" : "application/dicom",
+    "url" : "http://imaging.acme.com/wado/server?requestType=WADO&amp;wado_details"
+  }],
+  "patient" : {
+    "reference" : "Patient/example"
+  }
+}

@@ -1,0 +1,65 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/onc/us-quality-core/Flag/example> a fhir:Flag ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-flag"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-flag>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Flag example</b></p><a name=\"example\"> </a><a name=\"hcexample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-flag.html\">US Quality Core Flag</a></p></div><p><b>identifier</b>: 12345</p><p><b>status</b>: Active</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/flag-category safety}\">Safety</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 129839007}\">Patient is at increased risk for falls during inpatient care</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">Peter Patient</a></p><p><b>period</b>: 2013-04-04 --&gt; (ongoing)</p><p><b>author</b>: <a href=\"Practitioner-example.html\">Nancy Nurse</a></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:value [ fhir:v "12345" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/flag-category"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/flag-category>
+       ] ;
+       fhir:code [ fhir:v "safety" ] ;
+       fhir:display [ fhir:v "Safety" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:129839007 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "129839007" ] ;
+       fhir:display [ fhir:v "At risk for falls" ]
+     ] ) ;
+     fhir:text [ fhir:v "Patient is at increased risk for falls during inpatient care" ]
+  ] ; # 
+  fhir:subject [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ] ;
+     fhir:display [ fhir:v "Peter Patient" ]
+  ] ; # 
+  fhir:period [
+     fhir:start [ fhir:v "2013-04-04"^^xsd:date ]
+  ] ; # 
+  fhir:author [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Practitioner/example> ;
+     fhir:reference [ fhir:v "Practitioner/example" ] ;
+     fhir:display [ fhir:v "Nancy Nurse" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

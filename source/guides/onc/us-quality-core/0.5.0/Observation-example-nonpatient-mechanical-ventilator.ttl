@@ -1,0 +1,72 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/onc/us-quality-core/Observation/example-nonpatient-mechanical-ventilator> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "example-nonpatient-mechanical-ventilator"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-nonpatient-observation"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-nonpatient-observation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation example-nonpatient-mechanical-ventilator</b></p><a name=\"example-nonpatient-mechanical-ventilator\"> </a><a name=\"hcexample-nonpatient-mechanical-ventilator\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-nonpatient-observation.html\">US Quality Core NonPatient Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 49062001}\">Device (physical object)</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 449071006}\">Mechanical ventilator (physical object)</span></p><p><b>subject</b>: Mechanical ventilator inventory</p><p><b>effective</b>: 2023-07-07</p><p><b>performer</b>: <a href=\"Organization-example.html\">Hendricks Country Hospital</a></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 735333005}\">Equipment available (finding)</span></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       a sct:49062001 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "49062001" ] ;
+       fhir:display [ fhir:v "Device (physical object)" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:449071006 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "449071006" ] ;
+       fhir:display [ fhir:v "Mechanical ventilator (physical object)" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:display [ fhir:v "Mechanical ventilator inventory" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:DateTime ;
+     fhir:v "2023-07-07"^^xsd:date
+  ] ; # 
+  fhir:performer ( [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Organization/example> ;
+     fhir:reference [ fhir:v "Organization/example" ] ;
+     fhir:display [ fhir:v "Hendricks Country Hospital" ]
+  ] ) ; # 
+  fhir:value [
+     a fhir:CodeableConcept ;
+     fhir:coding ( [
+       a sct:735333005 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "735333005" ] ;
+       fhir:display [ fhir:v "Equipment available (finding)" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

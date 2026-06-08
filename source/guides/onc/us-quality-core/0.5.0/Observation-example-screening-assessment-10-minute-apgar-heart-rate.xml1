@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="example-screening-assessment-10-minute-apgar-heart-rate"/>
+  <meta>
+    <extension url="http://hl7.org/fhir/StructureDefinition/instance-name">
+      <valueString value="10 minute Apgar Heart Rate Screening Assessment Example"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/instance-description">
+      <valueMarkdown value="This example of a US Quality Core Observation Screening Assessment Profile illustrates its use to directly capture individual screening assessment items as an observation. It is not derived from a FHIR QuestionnaireResponse."/>
+    </extension>
+    <profile value="http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-screening-assessment"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation example-screening-assessment-10-minute-apgar-heart-rate</b></p><a name="example-screening-assessment-10-minute-apgar-heart-rate"> </a><a name="hcexample-screening-assessment-10-minute-apgar-heart-rate"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-us-quality-core-observation-screening-assessment.html">US Quality Core Observation Screening Assessment</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category survey}">Survey</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 32402-0}">Apgar respiratory effort score</span></p><p><b>subject</b>: <a href="Patient-infant-example.html">Infant Example  Male, DoB: 2020-06-02 ( Social Security number: United States Social Security Number#999123458 (use: usual, ))</a></p><p><b>effective</b>: 2016-05-18 22:33:22+0000</p><p><b>performer</b>: <a href="Practitioner-example.html">Practitioner Adam Careful </a></p><p><b>value</b>: <span title="Codes:{http://loinc.org LA6718-6}">2. At least 100 beats per minute</span></p></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="survey"/>
+      <display value="Survey"/>
+    </coding>
+    <text value="Survey"/>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="32402-0"/>
+      <display value="10 minute Apgar Heart Rate"/>
+    </coding>
+    <text value="Apgar respiratory effort score"/>
+  </code>
+  <subject>
+    <reference value="Patient/infant-example"/>
+  </subject>
+  <effectiveDateTime value="2016-05-18T22:33:22+00:00"/>
+  <performer>
+    <reference value="Practitioner/example"/>
+  </performer>
+  <valueCodeableConcept>
+    <coding>
+      <extension url="http://hl7.org/fhir/StructureDefinition/ordinalValue">
+        <valueDecimal value="2"/>
+      </extension>
+      <system value="http://loinc.org"/>
+      <code value="LA6718-6"/>
+      <display value="At least 100 beats per minute"/>
+    </coding>
+    <text value="2. At least 100 beats per minute"/>
+  </valueCodeableConcept>
+</Observation>

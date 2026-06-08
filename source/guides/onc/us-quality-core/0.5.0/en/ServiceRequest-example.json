@@ -1,0 +1,59 @@
+{
+  "resourceType" : "ServiceRequest",
+  "id" : "example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest"]
+  },
+  "language" : "en",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest example</b></p><a name=\"example\"> </a><a name=\"hcexample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-servicerequest.html\">US Quality Core ServiceRequest</a></p></div><p><b>status</b>: Completed</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 387713003}\">Surgical Procedure</span></p><p><b>priority</b>: Urgent</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 80146002}\">Excision of appendix (procedure)</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number\u00a0(use:\u00a0usual,\u00a0period:\u00a02001-05-06 --&gt; (ongoing)))</a></p><p><b>encounter</b>: <a href=\"Encounter-example.html\">Encounter: identifier = http://example.org/encounters#ENC-20130404-appendicitis; status = finished; class = inpatient encounter (v3 Code System ActCode#IMP); type = Initial hospital inpatient or observation care, per day, for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making. When using total time on the date of the encounter for code selection, 75 minutes must be met or exceeded.; period = 2013-04-04 18:00:00-0400 --&gt; 2013-04-06 11:00:00-0400</a></p><p><b>occurrence</b>: 2013-04-05 --&gt; 2013-04-05</p><p><b>asNeeded</b>: true</p><p><b>authoredOn</b>: 2013-04-04</p><p><b>reasonCode</b>: <span title=\"Codes:{http://snomed.info/sct 21522001}\">Abdominal pain (finding)</span></p><p><b>reasonReference</b>: <a href=\"Condition-appendicitis-example.html\">Condition Appendicitis (disorder)</a></p><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 66754008}\">Appendix structure</span></p></div>"
+  },
+  "status" : "completed",
+  "intent" : "order",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "387713003",
+      "display" : "Surgical Procedure"
+    }]
+  }],
+  "priority" : "urgent",
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "80146002",
+      "display" : "Excision of appendix (procedure)"
+    }],
+    "text" : "Excision of appendix (procedure)"
+  },
+  "subject" : {
+    "reference" : "Patient/example"
+  },
+  "encounter" : {
+    "reference" : "Encounter/example"
+  },
+  "occurrencePeriod" : {
+    "start" : "2013-04-05",
+    "end" : "2013-04-05"
+  },
+  "asNeededBoolean" : true,
+  "authoredOn" : "2013-04-04",
+  "reasonCode" : [{
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "21522001",
+      "display" : "Abdominal pain (finding)"
+    }]
+  }],
+  "reasonReference" : [{
+    "reference" : "Condition/appendicitis-example"
+  }],
+  "bodySite" : [{
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "66754008",
+      "display" : "Appendix structure"
+    }]
+  }]
+}

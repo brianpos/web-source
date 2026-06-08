@@ -1,0 +1,77 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/onc/us-quality-core/Device/example> a fhir:Device ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-device"^^xsd:anyURI ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-device>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Device example</b></p><a name=\"example\"> </a><a name=\"hcexample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-us-quality-core-device.html\">US Quality Core Device</a></p></div><p><b>identifier</b>: 345675, Serial Number/AMID-342135-8464</p><h3>UdiCarriers</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>DeviceIdentifier</b></td><td><b>CarrierHRF</b></td></tr><tr><td style=\"display: none\">*</td><td>09504000059118</td><td>(01)09504000059118(17)141120(10)7654321D(21)10987654d321</td></tr></table><p><b>status</b>: Active</p><p><b>manufacturer</b>: Acme Devices, Inc</p><p><b>lotNumber</b>: 43453424</p><p><b>modelNumber</b>: AB 45-J</p><p><b>type</b>: <span title=\"Codes:{http://snomed.info/sct 86184003}\">ECG</span></p><p><b>patient</b>: <a href=\"Patient-example.html\">Jim Chalmers  Male, DoB: 1974-12-25 ( Social Security number (use: usual, period: 2001-05-06 --&gt; (ongoing)))</a></p><p><b>contact</b>: ph: ext 4352</p><p><b>note</b>: By Practitioner/example @2015-06-28 14:03:32+1000</p><blockquote><div><p>QA Checked</p>\n</div></blockquote></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:value [ fhir:v "345675" ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "SNO" ]
+       ] ) ;
+       fhir:text [ fhir:v "Serial Number" ]
+     ] ;
+     fhir:value [ fhir:v "AMID-342135-8464" ]
+  ] ) ; # 
+  fhir:udiCarrier ( [
+     fhir:deviceIdentifier [ fhir:v "09504000059118" ] ;
+     fhir:carrierHRF [ fhir:v "(01)09504000059118(17)141120(10)7654321D(21)10987654d321" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:manufacturer [ fhir:v "Acme Devices, Inc"] ; # 
+  fhir:lotNumber [ fhir:v "43453424"] ; # 
+  fhir:modelNumber [ fhir:v "AB 45-J"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       a sct:86184003 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "86184003" ] ;
+       fhir:display [ fhir:v "Electrocardiographic monitor and recorder" ]
+     ] ) ;
+     fhir:text [ fhir:v "ECG" ]
+  ] ; # 
+  fhir:patient [
+     fhir:l <http://fhir.org/guides/onc/us-quality-core/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:contact ( [
+     fhir:system [ fhir:v "phone" ] ;
+     fhir:value [ fhir:v "ext 4352" ]
+  ] ) ; # 
+  fhir:note ( [
+     fhir:author [
+       a fhir:Reference ;
+       fhir:l <http://fhir.org/guides/onc/us-quality-core/Practitioner/example> ;
+       fhir:reference [ fhir:v "Practitioner/example" ]
+     ] ;
+     fhir:time [ fhir:v "2015-06-28T14:03:32+10:00"^^xsd:dateTime ] ;
+     fhir:text [ fhir:v "QA Checked" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
