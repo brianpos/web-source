@@ -372,9 +372,12 @@
 		}]);
 	})))(), 1);
 	const HtmlDiff = import_htmldiff_min.default.default ?? import_htmldiff_min.default;
+	function normalizeLineEndings(html) {
+		return html.replace(/\r\n?/g, "\n");
+	}
 	self.onmessage = (e) => {
 		const { oldHtml, newHtml } = e.data;
-		const result = HtmlDiff.execute(oldHtml, newHtml);
+		const result = HtmlDiff.execute(normalizeLineEndings(oldHtml), normalizeLineEndings(newHtml));
 		self.postMessage(result);
 	};
 	//#endregion
