@@ -1,0 +1,101 @@
+name: Update /diff from hl7-diff
+
+# Manually-triggered workflow that pulls the latest `dist` artifact
+# produced by the brianpos/hl7-diff Build workflow and commits its
+# contents into source/diff/ on the branch this workflow was run from.
+#
+# Pick the target branch from the "Run workflow" dropdown in the Actions
+# UI (or pass `ref` to the API). The commit lands on whatever branch you
+# selected, so you can route updates to `main` or to a feature branch.
+#
+# Uses only first-party tooling: actions/checkout and the `gh` CLI that
+# is preinstalled on GitHub-hosted runners. No third-party actions.
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: "hl7-diff workflow run id to pull `dist` from. Leave blank to use the latest successful Build run on hl7-diff `main`."
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  update-diff:
+    runs-on: ubuntu-latest
+    env:
+      SOURCE_REPO: brianpos/hl7-diff
+      SOURCE_WORKFLOW: build.yml
+      SOURCE_BRANCH: main
+      ARTIFACT_NAME: dist
+      TARGET_DIR: source/diff
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      - name: Checkout target branch
+        uses: actions/checkout@v4
+
+      - name: Resolve source run id
+        id: resolve
+        run: |
+          set -euo pipefail
+          run_id="${{ inputs.source_run_id }}"
+          if [ -z "$run_id" ]; then
+            echo "Looking up latest successful '$SOURCE_WORKFLOW' run on $SOURCE_REPO@$SOURCE_BRANCH..."
+            run_id=$(gh run list \
+              --repo "$SOURCE_REPO" \
+              --workflow "$SOURCE_WORKFLOW" \
+              --branch "$SOURCE_BRANCH" \
+              --status success \
+              --limit 1 \
+              --json databaseId \
+              --jq '.[0].databaseId')
+          fi
+          if [ -z "$run_id" ] || [ "$run_id" = "null" ]; then
+            echo "::error::Could not resolve a source run id."
+            exit 1
+          fi
+          echo "Using source run id: $run_id"
+          echo "run_id=$run_id" >> "$GITHUB_OUTPUT"
+
+      - name: Download dist artifact from hl7-diff
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/hl7-diff-dist
+          mkdir -p /tmp/hl7-diff-dist
+          gh run download "${{ steps.resolve.outputs.run_id }}" \
+            --repo "$SOURCE_REPO" \
+            --name "$ARTIFACT_NAME" \
+            --dir /tmp/hl7-diff-dist
+          echo "Downloaded files:"
+          ls -la /tmp/hl7-diff-dist
+
+      - name: Replace ${{ env.TARGET_DIR }} with artifact contents
+        run: |
+          set -euo pipefail
+          # Wipe the existing target dir so stale hashed asset filenames
+          # are not left behind, then copy the freshly built files in.
+          rm -rf "$TARGET_DIR"
+          mkdir -p "$TARGET_DIR"
+          cp -a /tmp/hl7-diff-dist/. "$TARGET_DIR/"
+          echo "New $TARGET_DIR contents:"
+          ls -la "$TARGET_DIR"
+
+      - name: Commit and push to ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add "$TARGET_DIR"
+          if git diff --cached --quiet; then
+            echo "No changes to commit; $TARGET_DIR is already up to date."
+            exit 0
+          fi
+
+          run_url="https://github.com/${SOURCE_REPO}/actions/runs/${{ steps.resolve.outputs.run_id }}"
+          git commit -m "Update /diff from hl7-diff run ${{ steps.resolve.outputs.run_id }}" \
+                     -m "Source: $run_url"
+          git push origin "HEAD:${{ github.ref_name }}"
